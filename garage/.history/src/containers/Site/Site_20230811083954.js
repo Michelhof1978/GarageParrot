@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import Navbar from '../../components/UI/Navbar/navbar';
+imp
 
 class Site extends Component {
     render() {
       return (
         <>
-          <Navbar />
+          SITE
         </>
       );
     }

@@ -5,7 +5,7 @@ class Site extends Component {
     render() {
       return (
         <>
-          <Navbar />
+          <Navbar
         </>
       );
     }
