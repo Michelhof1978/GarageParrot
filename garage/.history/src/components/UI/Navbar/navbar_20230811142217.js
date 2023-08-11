@@ -42,7 +42,7 @@ const Navbar = (props) => (
     <div className="container-fluid">
 
         <div className="collapse navbar-collapse" id="navbarColor01">
-            <ul className="navbar-nav me-auto navbar"> {/* Ajout de "d-flex justify-content-center" ici */}
+            <ul className="navbar-nav me-auto d-flex justify-content-center"> {/* Ajout de "d-flex justify-content-center" ici */}
                 <li className="nav-item m-3">
                     <a className="nav-link active" href="#">Accueil
                         <span className="visually-hidden">(current)</span>
