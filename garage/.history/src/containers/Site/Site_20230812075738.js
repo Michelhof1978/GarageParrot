@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 class Site extends Component {
   render() {
     return (
-          <>
+    
         <Navbar />
 
         <Routes>
@@ -18,11 +18,11 @@ class Site extends Component {
           <Route path="/mecanique" element={<h1>Mecanique </h1>} />
           <Route path="/entretien" element={<h1>Entretien </h1>} />
           <Route path="/parebrise" element={<h1>PareBrise</h1>} />
-          <Route path="/vidange" element={<h1>Vidange</h1>} />
+          <Route path="/vidange" element={<<h1>Vidange</h1>} />
           <Route path="/voitureoccasion" element={<h1>voiture d'occasion</h1>} />
           <Route path="/contact" element={<h1>Page de Contact</h1>} />
         </Routes>
-        </>
+      
     );
   }
 }

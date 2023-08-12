@@ -22,7 +22,7 @@ class Site extends Component {
           <Route path="/voitureoccasion" element={<h1>voiture d'occasion</h1>} />
           <Route path="/contact" element={<h1>Page de Contact</h1>} />
         </Routes>
-        </>
+      
     );
   }
 }

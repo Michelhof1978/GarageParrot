@@ -48,9 +48,8 @@ const Navbar = (props) => (
 
         <div className="collapse navbar-collapse " id="navbarColor01">
             <ul className="navbar-nav me-auto navbar-text-light"> 
-
                 <li className="nav-item m-3">
-                    <a className="nav-link" href="/">Accueil
+                    <a className="nav-link active" href="/">Accueil
                         <span className="visually-hidden">(current)</span>
                     </a>
                 </li>
@@ -61,20 +60,19 @@ const Navbar = (props) => (
             <Link className="dropdown-item text-primary" to="/pneumatique">Pneumatique</Link>
             <Link className="dropdown-item text-primary" to="/freinage">Freinage</Link>
             <Link className="dropdown-item text-primary" to="/mecanique">Mécanique</Link>
-            <Link className="dropdown-item text-primary" to="/entretien">Entretien</Link>
+            <Link className="dropdown-item text-primary" to="/entretien">Mécanique</Link>
             <Link className="dropdown-item text-primary" to="/parebrise">Pare-Brise</Link>
             <Link className="dropdown-item text-primary" to="/vidange">Vidange</Link>
                 </div>
+
                 </li>
 
                 <li className="nav-item m-3">
-                    <a className="nav-link" href="/voitureoccasion">Voitures D'occasion</a>
+                    <a className="nav-link" href="#">Voitures D'occasion</a>
                 </li>
-
                 <li className="nav-item m-3">
-                <a className="nav-link" href="/contact">Page de Contact</a>
+                    <a className="nav-link" href="#">Nous Contacter</a>
                 </li>
-
             </ul>
         </div>
     </div>
