@@ -50,7 +50,7 @@ const Navbar = (props) => (
             <ul className="navbar-nav me-auto navbar-text-light"> 
 
                 <li className="nav-item m-3">
-                    <NavLink to="/"  className="nav-link">Accueil</NavLink>
+                    <NavLink to="/" className="nav-link">Accueil</NavLink>
                         <span className="visually-hidden">(current)</span>
                 </li>
 
@@ -67,11 +67,12 @@ const Navbar = (props) => (
                 </li>
 
                 <li className="nav-item m-3">
-                <NavLink to="/voitureoccasion" className="nav-link">Voitures D'occasion</NavLink>
+                <NavLink to="/" className="nav-link">Accueil</NavLink>
+                    <a className="nav-link" href="">Voitures D'occasion</a>
                 </li>
 
                 <li className="nav-item m-3">
-                <NavLink to="/contact" className="nav-link">Page de Contact</NavLink>
+                <a className="nav-link" href="/contact">Page de Contact</a>
                 </li>
 
             </ul>

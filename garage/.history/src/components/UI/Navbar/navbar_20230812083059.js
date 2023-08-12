@@ -6,7 +6,7 @@ import logo from "../../../assets/images/logo2.webp";
 import banner from "../../../assets/images/bannier.webp";
 import sousbanner from "../../../assets/images/sousbanniere.webp";
 import iconespacepro from "../../../assets/images/iconespacepro.webp";
-import { NavLink } from "react-router-dom";//Pour le rechargement des pages
+import { NavLink } from "react-router-dom";
 
 
 //Composant stateless
@@ -50,28 +50,29 @@ const Navbar = (props) => (
             <ul className="navbar-nav me-auto navbar-text-light"> 
 
                 <li className="nav-item m-3">
-                    <NavLink to="/"  className="nav-link">Accueil</NavLink>
+                    <a className="nav-link" href="/">Accueil
                         <span className="visually-hidden">(current)</span>
+                    </a>
                 </li>
 
                 <li className="nav-item dropdown m-3">
                     <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/reparation" role="button" aria-haspopup="true" aria-expanded="false">Réparation véhicules</a>
                     <div className="dropdown-menu bg-light">
-            <NavLink className="dropdown-item text-primary" to="/pneumatique">Pneumatique</NavLink>
-            <NavLink className="dropdown-item text-primary" to="/freinage">Freinage</NavLink>
-            <NavLink className="dropdown-item text-primary" to="/mecanique">Mécanique</NavLink>
-            <NavLink className="dropdown-item text-primary" to="/entretien">Entretien</NavLink>
-            <NavLink className="dropdown-item text-primary" to="/parebrise">Pare-Brise</NavLink>
-            <NavLink className="dropdown-item text-primary" to="/vidange">Vidange</NavLink>
+            <Link className="dropdown-item text-primary" to="/pneumatique">Pneumatique</Link>
+            <Link className="dropdown-item text-primary" to="/freinage">Freinage</Link>
+            <Link className="dropdown-item text-primary" to="/mecanique">Mécanique</Link>
+            <Link className="dropdown-item text-primary" to="/entretien">Entretien</Link>
+            <Link className="dropdown-item text-primary" to="/parebrise">Pare-Brise</Link>
+            <Link className="dropdown-item text-primary" to="/vidange">Vidange</Link>
                 </div>
                 </li>
 
                 <li className="nav-item m-3">
-                <NavLink to="/voitureoccasion" className="nav-link">Voitures D'occasion</NavLink>
+                    <a className="nav-link" href="/voitureoccasion">Voitures D'occasion</a>
                 </li>
 
                 <li className="nav-item m-3">
-                <NavLink to="/contact" className="nav-link">Page de Contact</NavLink>
+                <a className="nav-link" href="/contact">Page de Contact</a>
                 </li>
 
             </ul>

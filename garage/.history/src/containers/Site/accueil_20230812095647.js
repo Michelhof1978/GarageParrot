@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
-import TitreH1 from '../../components/UI/Navbar/TitresH1';
+impo
 class Accueil extends Component {
     render() {
         return (
-            <>
             <div>
-                <TitreH1>Accueil</TitreH1>
+                <h1>Accueil</h1>
             </div>
-            </>
         );
     }
 }
-
 
 export default Accueil;

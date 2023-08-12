@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TitreH1 from '../../components/UI/Navbar/TitresH1';
+import T from '../../components/UI/Navbar/TitreH1/TitreH1';
 class Accueil extends Component {
     render() {
         return (
@@ -11,6 +11,5 @@ class Accueil extends Component {
         );
     }
 }
-
 
 export default Accueil;
