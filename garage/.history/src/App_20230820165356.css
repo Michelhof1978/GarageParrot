@@ -1,0 +1,9 @@
+
+.site{
+    min-height: 100vh;
+    margin-bottom: -140px;
+}
+
+footer, .minsite{
+    height: 140px; //
+}
