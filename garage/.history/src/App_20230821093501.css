@@ -1,17 +1,17 @@
-/* SITE */
+
 .site {
     min-height:100vh;
     margin-bottom: -540px; /* position du footer; */
 }
 
 
-/* FOOTER */
+FOOTER
 footer, .minsite{
     height: 540px;
 }
 
 .img-icon {
-    width: 40px; 
-    margin: 0 10px; 
+    width: 40px; /* Ajustez la largeur selon vos préférences */
+    margin: 0 10px; /* Ajustez la marge selon vos préférences */
   }
   

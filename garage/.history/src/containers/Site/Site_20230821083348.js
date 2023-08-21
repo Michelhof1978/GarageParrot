@@ -9,7 +9,7 @@ class Site extends Component {
   render() {
     return (
           <>
-            <div className='site'>
+            <div>
         <Navbar />
       
         <Routes>
@@ -25,7 +25,6 @@ class Site extends Component {
           <Route path="/contact" element={<h1>Page de Contact</h1>} />
         </Routes>
         </div>
-        <div className='minsite'></div> {/*  //pour le footer */}
 
         <Footer />
         </>

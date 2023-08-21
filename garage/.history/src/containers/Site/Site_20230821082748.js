@@ -3,15 +3,14 @@ import Navbar from '../../components/UI/Navbar/navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Accueil from '../Site/accueil';
 import { Link } from 'react-router-dom';
-import Footer from '../../components/Footer/footer';
+import
 
 class Site extends Component {
   render() {
     return (
           <>
-            <div className='site'>
         <Navbar />
-      
+
         <Routes>
           <Route path="/" element={<Accueil />} />
          
@@ -24,8 +23,6 @@ class Site extends Component {
           <Route path="/voitureoccasion" element={<h1>voiture d'occasion</h1>} />
           <Route path="/contact" element={<h1>Page de Contact</h1>} />
         </Routes>
-        </div>
-        <div className='minsite'></div> {/*  //pour le footer */}
 
         <Footer />
         </>
