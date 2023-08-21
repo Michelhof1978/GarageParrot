@@ -1,17 +1,37 @@
-
-/* body{
-    background-color: #f5f5f5;
-    font-family: 'times new roman', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-
+<<<<<<< HEAD
+/* SITE */
+.site {
+    min-height:100vh;
+    margin-bottom: -540px; /* position du footer; */
 }
 
 
-.justify-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+/* FOOTER */
+footer, .minsite{
+    height: 540px;
+}
+
+.img-icon {
+    width: 40px; 
+    margin: 0 10px; 
+  }
+
+  .logo-container {
+    margin-top: -90px; 
+  }
+
+  .adressFooter {
+   margin-top: -90px; 
+  }
+  
+=======
+
+.site{
+    min-height: 100vh;
+    margin-bottom: -140px;
+}
+
+footer, .minsite{
+     height: 140px; /*Pour corriger les bug lié au footer et de sa position ds la fenêtre */
+}
+>>>>>>> b1124c860a48b3a41f107cf6356d365433866ac4
