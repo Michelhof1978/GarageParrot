@@ -24,7 +24,7 @@ footer, .minsite{
    margin-top: -90px; 
   }
   
-
+=======
 
 .site{
     min-height: 100vh;
@@ -34,4 +34,4 @@ footer, .minsite{
 footer, .minsite{
      height: 140px; /*Pour corriger les bug lié au footer et de sa position ds la fenêtre */
 }
-
+>>>>>>> b1124c860a48b3a41f107cf6356d365433866ac4
