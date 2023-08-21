@@ -25,7 +25,7 @@ class Site extends Component {
           <Route path="/contact" element={<h1>Page de Contact</h1>} />
         </Routes>
         </div>
-        <div className='minsite'></div> {/*  //pour le footer */}
+        <div cl></div>
 
         <Footer />
         </>
