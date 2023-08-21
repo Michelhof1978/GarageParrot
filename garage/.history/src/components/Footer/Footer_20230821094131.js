@@ -35,7 +35,7 @@ const Footer = (props) => (
       <div className="row">
         <div className="col text-center">
           <img className="img-fluid" src={logo} alt="Logo Garage PARROT" />
-          <p className="adressFooter">Garage PARROT - 11 rue de la republique 30 000 Toulouse<br/>Hoffmann Michel - 2023 </p>
+          <p>Garage PARROT - 2021</p>
         </div>
       </div>
     </div>

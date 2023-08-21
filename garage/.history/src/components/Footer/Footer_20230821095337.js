@@ -10,32 +10,37 @@ const Footer = (props) => (
     <div className="container py-4">
       <div className="row justify-content-center align-items-center">
         <div className="col-2">
-          <a href="/" target="_blank">
-            <img src={iconInsta} alt="Instagram" className="img-fluid img-icon" />
+          <a href="/" className="d-block" target="_blank">
+            <img src={iconInsta} alt="instagram" className="img-icon" />
           </a>
         </div>
         <div className="col-2">
-          <a href="/" target="_blank">
-            <img src={iconTictoc} alt="Tictoc" className="img-fluid img-icon" />
+          <a href="/" className="d-block" target="_blank">
+            <img src={iconTictoc} alt="tictoc" className="img-icon" />
           </a>
         </div>
         <div className="col-2">
-          <a href="/" target="_blank">
-            <img src={iconLinkedin} alt="LinkedIn" className="img-fluid img-icon" />
+          <a href="/" className="d-block" target="_blank">
+            <img src={iconLinkedin} alt="linkedin" className="img-icon" />
           </a>
         </div>
         <div className="col-2">
-          <a href="/" target="_blank">
-            <img src={iconTwitter} alt="Twitter" className="img-fluid img-icon" />
+          <a href="/" className="d-block" target="_blank">
+            <img src={iconTwitter} alt="twitter" className="img-icon" />
           </a>
         </div>
       </div>
     </div>
-    <div className="container logo-container w-50">
+    <div className="container">
       <div className="row">
         <div className="col text-center">
           <img className="img-fluid" src={logo} alt="Logo Garage PARROT" />
-          <p className="adressFooter">Garage PARROT - 11 rue de la republique 30 000 Toulouse<br/>Hoffmann Michel - 2023 </p>
+          <div className="d-flex flex-column align-items-center">
+            <p>Garage PARROT - 2021</p>
+            <p className="mb-0">123 Rue de la Réparation</p>
+            <p className="mb-0">Ville, Code Postal</p>
+            <p className="mb-0">Téléphone : 123-456-7890</p>
+          </div>
         </div>
       </div>
     </div>
