@@ -72,10 +72,7 @@ const Navbar = (props) => (
                 <NavLink to="/voitureoccasion" className="nav-link text-white">Voitures D'occasion</NavLink>
                 </li>
 
-                <li className="nav-item m-3 ">
-                <NavLink to="/avisClients" className="nav-link text-white">Avis Clients</NavLink>
-                </li>
-
+                
 
                 <li className="nav-item m-3">
                 <NavLink to="/contact" className="nav-link text-white">Page de Contact</NavLink>

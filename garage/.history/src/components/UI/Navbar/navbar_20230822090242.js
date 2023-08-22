@@ -73,7 +73,7 @@ const Navbar = (props) => (
                 </li>
 
                 <li className="nav-item m-3 ">
-                <NavLink to="/avisClients" className="nav-link text-white">Avis Clients</NavLink>
+                <NavLink to="/voitureoccasion" className="nav-link text-white">Voitures D'occasion</NavLink>
                 </li>
 
 

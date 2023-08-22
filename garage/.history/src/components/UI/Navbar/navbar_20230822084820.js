@@ -5,7 +5,7 @@ import banner from "../../../assets/images/bannier.webp";
 import sousbanner from "../../../assets/images/sousbanniere.webp";
 import iconespacepro from "../../../assets/images/iconespacepro.webp";
 import { NavLink } from "react-router-dom";//Pour éviter le rechargement des pages
-
+import AvisClients from "../../../containers/Site/avisClients";
 
 
 //Composant stateless
@@ -71,11 +71,6 @@ const Navbar = (props) => (
                 <li className="nav-item m-3 ">
                 <NavLink to="/voitureoccasion" className="nav-link text-white">Voitures D'occasion</NavLink>
                 </li>
-
-                <li className="nav-item m-3 ">
-                <NavLink to="/avisClients" className="nav-link text-white">Avis Clients</NavLink>
-                </li>
-
 
                 <li className="nav-item m-3">
                 <NavLink to="/contact" className="nav-link text-white">Page de Contact</NavLink>
