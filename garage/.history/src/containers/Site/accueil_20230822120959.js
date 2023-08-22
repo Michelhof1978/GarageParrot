@@ -3,7 +3,7 @@ import TitreH1 from "../../components/UI/TitreH1/TitreH1";
 import CarousselCard from "../../components/Caroussel/caroussel";
 import peugeot208 from "../../assets/images/peugeot208.webp";
 import logoVoiture from "../../assets/images/logoVoiture.webp";
-import VoitureCard from "../../components/vehiculeFiche/vehiculeFiche";
+import CarCard from "../../components/voitureOccasion/voitureOccasionFiche";
 
 class Accueil extends Component {
   //Nom de la page ds onglet
@@ -27,8 +27,6 @@ class Accueil extends Component {
             </p>
 
             <CarousselCard />
-
-            <VoitureCard />
 
             <img
               className="img-fluid"
