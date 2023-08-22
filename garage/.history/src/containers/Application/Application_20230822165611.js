@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import TitreH1 from "../../../components/UI/Titres/TitreH1";
 import axios from "axios";
-import VoitureCard from "../../components/vehiculeFiche/vehiculeFiche";
+import VehiculeFiche from "../../components/vehiculeFiche/vehiculeFiche";
 
 
 
-class VoitureCard extends Component {
+class VehiculeCard extends Component {
   state = {
     voitureDetails: null,
   };
@@ -30,10 +30,11 @@ class VoitureCard extends Component {
       return <div>Loading...</div>;
     }
 
-    const { marque, modele, energie, prix } = voitureDetails;
+    const { marque, modele, energie, prix, image } = voitureDetails;
 
     return (
       <div className="card">
+        <img src={image} className="card-img-top" alt={marque} />
         <div className="card-body">
           <h5 className="card-title">{marque}</h5>
           <h6 className="card-subtitle mb-2 text-muted">{modele}</h6>
@@ -45,5 +46,4 @@ class VoitureCard extends Component {
   }
 }
 
-export default VoitureCard;
-
+export default VehiculeCard;
