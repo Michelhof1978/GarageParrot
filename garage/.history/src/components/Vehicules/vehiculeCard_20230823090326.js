@@ -1,14 +1,15 @@
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const VehiculeCard = () => {
-  const [vehicules, setVehicules] = useState([]); // hook useState pour créer un état local appelé vehicules, qui sera initialisé en tableau vide.
-  const vehiculesParPage = 12; // Affichage de 12 véhicules par page max
-  const [pageCourante, setPageCourante] = useState(1);
+  const [vehicules, setVehicules] = useState([]);// hook useState pour créer un état local appelé vehicules, qui sera initialisé en tableau vide.
+  const vehiculesParPage = 12;//Affichage de 12 véhicules par page max
+  const [pageCourante, setPageCourante] = useState(1);//
 
   useEffect(() => {
     axios
-      .get("http://localhost/garageback/front/voiturefiche/all") // all = pour récupérer toutes les données de la table, copie de l'url lors des tests effectués avec Postman en local avec de fausses données.
+      .get("http://localhost/garageback/front/voiturefiche/all")// all = pour récupérer toutes les données de la table, copie de l'url lors des tests effectués avec Postman en local avec de fausses données.
       .then((response) => {
         setVehicules(response.data);
       })
@@ -35,24 +36,7 @@ const VehiculeCard = () => {
       <div className="row">
         {vehiculesAffiches.map((vehicule) => (//méthode map pour parcourir chaque objet de la liste vehicules et générer une carte Bootstrap pour chaque véhicule.
           <div className="col-md-4 mb-3" key={vehicule.idVehicule}>
-            <div className="card">
-              <img
-                src={vehicule.imagevoiture}
-                className="card-img-top"
-                alt={vehicule.marque}
-              />
-              <div className="card-body">
-                <h5 className="card-title">{vehicule.marque}</h5>
-                <h6 className="card-subtitle mb-2 text-muted">
-                  {vehicule.modele}
-                </h6>
-                <p className="card-text">Carburant: {vehicule.energie}</p>
-                <p className="card-text">Prix: {vehicule.prix} €</p>
-              </div>
-              <div className="card-footer">
-                <button className="btn btn-primary">En savoir plus</button>
-              </div>
-            </div>
+            {/* Votre logique d'affichage de la carte ici */}
           </div>
         ))}
       </div>
