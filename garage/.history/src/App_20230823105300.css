@@ -35,21 +35,6 @@ footer, .minsite{
      height: 140px; /*Pour corriger les bug lié au footer et de sa position ds la fenêtre */
 }
 
-/* END FOOTER */
+/* FIN FOOTER */
 
-/* SEARCH FILTER */
-.slider-container {
-  display: flex;
-  align-items: center;
-}
-
-input[type="range"] {
-  width: 150px;
-  margin: 0 10px;
-}
-
-span {
-  font-size: 14px;
-}
-
-/* END SEARCH FILTER */
+/* FOOTER */

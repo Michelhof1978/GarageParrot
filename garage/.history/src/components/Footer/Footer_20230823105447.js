@@ -3,7 +3,7 @@ import iconInsta from "../../assets/images/iconInsta.webp";
 import iconTictoc from "../../assets/images/iconTictoc.webp";
 import iconTwitter from "../../assets/images/iconTwitter.webp";
 import iconLinkedin from "../../assets/images/iconLinkedin.webp";
-
+IMPO
 
 
 const Footer = (props) => (

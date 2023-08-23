@@ -4,7 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Accueil from '../Site/accueil';
 import { Link } from 'react-router-dom';
 import Footer from '../../components/Footer/footer';
-import Carsearch from '../Site/voitureoccasion';
+import Carsearch from '../Site/voitureOccasion';
+import SearchFilters from "../components/UI/SearchFilters";
 
 
 class Site extends Component {

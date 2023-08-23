@@ -4,8 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Accueil from '../Site/accueil';
 import { Link } from 'react-router-dom';
 import Footer from '../../components/Footer/footer';
-import Carsearch from '../Site/voitureoccasion';
-
+import
 
 class Site extends Component {
   render() {

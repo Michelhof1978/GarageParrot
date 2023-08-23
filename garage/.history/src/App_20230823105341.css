@@ -38,18 +38,5 @@ footer, .minsite{
 /* END FOOTER */
 
 /* SEARCH FILTER */
-.slider-container {
-  display: flex;
-  align-items: center;
-}
-
-input[type="range"] {
-  width: 150px;
-  margin: 0 10px;
-}
-
-span {
-  font-size: 14px;
-}
 
 /* END SEARCH FILTER */
