@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "../../App.css";
-import VehiculeCard from "../Vehicules/vehiculeCard";
+
 
 
 
@@ -165,7 +165,7 @@ const resultsPerPage = 20; // Nombre de résultats par page
   <div className="search-results">
   <h3>Résultats de la recherche :</h3>
   <VehiculeCard vehicules={searchResults} />
-
+  
 </div>
 
   <ul>

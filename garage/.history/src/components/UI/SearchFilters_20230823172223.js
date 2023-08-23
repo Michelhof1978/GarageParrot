@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "../../App.css";
-import VehiculeCard from "../Vehicules/vehiculeCard";
+
 
 
 
@@ -21,17 +21,8 @@ const SearchFilters = ({ onSearch }) => {
     });
 
     const [searchResults, setSearchResults] = useState([]);
-
-    const handleSearch = async () => {
-      try {
-        const response = await axios.get(
-          `http://localhost/garageback/front/voiturefiche/all/?marque=${filtres.marque}&anneeMin=${filtres.anneeMin}&anneeMax=${filtres.anneeMax}`
-        );
-        setSearchResults(response.data); // Mettre à jour les résultats de la recherche
-      } catch (error) {
-        console.error("Erreur lors de la recherche :", error);
-      }
-    };
+  const [currentPage, setCurrentPage] = useState(1);
+  const resultsPerPage = 20; // Nombre de résultats par page
   
   const [currentMousePosition, setCurrentMousePosition] = useState({
     prix: 5000,
@@ -91,7 +82,18 @@ const SearchFilters = ({ onSearch }) => {
     }
   };
 
-  
+  const handleSearch = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost/garageback/front/voiturefiche/all",
+        filtres
+      );
+      setSearchResults(response.data); // Mettre à jour les résultats de la recherche
+      setCurrentPage(1); // Réinitialiser le numéro de page après chaque recherche
+    } catch (error) {
+      console.error("Erreur lors de la recherche :", error);
+    }
+  };
   
   const getDisplayedResults = () => {
     const startIndex = (currentPage - 1) * resultsPerPage;
@@ -99,9 +101,6 @@ const SearchFilters = ({ onSearch }) => {
     return searchResults.slice(startIndex, endIndex);
   };
   
-  const [currentPage, setCurrentPage] = useState(1);
-const resultsPerPage = 20; // Nombre de résultats par page
-
 
   return (
     <div className="search-filters">
@@ -158,39 +157,7 @@ const resultsPerPage = 20; // Nombre de résultats par page
           SUV
         </label>
       </div>
-
-      <div className="search-results">
-  <h3>Résultats de la recherche :</h3>
-
-  <div className="search-results">
-  <h3>Résultats de la recherche :</h3>
-  <VehiculeCard vehicules={searchResults} />
-
-</div>
-
-  <ul>
-    {getDisplayedResults().map((voiture) => (
-      <li key={voiture.id}>{voiture.nom} - {voiture.prix} €</li>
-    ))}
-  </ul>
-  
-  <div className="pagination">
-    <button
-      onClick={() => setCurrentPage(currentPage - 1)}
-      disabled={currentPage === 1}
-    >
-      Précédent
-    </button>
-    <span>{currentPage}</span>
-    <button
-      onClick={() => setCurrentPage(currentPage + 1)}
-      disabled={currentPage === Math.ceil(searchResults.length / resultsPerPage)}
-    >
-      Suivant
-    </button>
-  </div>
-</div>
-
+      
 
       <div className="filter-row">
         <label>Prix :</label>

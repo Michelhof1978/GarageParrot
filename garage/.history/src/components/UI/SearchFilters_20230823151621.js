@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "../../App.css";
-import VehiculeCard from "../Vehicules/vehiculeCard";
+
+
 
 
 
@@ -11,28 +12,16 @@ import VehiculeCard from "../Vehicules/vehiculeCard";
 
 
 const SearchFilters = ({ onSearch }) => {
-    const [filtres, setFiltres] = useState({
-      famille: [],
-      marque: "",
-      anneeMin: 2000,
-      anneeMax: 2023,
-      prixMax: 5000,
-      kilometrageMax: 0,
-    });
+  const [filtres, setFiltres] = useState({
+    prixMin: 5000,
+    prixMax: 50000,
+    anneeMin: 2000,
+    anneeMax: 2023,
+    kilometrageMin: 0,
+    kilometrageMax: 200000,
+    famille: []
+  });
 
-    const [searchResults, setSearchResults] = useState([]);
-
-    const handleSearch = async () => {
-      try {
-        const response = await axios.get(
-          `http://localhost/garageback/front/voiturefiche/all/?marque=${filtres.marque}&anneeMin=${filtres.anneeMin}&anneeMax=${filtres.anneeMax}`
-        );
-        setSearchResults(response.data); // Mettre à jour les résultats de la recherche
-      } catch (error) {
-        console.error("Erreur lors de la recherche :", error);
-      }
-    };
-  
   const [currentMousePosition, setCurrentMousePosition] = useState({
     prix: 5000,
     annee: 2000,
@@ -49,8 +38,10 @@ const SearchFilters = ({ onSearch }) => {
       newValue = Math.min(Math.max(newValue, filtres.prixMin), 50000);
     } else if (name === "anneeMin" || name === "anneeMax") {
       newValue = Math.min(Math.max(newValue, 2000), 2023);
-    } else if (name === "kilometrageMin" || name === "kilometrageMax") {
-      newValue = Math.min(Math.max(newValue, 0), 200000);
+    } else if (name === "kilometrageMin") {
+      newValue = Math.min(Math.max(newValue, 0), filtres.kilometrageMax);
+    } else if (name === "kilometrageMax") {
+      newValue = Math.min(Math.max(newValue, filtres.kilometrageMin), 200000);
     }
 
     setFiltres({
@@ -91,17 +82,14 @@ const SearchFilters = ({ onSearch }) => {
     }
   };
 
-  
-  
-  const getDisplayedResults = () => {
-    const startIndex = (currentPage - 1) * resultsPerPage;
-    const endIndex = startIndex + resultsPerPage;
-    return searchResults.slice(startIndex, endIndex);
+  const handleSearch = async () => {
+    try {
+      const response = await axios.post("http://localhost/search.php", filtres);
+      onSearch(response.data);
+    } catch (error) {
+      console.error("Erreur lors de la recherche :", error);
+    }
   };
-  
-  const [currentPage, setCurrentPage] = useState(1);
-const resultsPerPage = 20; // Nombre de résultats par page
-
 
   return (
     <div className="search-filters">
@@ -158,39 +146,6 @@ const resultsPerPage = 20; // Nombre de résultats par page
           SUV
         </label>
       </div>
-
-      <div className="search-results">
-  <h3>Résultats de la recherche :</h3>
-
-  <div className="search-results">
-  <h3>Résultats de la recherche :</h3>
-  <VehiculeCard vehicules={searchResults} />
-
-</div>
-
-  <ul>
-    {getDisplayedResults().map((voiture) => (
-      <li key={voiture.id}>{voiture.nom} - {voiture.prix} €</li>
-    ))}
-  </ul>
-  
-  <div className="pagination">
-    <button
-      onClick={() => setCurrentPage(currentPage - 1)}
-      disabled={currentPage === 1}
-    >
-      Précédent
-    </button>
-    <span>{currentPage}</span>
-    <button
-      onClick={() => setCurrentPage(currentPage + 1)}
-      disabled={currentPage === Math.ceil(searchResults.length / resultsPerPage)}
-    >
-      Suivant
-    </button>
-  </div>
-</div>
-
 
       <div className="filter-row">
         <label>Prix :</label>

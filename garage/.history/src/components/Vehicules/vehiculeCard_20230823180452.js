@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "../../App.css";
 
+const VehiculeCard = (props) => {
+  const [vehicules, setVehicules] = useState(props.vehicules);
 
-const VehiculeCard = () => {
-  const [vehicules, setVehicules] = useState([]); // hook useState pour créer un état local appelé vehicules, qui sera initialisé en tableau vide.
-  const vehiculesParPage = 12; // Affichage de 12 véhicules par page max
-  const [pageCourante, setPageCourante] = useState(1);
+  useEffect(() => {
+    setVehicules(props.vehicules);
+  }, [props.vehicules]);
+
+  // Le reste du code du composant...
+}
+
 
   useEffect(() => {
     axios

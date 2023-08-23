@@ -22,16 +22,10 @@ const SearchFilters = ({ onSearch }) => {
 
     const [searchResults, setSearchResults] = useState([]);
 
-    const handleSearch = async () => {
-      try {
-        const response = await axios.get(
-          `http://localhost/garageback/front/voiturefiche/all/?marque=${filtres.marque}&anneeMin=${filtres.anneeMin}&anneeMax=${filtres.anneeMax}`
-        );
-        setSearchResults(response.data); // Mettre à jour les résultats de la recherche
-      } catch (error) {
-        console.error("Erreur lors de la recherche :", error);
-      }
-    };
+    useEffect(() => {
+        setVehicules(props.vehicules); // Utilisez les véhicules passés en props depuis SearchFilters
+      }, [props.vehicules]);
+      
   
   const [currentMousePosition, setCurrentMousePosition] = useState({
     prix: 5000,

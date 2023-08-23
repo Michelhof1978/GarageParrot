@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import "../../App.css";
-import VehiculeCard from "../Vehicules/vehiculeCard";
+
 
 
 
@@ -160,20 +160,13 @@ const resultsPerPage = 20; // Nombre de résultats par page
       </div>
 
       <div className="search-results">
+      
   <h3>Résultats de la recherche :</h3>
-
-  <div className="search-results">
-  <h3>Résultats de la recherche :</h3>
-  <VehiculeCard vehicules={searchResults} />
-
-</div>
-
   <ul>
     {getDisplayedResults().map((voiture) => (
       <li key={voiture.id}>{voiture.nom} - {voiture.prix} €</li>
     ))}
   </ul>
-  
   <div className="pagination">
     <button
       onClick={() => setCurrentPage(currentPage - 1)}
