@@ -52,18 +52,5 @@ span {
   font-size: 14px;
 }
 
-/* SearchFilters.css */
-
-.search-filters {
-  margin: 20px; /* Ajoute de la marge autour de la section des filtres */
-}
-
-.filter-row {
-  margin-bottom: 10px; /* Ajoute de l'espace entre chaque filtre */
-}
-
-.checkbox-filter label {
-  margin-right: 10px; /* Ajoute de l'espace entre les cases à cocher */
-}
 
 /* END SEARCH FILTER */

@@ -5,11 +5,8 @@ import "../../App.css";
 
 
 
-
-
-
-
-
+import React, { useState } from "react";
+import axios from "axios";
 
 const SearchFilters = ({ onSearch }) => {
   const [filtres, setFiltres] = useState({
@@ -30,42 +27,34 @@ const SearchFilters = ({ onSearch }) => {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    let newValue = Number(value);
-
-    if (name === "prixMin") {
-      newValue = Math.min(Math.max(newValue, 5000), filtres.prixMax);
-    } else if (name === "prixMax") {
-      newValue = Math.min(Math.max(newValue, filtres.prixMin), 50000);
-    } else if (name === "anneeMin" || name === "anneeMax") {
-      newValue = Math.min(Math.max(newValue, 2000), 2023);
-    } else if (name === "kilometrageMin") {
-      newValue = Math.min(Math.max(newValue, 0), filtres.kilometrageMax);
-    } else if (name === "kilometrageMax") {
-      newValue = Math.min(Math.max(newValue, filtres.kilometrageMin), 200000);
-    }
-
+    // Assurez-vous que les valeurs ne dépassent pas les maximums
+    const newValue = Math.min(Math.max(Number(value), 0), filtres[name.replace("Min", "Max")]);
     setFiltres({
       ...filtres,
       [name]: newValue
     });
   };
 
-  const handleMouseMove = (event, filterName) => {
-    const { clientX } = event;
-    const range = event.target.getBoundingClientRect();
-    const position = (clientX - range.left) / range.width;
-    const min = filterName === "prix" ? 5000 : filterName === "annee" ? 2000 : 0;
-    const max = filterName === "prix" ? 50000 : filterName === "annee" ? 2023 : 200000;
-    const newValue = min + position * (max - min);
+  // Le reste du code reste inchangé
 
-    const newValueLimited = Math.min(newValue, max);
-    if (newValueLimited !== max) {
-      setCurrentMousePosition({
-        ...currentMousePosition,
-        [filterName]: newValueLimited
-      });
-    }
-  };
+  return (
+    <div className="search-filters">
+      {/* Le reste du code reste inchangé */}
+    </div>
+  );
+};
+
+export default SearchFilters;
+
+
+
+
+
+
+
+
+
+
 
   const handleFamilleChange = (event) => {
     const { value } = event.target;
@@ -82,6 +71,20 @@ const SearchFilters = ({ onSearch }) => {
     }
   };
 
+  const handleMouseMove = (event, filterName) => {
+    const { clientX } = event;
+    const range = event.target.getBoundingClientRect();
+    const position = (clientX - range.left) / range.width;
+    const min = filterName === "prix" ? 5000 : filterName === "annee" ? 2000 : 0;
+    const max = filterName === "prix" ? 50000 : filterName === "annee" ? 2023 : 200000;
+    const newValue = min + position * (max - min);
+
+    setCurrentMousePosition({
+      ...currentMousePosition,
+      [filterName]: newValue
+    });
+  };
+
   const handleSearch = async () => {
     try {
       const response = await axios.post("http://localhost/search.php", filtres);
@@ -94,59 +97,7 @@ const SearchFilters = ({ onSearch }) => {
   return (
     <div className="search-filters">
       <h2>Recherche par filtres</h2>
-      <div className="checkbox-filter">
-        <label>
-          <input
-            type="checkbox"
-            name="famille"
-            value="utilitaire"
-            checked={filtres.famille.includes("utilitaire")}
-            onChange={handleFamilleChange}
-          />
-          Utilitaire
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            name="famille"
-            value="berline"
-            checked={filtres.famille.includes("berline")}
-            onChange={handleFamilleChange}
-          />
-          Berline
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            name="famille"
-            value="familiale"
-            checked={filtres.famille.includes("familiale")}
-            onChange={handleFamilleChange}
-          />
-          Familiale
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            name="famille"
-            value="citadine"
-            checked={filtres.famille.includes("citadine")}
-            onChange={handleFamilleChange}
-          />
-          Citadine
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            name="famille"
-            value="suv"
-            checked={filtres.famille.includes("suv")}
-            onChange={handleFamilleChange}
-          />
-          SUV
-        </label>
-      </div>
-
+      {/* Filtre de prix */}
       <div className="filter-row">
         <label>Prix :</label>
         <div className="range-filter">
@@ -162,10 +113,11 @@ const SearchFilters = ({ onSearch }) => {
             step="1000"
           />
           <span>{currentMousePosition.prix.toFixed(0)} €</span>
-          {currentMousePosition.prix === 50000 && <span>50000 €</span>}
+          <span>{currentMousePosition.prix === 50000 ? "50000 €" : ""}</span>
         </div>
       </div>
 
+      {/* Filtre d'année */}
       <div className="filter-row">
         <label>Année :</label>
         <div className="range-filter">
@@ -181,10 +133,11 @@ const SearchFilters = ({ onSearch }) => {
             step="1"
           />
           <span>{currentMousePosition.annee.toFixed(0)}</span>
-          {currentMousePosition.annee === 2023 && <span>2023</span>}
+          <span>{currentMousePosition.annee === 2023 ? "2023" : ""}</span>
         </div>
       </div>
 
+      {/* Filtre de kilométrage */}
       <div className="filter-row">
         <label>Kilométrage :</label>
         <div className="range-filter">
@@ -200,7 +153,64 @@ const SearchFilters = ({ onSearch }) => {
             step="1000"
           />
           <span>{currentMousePosition.kilometrage.toFixed(0)} km</span>
-          {currentMousePosition.kilometrage === 200000 && <span>200000 km</span>}
+          <span>{currentMousePosition.kilometrage === 200000 ? "200000 km" : ""}</span>
+        </div>
+      </div>
+
+      {/* Filtre par famille */}
+      <div className="filter-row">
+        <label>Famille :</label>
+        <div className="checkbox-filter">
+          <label>
+            <input
+              type="checkbox"
+              name="famille"
+              value="utilitaire"
+              checked={filtres.famille.includes("utilitaire")}
+              onChange={handleFamilleChange}
+            />
+            Utilitaire
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="famille"
+              value="berline"
+              checked={filtres.famille.includes("berline")}
+              onChange={handleFamilleChange}
+            />
+            Berline
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="famille"
+              value="familiale"
+              checked={filtres.famille.includes("familiale")}
+              onChange={handleFamilleChange}
+            />
+            Familiale
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="famille"
+              value="citadine"
+              checked={filtres.famille.includes("citadine")}
+              onChange={handleFamilleChange}
+            />
+            Citadine
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="famille"
+              value="suv"
+              checked={filtres.famille.includes("suv")}
+              onChange={handleFamilleChange}
+            />
+            SUV
+          </label>
         </div>
       </div>
 

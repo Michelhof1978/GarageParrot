@@ -4,12 +4,8 @@ import "../../App.css";
 
 
 
-
-
-
-
-
-
+import React, { useState } from "react";
+import axios from "axios";
 
 const SearchFilters = ({ onSearch }) => {
   const [filtres, setFiltres] = useState({
@@ -32,16 +28,12 @@ const SearchFilters = ({ onSearch }) => {
     const { name, value } = event.target;
     let newValue = Number(value);
 
-    if (name === "prixMin") {
-      newValue = Math.min(Math.max(newValue, 5000), filtres.prixMax);
-    } else if (name === "prixMax") {
-      newValue = Math.min(Math.max(newValue, filtres.prixMin), 50000);
+    if (name === "prixMin" || name === "prixMax") {
+      newValue = Math.min(Math.max(newValue, 5000), 50000);
     } else if (name === "anneeMin" || name === "anneeMax") {
       newValue = Math.min(Math.max(newValue, 2000), 2023);
-    } else if (name === "kilometrageMin") {
-      newValue = Math.min(Math.max(newValue, 0), filtres.kilometrageMax);
-    } else if (name === "kilometrageMax") {
-      newValue = Math.min(Math.max(newValue, filtres.kilometrageMin), 200000);
+    } else if (name === "kilometrageMin" || name === "kilometrageMax") {
+      newValue = Math.min(Math.max(newValue, 0), 200000);
     }
 
     setFiltres({

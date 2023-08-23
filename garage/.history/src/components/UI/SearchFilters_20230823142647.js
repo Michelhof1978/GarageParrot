@@ -10,6 +10,9 @@ import "../../App.css";
 
 
 
+import React, { useState } from "react";
+import axios from "axios";
+import "./SearchFilters.css"; // Assurez-vous d'avoir le fichier CSS correctement lié
 
 const SearchFilters = ({ onSearch }) => {
   const [filtres, setFiltres] = useState({

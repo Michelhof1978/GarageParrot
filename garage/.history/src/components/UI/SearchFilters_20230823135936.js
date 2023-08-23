@@ -9,8 +9,6 @@ import "../../App.css";
 
 
 
-
-
 const SearchFilters = ({ onSearch }) => {
   const [filtres, setFiltres] = useState({
     prixMin: 5000,
@@ -32,16 +30,12 @@ const SearchFilters = ({ onSearch }) => {
     const { name, value } = event.target;
     let newValue = Number(value);
 
-    if (name === "prixMin") {
-      newValue = Math.min(Math.max(newValue, 5000), filtres.prixMax);
-    } else if (name === "prixMax") {
-      newValue = Math.min(Math.max(newValue, filtres.prixMin), 50000);
+    if (name === "prixMin" || name === "prixMax") {
+      newValue = Math.min(Math.max(newValue, 5000), 50000);
     } else if (name === "anneeMin" || name === "anneeMax") {
       newValue = Math.min(Math.max(newValue, 2000), 2023);
-    } else if (name === "kilometrageMin") {
-      newValue = Math.min(Math.max(newValue, 0), filtres.kilometrageMax);
-    } else if (name === "kilometrageMax") {
-      newValue = Math.min(Math.max(newValue, filtres.kilometrageMin), 200000);
+    } else if (name === "kilometrageMin" || name === "kilometrageMax") {
+      newValue = Math.min(Math.max(newValue, 0), 200000);
     }
 
     setFiltres({
@@ -58,13 +52,10 @@ const SearchFilters = ({ onSearch }) => {
     const max = filterName === "prix" ? 50000 : filterName === "annee" ? 2023 : 200000;
     const newValue = min + position * (max - min);
 
-    const newValueLimited = Math.min(newValue, max);
-    if (newValueLimited !== max) {
-      setCurrentMousePosition({
-        ...currentMousePosition,
-        [filterName]: newValueLimited
-      });
-    }
+    setCurrentMousePosition({
+      ...currentMousePosition,
+      [filterName]: Math.min(newValue, max) // Limiter au maximum
+    });
   };
 
   const handleFamilleChange = (event) => {
@@ -94,59 +85,6 @@ const SearchFilters = ({ onSearch }) => {
   return (
     <div className="search-filters">
       <h2>Recherche par filtres</h2>
-      <div className="checkbox-filter">
-        <label>
-          <input
-            type="checkbox"
-            name="famille"
-            value="utilitaire"
-            checked={filtres.famille.includes("utilitaire")}
-            onChange={handleFamilleChange}
-          />
-          Utilitaire
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            name="famille"
-            value="berline"
-            checked={filtres.famille.includes("berline")}
-            onChange={handleFamilleChange}
-          />
-          Berline
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            name="famille"
-            value="familiale"
-            checked={filtres.famille.includes("familiale")}
-            onChange={handleFamilleChange}
-          />
-          Familiale
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            name="famille"
-            value="citadine"
-            checked={filtres.famille.includes("citadine")}
-            onChange={handleFamilleChange}
-          />
-          Citadine
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            name="famille"
-            value="suv"
-            checked={filtres.famille.includes("suv")}
-            onChange={handleFamilleChange}
-          />
-          SUV
-        </label>
-      </div>
-
       <div className="filter-row">
         <label>Prix :</label>
         <div className="range-filter">
@@ -162,7 +100,7 @@ const SearchFilters = ({ onSearch }) => {
             step="1000"
           />
           <span>{currentMousePosition.prix.toFixed(0)} €</span>
-          {currentMousePosition.prix === 50000 && <span>50000 €</span>}
+          <span>{currentMousePosition.prix === 50000 ? "50000 €" : ""}</span>
         </div>
       </div>
 
@@ -181,7 +119,7 @@ const SearchFilters = ({ onSearch }) => {
             step="1"
           />
           <span>{currentMousePosition.annee.toFixed(0)}</span>
-          {currentMousePosition.annee === 2023 && <span>2023</span>}
+          <span>{currentMousePosition.annee === 2023 ? "2023" : ""}</span>
         </div>
       </div>
 
@@ -200,7 +138,63 @@ const SearchFilters = ({ onSearch }) => {
             step="1000"
           />
           <span>{currentMousePosition.kilometrage.toFixed(0)} km</span>
-          {currentMousePosition.kilometrage === 200000 && <span>200000 km</span>}
+          <span>{currentMousePosition.kilometrage === 200000 ? "200000 km" : ""}</span>
+        </div>
+      </div>
+
+      <div className="filter-row">
+        <label>Famille :</label>
+        <div className="checkbox-filter">
+          <label>
+            <input
+              type="checkbox"
+              name="famille"
+              value="utilitaire"
+              checked={filtres.famille.includes("utilitaire")}
+              onChange={handleFamilleChange}
+            />
+            Utilitaire
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="famille"
+              value="berline"
+              checked={filtres.famille.includes("berline")}
+              onChange={handleFamilleChange}
+            />
+            Berline
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="famille"
+              value="familiale"
+              checked={filtres.famille.includes("familiale")}
+              onChange={handleFamilleChange}
+            />
+            Familiale
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="famille"
+              value="citadine"
+              checked={filtres.famille.includes("citadine")}
+              onChange={handleFamilleChange}
+            />
+            Citadine
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              name="famille"
+              value="suv"
+              checked={filtres.famille.includes("suv")}
+              onChange={handleFamilleChange}
+            />
+            SUV
+          </label>
         </div>
       </div>
 

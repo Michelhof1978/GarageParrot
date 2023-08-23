@@ -4,16 +4,14 @@ import "../../App.css";
 
 
 
-
-
 const SearchFilters = ({ onSearch }) => {
   const [filtres, setFiltres] = useState({
     famille: [],
     marque: "",
     anneeMin: 2000,
     anneeMax: 2023,
-    prixMax: 5000, // Limite de prix
-    kilometrageMax: 0, // Limite de kilométrage
+    kilometrageMin: 0,
+    kilometrageMax: 200000,
   });
 
   const [results, setResults] = useState([]);
@@ -111,27 +109,25 @@ const SearchFilters = ({ onSearch }) => {
       </div>
 
       <div className="filter-row">
-        <label>Prix maximal :</label>
-        <input
-          type="number"
-          name="prixMax"
-          min="0"
-          max="5000"
-          value={filtres.prixMax}
-          onChange={handleInputChange}
-        />
-      </div>
-
-      <div className="filter-row">
-        <label>Kilométrage maximal :</label>
-        <input
-          type="number"
-          name="kilometrageMax"
-          min="0"
-          max="200000"
-          value={filtres.kilometrageMax}
-          onChange={handleInputChange}
-        />
+        <label>Kilométrage :</label>
+        <div className="range-filter">
+          <input
+            type="number"
+            name="kilometrageMin"
+            min="0"
+            max="200000"
+            value={filtres.kilometrageMin}
+            onChange={handleInputChange}
+          />
+          <input
+            type="number"
+            name="kilometrageMax"
+            min="0"
+            max="200000"
+            value={filtres.kilometrageMax}
+            onChange={handleInputChange}
+          />
+        </div>
       </div>
 
       <button onClick={handleSearch}>Rechercher</button>
@@ -159,4 +155,3 @@ const SearchFilters = ({ onSearch }) => {
 };
 
 export default SearchFilters;
-
