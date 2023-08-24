@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import axios from "axios";
 import "../../App.css";
 import VehiculeCard from "../Vehicules/vehiculeCard";
@@ -6,7 +6,7 @@ import VehiculeCard from "../Vehicules/vehiculeCard";
 
 
 
-//La fonction SearchFilters prend en paramètre une fonction onSearch qui sera appelée lorsque l'utilisateur clique sur le bouton "Rechercher".
+
 const SearchFilters = ({ onSearch }) => {
     const [filtres, setFiltres] = useState({
       famille: [],
@@ -17,105 +17,90 @@ const SearchFilters = ({ onSearch }) => {
       kilometrageMax: 0,
     });
 
-    //La fonction useState est utilisée pour stocker les filtres de l'utilisateur
     const [searchResults, setSearchResults] = useState([]);
 
-    const handleSearch = async () => {
-      try {
-        const response = await axios.get(
-          `http://localhost/garageback/front/voiturefiche/all/?marque=${filtres.marque}&anneeMin=${filtres.anneeMin}&anneeMax=${filtres.anneeMax}`
-        );
-        setSearchResults(response.data); // Mettre à jour les résultats de la recherche
-      } catch (error) {
-        console.error("Erreur lors de la recherche :", error);
-      }
-    };
+  const handleSearch = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost/garageback/front/voiturefiche/all/?marque=<span class="math-inline">\{filtres\.marque\}&anneeMin\=</span>{filtres.anneeMin}&anneeMax=${filtres.anneeMax}`
+      );
+      setSearchResults(response.data); // Mettre à jour les résultats de la recherche
+    } catch (error) {
+      console.error("Erreur lors de la recherche :", error);
+    }
+  };
   
-  const [currentMousePosition, setCurrentMousePosition] = useState({
-    prix: 5000,
-    annee: 2000,
-    kilometrage: 0
-  });
+  const currentMousePositionRef = useRef(null);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     let newValue = Number(value);
 
     if (name === "prixMin") {
-        newValue = Math.min(Math.max(newValue, 5000), filtres.prixMax);
-      } else if (name === "prixMax") {
-        newValue = Math.min(Math.max(newValue, filtres.prixMin), 50000);
-      } else if (name === "anneeMin" || name === "anneeMax") {
-        newValue = Math.min(Math.max(newValue, 2000), 2023);
-      } else if (name === "kilometrageMin" || name === "kilometrageMax") {
-        newValue = Math.min(Math.max(newValue, 0), 200000);
-      }
-      
+      newValue = Math.min(Math.max(newValue, 5000), filtres.prixMax);
+    } else if (name === "prixMax") {
+      newValue = Math.min(Math.max(newValue, filtres.prixMin), 50000);
+    } else if (name === "anneeMin" || name === "anneeMax") {
+      newValue = Math.min(Math.max(newValue, 2000), 2023);
+    } else if (name === "kilometrageMin" || name === "kilometrageMax") {
+      newValue = Math.min(Math.max(newValue, 0), 200000);
+    }
+
 
     setFiltres({
-      ...filtres,
-      [name]: newValue
-    });
-  };
-
-  const handleMouseMove = (event, filterName) => {
-  const { clientX } = event;
-  const range = event.target.getBoundingClientRect();
-  const position = (clientX - range.left) / range.width;
-  const min = filterName === "prix" ? 5000 : filterName === "annee" ? 2000 : 0;
-  const max = filterName === "prix" ? 50000 : filterName === "annee" ? 2023 : 200000;
-  let newValue = min + position * (max - min);
-
-  // Si le nouveau prix est inférieur à 5000, on le limite à 5000
-
-  // Limiter la valeur minimale si nécessaire
-  if (filterName === "prix" && newValue < 5000) {
-    newValue = 5000;
-  } else if (filterName === "annee" && newValue < 2000) {
-    newValue = 2000;
-  } else if (filterName === "kilometrage" && newValue < 0) {
-    newValue = 0;
-  }
-
-  // Limiter la valeur maximale si nécessaire
-  if (newValue > max) {
-    newValue = max;
-  }
-
-  setCurrentMousePosition({
-    ...currentMousePosition,
-    [filterName]: newValue
-  });
-};
-
-  const handleFamilleChange = (event) => {
-    const { value } = event.target;
-    if (filtres.famille.includes(value)) {
+        ...filtres,
+        [name]: newValue
+      });
+  
+      currentMousePositionRef.current = {
+        ...currentMousePositionRef.current,
+        [name]: newValue
+      };
+    };
+  
+    const handleMouseMove = (event) => {
+      const { clientX } = event;
+      const range = event.target.getBoundingClientRect();
+      const position = (clientX - range.left) / range.width;
+      const min = event.target.name === "prix" ? 5000 : event.target.name === "annee" ? 2000 : 0;
+      const max = event.target.name === "prix" ? 50000 : event.target.name === "annee" ? 2023 : 200000;
+      const newValue = min + position * (max - min);
+  
+      const newValueLimited = Math.min(newValue, max);
       setFiltres({
         ...filtres,
-        famille: filtres.famille.filter((f) => f !== value)
+        [event.target.name]: newValueLimited
       });
-    } else {
-      setFiltres({
-        ...filtres,
-        famille: [...filtres.famille, value]
-      });
-    }
-  };
-
   
+      currentMousePositionRef.current = {
+        ...currentMousePositionRef.current,
+        [event.target.name]: newValueLimited
+      };
+    };
   
-  const getDisplayedResults = () => {
-    const startIndex = (currentPage - 1) * resultsPerPage;
-    const endIndex = startIndex + resultsPerPage;
-    return searchResults.slice(startIndex, endIndex);
-  };
+    const handleFamilleChange = (event) => {
+      const { value } = event.target;
+      if (filtres.famille.includes(value)) {
+        setFiltres({
+          ...filtres,
+          famille: filtres.famille.filter((f) => f !== value)
+        });
+      } else {
+        setFiltres({
+          ...filtres,
+          famille: [...filtres.famille, value]
+        });
+      }
+    };
   
-  const [currentPage, setCurrentPage] = useState(1);
-const resultsPerPage = 20; // Nombre de résultats par page
-
-
-  return (
+    const getDisplayedResults = () => {
+      const startIndex = (currentPage - 1) * resultsPerPage;
+      const endIndex = startIndex + resultsPerPage;
+      return searchResults.slice(startIndex, endIndex);
+    };
+  
+    const renderSearchResults = () => {
+      return (
     <div className="search-filters">
       <h2>Recherche par filtres</h2>
       <div className="checkbox-filter">
@@ -267,19 +252,3 @@ const resultsPerPage = 20; // Nombre de résultats par page
 };
 
 export default SearchFilters;
-
-// //La fonction SearchFilters prend en paramètre une fonction onSearch qui sera appelée lorsque l'utilisateur clique sur le bouton "Rechercher".
-// La fonction useState est utilisée pour stocker les filtres de l'utilisateur. Les filtres sont les suivants :
-// famille : une liste des familles de voitures que l'utilisateur souhaite inclure dans la recherche.
-// marque : la marque de la voiture que l'utilisateur souhaite rechercher.
-// anneeMin : l'année de construction minimale de la voiture que l'utilisateur souhaite rechercher.
-// anneeMax : l'année de construction maximale de la voiture que l'utilisateur souhaite rechercher.
-// prixMin : le prix minimum de la voiture que l'utilisateur souhaite rechercher.
-// prixMax : le prix maximum de la voiture que l'utilisateur souhaite rechercher.
-// kilometrageMin : le kilométrage minimum de la voiture que l'utilisateur souhaite rechercher.
-// kilometrageMax : le kilométrage maximum de la voiture que l'utilisateur souhaite rechercher.
-// La fonction handleInputChange est appelée lorsque l'utilisateur modifie un filtre. Elle met à jour le filtre correspondant dans l'état.
-// La fonction handleMouseMove est appelée lorsque l'utilisateur passe sa souris sur un curseur de plage. Elle calcule la nouvelle valeur du filtre correspondant et met à jour l'état.
-// La fonction handleFamilleChange est appelée lorsque l'utilisateur coche ou décoche une case à cocher dans la section "Famille". Elle met à jour la liste des familles de voitures incluses dans la recherche.
-// La fonction getDisplayedResults renvoie les résultats de la recherche, en tenant compte des filtres de l'utilisateur.
-// La fonction renderSearchResults affiche les résultats de la recherche.

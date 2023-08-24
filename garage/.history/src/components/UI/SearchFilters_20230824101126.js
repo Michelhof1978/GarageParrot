@@ -64,22 +64,12 @@ const SearchFilters = ({ onSearch }) => {
   const position = (clientX - range.left) / range.width;
   const min = filterName === "prix" ? 5000 : filterName === "annee" ? 2000 : 0;
   const max = filterName === "prix" ? 50000 : filterName === "annee" ? 2023 : 200000;
+  const newValue = min + position * (max - min);
   let newValue = min + position * (max - min);
-
   // Si le nouveau prix est inférieur à 5000, on le limite à 5000
 
-  // Limiter la valeur minimale si nécessaire
   if (filterName === "prix" && newValue < 5000) {
     newValue = 5000;
-  } else if (filterName === "annee" && newValue < 2000) {
-    newValue = 2000;
-  } else if (filterName === "kilometrage" && newValue < 0) {
-    newValue = 0;
-  }
-
-  // Limiter la valeur maximale si nécessaire
-  if (newValue > max) {
-    newValue = max;
   }
 
   setCurrentMousePosition({

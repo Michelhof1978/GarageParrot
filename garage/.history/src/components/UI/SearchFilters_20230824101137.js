@@ -68,18 +68,8 @@ const SearchFilters = ({ onSearch }) => {
 
   // Si le nouveau prix est inférieur à 5000, on le limite à 5000
 
-  // Limiter la valeur minimale si nécessaire
   if (filterName === "prix" && newValue < 5000) {
     newValue = 5000;
-  } else if (filterName === "annee" && newValue < 2000) {
-    newValue = 2000;
-  } else if (filterName === "kilometrage" && newValue < 0) {
-    newValue = 0;
-  }
-
-  // Limiter la valeur maximale si nécessaire
-  if (newValue > max) {
-    newValue = max;
   }
 
   setCurrentMousePosition({

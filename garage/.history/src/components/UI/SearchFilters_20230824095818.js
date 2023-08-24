@@ -17,7 +17,7 @@ const SearchFilters = ({ onSearch }) => {
       kilometrageMax: 0,
     });
 
-    //La fonction useState est utilisée pour stocker les filtres de l'utilisateur
+        
     const [searchResults, setSearchResults] = useState([]);
 
     const handleSearch = async () => {
@@ -42,15 +42,14 @@ const SearchFilters = ({ onSearch }) => {
     let newValue = Number(value);
 
     if (name === "prixMin") {
-        newValue = Math.min(Math.max(newValue, 5000), filtres.prixMax);
-      } else if (name === "prixMax") {
-        newValue = Math.min(Math.max(newValue, filtres.prixMin), 50000);
-      } else if (name === "anneeMin" || name === "anneeMax") {
-        newValue = Math.min(Math.max(newValue, 2000), 2023);
-      } else if (name === "kilometrageMin" || name === "kilometrageMax") {
-        newValue = Math.min(Math.max(newValue, 0), 200000);
-      }
-      
+      newValue = Math.min(Math.max(newValue, 5000), filtres.prixMax);
+    } else if (name === "prixMax") {
+      newValue = Math.min(Math.max(newValue, filtres.prixMin), 50000);
+    } else if (name === "anneeMin" || name === "anneeMax") {
+      newValue = Math.min(Math.max(newValue, 2000), 2023);
+    } else if (name === "kilometrageMin" || name === "kilometrageMax") {
+      newValue = Math.min(Math.max(newValue, 0), 200000);
+    }
 
     setFiltres({
       ...filtres,
@@ -59,34 +58,21 @@ const SearchFilters = ({ onSearch }) => {
   };
 
   const handleMouseMove = (event, filterName) => {
-  const { clientX } = event;
-  const range = event.target.getBoundingClientRect();
-  const position = (clientX - range.left) / range.width;
-  const min = filterName === "prix" ? 5000 : filterName === "annee" ? 2000 : 0;
-  const max = filterName === "prix" ? 50000 : filterName === "annee" ? 2023 : 200000;
-  let newValue = min + position * (max - min);
+    const { clientX } = event;
+    const range = event.target.getBoundingClientRect();
+    const position = (clientX - range.left) / range.width;
+    const min = filterName === "prix" ? 5000 : filterName === "annee" ? 2000 : 0;
+    const max = filterName === "prix" ? 50000 : filterName === "annee" ? 2023 : 200000;
+    const newValue = min + position * (max - min);
 
-  // Si le nouveau prix est inférieur à 5000, on le limite à 5000
-
-  // Limiter la valeur minimale si nécessaire
-  if (filterName === "prix" && newValue < 5000) {
-    newValue = 5000;
-  } else if (filterName === "annee" && newValue < 2000) {
-    newValue = 2000;
-  } else if (filterName === "kilometrage" && newValue < 0) {
-    newValue = 0;
-  }
-
-  // Limiter la valeur maximale si nécessaire
-  if (newValue > max) {
-    newValue = max;
-  }
-
-  setCurrentMousePosition({
-    ...currentMousePosition,
-    [filterName]: newValue
-  });
-};
+    const newValueLimited = Math.min(newValue, max);
+    if (newValueLimited !== max) {
+      setCurrentMousePosition({
+        ...currentMousePosition,
+        [filterName]: newValueLimited
+      });
+    }
+  };
 
   const handleFamilleChange = (event) => {
     const { value } = event.target;

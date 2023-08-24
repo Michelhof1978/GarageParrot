@@ -4,20 +4,16 @@ import "../../App.css";
 import VehiculeCard from "../Vehicules/vehiculeCard";
 
 
-
-
-//La fonction SearchFilters prend en paramètre une fonction onSearch qui sera appelée lorsque l'utilisateur clique sur le bouton "Rechercher".
 const SearchFilters = ({ onSearch }) => {
     const [filtres, setFiltres] = useState({
       famille: [],
       marque: "",
       anneeMin: 2000,
       anneeMax: 2023,
-      prixMax: 5000,
+      prixMax: 50000,
       kilometrageMax: 0,
     });
 
-    //La fonction useState est utilisée pour stocker les filtres de l'utilisateur
     const [searchResults, setSearchResults] = useState([]);
 
     const handleSearch = async () => {
@@ -42,15 +38,14 @@ const SearchFilters = ({ onSearch }) => {
     let newValue = Number(value);
 
     if (name === "prixMin") {
-        newValue = Math.min(Math.max(newValue, 5000), filtres.prixMax);
-      } else if (name === "prixMax") {
-        newValue = Math.min(Math.max(newValue, filtres.prixMin), 50000);
-      } else if (name === "anneeMin" || name === "anneeMax") {
-        newValue = Math.min(Math.max(newValue, 2000), 2023);
-      } else if (name === "kilometrageMin" || name === "kilometrageMax") {
-        newValue = Math.min(Math.max(newValue, 0), 200000);
-      }
-      
+      newValue = Math.min(Math.max(newValue, 5000), filtres.prixMax);
+    } else if (name === "prixMax") {
+      newValue = Math.min(Math.max(newValue, filtres.prixMin), 50000);
+    } else if (name === "anneeMin" || name === "anneeMax") {
+      newValue = Math.min(Math.max(newValue, 2000), 2023);
+    } else if (name === "kilometrageMin" || name === "kilometrageMax") {
+      newValue = Math.min(Math.max(newValue, 0), 200000);
+    }
 
     setFiltres({
       ...filtres,
@@ -59,34 +54,21 @@ const SearchFilters = ({ onSearch }) => {
   };
 
   const handleMouseMove = (event, filterName) => {
-  const { clientX } = event;
-  const range = event.target.getBoundingClientRect();
-  const position = (clientX - range.left) / range.width;
-  const min = filterName === "prix" ? 5000 : filterName === "annee" ? 2000 : 0;
-  const max = filterName === "prix" ? 50000 : filterName === "annee" ? 2023 : 200000;
-  let newValue = min + position * (max - min);
+    const { clientX } = event;
+    const range = event.target.getBoundingClientRect();
+    const position = (clientX - range.left) / range.width;
+    const min = filterName === "prix" ? 5000 : filterName === "annee" ? 2000 : 0;
+    const max = filterName === "prix" ? 50000 : filterName === "annee" ? 2023 : 200000;
+    const newValue = min + position * (max - min);
 
-  // Si le nouveau prix est inférieur à 5000, on le limite à 5000
-
-  // Limiter la valeur minimale si nécessaire
-  if (filterName === "prix" && newValue < 5000) {
-    newValue = 5000;
-  } else if (filterName === "annee" && newValue < 2000) {
-    newValue = 2000;
-  } else if (filterName === "kilometrage" && newValue < 0) {
-    newValue = 0;
-  }
-
-  // Limiter la valeur maximale si nécessaire
-  if (newValue > max) {
-    newValue = max;
-  }
-
-  setCurrentMousePosition({
-    ...currentMousePosition,
-    [filterName]: newValue
-  });
-};
+    const newValueLimited = Math.min(newValue, max);
+    if (newValueLimited !== max) {
+      setCurrentMousePosition({
+        ...currentMousePosition,
+        [filterName]: newValueLimited
+      });
+    }
+  };
 
   const handleFamilleChange = (event) => {
     const { value } = event.target;
@@ -267,19 +249,3 @@ const resultsPerPage = 20; // Nombre de résultats par page
 };
 
 export default SearchFilters;
-
-// //La fonction SearchFilters prend en paramètre une fonction onSearch qui sera appelée lorsque l'utilisateur clique sur le bouton "Rechercher".
-// La fonction useState est utilisée pour stocker les filtres de l'utilisateur. Les filtres sont les suivants :
-// famille : une liste des familles de voitures que l'utilisateur souhaite inclure dans la recherche.
-// marque : la marque de la voiture que l'utilisateur souhaite rechercher.
-// anneeMin : l'année de construction minimale de la voiture que l'utilisateur souhaite rechercher.
-// anneeMax : l'année de construction maximale de la voiture que l'utilisateur souhaite rechercher.
-// prixMin : le prix minimum de la voiture que l'utilisateur souhaite rechercher.
-// prixMax : le prix maximum de la voiture que l'utilisateur souhaite rechercher.
-// kilometrageMin : le kilométrage minimum de la voiture que l'utilisateur souhaite rechercher.
-// kilometrageMax : le kilométrage maximum de la voiture que l'utilisateur souhaite rechercher.
-// La fonction handleInputChange est appelée lorsque l'utilisateur modifie un filtre. Elle met à jour le filtre correspondant dans l'état.
-// La fonction handleMouseMove est appelée lorsque l'utilisateur passe sa souris sur un curseur de plage. Elle calcule la nouvelle valeur du filtre correspondant et met à jour l'état.
-// La fonction handleFamilleChange est appelée lorsque l'utilisateur coche ou décoche une case à cocher dans la section "Famille". Elle met à jour la liste des familles de voitures incluses dans la recherche.
-// La fonction getDisplayedResults renvoie les résultats de la recherche, en tenant compte des filtres de l'utilisateur.
-// La fonction renderSearchResults affiche les résultats de la recherche.

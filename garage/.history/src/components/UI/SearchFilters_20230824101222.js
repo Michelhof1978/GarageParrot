@@ -87,6 +87,15 @@ const SearchFilters = ({ onSearch }) => {
     [filterName]: newValue
   });
 };
+Encore une fois, vous avez déjà la structure en place, il s'agit simplement d'ajuster les valeurs de manière appropriée.
+
+Assurez-vous que ces modifications sont faites dans les bonnes parties de votre code, et cela devrait vous aider à garantir que les valeurs minimales et maximales des filtres sont correctement prises en compte.
+
+
+
+
+
+
 
   const handleFamilleChange = (event) => {
     const { value } = event.target;
