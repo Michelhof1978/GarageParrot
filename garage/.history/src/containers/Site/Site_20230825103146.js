@@ -4,13 +4,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Accueil from '../Site/accueil';
 import { Link } from 'react-router-dom';
 import Footer from '../../components/Footer/footer';
-<<<<<<< HEAD
-=======
 import Carsearch from '../Site/voitureoccasion';
-import VehiculeDetails from '../../components/Vehicules/VehiculeDetails';
 
 
->>>>>>> 687ae51 (mise en place fiche voiture individuelle lors du clic bouton sur carte)
 
 class Site extends Component {
   render() {
@@ -28,12 +24,8 @@ class Site extends Component {
           <Route path="/entretien" element={<h1>Entretien </h1>} />
           <Route path="/parebrise" element={<h1>PareBrise</h1>} />
           <Route path="/vidange" element={<h1>Vidange</h1>} />
-<<<<<<< HEAD
-          <Route path="/voitureoccasion" element={<h1>voiture d'occasion</h1>} />
-=======
           <Route path="/voitureoccasion" element={<Carsearch />} />
-          <Route path="/voituredetails/:id" element={<VehiculeDetails/>} />
->>>>>>> 687ae51 (mise en place fiche voiture individuelle lors du clic bouton sur carte)
+          <Route path="/voituredetails" element={<ehiculeDetails/>} />
           <Route path="/contact" element={<h1>Page de Contact</h1>} />
         </Routes>
         </div>
