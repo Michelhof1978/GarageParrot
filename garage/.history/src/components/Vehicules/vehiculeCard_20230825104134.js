@@ -51,8 +51,8 @@ const VehiculeCard = () => {
                 <p className="card-text">Prix: {vehicule.prix} €</p>
               </div>
               <div className="card-footer">
-    <Link to={`/vehiculedetail/${vehicule.idVehicule}`} className="btn btn-primary">En savoir plus</Link>
-  </div>
+                <button className="btn btn-primary">En savoir plus</button>
+              </div>
             </div>
           </div>
         ))}

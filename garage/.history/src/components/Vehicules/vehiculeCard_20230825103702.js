@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+
 
 const VehiculeCard = () => {
   const [vehicules, setVehicules] = useState([]); // hook useState pour créer un état local appelé vehicules, qui sera initialisé en tableau vide.
@@ -34,29 +34,21 @@ const VehiculeCard = () => {
   return (
     <div className="container">
       <div className="row">
-        {vehiculesAffiches.map((vehicule) => (//méthode map pour parcourir chaque objet de la liste vehicules et générer une carte Bootstrap pour chaque véhicule.
+        {vehiculesAffiches.map((vehicule) => (
           <div className="col-md-4 mb-3" key={vehicule.idVehicule}>
             <div className="card">
-              <img
-                src={vehicule.imagevoiture}
-                className="card-img-top"
-                alt={vehicule.marque}
-              />
-              <div className="card-body">
-                <h5 className="card-title">{vehicule.marque}</h5>
-                <h6 className="card-subtitle mb-2 text-muted">
-                  {vehicule.modele}
-                </h6>
-                <p className="card-text">Carburant: {vehicule.energie}</p>
-                <p className="card-text">Prix: {vehicule.prix} €</p>
-              </div>
+              {/* ... (Autres éléments de la carte) */}
               <div className="card-footer">
-    <Link to={`/vehiculedetail/${vehicule.idVehicule}`} className="btn btn-primary">En savoir plus</Link>
-  </div>
+                {/* Utilisez le composant Link pour envelopper le bouton */}
+                <Link to={`/vehicule/${vehicule.idVehicule}`} className="btn btn-primary">
+                  En savoir plus
+                </Link>
+              </div>
             </div>
           </div>
         ))}
       </div>
+
       <div className="pagination">
         <div className="pagination-numbers">
           {numerosDePage.map((numeroDePage) => (
