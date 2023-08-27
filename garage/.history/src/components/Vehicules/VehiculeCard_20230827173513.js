@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../../App.css";
-
+import VehiculeDetail from "../../components/Vehicules/vehiculeDetail";
 
 const VehiculeCard = () => {
   const [vehicules, setVehicules] = useState([]);

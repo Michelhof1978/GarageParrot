@@ -20,12 +20,12 @@ class Site extends Component {
           <Route path="/" element={<Accueil />} />
          
           <Link path="/pneumatique" element={<h1>Pneumatique</h1>} />
-          <Link path="/freinage" element={<h1>Freinage</h1>} />
-          <Link path="/mecanique" element={<h1>Mecanique </h1>} />
-          <Link path="/entretien" element={<h1>Entretien </h1>} />
-          <Link path="/parebrise" element={<h1>PareBrise</h1>} />
-          <Link path="/vidange" element={<h1>Vidange</h1>} />
-          <Link path="/voitureoccasion" element={<SearchFilters/>} />
+          <Rou path="/freinage" element={<h1>Freinage</h1>} />
+          <Route path="/mecanique" element={<h1>Mecanique </h1>} />
+          <Route path="/entretien" element={<h1>Entretien </h1>} />
+          <Route path="/parebrise" element={<h1>PareBrise</h1>} />
+          <Route path="/vidange" element={<h1>Vidange</h1>} />
+          <Route path="/voitureoccasion" element={<Carsearch />} />
           {/* <Route path="/voituredetails/:id" element={<VehiculeDetails/>} /> */}
           <Route path="/contact" element={<h1>Page de Contact</h1>} />
         </Routes>

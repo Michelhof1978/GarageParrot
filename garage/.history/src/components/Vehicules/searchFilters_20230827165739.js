@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../App.css";
-import VehiculeCard from "../Vehicules/vehiculeCard";
+import VehiculeCard from "../../Vehicules/vehiculeCard";
 
 
 
@@ -172,66 +172,99 @@ const resultsPerPage = 20; // Nombre de résultats par page
       </div>
 
 
+  <div className="search-results">
+  <h3>Résultats de la recherche :</h3>
+  <VehiculeCard vehicules={searchResults} />
 
-      <div className="filter-row">
-        <label>Prix :</label>
-        <div className="range-filter">
-          <span>5000 €</span>
-          <input
-            type="range"
-            name="prixMin"
-            min="5000"
-            max="50000"
-            value={filtres.prixMin}
-            onChange={handleInputChange}
-            onMouseMove={(e) => handleMouseMove(e, "prix")}
-            step="1000"
-          />
-          <span>{currentMousePosition.prix.toFixed(0)} €</span>
-          {currentMousePosition.prix === 50000 && <span>50000 €</span>}
-        </div>
-      </div>
+</div>
 
-      <div className="filter-row">
-        <label>Année :</label>
-        <div className="range-filter">
-          <span>2000</span>
-          <input
-            type="range"
-            name="anneeMin"
-            min="2000"
-            max="2023"
-            value={filtres.anneeMin}
-            onChange={handleInputChange}
-            onMouseMove={(e) => handleMouseMove(e, "annee")}
-            step="1"
-          />
-          <span>{currentMousePosition.annee.toFixed(0)}</span>
-          {currentMousePosition.annee === 2023 && <span>2023</span>}
-        </div>
-      </div>
+  <ul>
+    {getDisplayedResults().map((voiture) => (
+      <li key={voiture.id}>{voiture.nom} - {voiture.prix} €</li>
+    ))}
+  </ul>
 
-      <div className="filter-row">
-        <label>Kilométrage :</label>
-        <div className="range-filter">
-          <span>0 km</span>
-          <input
-            type="range"
-            name="kilometrageMin"
-            min="0"
-            max="200000"
-            value={filtres.kilometrageMin}
-            onChange={handleInputChange}
-            onMouseMove={(e) => handleMouseMove(e, "kilometrage")}
-            step="1000"
-          />
-          <span>{currentMousePosition.kilometrage.toFixed(0)} km</span>
-          {currentMousePosition.kilometrage === 200000 && <span>200000 km</span>}
-        </div>
-      </div>
+  <div className="pagination">
+    <button
+      onClick={() => setCurrentPage(currentPage - 1)}
+      disabled={currentPage === 1}
+    >
+      Précédent
+    </button>
+    <span>{currentPage}</span>
+    <button
+      onClick={() => setCurrentPage(currentPage + 1)}
+      disabled={currentPage === Math.ceil(searchResults.length / resultsPerPage)}
+    >
+      Suivant
+    </button>
 
-      <button onClick={handleSearch}>Rechercher</button>
+  </div>
+</div>
+
+
+     <div>
+  <div className="filter-row">
+    <label>Prix :</label>
+    <div className="range-filter">
+      <span>5000 €</span>
+      <input
+        type="range"
+        name="prixMin"
+        min="5000"
+        max="50000"
+        value={filtres.prixMin}
+        onChange={handleInputChange}
+        onMouseMove={(e) => handleMouseMove(e, "prix")}
+        step="1000"
+      />
+      <span>{currentMousePosition.prix.toFixed(0)} €</span>
+      {currentMousePosition.prix === 50000 && <span>50000 €</span>}
     </div>
+  </div>
+
+  <div className="filter-row">
+    <label>Année :</label>
+    <div className="range-filter">
+      <span>2000</span>
+      <input
+        type="range"
+        name="anneeMin"
+        min="2000"
+        max="2023"
+        value={filtres.anneeMin}
+        onChange={handleInputChange}
+        onMouseMove={(e) => handleMouseMove(e, "annee")}
+        step="1"
+      />
+      <span>{currentMousePosition.annee.toFixed(0)}</span>
+      {currentMousePosition.annee === 2023 && <span>2023</span>}
+    </div>
+  </div>
+
+  <div className="filter-row">
+    <label>Kilométrage :</label>
+    <div className="range-filter">
+      <span>0 km</span>
+      <input
+        type="range"
+        name="kilometrageMin"
+        min="0"
+        max="200000"
+        value={filtres.kilometrageMin}
+        onChange={handleInputChange}
+        onMouseMove={(e) => handleMouseMove(e, "kilometrage")}
+        step="1000"
+      />
+      <span>{currentMousePosition.kilometrage.toFixed(0)} km</span>
+      {currentMousePosition.kilometrage === 200000 && <span>200000 km</span>}
+    </div>
+  </div>
+
+  <button onClick={handleSearch}>Rechercher</button>
+  <
+</div>
+
   );
 };
 

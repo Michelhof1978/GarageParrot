@@ -8,5 +8,3 @@ const TitreH1 = (props) => (
 );
 
 export default TitreH1;
-
-

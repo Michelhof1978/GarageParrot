@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-//import TitreH1 from "../../components/UI/TitreH1/TitreH1";
+import TitreH1 from "../../components/UI/TitreH1/TitreH1";
 import CarousselCard from "../../components/Caroussel/caroussel";
 import peugeot208 from "../../assets/images/peugeot208.webp";
 import logoVoiture from "../../assets/images/logoVoiture.webp";
