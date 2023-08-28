@@ -37,7 +37,7 @@ const VehiculeList = ({ filtres }) => {
         ))}
       </div>
 
-{/* //Composant de pagination lors du resultat */}
+//Composant 
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}

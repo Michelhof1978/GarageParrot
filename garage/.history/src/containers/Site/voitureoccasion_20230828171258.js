@@ -1,21 +1,25 @@
 import React, { Component } from "react";
+import SearchFilters from "../../components/Vehicules/SearchFilters";
 import TitreH1 from "../../components/UI/TitreH1/TitreH1";
-import CarousselCard from "../../components/Caroussel/caroussel";
-import peugeot208 from "../../assets/images/peugeot208.webp";
 import logoVoiture from "../../assets/images/logoVoiture.webp";
-import VehiculeList from "../../components/Vehicules/VehiculeList";
+import bannierevente from "../../assets/images/bannierevente.webp";
 
-class Accueil extends Component {
+class Carsearch extends Component {
   //Nom de la page ds onglet
   componentDidMount = () => {
-    document.title = "Accueil";
+    document.title = "Voiture Occasion";
   };
 
   render() {
     return (
       <>
+        <img
+          className="img-fluid w-50"
+          src={bannierevente}
+          alt="Logo Garage PARROT"
+        />
         <div>
-          <TitreH1>Découvrez nos prestations</TitreH1>
+          <TitreH1>Recherche Véhicules</TitreH1>
 
           <div className="container">
             <p>
@@ -25,17 +29,8 @@ class Accueil extends Component {
               experts auto. Contactez nous dès maintenant pour un devis en ligne
               pour la réparation de votre voiture et obtenez un RDV immédiat !
             </p>
-
-            <CarousselCard />
-
-            <VehiculeList/>
-           
-
-            <img
-              className="img-fluid"
-              src={peugeot208}
-              alt="Logo Garage PARROT"
-            />
+            <SearchFilters />
+            <SearchFilters />
 
             <img
               className="img-fluid"
@@ -49,4 +44,4 @@ class Accueil extends Component {
   }
 }
 
-export default Accueil;
+export default Carsearch;

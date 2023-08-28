@@ -3,7 +3,6 @@ import axios from "axios";
 import VehiculeCard from "./VehiculeCard";
 import { generateURL } from './apiUtils';
 import Pagination from "./pagination";
-import "../../App.css";
 
 const VehiculeList = ({ filtres }) => {
   const [vehicules, setVehicules] = useState([]);
@@ -31,21 +30,20 @@ const VehiculeList = ({ filtres }) => {
 
   return (
     <div className="container">
-      <div className="row row-cols-5" style={{ justifyContent: "space-between" }}> {/* Utilisez row-cols-5 pour créer 5 colonnes */}
+      <div className="row">
         {displayedVehicules.map(vehicule => (
-          <VehiculeCard key={vehicule.idVehicule} vehicule={vehicule} />
+          // Afficher chaque véhicule ici
         ))}
       </div>
 
-{/* //Composant de pagination lors du resultat */}
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
         onPageChange={handlePageChange}
       />
+      
     </div>
   );
 };
 
 export default VehiculeList;
-

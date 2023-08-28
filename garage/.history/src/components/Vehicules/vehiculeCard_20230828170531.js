@@ -3,6 +3,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../App.css";
 
+import React from "react";
+import { Link } from "react-router-dom";
+
 const VehiculeCard = ({ vehicule }) => (
   <div className="col-md-2 mb-3" style={{ width: "20%" }}> {/* Utilisez une largeur de 20% */}
     <div className="card" style={{ width: "100%" }}>
@@ -18,7 +21,7 @@ const VehiculeCard = ({ vehicule }) => (
         <p className="card-text">Prix: {vehicule.prix} €</p>
       </div>
       <div className="card-footer">
-        <Link to={`/VehiculeList/${vehicule.idVehicule}`} className="btn btn-primary">En savoir plus</Link>
+        <Link to={`/vehiculedetail/${vehicule.idVehicule}`} className="btn btn-primary">En savoir plus</Link>
       </div>
     </div>
   </div>
@@ -27,7 +30,7 @@ const VehiculeCard = ({ vehicule }) => (
 export default VehiculeCard;
 
 
-
+export default VehiculeCard;
 
 
 // import React, { useState, useEffect } from "react";

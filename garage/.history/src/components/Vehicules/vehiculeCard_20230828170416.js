@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import "../../App.css";
 
 const VehiculeCard = ({ vehicule }) => (
-  <div className="col-md-2 mb-3" style={{ width: "20%" }}> {/* Utilisez une largeur de 20% */}
-    <div className="card" style={{ width: "100%" }}>
+  <div className="col-md-2 mb-3"> {/* Utilisez col-md-2 pour que 5 éléments prennent toute la largeur */}
+    <div className="card" style={{ width: "100%" }}> {/* Appliquez une largeur de 100% à la carte */}
       <img
         src={vehicule.imagevoiture}
         className="card-img-top"
@@ -18,16 +18,72 @@ const VehiculeCard = ({ vehicule }) => (
         <p className="card-text">Prix: {vehicule.prix} €</p>
       </div>
       <div className="card-footer">
-        <Link to={`/VehiculeList/${vehicule.idVehicule}`} className="btn btn-primary">En savoir plus</Link>
+        <Link to={`/vehiculedetail/${vehicule.idVehicule}`} className="btn btn-primary">En savoir plus</Link>
       </div>
     </div>
   </div>
 );
 
 export default VehiculeCard;
+Dans le composant VehiculeList.js, modifiez la classe de la div principale pour utiliser row avec une classe personnalisée pour créer une mise en page en colonnes :
+jsx
+Copy code
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import VehiculeCard from "./VehiculeCard";
+import Pagination from "./Pagination";
+
+const VehiculeList = ({ filtres }) => {
+  const [vehicules, setVehicules] = useState([]);
+  const vehiculesPerPage = 20; // Nombre de véhicules à afficher par page
+  const [currentPage, setCurrentPage] = useState(1); // Pour gérer la pagination
+  const [totalPages, setTotalPages] = useState(0);
+
+  useEffect(() => {
+    const url = generateURL(filtres);
+    axios.get(url)
+      .then(response => {
+        setVehicules(response.data);
+        setTotalPages(Math.ceil(response.data.length / vehiculesPerPage));
+      })
+      .catch(error => console.error("Erreur de récupération:", error));
+  }, [filtres]);
+
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+  const indexLastVehicule = currentPage * vehiculesPerPage;
+  const indexFirstVehicule = indexLastVehicule - vehiculesPerPage;
+  const displayedVehicules = vehicules.slice(indexFirstVehicule, indexLastVehicule);
+
+  return (
+    <div className="container">
+      <div className="row row-cols-5"> {/* Utilisez row-cols-5 pour créer 5 colonnes */}
+        {displayedVehicules.map(vehicule => (
+          <VehiculeCard key={vehicule.idVehicule} vehicule={vehicule} />
+        ))}
+      </div>
+
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+      />
+    </div>
+  );
+};
+
+export default VehiculeList;
+Avec ces modifications, les cartes auront une largeur de 20% chacune (5 éléments par ligne), ce qui leur permettra de prendre toute la largeur de la page. N'oubliez pas d'ajuster les styles CSS en fonction de vos besoins et de vos classes de style personnalisées.
 
 
 
+
+
+
+
+export default VehiculeCard;
 
 
 // import React, { useState, useEffect } from "react";

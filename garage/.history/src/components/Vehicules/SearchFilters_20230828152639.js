@@ -3,6 +3,7 @@ import axios from "axios";
 import "../../App.css";
 import VehiculeCard from "./VehiculeCard";
 
+
 //La fonction SearchFilters prend en paramètre une fonction onSearch qui sera appelée lorsque l'utilisateur clique sur le bouton "Rechercher".
 const SearchFilters = ({ onSearch }) => {
   const [filtres, setFiltres] = useState({

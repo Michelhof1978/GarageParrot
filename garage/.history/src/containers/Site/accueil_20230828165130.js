@@ -28,7 +28,7 @@ class Accueil extends Component {
 
             <CarousselCard />
 
-            <VehiculeList/>
+            <VehiculeCard/>
            
 
             <img

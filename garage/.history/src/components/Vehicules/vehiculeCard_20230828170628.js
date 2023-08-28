@@ -3,6 +3,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../../App.css";
 
+import React from "react";
+import { Link } from "react-router-dom";
+
 const VehiculeCard = ({ vehicule }) => (
   <div className="col-md-2 mb-3" style={{ width: "20%" }}> {/* Utilisez une largeur de 20% */}
     <div className="card" style={{ width: "100%" }}>

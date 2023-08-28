@@ -5,6 +5,11 @@ import { generateURL } from './apiUtils';
 import Pagination from "./pagination";
 import "../../App.css";
 
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import VehiculeCard from "./VehiculeCard";
+import Pagination from "./Pagination";
+
 const VehiculeList = ({ filtres }) => {
   const [vehicules, setVehicules] = useState([]);
   const vehiculesPerPage = 20; // Nombre de véhicules à afficher par page
@@ -37,7 +42,6 @@ const VehiculeList = ({ filtres }) => {
         ))}
       </div>
 
-{/* //Composant de pagination lors du resultat */}
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
