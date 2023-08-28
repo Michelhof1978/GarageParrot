@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import VehiculeCard from "../../components/Vehicules/vehiculeCard";
+import VehiculeCard from "../../components/Vehicules/VehiculeCard";
 
 
 
