@@ -1,8 +1,8 @@
 //Composant VehiculeCard pour s'occuper uniquement de la récupération des données et utilisez le composant VehiculeList pour afficher les véhicules:
-
+// VehiculeCard.js
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import VehiculeList from "./VehiculeList";
+import VehiculeList from './VehiculeList'; // Assurez-vous que le chemin d'importation est correct
 
 const VehiculeCard = () => {
   const [vehicules, setVehicules] = useState([]);

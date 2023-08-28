@@ -1,33 +1,4 @@
-//Composant VehiculeCard pour s'occuper uniquement de la récupération des données et utilisez le composant VehiculeList pour afficher les véhicules:
-
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import VehiculeList from "./VehiculeList";
-
-const VehiculeCard = () => {
-  const [vehicules, setVehicules] = useState([]);
-  const [pageCourante, setPageCourante] = useState(1);
-
-  useEffect(() => {
-    axios
-      .get("http://localhost/garageback/front/voiturefiche/all")
-      .then((response) => {
-        setVehicules(response.data);
-      })
-      .catch((error) => {
-        console.error("Erreur lors de la récupération des détails des voitures:", error);
-      });
-  }, []);
-
-  const changerDePage = (numeroDePage) => {
-    setPageCourante(numeroDePage);
-  };
-
-  return <VehiculeList vehicules={vehicules} pageCourante={pageCourante} changerDePage={changerDePage} />;
-};
-
-export default VehiculeCard;
-
+//Composant qui affichera uniquement la carte et recupérera les données ds vehiculeDetails
 
 // import React, { useState, useEffect } from "react";
 // import axios from "axios";
