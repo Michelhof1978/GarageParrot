@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import VehiculeCard fr
+import VehiculeCard
 import { generateURL } from './apiUtils';
 
 const VehiculeList = ({ filtres }) => {

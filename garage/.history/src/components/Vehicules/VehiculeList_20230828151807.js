@@ -1,38 +1,4 @@
-// (chargement et affichage de la liste de véhicules
-
-
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import VehiculeCard fr
-import { generateURL } from './apiUtils';
-
-const VehiculeList = ({ filtres }) => {
-  const [vehicules, setVehicules] = useState([]);
-  const vehiculesParPage = 12;
-  const [pageCourante, setPageCourante] = useState(1);
-
-  useEffect(() => {
-    const url = generateURL(filtres);
-    axios.get(url)
-      .then(response => setVehicules(response.data))
-      .catch(error => console.error("Erreur de récupération:", error));
-  }, [filtres]);
-
-  //... (garder le reste de votre logique de pagination)
-
-  return (
-    <div className="container">
-      <div className="row">
-        {vehicules.slice(indexDePremierVehicule, indexDeDernierVehicule).map(vehicule => <VehiculeCard key={vehicule.idVehicule} vehicule={vehicule} />)}
-      </div>
-      {/* votre pagination ici */}
-    </div>
-  );
-};
-
-export default VehiculeList;
-
-
+// Envoi uniquement le visuel 
 // import { Link } from "react-router-dom";
 
 // const VehiculeList = ({ vehicules, pageCourante, changerDePage }) => {

@@ -1,61 +1,30 @@
-//Composant qui va représenter qu'un seul véhicule
-// VehiculeCard.js
+//Composant VehiculeCard pour s'occuper uniquement de la récupération des données et utilisez le composant VehiculeList pour afficher les véhicules:
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+// import VehiculeList from "./VehiculeList";
 
-import React from "react";
-import { Link } from "react-router-dom";
+const VehiculeCard = () => {
+  const [vehicules, setVehicules] = useState([]);
+  const [pageCourante, setPageCourante] = useState(1);
 
-const VehiculeCard = ({ vehicule }) => (
-  <div className="col-md-4 mb-3">
-    <div className="card">
-      <img
-        src={vehicule.imagevoiture}
-        className="card-img-top"
-        alt={vehicule.marque}
-      />
-      <div className="card-body">
-        <h5 className="card-title">{vehicule.marque}</h5>
-        <h6 className="card-subtitle mb-2 text-muted">{vehicule.modele}</h6>
-        <p className="card-text">Carburant: {vehicule.energie}</p>
-        <p className="card-text">Prix: {vehicule.prix} €</p>
-      </div>
-      <div className="card-footer">
-        <Link to={`/vehiculedetail/${vehicule.idVehicule}`} className="btn btn-primary">En savoir plus</Link>
-      </div>
-    </div>
-  </div>
-);
+  useEffect(() => {
+    const url = generateURL();
+    axios
+      .get(url)
+      })
+      .catch((error) => {
+        console.error("Erreur lors de la récupération des détails des voitures:", error);
+      });
+  }, []);
+
+  const changerDePage = (numeroDePage) => {
+    setPageCourante(numeroDePage);
+  };
+
+  return <VehiculeList vehicules={vehicules} pageCourante={pageCourante} changerDePage={changerDePage} />;
+};
 
 export default VehiculeCard;
-
-
-// import React, { useState, useEffect } from "react";
-// import axios from "axios";
-// import  {generateURL} from "../../apiUtils";
-// import {link} from "react-router-dom"
-// // import VehiculeList from "./VehiculeList";
-
-// const VehiculeCard = () => {
-//   const [vehicules, setVehicules] = useState([]);
-//   const [pageCourante, setPageCourante] = useState(1);
-
-//   useEffect(() => {
-//     const url = generateURL();
-//     axios
-//       .get(url)
-//       })
-//       .catch((error) => {
-//         console.error("Erreur lors de la récupération des détails des voitures:", error);
-//       });
-//   }, []);
-
-//   const changerDePage = (numeroDePage) => {
-//     setPageCourante(numeroDePage);
-//   };
-
-//   return <VehiculeList vehicules={vehicules} pageCourante={pageCourante} changerDePage={changerDePage} />;
-// };
-
-// export default VehiculeCard;
 
 
 // import React, { useState, useEffect } from "react";

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../App.css";
-import VehiculeCard from "./VehiculeCard";
+import VehiculeCard from "../../components/Vehicules/vehiculeCard";
 
 //La fonction SearchFilters prend en paramètre une fonction onSearch qui sera appelée lorsque l'utilisateur clique sur le bouton "Rechercher".
 const SearchFilters = ({ onSearch }) => {
@@ -258,7 +258,7 @@ const SearchFilters = ({ onSearch }) => {
 
       <div className="search-results">
         <h3>Résultats de la recherche :</h3>
-        <VehiculeList filtres={vosFiltres} />
+        <VehiculeCard vehicules={searchResults} />
       </div>
 
       <ul>

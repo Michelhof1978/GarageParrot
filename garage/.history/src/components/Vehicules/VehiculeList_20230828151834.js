@@ -1,9 +1,9 @@
-// (chargement et affichage de la liste de véhicules
+// Envoi uniquement le visuel 
 
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import VehiculeCard fr
+import VehiculeCard from "./VehiculeCard";
 import { generateURL } from './apiUtils';
 
 const VehiculeList = ({ filtres }) => {
