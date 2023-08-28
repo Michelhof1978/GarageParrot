@@ -3,22 +3,25 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import VehiculeCard from "../../components/Vehicules/vehiculeCard";
 
-const VehiculeDetail = () => {
-  // Appeler les Hooks ici, à l'intérieur du composant
-  const { id } = useParams();
-  const [vehicule, setVehicule] = useState({}); // à supposer que vous voulez utiliser useState pour stocker le détail du véhicule
+const { id } = useParams();
+const [vehicule, setVehicule] = useState({});
+useEffect(() => {
+  const fetchVehiculeDetails = async () => {
+      try {
+          const response = await axios.get(`http://localhost/garageback/front/voiturefiche/${id}`);
+          setVehicule(response.data);
+      } catch (error) {
+          console.error("Erreur lors de la récupération des détails du véhicule:", error);
+      }
+  };
 
-  useEffect(() => {
-      // Supposons que vous voulez obtenir les détails du véhicule en fonction de l'ID à partir de l'API
-      axios.get(`votre_url_api/vehicules/${id}`)
-          .then(response => {
-              setVehicule(response.data);
-          })
-          .catch(error => {
-              console.error("Erreur lors de la récupération des détails du véhicule:", error);
-          });
-  }, [id]); // Exécutez useEffect chaque fois que l'ID change
+  fetchVehiculeDetails();
+}, [id]);
 
+
+
+
+const VehiculeDetail = ({ vehicule }) => {
   return (
     <div className="container">
       <div className="row">
@@ -27,9 +30,7 @@ const VehiculeDetail = () => {
           <h2>{vehicule.marque} - {vehicule.modele}</h2>
           <img src={vehicule.imagevoiture} alt={vehicule.marque} />
           <p>Date 1ère année circulation : {vehicule.datecirculation}</p>
-          <p>Couleur : {vehicule.couleur}</p>
-          <p>Nombre de places : {vehicule.place}</p>
-          <p>Energie : {vehicule.energie}</p>
+          
           <p>Année : {vehicule.annee}</p>
           <p>Boîte de vitesse : {vehicule.boitevitesse}</p>
           <p>Kilométrage : {vehicule.kilometrage}</p>

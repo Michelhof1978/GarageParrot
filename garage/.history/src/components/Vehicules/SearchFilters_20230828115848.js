@@ -63,7 +63,7 @@ const SearchFilters = ({ onSearch }) => {
       ...filtres,
       [name]: newValue,
     });
-  }};
+  };
 
   const handleMouseMove = (event, filterName) => {
     const { clientX } = event;
