@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../../App.css";
-import TitreH1 from "../UI/TitreH1/TitreH1";
+import TitreH1 from "../UI/Navbar/TitreH1/TitreH1";
 
 
 

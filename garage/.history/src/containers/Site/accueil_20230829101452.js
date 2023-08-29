@@ -15,7 +15,7 @@ class Accueil extends Component {
     return (
       <>
         <div>
-          <TitreH1>Découvrez nos prestations</TitreH1>
+          {/* <TitreH1>Découvrez nos prestations</TitreH1> */}
 
           <div className="container">
             <p>

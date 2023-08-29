@@ -17,7 +17,6 @@ class Site extends Component {
             <div className='site'>
         <Navbar />
       
-        <Routes>
         <Route path="/" element={<Accueil />} />
             <Route path="/pneumatique" element={<h1>Pneumatique</h1>} />
             <Route path="/freinage" element={<h1>Freinage</h1>} />
@@ -28,7 +27,6 @@ class Site extends Component {
             <Route path="/voitureoccasion" element={<SearchFilters />} />
             <Route path="/voituredetails/:id" element={<VehiculeDetails />} />
             <Route path="/contact" element={<h1>Page de Contact</h1>} />
-        </Routes>
         </div>
         <div className='minsite'></div> {/*  //pour le footer */}
 

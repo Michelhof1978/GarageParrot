@@ -2,15 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../../App.css";
-import TitreH1 from "../UI/TitreH1/TitreH1";
-
 
 
 const VehiculeCard = () => {
   const [vehicules, setVehicules] = useState([]);
 
   useEffect(() => {
-    // axios pour récupérer les données des véhicules
+    // Utilisez axios pour récupérer les données des véhicules
     axios.get("http://localhost/garageback/front/voiturefiche/all").then((response) => {
       setVehicules(response.data);
     }).catch((error) => {
@@ -27,7 +25,8 @@ const VehiculeCard = () => {
             <p className="card-text">Prix: {vehicule.prix} €</p>
           </div>
           <div className="card-footer">
-            
+            {/* Utilisation d'un bouton */}
+            <button className="btn btn-primary">En savoir plus</button>
             {/* Utilisation d'un lien */}
             <Link to={`/vehiculedetail/${vehicule.idVehicule}`} className="btn btn-primary">En savoir plus</Link>
           </div>
