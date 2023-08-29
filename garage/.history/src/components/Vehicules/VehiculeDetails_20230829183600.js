@@ -2,18 +2,19 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import "../../App.css";
+import TitreH1 from "../UI/TitreH1/TitreH1";
+import  { Component } from 'react';
 
-const VehiculeDetails = () => {
+const VehiculeFiche extends Component = () => {
   const [vehicule, setVehicule] = useState(null);
-  const { id } = useParams();
+  const { id } = useParams(); // Extract the ID from the URL
 
   useEffect(() => {
     axios
+    //Inclure les filtres ds l url et aussi ds controller
       .get(`http://localhost/garageback/front/voiturefiche/all`)
       .then((response) => {
-        console.log("Données du véhicule:", response.data);
-        const vehiculeData = response.data.find(item => item.idVehicule === id);
-        setVehicule(vehiculeData);
+        setVehicule(response.data);
       })
       .catch((error) => {
         console.error("Erreur lors de la récupération des détails du véhicule :", error);
@@ -21,12 +22,12 @@ const VehiculeDetails = () => {
   }, [id]);
 
   if (!vehicule) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>; // Loading indicator while fetching data
   }
 
   return (
     <div className="vehicule-details">
-      <img src={vehicule.imageVoiture} alt={vehicule.marque} />
+      <img src={vehicule.imagevoiture} alt={vehicule.marque} />
       <h5 className="card-title">{vehicule.nom}</h5>
       <p className="card-text">Modèle: {vehicule.modele} </p>
       <p className="card-text">Energie: {vehicule.energie} </p>
@@ -39,4 +40,4 @@ const VehiculeDetails = () => {
   );
 };
 
-export default VehiculeDetails;
+export default VehiculeFiche;

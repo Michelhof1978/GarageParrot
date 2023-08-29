@@ -15,7 +15,7 @@ const VehiculeCard = () => {
       .get("http://localhost/garageback/front/voiturefiche/all")
       .then((response) => {
         const jsonData = response.data; // S'Assurer que response.data est une chaîne JSON
-       
+        const data = JSON.parse(jsonData); // Si les données sont sous format chaîne, parse le convertira en un tableau JSON
         setVehicules(response.data); // Mise à jour le tableau d'état avec les données
       })
       .catch((error) => {
@@ -34,26 +34,26 @@ const VehiculeCard = () => {
 
   return (
     <div className="vehicule-grid">
-    {currentCards.map((vehicule) => (
-      <div key={vehicule.idVehicule} className="card">
-        <div className="card-body">
+      {currentCards.map((vehicule) => (
+        <div key={vehicule.idVehicule} className="card">
+          <div className="card-body">
           <a href={vehicule.imageVoiture.imageVoiture} target="_blank" rel="noopener noreferrer">
-            <img src={vehicule.imageVoiture.imageVoiture} alt={vehicule.marque} />
-          </a>
+  <img src={vehicule.imageVoiture.imageVoiture} alt={vehicule.marque} />
+</a>
 
-          <h5 className="card-title">{vehicule.nom}</h5>
-          <p className="card-text">Modèle: {vehicule.modele} </p>
-          <p className="card-text">Energie: {vehicule.energie} </p>
-          <p className="card-text">Prix: {vehicule.prix} €</p>
-        </div>
-        <div className="card-footer">
-          <Link
-            to={`/vehiculedetail/${vehicule.idVehicule}`}
-            className="btn btn-primary"
-          >
-            En savoir plus
-          </Link>
-        </div>
+            <h5 className="card-title">{vehicule.nom}</h5>
+            <p className="card-text">Modèle: {vehicule.modele} </p>
+            <p className="card-text">Energie: {vehicule.energie} </p>
+            <p className="card-text">Prix: {vehicule.prix} €</p>
+          </div>
+          <div className="card-footer">
+            <Link
+              to={`/vehiculedetail/${vehicule.idVehicule}`}
+              className="btn btn-primary"
+            >
+              En savoir plus
+            </Link>
+          </div>
         </div>
       ))}
 

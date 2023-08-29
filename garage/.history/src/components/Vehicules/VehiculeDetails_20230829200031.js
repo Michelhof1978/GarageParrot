@@ -11,7 +11,7 @@ const VehiculeDetails = () => {
     axios
       .get(`http://localhost/garageback/front/voiturefiche/all`)
       .then((response) => {
-        console.log("Données du véhicule:", response.data);
+        
         const vehiculeData = response.data.find(item => item.idVehicule === id);
         setVehicule(vehiculeData);
       })

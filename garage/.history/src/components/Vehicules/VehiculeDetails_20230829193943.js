@@ -2,26 +2,26 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import "../../App.css";
+import TitreH1 from "../UI/TitreH1/TitreH1";
 
 const VehiculeDetails = () => {
   const [vehicule, setVehicule] = useState(null);
-  const { id } = useParams();
+  const { id } = useParams(); // Extract the ID from the URL
 
   useEffect(() => {
     axios
       .get(`http://localhost/garageback/front/voiturefiche/all`)
       .then((response) => {
-        console.log("Données du véhicule:", response.data);
         const vehiculeData = response.data.find(item => item.idVehicule === id);
-        setVehicule(vehiculeData);
-      })
+        setVehicule(vhiculeData);
+      })e
       .catch((error) => {
         console.error("Erreur lors de la récupération des détails du véhicule :", error);
       });
   }, [id]);
 
   if (!vehicule) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>; // Loading indicator while fetching data
   }
 
   return (

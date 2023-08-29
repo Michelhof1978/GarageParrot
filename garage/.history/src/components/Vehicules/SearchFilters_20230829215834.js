@@ -16,7 +16,7 @@ const SearchFilters = ({ onSearch }) => {
       anneeMax: 2023,
       prixMax: 5000,
       kilometrageMax: 0,
-    });
+
       const handleMarqueChange = (event) => {
         const { value } = event.target;
         setFiltres({

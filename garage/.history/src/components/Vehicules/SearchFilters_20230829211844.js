@@ -8,22 +8,12 @@ import TitreH1 from "../UI/TitreH1/TitreH1";
 
 
 //La fonction SearchFilters prend en paramètre une fonction onSearch qui sera appelée lorsque l'utilisateur clique sur le bouton "Rechercher".
-const SearchFilters = ({ onSearch }) => {
-    const [filtres, setFiltres] = useState({
-      famille: [],
-      marque: "",
-      anneeMin: 2000,
-      anneeMax: 2023,
-      prixMax: 5000,
-      kilometrageMax: 0,
-    });
-      const handleMarqueChange = (event) => {
-        const { value } = event.target;
-        setFiltres({
-            ...filtres,
-            marque: value
-        });
-    };
+onst SearchFilters = () => {
+  const [vehiculeOptions, setVehiculeOptions] = useState([]);
+  const [selectedFamille, setSelectedFamille] = useState("");
+  const [selectedMarque, setSelectedMarque] = useState("");
+  const [selectedModele, setSelectedModele] = useState("");
+  const [selectedEnergie, setSelectedEnergie] = useState("");
 
     //La fonction useState est utilisée pour stocker les filtres de l'utilisateur
     const [searchResults, setSearchResults] = useState([]);
@@ -179,20 +169,6 @@ const resultsPerPage = 20; // Nombre de résultats par page
         </label>
       </div>
 
-      <div className="filter-row">
-                <label>Marque :</label>
-                <select
-                    name="marque"
-                    value={filtres.marque}
-                    onChange={handleMarqueChange}
-                >
-                    <option value="">Toutes</option>
-                    <option value="citroen">Citroën</option>
-                    <option value="peugeot">Peugeot</option>
-                    <option value="kia">Kia</option>
-                    <option value="bmw">BMW</option>
-                </select>
-            </div>
 
 
       <div className="filter-row">

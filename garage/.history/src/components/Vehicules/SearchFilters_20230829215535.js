@@ -17,13 +17,6 @@ const SearchFilters = ({ onSearch }) => {
       prixMax: 5000,
       kilometrageMax: 0,
     });
-      const handleMarqueChange = (event) => {
-        const { value } = event.target;
-        setFiltres({
-            ...filtres,
-            marque: value
-        });
-    };
 
     //La fonction useState est utilisée pour stocker les filtres de l'utilisateur
     const [searchResults, setSearchResults] = useState([]);
@@ -179,20 +172,7 @@ const resultsPerPage = 20; // Nombre de résultats par page
         </label>
       </div>
 
-      <div className="filter-row">
-                <label>Marque :</label>
-                <select
-                    name="marque"
-                    value={filtres.marque}
-                    onChange={handleMarqueChange}
-                >
-                    <option value="">Toutes</option>
-                    <option value="citroen">Citroën</option>
-                    <option value="peugeot">Peugeot</option>
-                    <option value="kia">Kia</option>
-                    <option value="bmw">BMW</option>
-                </select>
-            </div>
+    
 
 
       <div className="filter-row">

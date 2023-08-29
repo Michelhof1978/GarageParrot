@@ -17,13 +17,6 @@ const SearchFilters = ({ onSearch }) => {
       prixMax: 5000,
       kilometrageMax: 0,
     });
-      const handleMarqueChange = (event) => {
-        const { value } = event.target;
-        setFiltres({
-            ...filtres,
-            marque: value
-        });
-    };
 
     //La fonction useState est utilisée pour stocker les filtres de l'utilisateur
     const [searchResults, setSearchResults] = useState([]);
