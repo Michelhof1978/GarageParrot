@@ -10,7 +10,7 @@ const VehiculeDetails = () => {
 
   useEffect(() => {
     axios
-    //Inclure les filtres ds l url et aussi ds controller
+    
       .get(`http://localhost/garageback/front/voiturefiche?marque=Peugeot&famille=Berline&annee=2022&kilometrage=23000`)
       .then((response) => {
         setVehicule(response.data);
