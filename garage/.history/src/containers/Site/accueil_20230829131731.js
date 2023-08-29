@@ -3,10 +3,10 @@ import TitreH1 from "../../components/UI/TitreH1/TitreH1";
 import CarousselCard from "../../components/Caroussel/caroussel";
 import peugeot208 from "../../assets/images/peugeot208.webp";
 import logoVoiture from "../../assets/images/logoVoiture.webp";
-import VehiculeCard from "../../components/Vehicules/VehiculeCard"; // Assurez-vous que le chemin est correct
+import VehiculeCard from "./components/Vehicules/VehiculeCard";
 
 class Accueil extends Component {
-  // Nom de la page dans l'onglet
+  //Nom de la page ds onglet
   componentDidMount = () => {
     document.title = "Accueil";
   };
@@ -22,14 +22,15 @@ class Accueil extends Component {
               Les réparateurs s’occupent de la réparation et l’entretien de
               votre voiture, peu importe la marque ou le modèle de celle-ci.
               Profitez d’une prestation de qualité effectuée par des véritables
-              experts auto. Contactez-nous dès maintenant pour un devis en ligne
+              experts auto. Contactez nous dès maintenant pour un devis en ligne
               pour la réparation de votre voiture et obtenez un RDV immédiat !
             </p>
 
             <CarousselCard />
 
-            <VehiculeCard /> {/* Assurez-vous que cette ligne est correcte */}
+            <VehiculeCard/>
            
+
             <img
               className="img-fluid"
               src={peugeot208}

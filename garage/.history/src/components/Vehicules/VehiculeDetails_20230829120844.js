@@ -4,11 +4,14 @@ import axios from "axios";
 import "../../App.css";
 import TitreH1 from "../UI/TitreH1/TitreH1";
 
+
+
 const VehiculeDetails = () => {
   const [vehicule, setVehicule] = useState(null);
   const { id } = useParams(); // Extract the ID from the URL
 
   useEffect(() => {
+    // Fetch the details of the specific vehicle using the extracted ID
     axios
       .get(`http://localhost/garageback/front/voiturefiche/${id}`)
       .then((response) => {
@@ -31,7 +34,7 @@ const VehiculeDetails = () => {
       <p className="card-text">Energie: {vehicule.energie} </p>
       <p className="card-text">Prix: {vehicule.prix} €</p>
 
-      <Link to={`/contact`} className="btn btn-primary">
+      <Link to={`/contact/${id}`} className="btn btn-primary">
         En savoir plus
       </Link>
     </div>

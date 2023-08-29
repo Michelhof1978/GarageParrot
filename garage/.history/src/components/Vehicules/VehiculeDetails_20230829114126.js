@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import "../../App.css";
+import TitreH1 from "../UI/TitreH1/TitreH1";
+
+
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../../App.css";
 import TitreH1 from "../UI/TitreH1/TitreH1";
 import Pagination from "./Pagination";
 
-const VehiculeCard = () => {
+const VehiculeDetails = () => {
   const [vehicules, setVehicules] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 20;
+  
+  
 
   useEffect(() => {
     axios
@@ -21,9 +29,11 @@ const VehiculeCard = () => {
       });
   }, []);
 
+  //Pagination
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
   const currentCards = vehicules.slice(indexOfFirstCard, indexOfLastCard);
+ //Pagination
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -31,7 +41,7 @@ const VehiculeCard = () => {
 
   return (
     <div className="vehicule-grid">
-      {currentCards.map((vehicule) => (
+      {vehicules.map((vehicule) => (
         <div key={vehicule.idVehicule} className="card">
           <div className="card-body">
             <img src={vehicule.imagevoiture} alt={vehicule.marque} />
@@ -41,12 +51,15 @@ const VehiculeCard = () => {
             <p className="card-text">Prix: {vehicule.prix} €</p>
           </div>
           <div className="card-footer">
+
+            {/* Utilisation d'un lien */}
             <Link
               to={`/vehiculedetail/${vehicule.idVehicule}`}
               className="btn btn-primary"
             >
               En savoir plus
             </Link>
+            
           </div>
         </div>
       ))}
@@ -61,4 +74,4 @@ const VehiculeCard = () => {
   );
 };
 
-export default VehiculeCard;
+export default Vehicule;

@@ -3,12 +3,9 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import "../../App.css";
 import TitreH1 from "../UI/TitreH1/TitreH1";
-import Pagination from "./Pagination";
 
 const VehiculeCard = () => {
   const [vehicules, setVehicules] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 20;
 
   useEffect(() => {
     axios
@@ -21,26 +18,20 @@ const VehiculeCard = () => {
       });
   }, []);
 
-  const indexOfLastCard = currentPage * cardsPerPage;
-  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
-  const currentCards = vehicules.slice(indexOfFirstCard, indexOfLastCard);
-
-  const paginate = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
-
   return (
     <div className="vehicule-grid">
-      {currentCards.map((vehicule) => (
+      {vehicules.map((vehicule) => (
         <div key={vehicule.idVehicule} className="card">
           <div className="card-body">
             <img src={vehicule.imagevoiture} alt={vehicule.marque} />
             <h5 className="card-title">{vehicule.nom}</h5>
-            <p className="card-text">Modèle: {vehicule.modele} </p>
-            <p className="card-text">Energie: {vehicule.energie} </p>
+            <p className="card-text">Prix: {vehicule.prix} €</p>
+            <p className="card-text">Prix: {vehicule.prix} €</p>
             <p className="card-text">Prix: {vehicule.prix} €</p>
           </div>
           <div className="card-footer">
+
+            {/* Utilisation d'un lien */}
             <Link
               to={`/vehiculedetail/${vehicule.idVehicule}`}
               className="btn btn-primary"
@@ -50,13 +41,6 @@ const VehiculeCard = () => {
           </div>
         </div>
       ))}
-
-      <Pagination
-        cardsPerPage={cardsPerPage}
-        totalCards={vehicules.length}
-        currentPage={currentPage}
-        onPageChange={paginate}
-      />
     </div>
   );
 };

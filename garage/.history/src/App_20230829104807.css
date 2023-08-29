@@ -52,6 +52,8 @@ span {
 font-size: 14px;
 }
 
+/* SearchFilters.css */
+
 .search-filters {
 margin: 20px; /* Ajoute de la marge autour de la section des filtres */
 }
@@ -66,37 +68,10 @@ margin-right: 10px; /* Ajoute de l'espace entre les cases à cocher */
 
 /* END SEARCH FILTER */
 
-/* CAR CARD*/
+/* END SEARCH FILTER */
 .vehicule-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* Cinq colonnes égales de 5 cartes par ligne et par largeur */
+  grid-template-columns: repeat(5, 1fr); /* Cinq colonnes égales */
   grid-gap: 20px; /* Espacement entre les cartes */
   width: 100%; /* Pour occuper toute la largeur de la page */
 }
-/* END CAR CARD*/
-
-/* PAGINATION*/
-.pagination {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.pagination button {
-  background-color: #3498db;
-  border: none;
-  color: white;
-  padding: 8px 16px;
-  margin: 0 5px;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-.pagination button:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
-}
-
-/* END PAGINATION*/
