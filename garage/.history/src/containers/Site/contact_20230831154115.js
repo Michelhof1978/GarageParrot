@@ -3,9 +3,10 @@ import TitreH1 from '../../components/UI/TitreH1/TitreH1';
 import Formulaire from './Formulaire/Formulaire';
 
 class Contact extends Component {
+    class Accueil extends Component {
         // Nom de la page dans l'onglet
         componentDidMount = () => {
-          document.title = "Page de contact";
+          document.title = "Accueil";
         };
     render () {
         return (

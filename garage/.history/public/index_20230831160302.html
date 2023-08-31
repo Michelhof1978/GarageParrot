@@ -11,9 +11,21 @@
 
     
       <script src="https://www.google.com/recaptcha/enterprise.js?render=6LeouOsnAAAAAJtNEXrK24tmIgsSaLO_ZdUaJzXJ"></script>
-     
+      ...
+      </head>
       
-     
+      <script>
+      function onClick(e) {
+        e.preventDefault();
+        grecaptcha.enterprise.ready(async () => {
+          const token = await grecaptcha.enterprise.execute('6LeouOsnAAAAAJtNEXrK24tmIgsSaLO_ZdUaJzXJ', {action: 'LOGIN'});
+          // IMPORTANT: The 'token' that results from execute is an encrypted response sent by
+          // reCAPTCHA Enterprise to the end user's browser.
+          // This token must be validated by creating an assessment.
+          // See https://cloud.google.com/recaptcha-enterprise/docs/create-assessment
+        });
+      }
+      </script>
 
 
 
@@ -59,24 +71,11 @@
    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-     <script>
+    {# <script>
       $(document).ready(function() {
           $('#carouselExampleIndicators2').carousel();
       });
   </script>
-
-  <script>
-    function onClick(e) {
-      e.preventDefault();
-      grecaptcha.enterprise.ready(async () => {
-        const token = await grecaptcha.enterprise.execute('6LeouOsnAAAAAJtNEXrK24tmIgsSaLO_ZdUaJzXJ', {action: 'LOGIN'});
-        // IMPORTANT: The 'token' that results from execute is an encrypted response sent by
-        // reCAPTCHA Enterprise to the end user's browser.
-        // This token must be validated by creating an assessment.
-        // See https://cloud.google.com/recaptcha-enterprise/docs/create-assessment
-      });
-    }
-    </script>
-   
+   #}
   </body>
 </html>

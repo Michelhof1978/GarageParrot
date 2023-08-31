@@ -5,7 +5,7 @@ import Formulaire from './Formulaire/Formulaire';
 class Contact extends Component {
         // Nom de la page dans l'onglet
         componentDidMount = () => {
-          document.title = "Page de contact";
+          document.title = "Accueil";
         };
     render () {
         return (

@@ -45,7 +45,7 @@ const Formulaire = (props) => (
 
 </div>
 
-
+<
 <div className="form-outline mb-4">
     <div className="input-group has-validation">
         <span className="input-group-text" id="inputGroupPrepend">@</span>
@@ -61,8 +61,7 @@ const Formulaire = (props) => (
     <label className="form-label round" for="objet">Objet :</label>
         <select className="form-label" name="objet" id="objet">
             <option>Renseignements</option>
-            <option>Prendre Rdv</option>
-            <option>Administratif</option>
+            <option>Résérvation</option>
         </select>
 </div>
 
@@ -75,10 +74,10 @@ const Formulaire = (props) => (
             </div>
 </div>
 
-<div className="g-recaptcha m-4" data-sitekey="6LeouOsnAAAAAJtNEXrK24tmIgsSaLO_ZdUaJzXJ"></div>
+<div class="g-recaptcha m-4" data-sitekey="6Ld72FwnAAAAABXBamvH-_h6-dyX_phTGFlAWCgR"></div>
 
 
-<button type="submit" value="Valider" id="send-data" className="btn btn-primary btn-block mb-4 ">
+<button type="submit" value="Valider" id="send-data" class="btn btn-primary btn-block mb-4 ">
     Envoyez
 </button>
 
