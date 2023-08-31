@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const Form = (props) => {
-  return(
   <>
  <h4 className="m-5 text-center border border-3 rounded text-white p-2 display-6 h4Index" id="contact"><strong>NOUS CONTACTER</strong></h4>
 
@@ -61,25 +60,25 @@ const Form = (props) => {
 
 <div className="form-outline mb-4">
     <label className="form-label round" for="objet">Objet :</label>
-        <select className="form-label" name="objet" id="objet">
+        <select class="form-label" name="objet" id="objet">
             <option>Renseignements</option>
             <option>Résérvation</option>
         </select>
 </div>
 
 
-<div className="form-floating ">
-    <textarea name="message" className="form-control " id="message" required></textarea>
+<div class="form-floating ">
+    <textarea name="message" class="form-control " id="message" required></textarea>
         <label for="message">Message</label>
-            <div className="invalid-feedback">
+            <div class="invalid-feedback">
                 Veuillez saisir votre message.
             </div>
 </div>
 
-<div className="g-recaptcha m-4" data-sitekey="6Ld72FwnAAAAABXBamvH-_h6-dyX_phTGFlAWCgR"></div>
+<div class="g-recaptcha m-4" data-sitekey="6Ld72FwnAAAAABXBamvH-_h6-dyX_phTGFlAWCgR"></div>
 
-
-<button type="submit" value="Valider" id="send-data" className="btn btn-primary btn-block mb-4 ">
+<!-- Submit button -->
+<button type="submit" value="Valider" id="send-data" class="btn btn-primary btn-block mb-4 ">
     Envoyez
 </button>
 
@@ -89,7 +88,7 @@ const Form = (props) => {
 </form>
 
   </>
-  );
+  
 };
 
 export default Form;

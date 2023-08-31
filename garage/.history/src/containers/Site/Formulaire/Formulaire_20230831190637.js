@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const Form = (props) => {
-  return(
   <>
  <h4 className="m-5 text-center border border-3 rounded text-white p-2 display-6 h4Index" id="contact"><strong>NOUS CONTACTER</strong></h4>
 
@@ -89,7 +88,7 @@ const Form = (props) => {
 </form>
 
   </>
-  );
+  
 };
 
 export default Form;

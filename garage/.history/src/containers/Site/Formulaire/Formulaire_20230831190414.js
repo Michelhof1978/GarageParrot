@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
 const Form = (props) => {
-  return(
   <>
  <h4 className="m-5 text-center border border-3 rounded text-white p-2 display-6 h4Index" id="contact"><strong>NOUS CONTACTER</strong></h4>
 
@@ -69,9 +68,9 @@ const Form = (props) => {
 
 
 <div className="form-floating ">
-    <textarea name="message" className="form-control " id="message" required></textarea>
+    <textarea name="message" class="form-control " id="message" required></textarea>
         <label for="message">Message</label>
-            <div className="invalid-feedback">
+            <div class="invalid-feedback">
                 Veuillez saisir votre message.
             </div>
 </div>
@@ -89,7 +88,7 @@ const Form = (props) => {
 </form>
 
   </>
-  );
+  
 };
 
 export default Form;

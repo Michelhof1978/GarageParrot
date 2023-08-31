@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import TitreH1 from '../../components/UI/TitreH1/TitreH1';
-import Form from './Formulaire/formulaire';
+import Form from './Formulaire/Formulaire';
 
 class Contact extends Component {
         // Nom de la page dans l'onglet
