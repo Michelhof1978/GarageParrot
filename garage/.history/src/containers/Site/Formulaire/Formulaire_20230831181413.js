@@ -16,7 +16,7 @@ const Form = (props) => {
       console.log("Succés");
     
     } else {
-      console.log("Echec, Recommencez");
+      console.log("Please complete the reCAPTCHA.");
     }
   };
 

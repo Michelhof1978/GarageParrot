@@ -1,0 +1,13 @@
+import React from 'react';
+import ReCAPTCHA from "react-google-recaptcha";
+
+const RecaptchaComponent = ({ onChange }) => {
+  return (
+    <ReCAPTCHA
+      sitekey="VOTRE_CLE_RECAPTCHA"
+      onChange={onChange}
+    />
+  );
+};
+
+export default RecaptchaComponent;

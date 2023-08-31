@@ -13,10 +13,10 @@ const Form = (props) => {
     e.preventDefault();
 
     if (captchaValue) {
-      console.log("Succés");
+      console.log("Succé");
     
     } else {
-      console.log("Echec, Recommencez");
+      console.log("Please complete the reCAPTCHA.");
     }
   };
 

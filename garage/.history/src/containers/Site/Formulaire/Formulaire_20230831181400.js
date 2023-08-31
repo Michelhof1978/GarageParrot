@@ -13,10 +13,10 @@ const Form = (props) => {
     e.preventDefault();
 
     if (captchaValue) {
-      console.log("Succés");
+      console.log("Form submitted successfully!");
     
     } else {
-      console.log("Echec, Recommencez");
+      console.log("Please complete the reCAPTCHA.");
     }
   };
 
@@ -29,7 +29,8 @@ const Form = (props) => {
         <fieldset className="mb-5 ms-2 me-2">
           <div className="row d-flex justify-content-center">
             <div className="col-md-6">
-            
+              {/* Vos champs de formulaire */}
+              {/* ... */}
               <div className="form-floating">
                 <textarea name="message" className="form-control" id="message" required></textarea>
                 <label htmlFor="message">Message</label>

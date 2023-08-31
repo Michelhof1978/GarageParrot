@@ -1,0 +1,22 @@
+import React from 'react';
+import ReCAPTCHA from "react-google-recaptcha";
+
+const Recaptcha = () => {
+  const handleCaptchaChange = (response) => {
+    console.log("Captcha value:", response);
+    // Vous pouvez utiliser la valeur de la réponse du captcha dans votre logique ici
+  };
+
+  return (
+    <div>
+
+      <ReCAPTCHA
+        sitekey="6LeouOsnAAAAAJtNEXrK24tmIgsSaLO_ZdUaJzXJ"
+        onChange={handleCaptchaChange}
+      />
+      
+    </div>
+  );
+};
+
+export default Recaptcha;
