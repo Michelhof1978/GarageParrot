@@ -33,7 +33,7 @@ const Form = (props) => {
         <input name="lastName" onChange={props.handleChange} value={props.values.lastname} onBlur={props.handleBlur} type="text" id="lastName" className="form-control"placeholder="Nom" required/>
             <label htmlfor="lastName" className="form-label"></label>
             {
-        props.touched.lastName && props.errors.lastName && <span className="text-danger">{props.errors.lastName}</span>
+        props.touched.lastName && props.errors.lastNameName && <span className="text-danger">{props.errors.lastNameName}</span>
         }
     </div>
 </div>
@@ -57,9 +57,7 @@ const Form = (props) => {
             <input name="email" onChange={props.handleChange} value={props.values.email} onBlur={props.handleBlur}  type="email" id="email" className="form-control " placeholder="Email" required/>
                 </div>
                     <label htmlfor="email" className="form-label"></label>
-                    {
-        props.touched.email && props.errors.email && <span className="text-danger">{props.errors.email}</span>
-        }
+                    phoneNumber
                 </div>
 
 <div className="form-outline mb-4">
@@ -74,9 +72,9 @@ const Form = (props) => {
 <div className="form-floating ">
     <textarea name="message" onChange={props.handleChange} value={props.values.message} onBlur={props.handleBlur}  className="form-control " id="message" required></textarea>
         <label htmlfor="message">Message</label>
-        {
-        props.touched.message && props.errors.message && <span className="text-danger">{props.errors.message}</span>
-        }
+            <div className="invalid-feedback">
+                Veuillez saisir votre message.
+            </div>
 </div>
 
 <div className="g-recaptcha m-4" data-sitekey="6Ld72FwnAAAAABXBamvH-_h6-dyX_phTGFlAWCgR"></div>

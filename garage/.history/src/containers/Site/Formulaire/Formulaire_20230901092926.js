@@ -33,7 +33,7 @@ const Form = (props) => {
         <input name="lastName" onChange={props.handleChange} value={props.values.lastname} onBlur={props.handleBlur} type="text" id="lastName" className="form-control"placeholder="Nom" required/>
             <label htmlfor="lastName" className="form-label"></label>
             {
-        props.touched.lastName && props.errors.lastName && <span className="text-danger">{props.errors.lastName}</span>
+        props.touched.lastName && props.errors.lastName && <span className="text-danger">{props.errors.lastNameName}</span>
         }
     </div>
 </div>
