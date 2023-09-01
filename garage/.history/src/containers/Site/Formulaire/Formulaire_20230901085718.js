@@ -93,7 +93,7 @@ const Form = (props) => {
   );
 };
 
-export default withFormik({
+export default withFormik{
   mapPropsToValues: () => ({
     firstName: '',
     lastName: '',
@@ -125,4 +125,4 @@ export default withFormik({
     handleSubmit: (values)=> {
       alert("Message envoyé");
     }
-})(Form);
+}(Form);

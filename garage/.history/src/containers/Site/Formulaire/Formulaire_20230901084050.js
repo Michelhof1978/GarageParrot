@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import {withFormik} from 'formik';
-import * as Yup from 'yup'; //Vérification ds les champs de formulaire pour qu'ils soient correctement remplis
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Form = (props) => {
   return(
@@ -29,7 +28,7 @@ const Form = (props) => {
 <div className="col">
     <div className="form-outline">
         <input name="lastName" type="text" id="lastName" className="form-control"placeholder="Nom" required/>
-            <label htmlfor="lastName" className="form-label"></label>
+            <label for="lastName" className="form-label"></label>
                 <div className="invalid-feedback">
                     Veuillez saisir votre nom.
                 </div>
@@ -39,7 +38,7 @@ const Form = (props) => {
 <div className="col">
     <div className="form-outline">
         <input name="phoneNumber" type="tel" id="phoneNumber" className="form-control" placeholder="Téléphone" required/>
-            <label htmlfor="phoneNumber" className="form-label"></label>
+            <label for="phoneNumber" className="form-label"></label>
                 <div className="invalid-feedback">
                      Veuillez saisir votre téléphone.
                 </div>
@@ -54,14 +53,14 @@ const Form = (props) => {
         <span className="input-group-text" id="inputGroupPrepend">@</span>
             <input name="email" type="email" id="email" className="form-control " placeholder="Email" required/>
                 </div>
-                    <label htmlfor="email" className="form-label"></label>
+                    <label for="email" className="form-label"></label>
                         <div className="invalid-feedback">
                             Veuillez saisir votre Email.
                         </div>
                 </div>
 
 <div className="form-outline mb-4">
-    <label className="form-label round" htmlfor="objet">Objet :</label>
+    <label className="form-label round" for="objet">Objet :</label>
         <select className="form-label" name="objet" id="objet">
             <option>Renseignements</option>
             <option>Résérvation</option>
@@ -71,7 +70,7 @@ const Form = (props) => {
 
 <div className="form-floating ">
     <textarea name="message" className="form-control " id="message" required></textarea>
-        <label htmlfor="message">Message</label>
+        <label for="message">Message</label>
             <div className="invalid-feedback">
                 Veuillez saisir votre message.
             </div>
@@ -80,7 +79,7 @@ const Form = (props) => {
 <div className="g-recaptcha m-4" data-sitekey="6Ld72FwnAAAAABXBamvH-_h6-dyX_phTGFlAWCgR"></div>
 
 
-<button type="submit" value="Envoyer" id="send-data" className="btn btn-primary btn-block mb-4 " onClick={props.handleSubmit}>
+<button type="submit" value="Valider" id="send-data" className="btn btn-primary btn-block mb-4 ">
     Envoyez
 </button>
 
@@ -93,36 +92,4 @@ const Form = (props) => {
   );
 };
 
-export default withFormik({
-  mapPropsToValues: () => ({
-    firstName: '',
-    lastName: '',
-    phoneNumber: '',
-    email: '',
-    message: '',
-  }),
-    validationSchema: Yup.object().shape({
-      firstName: Yup.string()
-        .min(2, 'Trop court !')
-        .max(50, 'Trop long !')
-        .required('Veuillez saisir votre prénom.'),
-      lastName: Yup.string()
-        .min(2, 'Trop court !')
-        .max(50, 'Trop long !')
-        .required('Veuillez saisir votre nom.'),
-      phoneNumber: Yup.string()
-        .min(10, 'Trop court !')
-        .max(10, 'Trop long !')
-        .required('Veuillez saisir votre numéro de téléphone.'),
-      email: Yup.string()
-        .email('Veuillez saisir un email valide.')
-        .required('Veuillez saisir votre email.'),
-      message: Yup.string()
-        .min(10, 'Trop court !')
-        .max(1000, 'Trop long !')
-        .required('Veuillez saisir votre message.'),
-    }),
-    handleSubmit: (values)=> {
-      alert("Message envoyé");
-    }
-})(Form);
+export default Form;
