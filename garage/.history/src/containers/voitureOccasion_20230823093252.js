@@ -1,0 +1,33 @@
+import React from "react";
+import SearchFilters from "../components/UI/SearchFilters";
+
+class carsearch extends Component {
+    //Nom de la page ds onglet
+    componentDidMount = () => {
+      document.title = "Voiture Occasion";
+    };
+  
+    render() {
+      return (
+        <>
+          <div>
+            <TitreH1>Recherche Véhicules</TitreH1>
+  
+            <div className="container">
+             
+  
+              <CarousselCard />
+  
+              <VehiculeCard/>
+             
+  
+              
+            </div>
+          </div>
+        </>
+      );
+    }
+  }
+  
+  export default carsearch;
+  
