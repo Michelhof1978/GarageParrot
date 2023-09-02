@@ -3,10 +3,17 @@ import TitreH1 from "../../components/UI/TitreH1/TitreH1";
 import CarousselCard from "../../components/Caroussel/caroussel";
 import peugeot208 from "../../assets/images/peugeot208.webp";
 import logoVoiture from "../../assets/images/logoVoiture.webp";
+<<<<<<< HEAD
 import VehiculeCard from "../../components/Vehicules/vehiculeCard";
 
 class Accueil extends Component {
   //Nom de la page ds onglet
+=======
+import VehiculeCard from "../../components/Vehicules/VehiculeCard"; // Assurez-vous que le chemin est correct
+
+class Accueil extends Component {
+  // Nom de la page dans l'onglet
+>>>>>>> 004625550824244cfb7c22ebdcd3132c8a18505b
   componentDidMount = () => {
     document.title = "Accueil";
   };
@@ -22,12 +29,17 @@ class Accueil extends Component {
               Les réparateurs s’occupent de la réparation et l’entretien de
               votre voiture, peu importe la marque ou le modèle de celle-ci.
               Profitez d’une prestation de qualité effectuée par des véritables
+<<<<<<< HEAD
               experts auto. Contactez nous dès maintenant pour un devis en ligne
+=======
+              experts auto. Contactez-nous dès maintenant pour un devis en ligne
+>>>>>>> 004625550824244cfb7c22ebdcd3132c8a18505b
               pour la réparation de votre voiture et obtenez un RDV immédiat !
             </p>
 
             <CarousselCard />
 
+<<<<<<< HEAD
             <VehiculeCard/>
            
 
@@ -39,6 +51,18 @@ class Accueil extends Component {
 
             <img
               className="img-fluid"
+=======
+            <VehiculeCard /> 
+           
+            <img
+              className="img-fluid"
+              src={peugeot208}
+              alt="Logo Garage PARROT"
+            />
+
+            <img
+              className="img-fluid"
+>>>>>>> 004625550824244cfb7c22ebdcd3132c8a18505b
               src={logoVoiture}
               alt="Logo Garage PARROT"
             />
