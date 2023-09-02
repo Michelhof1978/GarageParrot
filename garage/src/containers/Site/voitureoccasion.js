@@ -1,10 +1,19 @@
+<<<<<<< HEAD
 import React, { Component } from "react";
 import SearchFilters from "../../components/Vehicules/VehiculeFilters";
 import TitreH1 from "../../components/UI/TitreH1/TitreH1";
+=======
+
+import React, { Component } from "react";
+import SearchFilters from "../../components/Vehicules/SearchFilters";
+import TitreH1 from "../../components/UI/TitreH1/TitreH1";
+
+>>>>>>> 004625550824244cfb7c22ebdcd3132c8a18505b
 import logoVoiture from "../../assets/images/logoVoiture.webp";
 import bannierevente from "../../assets/images/bannierevente.webp";
 
 class Carsearch extends Component {
+<<<<<<< HEAD
   //Nom de la page ds onglet
   componentDidMount = () => {
     document.title = "Voiture Occasion";
@@ -13,11 +22,21 @@ class Carsearch extends Component {
   render() {
     return (
       <>
+=======
+  componentDidMount() {
+    document.title = "Voiture Occasion";
+  }
+
+  render() {
+    return (
+      <div>
+>>>>>>> 004625550824244cfb7c22ebdcd3132c8a18505b
         <img
           className="img-fluid w-50"
           src={bannierevente}
           alt="Logo Garage PARROT"
         />
+<<<<<<< HEAD
         <div>
           <TitreH1>Recherche Véhicules</TitreH1>
 
@@ -40,6 +59,21 @@ class Carsearch extends Component {
           </div>
         </div>
       </>
+=======
+        <div className="container">
+          <TitreH1>Recherche Véhicules</TitreH1>
+          <p>
+            Les réparateurs s’occupent de la réparation et l’entretien de votre voiture, peu importe la marque ou le modèle de celle-ci. Profitez d’une prestation de qualité effectuée par des véritables experts auto. Contactez nous dès maintenant pour un devis en ligne pour la réparation de votre voiture et obtenez un RDV immédiat !
+          </p>
+          <SearchFilters />
+        </div>
+        <img
+          className="img-fluid"
+          src={logoVoiture}
+          alt="Logo Garage PARROT"
+        />
+      </div>
+>>>>>>> 004625550824244cfb7c22ebdcd3132c8a18505b
     );
   }
 }
