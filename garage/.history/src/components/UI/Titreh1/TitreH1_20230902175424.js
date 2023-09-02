@@ -9,4 +9,4 @@ const TitreH1 = (props) => (
 );
 
 export default TitreH1;
-
+>>>>>>> 004625550824244cfb7c22ebdcd3132c8a18505b

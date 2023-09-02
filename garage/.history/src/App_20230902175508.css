@@ -89,10 +89,11 @@ margin-bottom: 10px; /* Ajoute de l'espace entre chaque filtre */
 
 .checkbox-filter label {
 margin-right: 10px; /* Ajoute de l'espace entre les cases à cocher */
-
+>>>>>>> 004625550824244cfb7c22ebdcd3132c8a18505b
 }
 
 /* END SEARCH FILTER */
+
 
 /* Styles pour les cartes */
 .card {
@@ -137,7 +138,7 @@ margin-right: 10px; /* Ajoute de l'espace entre les cases à cocher */
   box-sizing: border-box;
 }
 /* END Styles pour les cartes */
-
+=======
 /* CAR CARD*/
 .vehicule-grid {
   display: grid;
@@ -172,3 +173,4 @@ margin-right: 10px; /* Ajoute de l'espace entre les cases à cocher */
 }
 
 /* END PAGINATION*/
+>>>>>>> 004625550824244cfb7c22ebdcd3132c8a18505b
