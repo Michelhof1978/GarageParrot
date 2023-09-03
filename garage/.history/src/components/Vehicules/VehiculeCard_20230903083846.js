@@ -57,13 +57,13 @@ const VehiculeCard = () => {
         </div>
       ))}
 
-      <Pagination
+      {/* <Pagination
         cardsPerPage={cardsPerPage}
         totalCards={vehicules.length}
         currentPage={currentPage}
         onPageChange={paginate}
       />
-    </div>
+    </div> */}
   );
 };
 

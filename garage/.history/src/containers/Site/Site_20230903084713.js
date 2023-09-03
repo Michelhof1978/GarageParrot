@@ -7,7 +7,7 @@ import Footer from '../../components/Footer/footer';
 import Carsearch from '../Site/voitureoccasion';
 import VehiculeDetails from '../../components/Vehicules/VehiculeDetails';
 import SearchFilters from '../../components/Vehicules/SearchFilters';
-import Contact from '../../containers/Site/contact';
+import Contact from '../Site/contact';
 
 
 

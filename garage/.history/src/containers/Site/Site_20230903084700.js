@@ -7,7 +7,6 @@ import Footer from '../../components/Footer/footer';
 import Carsearch from '../Site/voitureoccasion';
 import VehiculeDetails from '../../components/Vehicules/VehiculeDetails';
 import SearchFilters from '../../components/Vehicules/SearchFilters';
-import Contact from '../../containers/Site/contact';
 
 
 
@@ -28,7 +27,7 @@ class Site extends Component {
             <Route path="/vidange" element={<h1>Vidange</h1>} />
             <Route path="/voitureoccasion" element={<SearchFilters />} />
             <Route path="/vehiculedetails/:id" element={<VehiculeDetails />} />
-            <Route path="/contact" element={<Contact/>} />
+            <Route path="/contact" element={<C/>} />
         </Routes>
         </div>
         <div className='minsite'></div> {/*  //pour le footer */}
