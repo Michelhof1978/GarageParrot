@@ -1,9 +1,10 @@
 
 import React, { Component } from "react";
+import SearchFilters from "../../components/Vehicules/VehiculeFilters";
 import TitreH1 from "../../components/UI/TitreH1/TitreH1";
+
 import logoVoiture from "../../assets/images/logoVoiture.webp";
 import bannierevente from "../../assets/images/bannierevente.webp";
-import VehiculeFilters from "../../components/Vehicules/VehiculeFilters";
 
 class Carsearch extends Component {
   componentDidMount() {
@@ -23,7 +24,7 @@ class Carsearch extends Component {
           <p>
             Les réparateurs s’occupent de la réparation et l’entretien de votre voiture, peu importe la marque ou le modèle de celle-ci. Profitez d’une prestation de qualité effectuée par des véritables experts auto. Contactez nous dès maintenant pour un devis en ligne pour la réparation de votre voiture et obtenez un RDV immédiat !
           </p>
-          <VehiculeFilters />
+          <VFilters />
         </div>
         <img
           className="img-fluid"

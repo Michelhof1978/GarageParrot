@@ -1,6 +1,8 @@
 
 import React, { Component } from "react";
+import SearchFilters from "../../components/Vehicules/VehiculeFilters";
 import TitreH1 from "../../components/UI/TitreH1/TitreH1";
+
 import logoVoiture from "../../assets/images/logoVoiture.webp";
 import bannierevente from "../../assets/images/bannierevente.webp";
 import VehiculeFilters from "../../components/Vehicules/VehiculeFilters";
