@@ -1,9 +1,10 @@
+
 //Dropdown
 
 import "../../App.css";
 
 const BasicSelect = (props) => {
-  
+ 
   const handleChange = (event) => {
       const {value, name} = event.target; //récupérer la valeur et name du select
       props.handleChange(name, value); //handleChange va transmettre la valeur value et name  au composant parent
@@ -14,7 +15,7 @@ const BasicSelect = (props) => {
       <label>{props.label}</label>
       <select
         name={props.name}
-        
+       
         onChange={handleChange}
       >
 
@@ -22,11 +23,11 @@ const BasicSelect = (props) => {
 
         if(
             idx = 0
-        
+       
         )
 
-        {   return(<option selected value={ele.value}>{ele.text}</option>) 
-        
+        {   return(<option selected value={ele.value}>{ele.text}</option>)
+       
          }else{ return(<option value={ele.value}>{ele.text}</option>) }
 
       })
@@ -38,3 +39,4 @@ const BasicSelect = (props) => {
 };
 
 export default BasicSelect;
+

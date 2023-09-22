@@ -149,7 +149,7 @@ const VehiculeFilters = ({ onSearch }) => {
         <button>Rechercher</button>
       </div>
     </>
-
+>>>>>>> filters
   );
 };
 

@@ -1,30 +1,24 @@
+//SLIDER
 import "../../App.css";
-import * as React from "react";
+import React, { useState } from "react";
 import Slider from "@mui/material/Slider";
 import Typography from "@mui/material/Typography";
 
-//Propriétés configurables pour name, range....
 const BasicRange = (props) => {
-  let name, range, marks, label;
-  //Condition térnaire : si aucune valeur n'est passée en props, on met une valeur par défaut
-  props.name ? (name = props.name) : (name = "slider");
-  props.range ? (range = props.range) : (range = [0, 100]);
-  props.marks
-    ? (marks = props.marks)
-    : (marks = [
-        { value: 0, label: "0" },
-        { value: 100, label: "100" },
-      ]);
-  props.label ? (label = props.label) : (label = "");
-  range = range.sort();
+  // Utilisation de destructuring pour extraire les valeurs des props avec des valeurs par défaut
+  const { name = "slider", range = [0, 100], marks, label = "", handleChange } = props;
 
-  const [value, setValue] = React.useState(range); //value va stocker ds le state la valeur actuelle du slider
+  // Tri du tableau range si nécessaire, de sorte que la valeur la plus petite soit toujours en 1 ère positions et la plus grande en dérnière
+  //On l utilisera car pour les 3 composants prix, km et année, leur valeurs sont des entiers et que sort trie uniquement des chaines de caractères.
+  range.sort((a, b) => a - b);
 
-  const handleChange = (name, newValue) => {
-    //Lorsque la valeur du slidr change la fonction handleChange sera appellé" et qui mettra à jour l'état local avec la nouvelle valeur
+  // Utilisation de useState pour gérer la valeur actuelle du slider
+  const [value, setValue] = useState(range);
 
+  // Fonction de gestion du changement de valeur du slider
+  const handleSliderChange = (event, newValue) => {
     setValue(newValue);
-    props.handleChange(name, newValue); //la fonction sera appelé par handleChange si une valeur change et Va transmettre cette valeur au compmosant parent
+    handleChange(name, newValue); // Appel de la fonction handleChange du parent avec le nom et la nouvelle valeur
   };
 
   return (
@@ -37,10 +31,10 @@ const BasicRange = (props) => {
         name={name}
         min={range[0]}
         max={range[1]}
-        onChange={(e) => handleChange(e.target.name, e.target.value)}
+        onChange={handleSliderChange}
         size="medium"
-        valueLabelDisplay=""
-        marks={marks}
+        valueLabelDisplay="auto" // Afficher la valeur actuelle
+        marks={marks || [{ value: range[0], label: range[0].toString() }, { value: range[1], label: range[1].toString() }]}
         value={value}
       />
     </>
@@ -48,3 +42,4 @@ const BasicRange = (props) => {
 };
 
 export default BasicRange;
+
