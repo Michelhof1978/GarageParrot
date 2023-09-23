@@ -1,10 +1,12 @@
+//CHECKBOX
+
 import "../../App.css";
 
 
 const BasicCheckbox = (props) =>{
 
-    const handleChange = () => {
-
+    const handleChange = (e) => {
+props.handleCheckBoxChange(e)
     }
    return ( <label>
     <input

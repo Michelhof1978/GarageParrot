@@ -1,7 +1,14 @@
+//DROPDOWN 
+
 import "../../App.css";
 
 const BasicSelect = (props) => {
-  const handleChange = () => {};
+  
+  const handleChange = (event) => {
+      const {value, name} = event.target; //récupérer la valeur et name du select
+      props.handleChange(name, value); //handleChange va transmettre la valeur value et name  au composant parent
+  };
+
   return (
     <>
       <label>{props.label}</label>

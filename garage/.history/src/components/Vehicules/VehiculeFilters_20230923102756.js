@@ -3,9 +3,9 @@ import axios from "axios";
 import "../../App.css";
 import VehiculeCard from "./VehiculeCard";
 import TitreH1 from "../UI/TitreH1/TitreH1";
-// import BasicCheckbox from "../filters/BasicCheckbox";
-// import BasicSelect from "../filters/BasicSelect";
-// import BasicRange from "../filters/BasicRange";
+import BasicCheckbox from "../filters/BasicCheckbox";
+import BasicSelect from "../filters/BasicSelect";
+import BasicRange from "../filters/basicRange";
 
 //La fonction SearchFilters prend en paramètre une fonction onSearch qui sera appelée lorsque l'utilisateur clique sur le bouton "Rechercher".
 const VehiculeFilters = ({ onSearch }) => {
