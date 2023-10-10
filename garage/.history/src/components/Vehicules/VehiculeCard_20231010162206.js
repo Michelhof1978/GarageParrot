@@ -15,7 +15,7 @@ const VehiculeCard = () => {
       .get("http://localhost/garageback/front/voiturefiche/all")
       .then((response) => {
         const jsonData = response.data;
-        const sortedVehicules = [...jsonData]; // Copie les données pour ne pas modifier l'original
+        const sortedVehicules = [...jsonData]; // Copiez les données pour ne pas modifier l'original
   
         // Fonction de tri par la date de création (champ created_at)
         const sortByCreatedAt = (a, b) => {
@@ -34,7 +34,7 @@ const VehiculeCard = () => {
   
     // Le return est placé ici pour nettoyer l'effet lorsque le composant est démonté
     return () => {
-      // Code de nettoyage 
+      // Code de nettoyage (si nécessaire)
     };
   }, []);
   

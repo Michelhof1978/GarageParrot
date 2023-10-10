@@ -8,36 +8,19 @@ import TitreH1 from "../UI/TitreH1/TitreH1";
 const VehiculeCard = () => {
   const [vehicules, setVehicules] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 10;
+  const cardsPerPage = 20;
 
   useEffect(() => {
     axios
       .get("http://localhost/garageback/front/voiturefiche/all")
       .then((response) => {
         const jsonData = response.data;
-        const sortedVehicules = [...jsonData]; // Copie les données pour ne pas modifier l'original
-  
-        // Fonction de tri par la date de création (champ created_at)
-        const sortByCreatedAt = (a, b) => {
-          const dateA = new Date(a.created_at).getTime();
-          const dateB = new Date(b.created_at).getTime();
-          return dateA - dateB;
-        };
-  
-        // Triez les véhicules par date de création
-        sortedVehicules.sort(sortByCreatedAt);
-        setVehicules(sortedVehicules); // Mettez à jour le tableau des véhicules triés
-      })
+        setVehicules(response.data);
+        
       .catch((error) => {
         console.error("Erreur lors de la récupération des véhicules :", error);
       });
-  
-    // Le return est placé ici pour nettoyer l'effet lorsque le composant est démonté
-    return () => {
-      // Code de nettoyage 
-    };
   }, []);
-  
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;

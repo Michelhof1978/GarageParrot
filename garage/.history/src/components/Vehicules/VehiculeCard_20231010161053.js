@@ -5,47 +5,46 @@ import "../../App.css";
 import TitreH1 from "../UI/TitreH1/TitreH1";
 // import Pagination from "./Pagination"; 
 
+
 const VehiculeCard = () => {
   const [vehicules, setVehicules] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 10;
+  const cardsPerPage = 20;
 
   useEffect(() => {
     axios
       .get("http://localhost/garageback/front/voiturefiche/all")
       .then((response) => {
         const jsonData = response.data;
-        const sortedVehicules = [...jsonData]; // Copie les données pour ne pas modifier l'original
-  
-        // Fonction de tri par la date de création (champ created_at)
-        const sortByCreatedAt = (a, b) => {
-          const dateA = new Date(a.created_at).getTime();
-          const dateB = new Date(b.created_at).getTime();
+        const sortedVehicules = [...jsonData]; // Copiez les données pour ne pas modifier l'original
+        // Fonction de tri par ordre d'arrivée 
+        const sortByArrival = (a, b) => {
+          const dateA = new Date(a.dateArrivee).getTime();
+          const dateB = new Date(b.dateArrivee).getTime();
           return dateA - dateB;
         };
   
-        // Triez les véhicules par date de création
-        sortedVehicules.sort(sortByCreatedAt);
+        // Triez les véhicules par ordre d'arrivée
+        sortedVehicules.sort(sortByArrival);
         setVehicules(sortedVehicules); // Mettez à jour le tableau des véhicules triés
       })
       .catch((error) => {
         console.error("Erreur lors de la récupération des véhicules :", error);
       });
-  
-    // Le return est placé ici pour nettoyer l'effet lorsque le composant est démonté
-    return () => {
-      // Code de nettoyage 
-    };
   }, []);
   
 
-  const indexOfLastCard = currentPage * cardsPerPage;
-  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
-  const currentCards = vehicules.slice(indexOfFirstCard, indexOfLastCard);
+  // reste ducode pour la pagination et l'affichage des cartes
+};
 
-  const paginate = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
+
+  // const indexOfLastCard = currentPage * cardsPerPage;
+  // const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  // const currentCards = vehicules.slice(indexOfFirstCard, indexOfLastCard);
+
+  // const paginate = (pageNumber) => {
+  //   setCurrentPage(pageNumber);
+  // };
 
   return (
     <div className="vehicule-grid">

@@ -5,17 +5,18 @@ import "../../App.css";
 import TitreH1 from "../UI/TitreH1/TitreH1";
 // import Pagination from "./Pagination"; 
 
+
 const VehiculeCard = () => {
   const [vehicules, setVehicules] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 10;
+  const cardsPerPage = 20;
 
   useEffect(() => {
     axios
       .get("http://localhost/garageback/front/voiturefiche/all")
       .then((response) => {
         const jsonData = response.data;
-        const sortedVehicules = [...jsonData]; // Copie les données pour ne pas modifier l'original
+        const sortedVehicules = [...jsonData]; // Copiez les données pour ne pas modifier l'original
   
         // Fonction de tri par la date de création (champ created_at)
         const sortByCreatedAt = (a, b) => {
@@ -31,26 +32,26 @@ const VehiculeCard = () => {
       .catch((error) => {
         console.error("Erreur lors de la récupération des véhicules :", error);
       });
-  
-    // Le return est placé ici pour nettoyer l'effet lorsque le composant est démonté
-    return () => {
-      // Code de nettoyage 
-    };
   }, []);
   
+  
 
-  const indexOfLastCard = currentPage * cardsPerPage;
-  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
-  const currentCards = vehicules.slice(indexOfFirstCard, indexOfLastCard);
+  // reste ducode pour la pagination et l'affichage des cartes
+// };
 
-  const paginate = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
 
-  return (
-    <div className="vehicule-grid">
-      {currentCards.map((vehicule) => (
-  <div key={vehicule.idVehicule} className="card">
+  // const indexOfLastCard = currentPage * cardsPerPage;
+  // const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  // const currentCards = vehicules.slice(indexOfFirstCard, indexOfLastCard);
+
+  // const paginate = (pageNumber) => {
+  //   setCurrentPage(pageNumber);
+  // };
+
+  // return (
+  //   <div className="vehicule-grid">
+  //     {currentCards.map((vehicule) => (
+  // <div key={vehicule.idVehicule} className="card">
     <div className="card-body">
     <img
   src={`http://localhost/GarageBack/public/images/${vehicule.imageVoiture}`}

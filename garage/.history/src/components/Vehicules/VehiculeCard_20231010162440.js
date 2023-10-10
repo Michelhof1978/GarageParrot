@@ -34,7 +34,7 @@ const VehiculeCard = () => {
   
     // Le return est placé ici pour nettoyer l'effet lorsque le composant est démonté
     return () => {
-      // Code de nettoyage 
+      // Code de nettoyage (si nécessaire)
     };
   }, []);
   

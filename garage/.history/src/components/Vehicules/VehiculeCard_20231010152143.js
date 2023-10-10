@@ -15,29 +15,12 @@ const VehiculeCard = () => {
       .get("http://localhost/garageback/front/voiturefiche/all")
       .then((response) => {
         const jsonData = response.data;
-        const sortedVehicules = [...jsonData]; // Copie les données pour ne pas modifier l'original
-  
-        // Fonction de tri par la date de création (champ created_at)
-        const sortByCreatedAt = (a, b) => {
-          const dateA = new Date(a.created_at).getTime();
-          const dateB = new Date(b.created_at).getTime();
-          return dateA - dateB;
-        };
-  
-        // Triez les véhicules par date de création
-        sortedVehicules.sort(sortByCreatedAt);
-        setVehicules(sortedVehicules); // Mettez à jour le tableau des véhicules triés
+        setVehicules(response.data);
       })
       .catch((error) => {
         console.error("Erreur lors de la récupération des véhicules :", error);
       });
-  
-    // Le return est placé ici pour nettoyer l'effet lorsque le composant est démonté
-    return () => {
-      // Code de nettoyage 
-    };
   }, []);
-  
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
@@ -50,14 +33,13 @@ const VehiculeCard = () => {
   return (
     <div className="vehicule-grid">
       {currentCards.map((vehicule) => (
-  <div key={vehicule.idVehicule} className="card">
-    <div className="card-body">
-    <img
-  src={`http://localhost/GarageBack/public/images/${vehicule.imageVoiture}`}
+        <div key={vehicule.idVehicule} className="card">
+         
+          <div className="card-body">
+          <img
+  src={vehicule.imageVoiture || 'http://localhost/GarageBack/public/images/'}
   alt={vehicule.marque}
-  className="img-fluid rounded w-100 h-75"
 />
-
 
 
 
