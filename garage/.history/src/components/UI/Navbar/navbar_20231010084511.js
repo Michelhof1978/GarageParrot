@@ -31,15 +31,13 @@ const Navbar = (props) => (
     </div>
 
     <div className="col-6">
-         <img className="img-fluid" src={sousbanner} alt="publicité offre" />
+         <img className="img-fluid" src={sousbanner} alt="publicité" />
     </div>
 
 {/*--ESPACE PRO-- */}
-<div className="col-3">
-        <a href="http://localhost/GarageBack/back/login">
-          <img className="img-fluid" src={iconespacepro} alt="connexion espace pro" />
-        </a>
-      </div>
+    <div className="col-3">
+         <img className="img-fluid" src={iconespacepro} alt="Logo Garage PARROT" />
+    </div>
 </div>
 {/*------------ END BANNER----------- */}
 
