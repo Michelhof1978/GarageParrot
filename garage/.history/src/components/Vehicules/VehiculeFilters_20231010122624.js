@@ -70,7 +70,7 @@ const VehiculeFilters = ({ onSearch }) => {
 
   useEffect(() => {
     fetch(//fetch effectue une requête http, si reponse, elle sera encapsulé dans une promesse
-     lien // "http://localhost/GarageBack/API/vehicule.php?kilometremin=0&kilometremax=200000&anneemin=2000&anneemax=2023&prixmin=0&prixmax=50000"
+      "http://localhost/GarageBack/API/vehicule.php?kilometremin=0&kilometremax=200000&anneemin=2000&anneemax=2023&prixmin=0&prixmax=50000"
     )
     //Si reponse reçu de la requête http, then va gére la reponse de cette promesse et va prendre une fonction de rappel en argument:
       .then((res) => res.json())// Va extraire les données de l'API sous format json
