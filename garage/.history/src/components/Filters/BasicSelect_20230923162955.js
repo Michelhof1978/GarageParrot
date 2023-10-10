@@ -12,7 +12,6 @@ const BasicSelect = (props) => {
   return (
     <>
       <label>{props.label}</label>
-      
       <select
         name={props.name}
         
