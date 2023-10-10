@@ -51,7 +51,7 @@ const Navbar = (props) => (
         <ul className="navbar-nav mx-auto navbar-text-light lead">
 
                 <li className="nav-item m-3">
-                    <NavLink to="/"  className="nav-link text-white font-weight-bold">Accueil</NavLink>
+                    <NavLink to="/"  className="nav-link text-white">Accueil</NavLink>
                         <span className="visually-hidden">(current)</span>
                 </li>
 

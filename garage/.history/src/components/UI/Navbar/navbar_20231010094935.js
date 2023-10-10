@@ -12,46 +12,49 @@ import { NavLink } from "react-router-dom";//Pour éviter le rechargement des pa
 const Navbar = (props) => (
   <>
 {/*------------BANNER----------- */}
-<div className="container-fluid p-0"> 
-  <div className="row">
-    <div className="col-12 text-center p-0"> 
+  <div className="container-fluid p-0"> 
+    <div className="row">
+      <div className="col-12 text-center p-0"> 
       <img className="img-fluid w-100" src={bannertop} alt="Logo Garage PARROT" />
+      </div>
     </div>
   </div>
+  {/*------------ END BANNER----------- */}
+  
+
+{/*------------BANNER----------- */}
+<div className="row text-center">
+    <div className="col-3">
+        <a className="navbar-brand" href="#">
+             <img className="img-fluid" src={logo} alt="Logo Garage PARROT" />
+        </a>
+    </div>
+
+    <div className="col-6">
+         <img className="img-fluid" src={sousbanner} alt="publicité offre" />
+    </div>
+
+{/*--ESPACE PRO-- */}
+<div className="col-3">
+        <a href="http://localhost/GarageBack/back/login">
+          <img className="img-fluid" src={iconespacepro} alt="connexion espace pro" />
+        </a>
+      </div>
 </div>
-
-<div className="row text-center " style={{ marginBottom: '-100px', marginTop: '-80px'}}> {/* Utilisez my-3 pour réduire la hauteur de 25% */}
-  <div className="col-3">
-    <a className="navbar-brand" href="#">
-      <img className="img-fluid" src={logo} alt="Logo Garage PARROT" />
-    </a>
-  </div>
-
-  <div className="col-6">
-    <img className="img-fluid" src={sousbanner} alt="publicité offre" />
-  </div>
-
-  <div className="col-3">
-    <a href="http://localhost/GarageBack/back/login">
-      <img className="img-fluid" src={iconespacepro} alt="connexion espace pro" />
-    </a>
-  </div>
-</div>
-
-
 {/*------------ END BANNER----------- */}
 
 {/*------------NAVBAR----------- */}
-<nav className="navbar navbar-expand-lg bg-primary p-0 text-light " data-bs-theme="dark">  <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+<nav className="navbar navbar-expand-lg bg-primary w-75 p-0 text-light" data-bs-theme="dark">
+  <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
     <div className="container-fluid ">
 
         <div className="collapse navbar-collapse " id="navbarColor01">
-        <ul className="navbar-nav mx-auto navbar-text-light lead">
+            <ul className="navbar-nav me-auto navbar-text-light"> 
 
                 <li className="nav-item m-3">
-                    <NavLink to="/"  className="nav-link text-white font-weight-bold">Accueil</NavLink>
+                    <NavLink to="/"  className="nav-link text-white">Accueil</NavLink>
                         <span className="visually-hidden">(current)</span>
                 </li>
 
@@ -68,7 +71,7 @@ const Navbar = (props) => (
                 </li>
 
                 <li className="nav-item m-3 ">
-                <NavLink to="/voitureoccasion" className="nav-link text-white">Voitures D'occasions</NavLink>
+                <NavLink to="/voitureoccasion" className="nav-link text-white">Voitures D'occasion</NavLink>
                 </li>
 
                 <li className="nav-item m-3 ">
@@ -77,7 +80,7 @@ const Navbar = (props) => (
 
 
                 <li className="nav-item m-3">
-                <NavLink to="/contact" className="nav-link text-white">Nous contacter</NavLink>
+                <NavLink to="/contact" className="nav-link text-white">Page de Contact</NavLink>
                 </li>
 
             </ul>
@@ -90,7 +93,7 @@ const Navbar = (props) => (
     <div className="container-fluid"> 
     <div className="row">
       <div className="col-12 text-center p-0"> 
-       <img className="img-fluid w-50 " src={banner} alt="banniere arrivage voitures" />
+       <img className="img-fluid w-75 " src={banner} alt="Logo Garage PARROT" />
       </div>
     </div>
   </div>

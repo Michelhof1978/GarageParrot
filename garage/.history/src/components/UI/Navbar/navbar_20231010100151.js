@@ -20,7 +20,7 @@ const Navbar = (props) => (
   </div>
 </div>
 
-<div className="row text-center " style={{ marginBottom: '-100px', marginTop: '-80px'}}> {/* Utilisez my-3 pour réduire la hauteur de 25% */}
+<div className="row text-center">
   <div className="col-3">
     <a className="navbar-brand" href="#">
       <img className="img-fluid" src={logo} alt="Logo Garage PARROT" />
@@ -38,20 +38,19 @@ const Navbar = (props) => (
   </div>
 </div>
 
-
 {/*------------ END BANNER----------- */}
 
 {/*------------NAVBAR----------- */}
-<nav className="navbar navbar-expand-lg bg-primary p-0 text-light " data-bs-theme="dark">  <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+<nav className="navbar navbar-expand-lg bg-primary p-0 text-light" data-bs-theme="dark">  <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
     <div className="container-fluid ">
 
         <div className="collapse navbar-collapse " id="navbarColor01">
-        <ul className="navbar-nav mx-auto navbar-text-light lead">
+        <ul className="navbar-nav me-auto navbar-text-light text-center lead">
 
                 <li className="nav-item m-3">
-                    <NavLink to="/"  className="nav-link text-white font-weight-bold">Accueil</NavLink>
+                    <NavLink to="/"  className="nav-link text-white">Accueil</NavLink>
                         <span className="visually-hidden">(current)</span>
                 </li>
 
@@ -90,7 +89,7 @@ const Navbar = (props) => (
     <div className="container-fluid"> 
     <div className="row">
       <div className="col-12 text-center p-0"> 
-       <img className="img-fluid w-50 " src={banner} alt="banniere arrivage voitures" />
+       <img className="img-fluid w-75 " src={banner} alt="Logo Garage PARROT" />
       </div>
     </div>
   </div>

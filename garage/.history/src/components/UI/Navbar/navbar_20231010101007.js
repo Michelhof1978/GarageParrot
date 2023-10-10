@@ -20,7 +20,7 @@ const Navbar = (props) => (
   </div>
 </div>
 
-<div className="row text-center " style={{ marginBottom: '-100px', marginTop: '-80px'}}> {/* Utilisez my-3 pour réduire la hauteur de 25% */}
+<div className="row text-center my--2"> {/* Utilisez my-3 pour réduire la hauteur de 25% */}
   <div className="col-3">
     <a className="navbar-brand" href="#">
       <img className="img-fluid" src={logo} alt="Logo Garage PARROT" />
@@ -42,7 +42,7 @@ const Navbar = (props) => (
 {/*------------ END BANNER----------- */}
 
 {/*------------NAVBAR----------- */}
-<nav className="navbar navbar-expand-lg bg-primary p-0 text-light " data-bs-theme="dark">  <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+<nav className="navbar navbar-expand-lg bg-primary p-0 text-light" data-bs-theme="dark">  <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
     <div className="container-fluid ">
@@ -51,7 +51,7 @@ const Navbar = (props) => (
         <ul className="navbar-nav mx-auto navbar-text-light lead">
 
                 <li className="nav-item m-3">
-                    <NavLink to="/"  className="nav-link text-white font-weight-bold">Accueil</NavLink>
+                    <NavLink to="/"  className="nav-link text-white">Accueil</NavLink>
                         <span className="visually-hidden">(current)</span>
                 </li>
 
