@@ -51,11 +51,15 @@ const VehiculeFilters = ({ onSearch }) => {
                         prixmin:filtres.prix[0],
                         prixmax:filtres.prix[1], 
                         anneemin:filtres.annee[0],
-                        anneemax:filtres.annee[1], 
+                        anneemax:filtres.annee[1],
+
+                      
                       };
         if(filtres.marque.length !== 0){
+
           lienObject.marque = filtres.marque;
         }
+
           for(const [cle, valeur] of Object.entries(lienObject)){
             lienTmp = lienTmp + `${cle}=${valeur}&`
           }

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import TitreH1 from "../../components/UI/TitreH1/TitreH1";
 import CarousselCard from "../../components/Caroussel/caroussel";
 import peugeot208 from "../../assets/images/peugeot208.webp";
-import peugeot3008 from "../../assets/images/peugeot3008.webp";
+import peugeot3008 from "../../assets/images/peugeot208.webp";
 import logoVoiture from "../../assets/images/logoVoiture.webp";
 import VehiculeCard from "../../components/Vehicules/VehiculeCard";
 
@@ -32,19 +32,11 @@ class Accueil extends Component {
             <TitreH1>Nouvel Arrivage en exclusivité !</TitreH1>
             <VehiculeCard />
 
-            <div className="container-fluid mt-3">
             <img
               className="img-fluid w-50"
               src={peugeot208}
-              alt="peugeot 2008"
+              alt="Logo Garage PARROT"
             />
-
-            <img
-              className="img-fluid w-50"
-              src={peugeot3008}
-              alt="peugeot 3008"
-            />
-            </div>
 
             <div className="col-12">
               <div className="d-flex justify-content-center">

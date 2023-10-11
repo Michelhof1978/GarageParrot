@@ -18,5 +18,6 @@ props.handleCheckBoxChange(e)
    {props.label }
   </label>
   )
+
 }
 export default BasicCheckbox;

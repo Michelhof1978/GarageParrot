@@ -54,8 +54,10 @@ const VehiculeFilters = ({ onSearch }) => {
                         anneemax:filtres.annee[1], 
                       };
         if(filtres.marque.length !== 0){
+
           lienObject.marque = filtres.marque;
         }
+
           for(const [cle, valeur] of Object.entries(lienObject)){
             lienTmp = lienTmp + `${cle}=${valeur}&`
           }

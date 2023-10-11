@@ -32,7 +32,7 @@ class Accueil extends Component {
             <TitreH1>Nouvel Arrivage en exclusivité !</TitreH1>
             <VehiculeCard />
 
-            <div className="container-fluid mt-3">
+            <div cl>
             <img
               className="img-fluid w-50"
               src={peugeot208}

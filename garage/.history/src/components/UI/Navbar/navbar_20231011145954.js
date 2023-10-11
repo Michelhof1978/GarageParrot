@@ -20,6 +20,9 @@ const Navbar = (props) => (
   </div>
 </div>
 
+Je comprends votre demande. Pour que toutes les divs occupent la même ligne en mode mobile, vous pouvez les envelopper dans une seule div de largeur totale (`col-12`). Voici comment vous pouvez le faire :
+
+```jsx
 <div className="row text-center" style={{ marginBottom: '-100px', marginTop: '-80px'}}>
   {/* Utilisez my-3 pour réduire la hauteur de 25% */}
   <div className="col-12">
@@ -42,7 +45,9 @@ const Navbar = (props) => (
     </div>
   </div>
 </div>
+```
 
+Avec cette structure, toutes les divs occuperont la même ligne sur les petits écrans (col-12), et la disposition actuelle sera maintenue sur les écrans de taille moyenne (col-md-3, col-md-6, col-md-3).
 
 
 

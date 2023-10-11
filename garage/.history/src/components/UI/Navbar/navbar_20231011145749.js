@@ -23,25 +23,22 @@ const Navbar = (props) => (
 <div className="row text-center" style={{ marginBottom: '-100px', marginTop: '-80px'}}>
   {/* Utilisez my-3 pour réduire la hauteur de 25% */}
   <div className="col-12">
-    <div className="row">
-      <div className="col-4 col-md-3">
-        <a className="navbar-brand" href="#">
-          <img className="img-fluid" src={logo} alt="Logo Garage PARROT" />
-        </a>
-      </div>
+    <a className="navbar-brand" href="#">
+      <img className="img-fluid" src={logo} alt="Logo Garage PARROT" />
+    </a>
+  </div>
 
-      <div className="col-4 col-md-6">
-        <img className="img-fluid" src={sousbanner} alt="publicité offre" />
-      </div>
+  <div className="col-12">
+    <img className="img-fluid" src={sousbanner} alt="publicité offre" />
+  </div>
 
-      <div className="col-4 col-md-3">
-        <a href="http://localhost/GarageBack/back/login">
-          <img className="img-fluid" src={iconespacepro} alt="connexion espace pro" />
-        </a>
-      </div>
-    </div>
+  <div className="col-12">
+    <a href="http://localhost/GarageBack/back/login">
+      <img className="img-fluid" src={iconespacepro} alt="connexion espace pro" />
+    </a>
   </div>
 </div>
+
 
 
 

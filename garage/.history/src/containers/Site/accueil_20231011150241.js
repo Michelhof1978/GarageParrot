@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import TitreH1 from "../../components/UI/TitreH1/TitreH1";
 import CarousselCard from "../../components/Caroussel/caroussel";
 import peugeot208 from "../../assets/images/peugeot208.webp";
-import peugeot3008 from "../../assets/images/peugeot3008.webp";
 import logoVoiture from "../../assets/images/logoVoiture.webp";
-import VehiculeCard from "../../components/Vehicules/VehiculeCard";
+import VehiculeCard from "../../components/Vehicules/VehiculeCard"; // Assurez-vous que le chemin est correct
 
 class Accueil extends Component {
   // Nom de la page dans l'onglet
@@ -29,32 +28,20 @@ class Accueil extends Component {
 
             <CarousselCard />
 
-            <TitreH1>Nouvel Arrivage en exclusivité !</TitreH1>
-            <VehiculeCard />
-
-            <div className="container-fluid mt-3">
+            <TitreH1>Nouvel</TitreH1>
+            <VehiculeCard /> 
+           
             <img
-              className="img-fluid w-50"
+              className="img-fluid"
               src={peugeot208}
-              alt="peugeot 2008"
+              alt="Logo Garage PARROT"
             />
 
             <img
-              className="img-fluid w-50"
-              src={peugeot3008}
-              alt="peugeot 3008"
+              className="img-fluid"
+              src={logoVoiture}
+              alt="Logo Garage PARROT"
             />
-            </div>
-
-            <div className="col-12">
-              <div className="d-flex justify-content-center">
-                <img
-                  className="img-fluid w-75 mx-auto"
-                  src={logoVoiture}
-                  alt="Logo Garage PARROT"
-                />
-              </div>
-            </div>
           </div>
         </div>
       </>
