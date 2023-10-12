@@ -11,6 +11,15 @@ import carousselEntretient08 from '../../assets/images/carousselEntretient08.web
 
 
 
+
+import React from 'react';
+import 'font-awesome/css/font-awesome.min.css'; // Assurez-vous que le chemin est correct
+import 'bootstrap/dist/css/bootstrap.min.css'; // Assurez-vous que Bootstrap est importé correctement
+
+import carousselEntretient01 from '../../assets/images/carousselEntretient01.webp';
+import carousselEntretient02 from '../../assets/images/carousselEntretient02.webp';
+import carousselEntretient03 from '../../assets/images/carousselEntretient03.webp';
+
 const CarousselCard = (props) => {
   return (
     <div className="caroussel-container">

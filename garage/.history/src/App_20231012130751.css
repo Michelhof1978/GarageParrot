@@ -126,3 +126,11 @@ margin-right: 10px; /* Ajoute de l'espace entre les cases à cocher */
   height: 100%; /* Force le carrousel à remplir la hauteur du conteneur */
 }
 
+.carousel-fade .carousel-item {
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+}
+
+.carousel-fade .carousel-item.active {
+  opacity: 1;
+}

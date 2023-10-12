@@ -116,13 +116,3 @@ margin-right: 10px; /* Ajoute de l'espace entre les cases à cocher */
 .carousel {
   height: 100%; /* Force le carrousel à remplir la hauteur du conteneur */
 }
-
-.caroussel-container {
-  max-height: 60vh; /* Réduit la hauteur à 50% de la hauteur de la fenêtre */
-  overflow: hidden; /* Masque le contenu dépassant de la hauteur maximale */
-}
-
-.carousel {
-  height: 100%; /* Force le carrousel à remplir la hauteur du conteneur */
-}
-

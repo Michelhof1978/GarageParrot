@@ -1,5 +1,6 @@
 import React from 'react';
 import 'font-awesome/css/font-awesome.min.css'; // Ensure that this path is correct
+
 import carousselEntretient01 from '../../assets/images/carousselEntretient01.webp';
 import carousselEntretient02 from '../../assets/images/carousselEntretient02.webp';
 import carousselEntretient03 from '../../assets/images/carousselEntretient03.webp';
@@ -9,48 +10,69 @@ import carousselEntretient06 from '../../assets/images/carousselEntretient06.web
 import carousselEntretient07 from '../../assets/images/carousselEntretient07.webp';
 import carousselEntretient08 from '../../assets/images/carousselEntretient08.webp';
 
-
-
 const CarousselCard = (props) => {
   return (
     <div className="caroussel-container">
-      <div id="carouselExampleCaptions" className="carousel slide carousel-fade carouselIndex">
-        <ol className="carousel-indicators">
-          <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active"></li>
-          <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"></li>
-          <li data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"></li>
-        </ol>
+      <div id="carouselExampleCaptions" className="carousel slide carouselIndex">
+        <div className="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleCaptions"
+            data-bs-slide-to="0"
+            className="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          {/* ... Vos autres indicateurs */}
+        </div>
+
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src={carousselEntretient01} className="d-block w-100" alt="Slide 1" />
+            <img src={carousselEntretient01} className="d-block w-100" alt="" />
             <div className="carousel-caption d-none d-md-block">
-              <h5>Titre de la diapositive 1</h5>
-              <p>Description de la diapositive 1</p>
+              <h5>ggggggggggggggggggg</h5>
+              <p>ggggggggggggggggggggggggg</p>
             </div>
           </div>
+
           <div className="carousel-item">
-            <img src={carousselEntretient02} className="d-block w-100" alt="Slide 2" />
+            <img src={carousselEntretient02} className="d-block w-100" alt="" />
             <div className="carousel-caption d-none d-md-block">
-              <h5>Titre de la diapositive 2</h5>
-              <p>Description de la diapositive 2</p>
+              <h5>ggggggggggggggggggg</h5>
+              <p>ggggggggggggggggggggggggg</p>
             </div>
           </div>
+
           <div className="carousel-item">
-            <img src={carousselEntretient03} className="d-block w-100" alt="Slide 3" />
+            <img src={carousselEntretient03} className="d-block w-100" alt="" />
             <div className="carousel-caption d-none d-md-block">
-              <h5>Titre de la diapositive 3</h5>
-              <p>Description de la diapositive 3</p>
+              <h5>ggggggggggggggggggg</h5>
+              <p>ggggggggggggggggggggggggg</p>
             </div>
           </div>
+
+          {/* Add the other carousel items in a similar manner as above */}
         </div>
-        <a className="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
+
+        <button
+          className="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+        >
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Précédent</span>
-        </a>
-        <a className="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
+          <span className="visually-hidden">Previous</span>
+        </button>
+
+        <button
+          className="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="next"
+        >
           <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          <span className="visually-hidden">Suivant</span>
-        </a>
+          <span className="visually-hidden">Next</span>
+        </button>
       </div>
     </div>
   );
