@@ -19,7 +19,7 @@ class Accueil extends Component {
           <TitreH1>Découvrez nos prestations</TitreH1>
 
           <div className="container">
-            <p className="lead">
+            <p cl>
               Les réparateurs s’occupent de la réparation et l’entretien de
               votre voiture, peu importe la marque ou le modèle de celle-ci.
               Profitez d’une prestation de qualité effectuée par des véritables

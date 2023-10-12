@@ -80,4 +80,4 @@ const CarousselCard = (props) => {
   );
 };
 
-export default CarousselCard;
+export default Caroussel;

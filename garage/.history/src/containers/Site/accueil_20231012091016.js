@@ -19,7 +19,7 @@ class Accueil extends Component {
           <TitreH1>Découvrez nos prestations</TitreH1>
 
           <div className="container">
-            <p className="lead">
+            <p>
               Les réparateurs s’occupent de la réparation et l’entretien de
               votre voiture, peu importe la marque ou le modèle de celle-ci.
               Profitez d’une prestation de qualité effectuée par des véritables
@@ -27,7 +27,7 @@ class Accueil extends Component {
               pour la réparation de votre voiture et obtenez un RDV immédiat !
             </p>
 
-            <CarousselCard />
+            {/* <CarousselCard /> */}
 
             <TitreH1>Nouvel Arrivage en exclusivité !</TitreH1>
             <VehiculeCard />

@@ -3,7 +3,7 @@ import vitrage from "../../assets/images/vitrage.webp";
 import mecanique from "../../assets/images/mecanique.webp";
 import "font-awesome/css/font-awesome.min.css";
 
-const CarousselCard = (props) => {
+const Caroussel = (props) => {
   return (
     <section className="pt-5 pb-5">
       <div className="container-fluid">
@@ -80,4 +80,4 @@ const CarousselCard = (props) => {
   );
 };
 
-export default CarousselCard;
+export default Caroussel;

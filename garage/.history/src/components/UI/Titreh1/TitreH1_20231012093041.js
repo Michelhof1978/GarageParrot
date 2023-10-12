@@ -3,7 +3,7 @@ import React from "react";
 const TitreH1 = (props) => (
 
    
-   <h1 className="ms-3 text-primary lead fw-bold display-6">{props.children}</h1>
+   <h1 className="ms- text-primary lead">{props.children}</h1>
 
 );
 
