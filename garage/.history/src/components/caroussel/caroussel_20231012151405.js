@@ -46,7 +46,7 @@ const CarousselCard = (props) => {
             </div>
           </div>
           <div className="carousel-item">
-            <img src={carousselEntretient04} className= "d-block w-100 carousel-image" alt="Slide 4" />
+            <img src={carousselEntretient04} className "d-block w-100 carousel-image" alt="Slide 4" />
             <div className="carousel-caption">
               <h2 className='display-4 fw-bold text-md'>GARAGE PARROT</h2>
               <p className='lead fw-bold text-md'>Renplacement de vitrage</p>

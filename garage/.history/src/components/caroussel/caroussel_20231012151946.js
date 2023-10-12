@@ -3,6 +3,7 @@ import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 
+
 import carousselEntretient01 from '../../assets/images/carousselEntretient01.webp';
 import carousselEntretient02 from '../../assets/images/carousselEntretient02.webp';
 import carousselEntretient03 from '../../assets/images/carousselEntretient03.webp';
@@ -24,41 +25,45 @@ const CarousselCard = (props) => {
           <div className="carousel-item active">
             <img src={carousselEntretient01} className="d-block w-100 carousel-image" alt="Slide 1" />
             <div className="carousel-caption">
-              <h2 className='display-4 fw-bold text-md'>GARAGE PARROT</h2>
-              <p className='lead fw-bold text-md'>Tout Type De Mécanique</p>
-              <Link to="/reparation" className="btn btn-primary btn-md fw-bold">Plus d'Infos Ici !</Link>
+              <h2 className='custom-text-size'>GARAGE PARROT</h2>
+              <p className='custom-text-size'>Tout Type De Mécanique</p>
+              <Link to="/reparation" className="btn btn-primary custom-btn-size">Plus d'Infos Ici !</Link>
             </div>
           </div>
+
           <div className="carousel-item">
             <img src={carousselEntretient02} className="d-block w-100 carousel-image" alt="Slide 2" />
             <div className="carousel-caption">
-              <h2 className='display-4 fw-bold text-md'>GARAGE PARROT</h2>
-              <p className='lead fw-bold text-md'>Pneus Toutes Saisons</p>
-              <Link to="/reparation" className="btn btn-primary btn-md fw-bold">Plus d'Infos Ici !</Link>
+              <h2 className='custom-text-size'>GARAGE PARROT</h2>
+              <p className='custom-text-size'>Pneus Toutes Saisons</p>
+              <Link to="/reparation" className="btn btn-primary custom-btn-size">Plus d'Infos Ici !</Link>
             </div>
           </div>
+
           <div className="carousel-item">
-            <img src={carousselEntretient03} className="d-block w-100 carousel-image" alt="Slide 3" />
-            <div className= "carousel-caption">
-              <h2 className='display-4 fw-bold text-md'>GARAGE PARROT</h2>
-              <p className='lead fw-bold text-md'>Vidange</p>
-              <Link to="/reparation" className="btn btn-primary btn-md fw-bold">Plus d'Infos Ici !</Link>
-            </div>
-          </div>
-          <div className="carousel-item">
-            <img src={carousselEntretient04} className= "d-block w-100 carousel-image" alt="Slide 4" />
+            <img src={carousselEntretient03} className= "d-block w-100 carousel-image" alt="Slide 3" />
             <div className="carousel-caption">
-              <h2 className='display-4 fw-bold text-md'>GARAGE PARROT</h2>
-              <p className='lead fw-bold text-md'>Renplacement de vitrage</p>
-              <Link to="/reparation" className="btn btn-primary btn-md fw-bold">Plus d'Infos Ici !</Link>
+              <h2 className='custom-text-size'>GARAGE PARROT</h2>
+              <p className='custom-text-size'>Vidange</p>
+              <Link to="/reparation" className="btn btn-primary custom-btn-size">Plus d'Infos Ici !</Link>
             </div>
           </div>
+
+          <div className="carousel-item">
+            <img src={carousselEntretient04} className="d-block w-100 carousel-image" alt="Slide 4" />
+            <div className="carousel-caption">
+              <h2 className='custom-text-size'>GARAGE PARROT</h2>
+              <p className='custom-text-size'>Renplacement de vitrage</p>
+              <Link to="/reparation" className="btn btn-primary custom-btn-size">Plus d'Infos Ici !</Link>
+            </div>
+          </div>
+
           <div className="carousel-item">
             <img src={carousselEntretient05} className="d-block w-100 carousel-image" alt="Slide 5" />
             <div className="carousel-caption">
-              <h2 className='display-4 fw-bold text-md'>GARAGE PARROT</h2>
-              <p className='lead fw-bold text-md'>Mise à Niveau Gratuit !</p>
-              <Link to="/reparation" className="btn btn-primary btn-md fw-bold">Plus d'Infos Ici !</Link>
+              <h2 className='custom-text-size'>GARAGE PARROT</h2>
+              <p className='custom-text-size'>Mise à Niveau Gratuit !</p>
+              <Link to="/reparation" className="btn btn-primary custom-btn-size">Plus d'Infos Ici !</Link>
             </div>
           </div>
         </div>

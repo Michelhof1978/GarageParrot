@@ -106,7 +106,6 @@ margin-right: 10px; /* Ajoute de l'espace entre les cases à cocher */
   width: 25vw;
   margin-left: 2rem;
 }
-/* END FILTRE*/
 
 /* CAROUSSEL */
 .caroussel-container {
@@ -123,12 +122,14 @@ margin-right: 10px; /* Ajoute de l'espace entre les cases à cocher */
   overflow: hidden; /* Masque le contenu dépassant de la hauteur maximale */
 }
 
-
-.carousel-image {
-  width: 100%; /* Largeur souhaitée,  100% pour remplir la largeur du conteneur */
-  height: auto; /* Hauteur automatique pour maintenir les proportions de l'image */
+.carousel {
+  height: 100%; /* Force le carrousel à remplir la hauteur du conteneur */
 }
 
-
+/* Dans votre fichier CSS (si vous avez un fichier CSS séparé) */
+.carousel-image {
+  width: 100%; /* Largeur souhaitée, par exemple, 100% pour remplir la largeur du conteneur */
+  height: auto; /* Hauteur automatique pour maintenir les proportions de l'image */
+}
 /* END CAROUSSEL */
 

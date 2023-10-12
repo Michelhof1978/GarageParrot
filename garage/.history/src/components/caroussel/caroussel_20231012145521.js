@@ -1,6 +1,6 @@
 import React from 'react';
-import 'font-awesome/css/font-awesome.min.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.min.css'; // Assurez-vous que le chemin est correct
+import 'bootstrap/dist/css/bootstrap.min.css'; // Assurez-vous que Bootstrap est importé correctement
 import { Link } from 'react-router-dom';
 
 import carousselEntretient01 from '../../assets/images/carousselEntretient01.webp';
@@ -23,42 +23,42 @@ const CarousselCard = (props) => {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img src={carousselEntretient01} className="d-block w-100 carousel-image" alt="Slide 1" />
-            <div className="carousel-caption">
-              <h2 className='display-4 fw-bold text-md'>GARAGE PARROT</h2>
-              <p className='lead fw-bold text-md'>Tout Type De Mécanique</p>
-              <Link to="/reparation" className="btn btn-primary btn-md fw-bold">Plus d'Infos Ici !</Link>
+            <div className="carousel-caption d-none d-md-block">
+              <h className='lead fw-bold text-primary'>GARAGE PARROT</h5>
+              <p className='lead fw-bold'>Tout Type De Mécanique</p>
+              <Link to="/reparation" className="btn btn-primary">Plus d'Infos Ici !</Link>
             </div>
           </div>
           <div className="carousel-item">
             <img src={carousselEntretient02} className="d-block w-100 carousel-image" alt="Slide 2" />
-            <div className="carousel-caption">
-              <h2 className='display-4 fw-bold text-md'>GARAGE PARROT</h2>
-              <p className='lead fw-bold text-md'>Pneus Toutes Saisons</p>
-              <Link to="/reparation" className="btn btn-primary btn-md fw-bold">Plus d'Infos Ici !</Link>
+            <div className="carousel-caption d-none d-md-block">
+              <h5 className='lead fw-bold'>GARAGE PARROT</h5>
+              <p className = 'lead fw-bold'>Pneus Toutes Saisons</p>
+              <Link to="/reparation" className="btn btn-primary">Plus d'Infos Ici !</Link>
             </div>
           </div>
           <div className="carousel-item">
             <img src={carousselEntretient03} className="d-block w-100 carousel-image" alt="Slide 3" />
-            <div className= "carousel-caption">
-              <h2 className='display-4 fw-bold text-md'>GARAGE PARROT</h2>
-              <p className='lead fw-bold text-md'>Vidange</p>
-              <Link to="/reparation" className="btn btn-primary btn-md fw-bold">Plus d'Infos Ici !</Link>
+            <div className="carousel-caption d-none d-md-block">
+              <h5 className='lead fw-bold'>GARAGE PARROT</h5>
+              <p className='lead fw-bold'>Vidange</p>
+              <Link to="/reparation" className="btn btn-primary">Plus d'Infos Ici !</Link>
             </div>
           </div>
           <div className="carousel-item">
-            <img src={carousselEntretient04} className= "d-block w-100 carousel-image" alt="Slide 4" />
-            <div className="carousel-caption">
-              <h2 className='display-4 fw-bold text-md'>GARAGE PARROT</h2>
-              <p className='lead fw-bold text-md'>Renplacement de vitrage</p>
-              <Link to="/reparation" className="btn btn-primary btn-md fw-bold">Plus d'Infos Ici !</Link>
+            <img src={carousselEntretient04} className="d-block w-100 carousel-image" alt="Slide 4" />
+            <div className="carousel-caption d-none d-md-block">
+              <h5 className='lead fw-bold'>GARAGE PARROT</h5>
+              <p className='lead fw-bold'>Renplacement de vitrage</p>
+              <Link to="/reparation" className="btn btn-primary">Plus d'Infos Ici !</Link>
             </div>
           </div>
           <div className="carousel-item">
             <img src={carousselEntretient05} className="d-block w-100 carousel-image" alt="Slide 5" />
-            <div className="carousel-caption">
-              <h2 className='display-4 fw-bold text-md'>GARAGE PARROT</h2>
-              <p className='lead fw-bold text-md'>Mise à Niveau Gratuit !</p>
-              <Link to="/reparation" className="btn btn-primary btn-md fw-bold">Plus d'Infos Ici !</Link>
+            <div className="carousel-caption d-none d-md-block">
+              <h5 className='lead fw-bold'>GARAGE PARROT</h5>
+              <p className='lead fw-bold'>Mise à Niveau Gratuit !</p>
+              <Link to="/reparation" className="btn btn-primary">Plus d'Infos Ici !</Link>
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@ const CarousselCard = (props) => {
           <span className="visually-hidden">Précédent</span>
         </a>
         <a className="carousel-control-next" href="#carouselExampleCaptions" role="button" data-bs-slide="next">
-          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="carousel-control-next-icon" ariahidden="true"></span>
           <span className="visually-hidden">Suivant</span>
         </a>
       </div>

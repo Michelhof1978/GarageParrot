@@ -46,7 +46,7 @@ const VehiculeCard = () => {
       <div className="row">
         {currentCards.map((vehicule) => (
           <div key={vehicule.idVehicule} className="col-lg-4 col-md-6 col-sm-12">
-            <div className="card mt-4">
+            <div className="card">
               <img
                 src={`http://localhost/GarageBack/public/images/${vehicule.imageVoiture}`}
                 alt={vehicule.marque}

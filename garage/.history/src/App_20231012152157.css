@@ -129,6 +129,12 @@ margin-right: 10px; /* Ajoute de l'espace entre les cases à cocher */
   height: auto; /* Hauteur automatique pour maintenir les proportions de l'image */
 }
 
+.custom-text-size {
+  font-size: 16px; /* Ajustez la taille du texte pour les appareils mobiles */
+}
 
+.custom-btn-size {
+  font-size: 10px; /* Ajustez la taille des boutons pour les appareils mobiles */
+}
 /* END CAROUSSEL */
 
