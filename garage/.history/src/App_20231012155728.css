@@ -73,16 +73,6 @@ margin-right: 10px; /* Ajoute de l'espace entre les cases à cocher */
   grid-gap: 20px; /* Espacement entre les cartes */
   width: 100%; /* Pour occuper toute la largeur de la page */
 }
-
-
-.card-img-top {
-  width: 100%; /* Largeur de l'image */
-  height: auto; /* Hauteur souhaitée de l'image */
-  object-fit: cover; /* Pour ajuster l'image sans déformation */
-}
-
-
-
 /* END VEHICULE CARD*/
 
 /* PAGINATION*/

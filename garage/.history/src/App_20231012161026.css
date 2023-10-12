@@ -81,7 +81,11 @@ margin-right: 10px; /* Ajoute de l'espace entre les cases à cocher */
   object-fit: cover; /* Pour ajuster l'image sans déformation */
 }
 
-
+.card-img-top {
+  width: 100%;
+  
+  object-fit: cover;
+}
 
 /* END VEHICULE CARD*/
 
