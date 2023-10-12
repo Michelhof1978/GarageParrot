@@ -80,12 +80,12 @@ const Navbar = (props) => (
                 </li>
 
                 <li className="nav-item m-3 ">
-                <NavLink to="/avisClients" className="nav-link text-white fw-bold">Avis Clients</NavLink>
+                <NavLink to="/avisClients" className="nav-link text-white">Avis Clients</NavLink>
                 </li>
 
 
                 <li className="nav-item m-3">
-                <NavLink to="/contact" className="nav-link text-white fw-bold">Nous contacter</NavLink>
+                <NavLink to="/contact" className="nav-link text-white">Nous contacter</NavLink>
                 </li>
 
             </ul>

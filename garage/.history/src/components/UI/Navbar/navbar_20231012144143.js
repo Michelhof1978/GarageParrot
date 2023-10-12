@@ -64,7 +64,7 @@ const Navbar = (props) => (
                 </li>
 
                 <li className="nav-item dropdown m-3">
-                    <a className="nav-link dropdown-toggle text-white fw-bold" data-bs-toggle="dropdown" href="/reparation" role="button" aria-haspopup="true" aria-expanded="false">Réparation véhicules</a>
+                    <a className="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="/reparation" role="button" aria-haspopup="true" aria-expanded="false">Réparation véhicules</a>
                     <div className="dropdown-menu bg-light fw-bold">
             <NavLink className="dropdown-item text-primary fw-bold" to="/pneumatique">Pneumatique</NavLink>
             <NavLink className="dropdown-item text-primary fw-bold" to="/freinage">Freinage</NavLink>
@@ -76,16 +76,16 @@ const Navbar = (props) => (
                 </li>
 
                 <li className="nav-item m-3 ">
-                <NavLink to="/voitureoccasion" className="nav-link text-white fw-bold">Voitures D'occasions</NavLink>
+                <NavLink to="/voitureoccasion" className="nav-link text-white">Voitures D'occasions</NavLink>
                 </li>
 
                 <li className="nav-item m-3 ">
-                <NavLink to="/avisClients" className="nav-link text-white fw-bold">Avis Clients</NavLink>
+                <NavLink to="/avisClients" className="nav-link text-white">Avis Clients</NavLink>
                 </li>
 
 
                 <li className="nav-item m-3">
-                <NavLink to="/contact" className="nav-link text-white fw-bold">Nous contacter</NavLink>
+                <NavLink to="/contact" className="nav-link text-white">Nous contacter</NavLink>
                 </li>
 
             </ul>
