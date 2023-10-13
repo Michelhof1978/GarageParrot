@@ -5,7 +5,7 @@ import "../../App.css";
 import TitreH1 from "../UI/TitreH1/TitreH1";
 import { Pagination } from "react-bootstrap";
 
-const VehiculeCard = () => {
+const VehiculesCard = () => {
   const [vehicules, setVehicules] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 9;
@@ -44,14 +44,16 @@ const VehiculeCard = () => {
   return (
     <div>
       <div className="row">
-        {currentCards.map((vehicule) => (
-          <div key={vehicule.idVehicule} className="col-lg-4 col-md-6 col-sm-12">
-            <div className="card mt-4">
-              <img
-                src={`http://localhost/GarageBack/public/images/${vehicule.imageVoiture}`}
-                alt={vehicule.marque}
-                className="card-img-top"
-              />
+      {currentCards.map((vehicule) => (
+  <div key={vehicule.idVehicule} className="col-lg-4 col-md-6 col-sm-12 col-6">
+            <div className="card mt-4 ms-2 me-2">
+            <img
+  src={`http://localhost/GarageBack/public/images/${vehicule.imageVoiture}`}
+  alt={vehicule.marque}
+  className="card-img-top"
+/>
+
+
               <div className="card-body ">
                 <h5 className="card-title">{vehicule.marque}</h5>
                 <p className="card-text">Modèle: {vehicule.modele} </p>
@@ -91,4 +93,21 @@ const VehiculeCard = () => {
   );
 };
 
-export default VehiculeCard;
+export default VehiculesCard;
+return (
+      <div className="vehicule-grid">
+        {currentCards.map((vehicule) => (
+  
+           <Card image = {vehicule.imageVoiture.imageVoiture }
+           marque = {vehicule.marque}
+           nom = {vehicule.nom}
+          modele = {vehicule.modele}
+  //         energie = {vehicule.energie}
+  //         prix = {vehicule.prix}
+  //         id = {vehicule.idVehicule}
+  //         key = {vehicule.idVehicule}
+  //         /> 
+         
+  //       ))}
+  
+  

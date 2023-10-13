@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import "../../App.css";
 
-const VehiculeDetails = () => {
+const VehiculesDetails = () => {
   const [vehicule, setVehicule] = useState(null);
   const { id } = useParams();
 
