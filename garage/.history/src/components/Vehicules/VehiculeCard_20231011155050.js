@@ -44,6 +44,7 @@ const VehiculeCard = () => {
   return (
     <div>
       <div className="row">
+<<<<<<< HEAD:garage/.history/src/components/Vehicules/VehiculeCard_20231011155050.js
         {currentCards.map((vehicule) => (
           <div key={vehicule.idVehicule} className="col-lg-4 col-md-6 col-sm-12">
             <div className="card">
@@ -53,6 +54,19 @@ const VehiculeCard = () => {
                 className="card-img-top"
               />
               <div className="card-body">
+=======
+      {currentCards.map((vehicule) => (
+  <div key={vehicule.idVehicule} className="col-lg-4 col-md-6 col-sm-12 col-6">
+            <div className="card mt-4 ms-2 me-2">
+            <img
+  src={`http://localhost/GarageBack/public/images/${vehicule.imageVoiture}`}
+  alt={vehicule.marque}
+  className="card-img-top"
+/>
+
+
+              <div className="card-body ">
+>>>>>>> a442a4ad4a2fe7b9d4aeee3c4e2f787a82775238:garage/src/components/Vehicules/VehiculeCard.js
                 <h5 className="card-title">{vehicule.marque}</h5>
                 <p className="card-text">Modèle: {vehicule.modele} </p>
                 <p className="card-text">Energie: {vehicule.energie} </p>
