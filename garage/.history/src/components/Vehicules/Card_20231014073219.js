@@ -9,10 +9,10 @@ const Card = (props) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={props.image} alt={props.marque} />
+          <img src={props.imageVoiture} alt={props.marque} />
         </a>
 
-        <h5 className="card-title">{props.marque}</h5>
+        <h5 className="card-title">{props.nom}</h5>
         <p className="card-text">Modèle: {props.modele} </p>
         <p className="card-text">Energie: {props.energie} </p>
         <p className="card-text">Prix: {props.prix} €</p>

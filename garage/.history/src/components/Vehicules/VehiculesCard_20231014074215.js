@@ -99,49 +99,49 @@ export default VehiculesCard;
 
 
 
-// import React, { useState, useEffect } from "react";
-// import axios from "axios";
-// import { Link } from "react-router-dom";
-// import "../../App.css";
-// import TitreH1 from "../UI/TitreH1/TitreH1";
-// import { Pagination } from "react-bootstrap";
-// import Card from "./Card"; 
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import "../../App.css";
+import TitreH1 from "../UI/TitreH1/TitreH1";
+import { Pagination } from "react-bootstrap";
+import Card from "./Card"; 
 
-// const VehiculesCard = () => {
-//   const [vehicules, setVehicules] = useState([]);
-//   const [currentPage, setCurrentPage] = useState(1);
-//   const cardsPerPage = 9;
+const VehiculesCard = () => {
+  const [vehicules, setVehicules] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const cardsPerPage = 9;
 
-//   useEffect(() => {
-//     axios
-//       .get("http://localhost/garageback/front/voiturefiche/all")
-//       .then((response) => {
-//         const jsonData = response.data;
-//         const sortedVehicules = [...jsonData];
-//         const sortByCreatedAt = (a, b) => {
-//           const dateA = new Date(a.created_at).getTime();
-//           const dateB = new Date(b.created_at).getTime();
-//           return dateA - dateB;
-//         };
-//         sortedVehicules.sort(sortByCreatedAt);
-//         setVehicules(sortedVehicules);
-//       })
-//       .catch((error) => {
-//         console.error("Erreur lors de la récupération des véhicules :", error);
-//       });
+  useEffect(() => {
+    axios
+      .get("http://localhost/garageback/front/voiturefiche/all")
+      .then((response) => {
+        const jsonData = response.data;
+        const sortedVehicules = [...jsonData];
+        const sortByCreatedAt = (a, b) => {
+          const dateA = new Date(a.created_at).getTime();
+          const dateB = new Date(b.created_at).getTime();
+          return dateA - dateB;
+        };
+        sortedVehicules.sort(sortByCreatedAt);
+        setVehicules(sortedVehicules);
+      })
+      .catch((error) => {
+        console.error("Erreur lors de la récupération des véhicules :", error);
+      });
 
-//     return () => {
-//       // Code de nettoyage
-//     };
-//   }, []);
+    return () => {
+      // Code de nettoyage
+    };
+  }, []);
 
-//   const indexOfLastCard = currentPage * cardsPerPage;
-//   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
-//   const currentCards = vehicules.slice(indexOfFirstCard, indexOfLastCard);
+  const indexOfLastCard = currentPage * cardsPerPage;
+  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  const currentCards = vehicules.slice(indexOfFirstCard, indexOfLastCard);
 
-//   const paginate = (pageNumber) => {
-//     setCurrentPage(pageNumber);
-//   };
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
 
 //   return (
 //     <div>
