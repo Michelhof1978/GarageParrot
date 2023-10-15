@@ -140,3 +140,18 @@ margin-right: 10px; /* Ajoute de l'espace entre les cases à cocher */
 }
 /* END CAROUSSEL */
 
+.introbanner {
+  padding: 15px;
+  background: #FFF;
+  /* CSS3 effects */
+  background: linear-gradient(#FFF, #FFF 20%, #EEE 80%, #DDD);
+  border-radius: 2px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+.image-container {
+  display: inline-block;
+  border: 1px solid #ddd;
+  border-radius: 2px; /* Vous pouvez ajuster la valeur pour le rayon des coins arrondis */
+  overflow: hidden;
+}

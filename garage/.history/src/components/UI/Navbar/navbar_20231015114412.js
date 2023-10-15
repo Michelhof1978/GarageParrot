@@ -2,7 +2,7 @@ import React from "react";
 import bannertop from "../../../assets/images/bannertop.webp";
 import logo from "../../../assets/images/logo2.webp";
 import banner from "../../../assets/images/bannier.webp";
-import contact from "../../../assets/images/contact.webp";
+import sousbanner from "../../../assets/images/sousbanniere.webp";
 import iconespacepro from "../../../assets/images/iconespacepro.webp";
 import { NavLink } from "react-router-dom";//Pour éviter le rechargement des pages
 
@@ -31,7 +31,7 @@ const Navbar = (props) => (
       </div>
 
       <div className="col-4 col-md-6">
-        <img className="img-fluid" src={contact} alt="publicité offre" />
+        <img className="img-fluid" src={sousbanner} alt="publicité offre" />
       </div>
 
       <div className="col-4 col-md-3">
@@ -99,7 +99,7 @@ const Navbar = (props) => (
   <div className="row">
     <div className="col-12 text-center p-0 mt-3">
       <div class="image-container">
-        <img className="img-fluid w-75 rounded" src={banner} alt="banniere arrivage voitures" />
+        <img className="img-fluid w-50 rounded" src={banner} alt="banniere arrivage voitures" />
       </div>
     </div>
   </div>

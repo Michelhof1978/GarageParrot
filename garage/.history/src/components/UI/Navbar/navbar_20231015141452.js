@@ -31,7 +31,7 @@ const Navbar = (props) => (
       </div>
 
       <div className="col-4 col-md-6">
-        <img className="img-fluid" src={contact} alt="publicité offre" />
+        <img className="img-fluid" src={sousbanner} alt="publicité offre" />
       </div>
 
       <div className="col-4 col-md-3">
