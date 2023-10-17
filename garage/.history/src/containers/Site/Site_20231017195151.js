@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import Navbar from '../../components/UI/Navbar/Navbar';
+import Navbar from '../../components/UI/Navbar/navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Accueil from '../Site/Accueil';
+import Accueil from '../Site/ccueil';
 import { Link } from 'react-router-dom';
-import Footer from '../../components/Footer/Footer';
+import Footer from '../../components/Footer/footer';
 // import Carsearch from '../Site/voitureoccasion';
 import VehiculesDetails from '../../components/Vehicules/VehiculesDetails';
 import VehiculesFilters from '../../components/Vehicules/VehiculesFilters';
-import Contact from '../../containers/Site/Contact';
-import Reparation from '../../containers/Site/Reparation';
+import Contact from '../../containers/Site/contact';
+import Reparation from '../../containers/Site/reparation';
 
 
 

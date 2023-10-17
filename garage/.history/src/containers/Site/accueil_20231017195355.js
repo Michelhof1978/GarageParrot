@@ -9,6 +9,7 @@ import AvisClients from "../../components/Avis/AvisClients";
 import TitreH2 from "../../components/UI/Titres/TitreH2";
 import Textes from "../../components/UI/Textes/textes";
 import TitreH3 from "../../components/UI/Titres/TitreH3";
+imp
 
 
 class Accueil extends Component {
@@ -22,7 +23,7 @@ class Accueil extends Component {
       <>
         <div>
           <div className="container">
-          
+
             <Textes>
               Les réparateurs s'occupent de la réparation et de l'entretien de votre voiture, peu importe la marque ou le modèle de celle-ci. Profitez d'une prestation de qualité effectuée par des véritables experts auto. Contactez-nous dès maintenant pour un devis en ligne pour la réparation de votre voiture et obtenez un RDV immédiat !
             </Textes>

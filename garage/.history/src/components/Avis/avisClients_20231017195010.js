@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Avis from "../../components/Avis/Avis";
+import Avis
 import TitreH3 from "../UI/Titres/TitreH3";
 
 const AvisClients = () => {
