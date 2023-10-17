@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import TitreH1 from '../../components/UI/Titres/TitreH1';
+import TitreH1 from '../../components/UI/TitreH1/TitreH1';
 import Form from '../../containers/Formulaire/formulaire';
 import axios from 'axios';
 

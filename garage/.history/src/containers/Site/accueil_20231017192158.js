@@ -5,9 +5,9 @@ import peugeot208 from "../../assets/images/peugeot208.webp";
 import peugeot3008 from "../../assets/images/peugeot3008.webp";
 import logoVoiture from "../../assets/images/logoVoiture.webp";
 import VehiculesCard from "../../components/Vehicules/VehiculesCard";
-import AvisClients from "../../components/Avis/AvisClients";
-import TitreH2 from "../../components/UI/Titres/TitreH2";
-import Textes from "../../components/UI/Textes/textes";
+import AvisClients from "../../components/Avis/avisClients";
+import TitreH
+import Textes from "../../components/UI/Textes/textes"; 
 import TitreH3 from "../../components/UI/Titres/TitreH3";
 
 

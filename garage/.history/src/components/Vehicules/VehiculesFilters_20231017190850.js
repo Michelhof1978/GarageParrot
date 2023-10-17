@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../App.css";
 import VehiculesCard from "./VehiculesCard";
-import TitreH1 from "../UI/Titres/TitreH1";
+import TitreH1 from "../UI/Titre/TitreH1";
 import BasicCheckbox from "../filters/BasicCheckbox";
 import BasicSelect from "../filters/BasicSelect";
 import BasicRange from "../filters/BasicRange";

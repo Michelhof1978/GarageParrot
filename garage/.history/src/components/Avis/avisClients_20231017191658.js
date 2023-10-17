@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Avis from "./Avis";
 import TitreH3 from "../UI/Titres/TitreH3";
 
 const AvisClients = () => {
@@ -44,7 +45,7 @@ const AvisClients = () => {
 
   return (
     <section className="container-fluid avisClients mt-5">
-      <TitreH3> Nos Avis Clients Actualisés Toutes Les Semaines !</TitreH3>
+      <TitreH3 className> Nos Avis Clients Actualisés Toutes Les Semaines !</TitreH3>
       <div className="row align-items-center justify-content-center h-100">
         <div className="col-md-8 col-lg-6 p-3">
           <div className="bg-light shadow p-5">
