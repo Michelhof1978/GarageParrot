@@ -20,34 +20,33 @@ const Navbar = (props) => (
   </div>
 </div>
 
-
+<div className="row">
+  <div className="col-12">
     <div className="row">
-      <div className="col-3 ">
+      <div className="col-4 ">
         <a className="navbar-brand" href="#">
           <img className="img-fluid" src={logo} alt="Logo Garage PARROT" />
         </a>
       </div>
 
-      <div className="col-6 d-flex justify-content-center align-items-center">
-  <img className="img-fluid me-3" src={contact} alt="icône de contact" />
-  <div>
-    <p className="fw-bold text-primary text-center fs-4">Nous contacter au </p>
-    <p className="fw-bold text-primary text-center fs-5 d-md-none">04-70-45-25-36</p>
-  </div>
-</div>
+      <div className="col-4 ">
+        <div className="d-flex align-items-center">
+          <img className="img-fluid me-3" src={contact} alt="contact icon" />
+          <div>
+            <p className="fw-bold text-primary ">Nous contacter au 04-70-45-25-36</p>
+          </div>
+         
+        </div>
+      </div>
 
-
-
-
-
-
-      <div className="col-3 ">
+      <div className="col-4 ">
         <a href="http://localhost/GarageBack/back/login">
           <img className="img-fluid" src={iconespacepro} alt="connexion espace pro" />
         </a>
       </div>
     </div>
-  
+  </div>
+</div>
 
 
 

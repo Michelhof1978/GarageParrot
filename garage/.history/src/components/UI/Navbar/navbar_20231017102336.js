@@ -32,7 +32,7 @@ const Navbar = (props) => (
   <img className="img-fluid me-3" src={contact} alt="icône de contact" />
   <div>
     <p className="fw-bold text-primary text-center fs-4">Nous contacter au </p>
-    <p className="fw-bold text-primary text-center fs-5 d-md-none">04-70-45-25-36</p>
+    <p className="fw-bold text-primary text-center fs-5 d-md-none">Nous contacter au 04-70-45-25-36</p>
   </div>
 </div>
 
