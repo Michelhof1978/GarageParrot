@@ -1,15 +1,13 @@
 import React, { Component } from "react";
-import TitreH1 from "../../components/UI/Titres/TitreH1"; 
-import CarousselCard from "../../components/Caroussel/Caroussel"; 
+import TitreH1 from "../../components/UI/Titres/TitreH1"; // Assurez-vous que TitreH1 est correctement importé
+import CarousselCard from "../../components/Caroussel/Caroussel"; // Assurez-vous que Caroussel est correctement importé
 import peugeot208 from "../../assets/images/peugeot208.webp";
 import peugeot3008 from "../../assets/images/peugeot3008.webp";
 import logoVoiture from "../../assets/images/logoVoiture.webp";
 import VehiculesCard from "../../components/Vehicules/VehiculesCard";
-import AvisClients from "../../components/Avis/AvisClients"; 
-import TitreH2 from "../../components/UI/Titres/TitreH2"; 
-import Texte from "../../components/UI/Textes/Texte"; 
-import TitreH3 from "../../components/UI/Titres/TitreH3";
-
+import AvisClients from "../../components/Avis/AvisClients"; // Assurez-vous que le chemin est correct
+import TitreH2 from "../../components/UI/Titres/TitreH2"; // Ajout de l'import pour TitreH2
+import Texte from "../../components/UI/Textes/Texte"; // Assurez-vous que Texte est correctement importé
 
 class Accueil extends Component {
   // Nom de la page dans l'onglet
@@ -35,7 +33,7 @@ class Accueil extends Component {
               <img className="img-fluid w-50" src={peugeot3008} alt="peugeot 3008" />
             </div>
 
-            <TitreH2>Nos Avis Clients Actualisés Toutes Les Semaines !</TitreH2>
+            <TitreH2>Nos Avis Clients Actualisés Toutes Les Semaines !</TitreH3>
             <AvisClients />
 
             <div className="col-12">

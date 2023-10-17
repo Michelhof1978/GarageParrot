@@ -9,8 +9,6 @@ import AvisClients from "../../components/Avis/AvisClients";
 import TitreH2 from "../../components/UI/Titres/TitreH2"; 
 import Texte from "../../components/UI/Textes/Texte"; 
 import TitreH3 from "../../components/UI/Titres/TitreH3";
-
-
 class Accueil extends Component {
   // Nom de la page dans l'onglet
   componentDidMount = () => {

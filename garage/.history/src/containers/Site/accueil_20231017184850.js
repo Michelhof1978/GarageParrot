@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import TitreH1 from "../../components/UI/Titres/TitreH1"; 
-import CarousselCard from "../../components/Caroussel/Caroussel"; 
+import TitreH1 from "../../components/UI/Titres/TitreH1"; // Assurez-vous que TitreH1 est correctement importé
+import CarousselCard from "../../components/Caroussel/Caroussel"; // Assurez-vous que Caroussel est correctement importé
 import peugeot208 from "../../assets/images/peugeot208.webp";
 import peugeot3008 from "../../assets/images/peugeot3008.webp";
 import logoVoiture from "../../assets/images/logoVoiture.webp";
@@ -9,8 +9,6 @@ import AvisClients from "../../components/Avis/AvisClients";
 import TitreH2 from "../../components/UI/Titres/TitreH2"; 
 import Texte from "../../components/UI/Textes/Texte"; 
 import TitreH3 from "../../components/UI/Titres/TitreH3";
-
-
 class Accueil extends Component {
   // Nom de la page dans l'onglet
   componentDidMount = () => {
