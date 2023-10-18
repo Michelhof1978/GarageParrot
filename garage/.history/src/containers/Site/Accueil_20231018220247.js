@@ -6,9 +6,9 @@ import peugeot3008 from "../../assets/images/peugeot3008.webp";
 import logoVoiture from "../../assets/images/logoVoiture.webp";
 import VehiculesCard from "../../components/Vehicules/VehiculesCard";
 import AvisClients from "../../components/Avis/AvisClients";
-import TitreH3 from "../../components/UI/Titres/TitreH2";
+import TitreH from "../../components/UI/Titres/TitreH2";
 import Textes from "../../components/UI/Textes/Textes";
-
+import TitreH3 from "../../components/UI/Titres/TitreH3";
 
 
 class Accueil extends Component {

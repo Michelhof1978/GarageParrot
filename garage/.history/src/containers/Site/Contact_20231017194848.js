@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import TitreH1 from '../../components/UI/Titres/TitreH1';
-import Form from '../Formulaire/Formulaire';
+import Form from '../Formulaire/formulaire';
 import axios from 'axios';
 
 class Contact extends Component {
@@ -17,7 +17,7 @@ class Contact extends Component {
     render () {
         return (
             <>
-            <TitreH1>Nous Contacter</TitreH1>
+            <TitreH1 bgColor="primary">Nous Contacter</TitreH1>
             <div className="container">
                 <h2>Adresse : </h2>
                 11 rue de la quiche 33 000 Toulouse 

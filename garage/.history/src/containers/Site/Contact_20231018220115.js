@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import TitreH1 from '../../components/UI/Titres/TitreH1';
-import Form from '../Formulaire/Formulaire';
+import Form from '../Formulaire/formulaire';
 import axios from 'axios';
 
 class Contact extends Component {

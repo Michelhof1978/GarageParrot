@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Navbar from '../../components/UI/Navbar/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Accueil from './Accueil';
+import Accueil from '../Site/Accueil';
 import { Link } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer';
 // import Carsearch from '../Site/voitureoccasion';

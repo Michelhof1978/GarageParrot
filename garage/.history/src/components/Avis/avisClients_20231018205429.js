@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import TitreH3 from "../UI/Titres/TitreH3";
 import { Link } from "react-router-dom";
 
@@ -78,4 +79,4 @@ const AvisClients = () => {
   );
 };
 
-export default AvisClients;
+export default AvisClients
