@@ -8,12 +8,12 @@ import VehiculesCard from "../../components/Vehicules/VehiculesCard";
 import AvisClients from "../../components/Avis/AvisClients";
 import Textes from "../../components/UI/Textes/Textes";
 import TitreH3 from "../../components/UI/Titres/TitreH3";
-
+import bannerInfo from "../../../assets/images/bannerInfo.webp";
 
 
 class Accueil extends Component {
   
-  componentDidMount = () => {//Titre de la page
+  componentDidMount = () => {
     document.title = "Accueil Garage Parrot";
   };
 

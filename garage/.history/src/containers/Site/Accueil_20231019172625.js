@@ -22,6 +22,10 @@ class Accueil extends Component {
       <>
         <div>
           <div className="container">
+
+       
+
+{/*------------END BANNER----------- */}
           
           <TitreH1>
             Bienvenue au Garage Parrot à Toulouse

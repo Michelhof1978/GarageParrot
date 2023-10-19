@@ -1,5 +1,5 @@
 import React from "react";
-import bannertop from "../../../assets/images/bannertop.webp";
+import bannertop from "../../../images/bannertop.webp";
 import logo from "../../../assets/images/logo2.webp";
 import contact from "../../../assets/images/contact.webp";
 import iconespacepro from "../../../assets/images/iconespacepro.webp";

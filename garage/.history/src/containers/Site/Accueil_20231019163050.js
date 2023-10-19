@@ -10,10 +10,9 @@ import Textes from "../../components/UI/Textes/Textes";
 import TitreH3 from "../../components/UI/Titres/TitreH3";
 
 
-
 class Accueil extends Component {
   
-  componentDidMount = () => {//Titre de la page
+  componentDidMount = () => {
     document.title = "Accueil Garage Parrot";
   };
 

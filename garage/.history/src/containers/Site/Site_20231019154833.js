@@ -3,12 +3,13 @@ import Navbar from '../../components/UI/Navbar/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer';
+// import Carsearch from '../Site/voitureoccasion';
 import VehiculesDetails from '../../components/Vehicules/VehiculesDetails';
 import VehiculesFilters from '../../components/Vehicules/VehiculesFilters';
 import Contact from '../../containers/Site/Contact';
 import Reparation from '../../containers/Site/Reparation';
 import AvisClients from '../../components/Avis/AvisClients';
-import Accueil from '../../containers/Site/Accueil'
+import Accueil from '../../containers/Site/A'
 
 
 
@@ -23,7 +24,7 @@ class Site extends Component {
         <Navbar />
       
         <Routes>
-        <Route path="/" element={<Accueil />} />
+        <Route path="/accueil" element={<Accueil />} />
             <Route path="/pneumatique" element={<h1>Pneumatique</h1>} />
             <Route path="/freinage" element={<h1>Freinage</h1>} />
             <Route path="/mecanique" element={<h1>Mecanique </h1>} />

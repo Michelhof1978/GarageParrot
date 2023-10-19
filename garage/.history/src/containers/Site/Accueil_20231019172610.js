@@ -13,7 +13,7 @@ import TitreH3 from "../../components/UI/Titres/TitreH3";
 
 class Accueil extends Component {
   
-  componentDidMount = () => {//Titre de la page
+  componentDidMount = () => {
     document.title = "Accueil Garage Parrot";
   };
 
@@ -22,6 +22,10 @@ class Accueil extends Component {
       <>
         <div>
           <div className="container">
+
+       
+
+{/*------------END BANNER----------- */}
           
           <TitreH1>
             Bienvenue au Garage Parrot à Toulouse

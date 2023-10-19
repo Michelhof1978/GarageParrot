@@ -23,7 +23,7 @@ class Site extends Component {
         <Navbar />
       
         <Routes>
-        <Route path="/" element={<Accueil />} />
+        <Route path="/accueil" element={<Accueil />} />
             <Route path="/pneumatique" element={<h1>Pneumatique</h1>} />
             <Route path="/freinage" element={<h1>Freinage</h1>} />
             <Route path="/mecanique" element={<h1>Mecanique </h1>} />

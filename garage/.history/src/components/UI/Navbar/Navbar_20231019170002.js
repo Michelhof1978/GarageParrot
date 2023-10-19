@@ -93,7 +93,18 @@ const Navbar = (props) => (
 </nav>
 {/*------------END NAVBAR----------- */}
 
+{/*------------BANNER----------- */}
+<div className="container-fluid introbanner">
+  <div className="row">
+    <div className="col-12 text-center p-0 mt-3">
+      <div class="image-container">
+        <img className="img-fluid w-75 rounded" src={banner} alt="banniere arrivage voitures" />
+      </div>
+    </div>
+  </div>
+</div>
 
+{/*------------END BANNER----------- */}
   </>
 );
 

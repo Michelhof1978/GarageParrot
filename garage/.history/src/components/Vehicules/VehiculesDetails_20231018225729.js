@@ -33,7 +33,7 @@ const VehiculesDetails = () => {
       <p className="card-text">Prix: {vehicule.prix} €</p>
 
       <Link to={`/contact`} className="btn btn-primary">
-        En savoir plus, Contactez-nous ! 
+        En savoir plus, Contactez
       </Link>
     </div>
   );
