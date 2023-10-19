@@ -1,10 +1,10 @@
 import bannerInfo from "../../assets/images/bannerInfo.webp";
 import React from "react"; 
 
-const BannerInfo = (props) => (
+const Banner = (props) => (
 <>
    
-    div className="container-fluid introbanner">
+    <div className="container-fluid introbanner">
     <div className="row">
       <div className="col-12 text-center p-0 mt-3">
         <div class="image-container">
@@ -12,7 +12,7 @@ const BannerInfo = (props) => (
         </div>
       </div>
     </div>
-  </div>
+    </div>
   </>
 
 );
