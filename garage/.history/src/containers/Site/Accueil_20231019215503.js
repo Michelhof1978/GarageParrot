@@ -8,8 +8,8 @@ import VehiculesCard from "../../components/Vehicules/VehiculesCard";
 import AvisClients from "../../components/Avis/AvisClients";
 import Textes from "../../components/UI/Textes/Textes";
 import TitreH3 from "../../components/UI/Titres/TitreH3";
-// import Banner from "../../components/UI/Banner/Banner";
-// import BannerInfo from "../../assets/images/bannerInfo.webp";
+import Banner from "../../components/UI/Banner/Banner";
+import BannerInfo from "../../assets/images/bannerInfo.webp";
 
 class Accueil extends Component {
   

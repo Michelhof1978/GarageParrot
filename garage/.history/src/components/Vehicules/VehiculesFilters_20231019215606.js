@@ -82,7 +82,7 @@ const VehiculesFilters = ({ onSearch }) => {
 
   return (
     <>
-     {/* <Banner imageUrl={BannerInfo} altText="Bannière info" /> */}
+     <Banner imageUrl={BannerInfo} altText="Bannière info" />
       <div className="search-filters">
      
 

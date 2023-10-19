@@ -82,9 +82,8 @@ const VehiculesFilters = ({ onSearch }) => {
 
   return (
     <>
-     {/* <Banner imageUrl={BannerInfo} altText="Bannière info" /> */}
       <div className="search-filters">
-     
+      <Banner imageUrl={BannerInfo} altText="Bannière info" />
 
         <TitreH1>Veuillez faire votre selection</TitreH1>
         <div className="checkbox-filter">

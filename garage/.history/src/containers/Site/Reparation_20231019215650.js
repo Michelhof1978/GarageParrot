@@ -1,6 +1,6 @@
 import React from "react";
-// import Banner from "../../components/UI/Banner/Banner";
-// import bannerPromoEntretien from "../../assets/images/bannerPromoEntretien.webp";
+import Banner from "../../components/UI/Banner/Banner";
+import bannerPromoEntretien from "../../assets/images/bannerPromoEntretien.webp";
 
 const Reparation = (props) => (
   <>
