@@ -6,9 +6,9 @@ import TitreH1 from "../UI/Titres/TitreH1";
 import BasicCheckbox from "../filters/BasicCheckbox";
 import BasicSelect from "../filters/BasicSelect";
 import BasicRange from "../filters/BasicRange";
-import BannerInfo from "../UI/Banner/BannerInfo";
- import BannerInfo1 from "../../assets/images/bannerInfo1.webp";
-import Card from "./Card";
+// import Banner from "../UI/Banner/Banner";
+// import BannerInfo from "../../assets/images/bannerInfo.webp";
+
 
 //La fonction prend en paramètre une fonction onSearch qui sera appelée lorsque l'utilisateur clique sur le bouton "Rechercher".
 const VehiculesFilters = ({ onSearch }) => {
@@ -28,14 +28,8 @@ const VehiculesFilters = ({ onSearch }) => {
     annee: [2000, getCurrentYear()], // On appelle la fonction getCurrentYear() pour avoir l'année actuelle
   });
 
-
   const [lien, setLien] = useState("http://localhost/garageback/API/vehicules.php")
 
-  const [cards, setCards] = useState(
-    []
-  )
-
-  
    //Impossible de communiquer directement entre parents et fils, on utilisera donc la fonction handlechange pour le faire, il sera passer en props pour chaque composant fils
   const handleChange = (name, newValue) => {
     setFiltres({ ...filtres, [name]: newValue }); //prendra 2 paramètres name (le nom du filtre à mettre à jour et newValue, la nouvelle valeur du filtre.
@@ -79,10 +73,7 @@ const VehiculesFilters = ({ onSearch }) => {
     )
     //Si reponse reçu de la requête http, then va gére la reponse de cette promesse et va prendre une fonction de rappel en argument:
       .then((res) => res.json())// Va extraire les données de l'API sous format json
-      .then((data) => {
-        setCards(data)
-        console.log();
-      })//data ou on aurait pu mettre un nom reprèsente la réponse de la requête http
+      .then((data) => console.log(data))//data ou on aurait pu mettre un nom reprèsente la réponse de la requête http
       .catch((err) => console.log(err));//Si erreur de la requête, catch retourne une erreur
   }, [lien]);
 
@@ -91,7 +82,15 @@ const VehiculesFilters = ({ onSearch }) => {
 
   return (
     <>
-   <BannerInfo imageUrl={BannerInfo1} altText="Banner offre" />
+    <div className="container-fluid introbanner">
+  <div className="row">
+    <div className="col-12 text-center p-0 mt-3">
+      <div class="image-container">
+        <img className="img-fluid w-75 rounded" src={BannerInfo} alt="banniere arrivage voitures" />
+      </div>
+    </div>
+  </div>
+</div>
 
       <div className="search-filters">
      
@@ -187,26 +186,6 @@ const VehiculesFilters = ({ onSearch }) => {
 
         <button onClick={handleClick}>Rechercher</button>
       </div>
-      <div className="row">
-        {cards.map((vehicule) => (
-          <div
-            key={vehicule.idVehicule}
-            className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3" 
-          >
-            <Card
-              image={vehicule.imageVoiture}
-              marque={vehicule.marque}
-              nom={vehicule.nom}
-              modele={vehicule.modele}
-              energie={vehicule.energie}
-              prix={vehicule.prix}
-              id={vehicule.idVehicule}
-            />
-          </div>
-        ))}
-      </div>
-
-
     </>
 
 

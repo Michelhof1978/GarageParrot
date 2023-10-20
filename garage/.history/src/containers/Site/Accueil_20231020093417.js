@@ -20,7 +20,7 @@ class Accueil extends Component {
   render() {
     return (
       <>
-     <BannerInfo imageUrl={BannerInfo1} altText="Banner offre" />
+     <Banner imageUrl={BannerHeader} altText="Banner offre" />
 
 
         <div>

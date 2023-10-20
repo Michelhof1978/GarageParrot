@@ -41,7 +41,7 @@ const VehiculesCard = () => {
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-console.log(currentCards);
+console
   return (
     <div>
       <div className="row">

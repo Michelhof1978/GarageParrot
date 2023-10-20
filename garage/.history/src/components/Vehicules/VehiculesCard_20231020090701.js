@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../../App.css";
-import TitreH2 from "../UI/Titres/TitreH2";
+import TitreH2 from "../UI/Titres/TitreH1";
 import { Pagination } from "react-bootstrap";
 import Card from "./Card";
 
@@ -41,7 +41,7 @@ const VehiculesCard = () => {
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-console.log(currentCards);
+
   return (
     <div>
       <div className="row">

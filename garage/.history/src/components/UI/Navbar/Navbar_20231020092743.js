@@ -4,7 +4,7 @@ import logo from "../../../assets/images/logo2.webp";
 import contact from "../../../assets/images/contact.webp";
 import iconespacepro from "../../../assets/images/iconespacepro.webp";
 import { NavLink } from "react-router-dom";//Pour éviter le rechargement des pages
-import Banner from "../Banner/BannerWidh100";
+import Banner from "../Banner/BannerWid";
 
 
 //Composant stateless

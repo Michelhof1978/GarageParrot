@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 
 const Card = (props) => {
-  const image = `http://localhost/garageback/public/images/${props.image}`;
   return (
     <div className="card">
       <div className="card-body">
@@ -10,7 +9,7 @@ const Card = (props) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={image} alt={props.marque} />
+          <img src=`http://localhost/garageback/publi` alt={props.marque} />
         </a>
        
         <h5 className="card-title">{props.marque}</h5>

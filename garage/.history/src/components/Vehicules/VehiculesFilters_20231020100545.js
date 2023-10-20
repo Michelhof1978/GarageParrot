@@ -187,24 +187,7 @@ const VehiculesFilters = ({ onSearch }) => {
 
         <button onClick={handleClick}>Rechercher</button>
       </div>
-      <div className="row">
-        {cards.map((vehicule) => (
-          <div
-            key={vehicule.idVehicule}
-            className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3" 
-          >
-            <Card
-              image={vehicule.imageVoiture}
-              marque={vehicule.marque}
-              nom={vehicule.nom}
-              modele={vehicule.modele}
-              energie={vehicule.energie}
-              prix={vehicule.prix}
-              id={vehicule.idVehicule}
-            />
-          </div>
-        ))}
-      </div>
+
 
 
     </>

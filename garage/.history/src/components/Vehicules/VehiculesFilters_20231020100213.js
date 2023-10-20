@@ -31,11 +31,7 @@ const VehiculesFilters = ({ onSearch }) => {
 
   const [lien, setLien] = useState("http://localhost/garageback/API/vehicules.php")
 
-  const [cards, setCards] = useState(
-    []
-  )
-
-  
+  const [cars]
    //Impossible de communiquer directement entre parents et fils, on utilisera donc la fonction handlechange pour le faire, il sera passer en props pour chaque composant fils
   const handleChange = (name, newValue) => {
     setFiltres({ ...filtres, [name]: newValue }); //prendra 2 paramètres name (le nom du filtre à mettre à jour et newValue, la nouvelle valeur du filtre.
@@ -79,10 +75,7 @@ const VehiculesFilters = ({ onSearch }) => {
     )
     //Si reponse reçu de la requête http, then va gére la reponse de cette promesse et va prendre une fonction de rappel en argument:
       .then((res) => res.json())// Va extraire les données de l'API sous format json
-      .then((data) => {
-        setCards(data)
-        console.log();
-      })//data ou on aurait pu mettre un nom reprèsente la réponse de la requête http
+      .then((data) => console.log(data))//data ou on aurait pu mettre un nom reprèsente la réponse de la requête http
       .catch((err) => console.log(err));//Si erreur de la requête, catch retourne une erreur
   }, [lien]);
 
@@ -187,24 +180,7 @@ const VehiculesFilters = ({ onSearch }) => {
 
         <button onClick={handleClick}>Rechercher</button>
       </div>
-      <div className="row">
-        {cards.map((vehicule) => (
-          <div
-            key={vehicule.idVehicule}
-            className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3" 
-          >
-            <Card
-              image={vehicule.imageVoiture}
-              marque={vehicule.marque}
-              nom={vehicule.nom}
-              modele={vehicule.modele}
-              energie={vehicule.energie}
-              prix={vehicule.prix}
-              id={vehicule.idVehicule}
-            />
-          </div>
-        ))}
-      </div>
+
 
 
     </>

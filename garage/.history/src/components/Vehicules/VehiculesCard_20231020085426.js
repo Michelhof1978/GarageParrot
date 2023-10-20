@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../../App.css";
-import TitreH2 from "../UI/Titres/TitreH2";
+import TitreH1 from "../UI/TitreS/TitreH1";
 import { Pagination } from "react-bootstrap";
 import Card from "./Card";
 
 const VehiculesCard = () => {
   const [vehicules, setVehicules] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 6;
+  const cardsPerPage = 9;
 
   useEffect(() => {
     axios
@@ -41,25 +41,21 @@ const VehiculesCard = () => {
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-console.log(currentCards);
+
   return (
     <div>
-      <div className="row">
+      <div className="vehicule-grid">
         {currentCards.map((vehicule) => (
-          <div
+          <Card
+            image={vehicule.imageVoiture}
+            marque={vehicule.marque}
+            nom={vehicule.nom}
+            modele={vehicule.modele}
+            energie={vehicule.energie}
+            prix={vehicule.prix}
+            id={vehicule.idVehicule}
             key={vehicule.idVehicule}
-            className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3" 
-          >
-            <Card
-              image={vehicule.imageVoiture}
-              marque={vehicule.marque}
-              nom={vehicule.nom}
-              modele={vehicule.modele}
-              energie={vehicule.energie}
-              prix={vehicule.prix}
-              id={vehicule.idVehicule}
-            />
-          </div>
+          />
         ))}
       </div>
       <div className="pagination-container">

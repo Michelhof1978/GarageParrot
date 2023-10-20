@@ -8,8 +8,8 @@ import VehiculesCard from "../../components/Vehicules/VehiculesCard";
 import AvisClients from "../../components/Avis/AvisClients";
 import Textes from "../../components/UI/Textes/Textes";
 import TitreH3 from "../../components/UI/Titres/TitreH3";
-import BannerInfo from "../../components/UI/Banner/BannerInfo";
-import BannerInfo1 from "../../assets/images/bannerInfo1.webp";
+// import Banner from "../../components/UI/Banner/Banner";
+// import BannerInfo from "../../assets/images/bannerInfo.webp";
 
 class Accueil extends Component {
   
@@ -20,8 +20,7 @@ class Accueil extends Component {
   render() {
     return (
       <>
-     <BannerInfo imageUrl={BannerInfo1} altText="Banner offre" />
-
+      {/* <Banner imageUrl={BannerInfo} altText="Info" /> */}
 
         <div>
           <div className="container">

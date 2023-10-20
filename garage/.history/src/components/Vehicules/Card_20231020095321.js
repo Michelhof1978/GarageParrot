@@ -10,7 +10,7 @@ const Card = (props) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src={image} alt={props.marque} />
+          <img src={`//http:localhost/garageback/public`} alt={props.marque} />
         </a>
        
         <h5 className="card-title">{props.marque}</h5>

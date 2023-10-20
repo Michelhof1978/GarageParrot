@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "../../App.css";
-import TitreH2 from "../UI/Titres/TitreH2";
+import TitreH1 from "../UI/Titres/TitreH1";
 import { Pagination } from "react-bootstrap";
 import Card from "./Card";
 
@@ -41,14 +41,14 @@ const VehiculesCard = () => {
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-console.log(currentCards);
+
   return (
     <div>
       <div className="row">
         {currentCards.map((vehicule) => (
           <div
             key={vehicule.idVehicule}
-            className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3" 
+            className="col-lg-4 col-md-4 col-sm-6 col-6" // Utilisation de classes Bootstrap pour le placement des cartes
           >
             <Card
               image={vehicule.imageVoiture}
