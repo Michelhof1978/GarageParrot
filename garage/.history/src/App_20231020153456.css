@@ -140,9 +140,8 @@ margin-right: 10px; /* Ajoute de l'espace entre les cases à cocher */
 }
 /* END CAROUSSEL */
 
-/* COMPOSANT BannerWidh100*/
+/* styles.css (ou votre fichier CSS) */
 .banner-image {
   width: 100%; 
-  max-height: 450px; 
+  max-height: 300px; 
 }
-/* FIN COMPOSANT BannerWidh100 */
