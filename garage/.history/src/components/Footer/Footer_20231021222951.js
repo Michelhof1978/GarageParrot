@@ -61,7 +61,7 @@ const Footer = () => {
       
       <div>
    
-    <Logo imageUrl="public/assets/images/logoblc.webp" altText="Texte alternatif de l'image" />
+    <Logo imageUrl="../../assets/images/logoblc.webp" altText="Texte alternatif de l'image" />
   </div>
     </footer>
   );

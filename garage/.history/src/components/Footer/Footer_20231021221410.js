@@ -1,7 +1,8 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faTwitter, faInstagram } from "@fortawesome/free-brands-svg-icons";
-import Logo from "../UI/Logo/Logo";
+import LogoBlanc from "../../../assets/images/logoblc.webp";
+import Logoblc from "../UI/Logo/Logoblc";
 
 const Footer = () => {
   return (
@@ -59,10 +60,7 @@ const Footer = () => {
         </div>
       </div>
       
-      <div>
-   
-    <Logo imageUrl="public/assets/images/logoblc.webp" altText="Texte alternatif de l'image" />
-  </div>
+      <Logoblc imageUrl={BannerHeader} altText="Banner offre" />
     </footer>
   );
 };

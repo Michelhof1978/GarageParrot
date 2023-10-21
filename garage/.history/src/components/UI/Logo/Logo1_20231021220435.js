@@ -1,4 +1,5 @@
 import React from "react";
+import Logo2 from "../../../assets/images/logo2.webp";
 
 const Banner = (props) => (
   <div className="container-fluid p-0 ">

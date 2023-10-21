@@ -1,6 +1,5 @@
 import React from "react";
 import BannerInfo from "../../components/UI/Banner/BannerInfo";
-import BannerWidh100 from "../../components/UI/Banner/BannerWidh100";
 import BannerPneusContinental from "../../assets/images/bannerPneusContinental.webp";
 import TitreH1 from "../../components/UI/Titres/TitreH1";
 import Textes from "../../components/UI/Textes/Textes";
@@ -23,9 +22,8 @@ const Reparation = (props) => (
             Les réparateurs du Garage Parrot s’occupent de la réparation et l’entretien de votre voiture, peu importe la marque ou le modèle de celle-ci. Profitez d’une prestation de qualité effectuée par des véritables experts auto. Réalisez dès maintenant un devis en ligne en nous contactant via le formulaire pour la réparation de votre voiture et obtenez un RDV immédiat !
             </Textes>
 
-            <div className="w-50 text-center">
-            <BannerWidh100 imageUrl={BannerQuality} altText="Offre satisfaction" />
-            </div>
+            <BannerInfo imageUrl={BannerQuality} altText="Ofre" />
+           
     </div>
    
   </>

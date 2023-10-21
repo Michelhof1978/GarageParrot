@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebook, faTwitter, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import LogoBlanc from "../../../assets/images/logo.webp";
 import Logo from "../UI/Logo/Logo";
 
 const Footer = () => {
@@ -61,7 +62,7 @@ const Footer = () => {
       
       <div>
    
-    <Logo imageUrl="public/assets/images/logoblc.webp" altText="Texte alternatif de l'image" />
+    <Logo imageUrl="chemin_vers_votre_image.jpg" altText="Texte alternatif de l'image" />
   </div>
     </footer>
   );

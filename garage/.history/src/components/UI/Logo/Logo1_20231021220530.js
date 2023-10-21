@@ -1,6 +1,7 @@
 import React from "react";
+import Logo2 from "../../../assets/images/logo2.webp";
 
-const Banner = (props) => (
+const Logo1 = (props) => (
   <div className="container-fluid p-0 ">
     <div className="row">
       <div className="col-12 text-center p-0">
@@ -10,4 +11,4 @@ const Banner = (props) => (
   </div>
 );
 
-export default Banner;
+export default Logo;

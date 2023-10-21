@@ -8,7 +8,7 @@
 }
  
 
-footer {
+.footer {
   padding: 20px; /* Espacement interne du footer */
   width: 100%;
 }
@@ -42,10 +42,6 @@ margin-bottom: 10px; /* Ajout de l'espace entre chaque filtre */
 margin-right: 10px; /* Ajout de l'espace entre les cases à cocher */
 }
 
-.filter-row {
-  width: 25vw;
-  margin-left: 2rem;
-}
 /* END SEARCH FILTER */
 
 /* VEHICULE CARD*/
@@ -92,6 +88,13 @@ margin-right: 10px; /* Ajout de l'espace entre les cases à cocher */
 }
 
 /* END PAGINATION*/
+
+/* FILTRE*/
+.filter-row {
+  width: 25vw;
+  margin-left: 2rem;
+}
+/* END FILTRE*/
 
 /* CAROUSSEL */
 .caroussel-container {
