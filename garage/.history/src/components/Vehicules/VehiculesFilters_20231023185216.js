@@ -4,7 +4,7 @@ import VehiculesCard from "./VehiculesCard";
 import TitreH1 from "../UI/Titres/TitreH1";
 import BasicCheckbox from "../Filters/BasicCheckbox";
 import BasicSelect from "../Filters/BasicSelect";
-import BasicRange from "../Filters/BasicRange";
+import BasicRange from "../filters/BasicRange";
 import BannerInfo from "../UI/Banner/BannerInfo";
  import BannerInfo1 from "../../assets/images/bannerInfo1.webp";
  import logoVoiture from "../../assets/images/logoVoiture.webp";
