@@ -123,3 +123,16 @@ margin-right: 10px; /* Ajout de l'espace entre les cases à cocher */
 /* FIN COMPOSANT BannerWidh100 */
 
 
+/* AvisClients.css */
+.custom-input {
+  border: 2px solid #007bff; /* Couleur bleue pour l'encadrement */
+}
+
+.custom-button {
+  background-color: #007bff; /* Couleur de fond bleue pour le bouton */
+  border: none;
+}
+
+.custom-button:hover {
+  background-color: #0056b3; /* Couleur de fond bleue foncée au survol */
+}

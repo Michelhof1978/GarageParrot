@@ -77,7 +77,7 @@ class AvisClients extends Component {
                   <label>Nom:</label>
                   <input
                     type="text"
-                    className="form-control form-control-thick mb-3 fw-bold lead"
+                    className="form-control form-control-thick mb-3 fw-bold"
                     style={inputStyles} // Applique les styles personnalisés
                     value={this.state.nom}
                     onChange={this.handleNomChange}

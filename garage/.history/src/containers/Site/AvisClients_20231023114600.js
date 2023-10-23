@@ -77,13 +77,13 @@ class AvisClients extends Component {
                   <label>Nom:</label>
                   <input
                     type="text"
-                    className="form-control form-control-thick mb-3 fw-bold lead"
+                    className="form-control form-control-thick mb-3 fw-bold"
                     style={inputStyles} // Applique les styles personnalisés
                     value={this.state.nom}
                     onChange={this.handleNomChange}
                   />
                 </div>
-                <div className="form-group mb-3 fw-bold lead">
+                <div className="form-group mb-3 fw-bold">
                   <label>Prénom:</label>
                   <input
                     type="text"
@@ -93,11 +93,11 @@ class AvisClients extends Component {
                     onChange={this.handlePrenomChange}
                   />
                 </div>
-                <div className="form-group mb-3 fw-bold lead">
+                <div className="form-group mb-3 fw-bold">
                   <label>Note:</label>
                   <div className="etoiles-container">{etoiles}</div>
                 </div>
-                <div className="form-group mb-3 fw-bold lead">
+                <div className="form-group mb-3 fw-bold">
                   <label>Commentaire:</label>
                   <textarea
                     className="form-control form-control-thick"
