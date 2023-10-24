@@ -59,7 +59,7 @@ class AvisClients extends Component {
           <div className="row justify-content-center">
             <div className="col-md-8">
               <TitreH2>Laissez Un Avis !</TitreH2>
-              <div className="text-center m-5">
+              <div className="text-center m">
   <DetailsInfoAvis />
   <DetailsInfoAvisNoteSur5 />
 </div>
