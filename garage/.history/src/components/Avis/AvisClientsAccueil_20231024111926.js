@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react";
 import TitreH3 from "../UI/Titres/TitreH3";
 import { Link } from "react-router-dom";
 import EtoileNotation from "./EtoileNotation";
-
+import DetailsInfoAvis from "./DetailsInfoAvis";
 import DetailsInfoAvisNoteSur5 from "./DetailsInfoAvisNoteSur5";
 import DetailsInfoAvis from "./DetailsInfoAvis";
-
 const AvisClientsAccueil = () => {
   const avis = [
     [

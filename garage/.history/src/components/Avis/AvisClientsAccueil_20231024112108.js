@@ -5,7 +5,6 @@ import EtoileNotation from "./EtoileNotation";
 
 import DetailsInfoAvisNoteSur5 from "./DetailsInfoAvisNoteSur5";
 import DetailsInfoAvis from "./DetailsInfoAvis";
-
 const AvisClientsAccueil = () => {
   const avis = [
     [

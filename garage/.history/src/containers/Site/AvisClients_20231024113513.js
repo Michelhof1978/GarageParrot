@@ -75,7 +75,7 @@ class AvisClients extends Component {
                   <label className="mb-2">Prénom:</label>
                   <input
                     type="text"
-                    className="form-control form-control-thick "
+                    className="form-control form-control-thick mb-3"
                     style={inputStyles}
                     value={this.state.prenom}
                     onChange={this.handlePrenomChange}
@@ -83,14 +83,14 @@ class AvisClients extends Component {
                 </div>
                 <div className="form-group mb-3 fw-bold lead">
                   <label >Note:</label>
-                  <div className="etoiles-container ">
+                  <div className="etoiles-container mt-2">
                     <EtoileNotation
                       note={this.state.note}
                       onEtoileClick={this.handleNoteChange}
                     />
                   </div>
                 </div>
-              
+                // ...
 
 <div className="form-group mb-3 fw-bold lead ">
   <label className="mb-2">Commentaire:</label>

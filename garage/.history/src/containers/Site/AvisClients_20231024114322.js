@@ -83,7 +83,7 @@ class AvisClients extends Component {
                 </div>
                 <div className="form-group mb-3 fw-bold lead">
                   <label >Note:</label>
-                  <div className="etoiles-container ">
+                  <div className="etoiles-container mt-2">
                     <EtoileNotation
                       note={this.state.note}
                       onEtoileClick={this.handleNoteChange}
