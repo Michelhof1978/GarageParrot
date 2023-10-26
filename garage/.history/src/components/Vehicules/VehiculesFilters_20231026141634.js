@@ -132,13 +132,13 @@ const VehiculesFilters = ({ onSearch }) => {
             handleCheckBoxChange={handleCheckBoxChange}
             label="suv"
             name="famille"
-            value="suv"
+            value="SUV"
           />
         </div>
 
         <div className="filter-row">
           <BasicSelect
-            label="marque:"
+            label="Marque:"
             name="marque"
             handleChange={handleChange}
             options={[

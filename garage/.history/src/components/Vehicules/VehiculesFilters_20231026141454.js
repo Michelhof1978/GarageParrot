@@ -114,31 +114,31 @@ const VehiculesFilters = ({ onSearch }) => {
             handleCheckBoxChange={handleCheckBoxChange}
             label="berline"
             name="famille"
-            value="berline"
+            value="Berline"
           />
           <BasicCheckbox
             handleCheckBoxChange={handleCheckBoxChange}
             label="familiale"
             name="famille"
-            value="familiale"
+            value="Familiale"
           />
           <BasicCheckbox
             handleCheckBoxChange={handleCheckBoxChange}
             label="citadine"
             name="famille"
-            value="citadine"
+            value="Citadine"
           />
           <BasicCheckbox
             handleCheckBoxChange={handleCheckBoxChange}
-            label="suv"
+            label="SUV"
             name="famille"
-            value="suv"
+            value="SUV"
           />
         </div>
 
         <div className="filter-row">
           <BasicSelect
-            label="marque:"
+            label="Marque:"
             name="marque"
             handleChange={handleChange}
             options={[

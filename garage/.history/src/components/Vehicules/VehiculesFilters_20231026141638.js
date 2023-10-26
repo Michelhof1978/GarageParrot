@@ -138,7 +138,7 @@ const VehiculesFilters = ({ onSearch }) => {
 
         <div className="filter-row">
           <BasicSelect
-            label="marque:"
+            label="Marque:"
             name="marque"
             handleChange={handleChange}
             options={[
