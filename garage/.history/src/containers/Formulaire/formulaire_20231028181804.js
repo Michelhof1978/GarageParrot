@@ -116,7 +116,7 @@ const Form = (props) => {
                   onChange={props.handleChange}
                   value={props.values.message}
                   onBlur={props.handleBlur}
-                  className="form-control border-4 border-primary" // Ajoutez la classe "border-2 border-primary" ici
+                  className="form-control border-3 border-primary" // Ajoutez la classe "border-2 border-primary" ici
                   id="message"
                   required
                 ></textarea>
