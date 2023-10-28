@@ -3,7 +3,7 @@ import Navbar from '../../components/UI/Navbar/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer';
-import VehiculeFiche from './VehiculeFiche';
+import VehiculesFilters from '../../containers/Site/VehiculesFilters';
 import VehiculesFilters from '../../containers/Site/VehiculesFilters';
 import Contact from '../../containers/Site/Contact';
 import Reparation from '../../containers/Site/Reparation';

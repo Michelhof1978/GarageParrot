@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import VehiculesCard from "../../components/Vehicules/VehiculesCard";
-import TitreH1 from "../../components/UI/Titres/TitreH1";
-import TitreH2 from "../../components/UI/Titres/TitreH2";
-import BasicCheckbox from "../../components/Filters/BasicCheckbox";
-import BasicSelect from "../../components/Filters/BasicSelect";
-import BasicRange from "../../components/Filters/BasicRange";
-import BannerInfo from "../../components/UI/Banner/BannerInfo";
+import VehiculesCaz;
+import TitreH1 from "../UI/Titres/TitreH1";
+import TitreH2 from "../UI/Titres/TitreH2";
+import BasicCheckbox from "../Filters/BasicCheckbox";
+import BasicSelect from "../Filters/BasicSelect";
+import BasicRange from "../Filters/BasicRange";
+import BannerInfo from "../UI/Banner/BannerInfo";
  import BannerInfo1 from "../../assets/images/bannerInfo1.webp";
  import logoVoiture from "../../assets/images/logoVoiture.webp";
-import Card from "../../components/Vehicules/Card";
-import { Link } from "react-router-dom";
+import Card from "./Card";
 
 //La fonction prend en paramètre une fonction onSearch qui sera appelée lorsque l'utilisateur clique sur le bouton "Rechercher".
 const VehiculesFilters = ({ onSearch }) => {
@@ -104,9 +103,9 @@ const VehiculesFilters = ({ onSearch }) => {
       <div className="search-filters">
      
 
-        <TitreH1>Veuillez faire votre sélection</TitreH1>
+        <TitreH1>Veuillez faire votre selection</TitreH1>
 
-        <div className="checkbox-filter mb-3 mt-5">
+        <div className="checkbox-filter">
           <BasicCheckbox
             handleCheckBoxChange={handleCheckBoxChange}
             label="Utilitaire"
@@ -139,20 +138,20 @@ const VehiculesFilters = ({ onSearch }) => {
           />
         </div>
 
-        <div className="filter-row ">
-  <BasicSelect
-    label="Marque :&nbsp; "
-    name="marque"
-    handleChange={handleChange}
-    options={[
-      { value: "", text: "Toutes" },
-      { value: "citroen", text: "Citroen" },
-      { value: "peugeot", text: "Peugeot" },
-      { value: "kia", text: "Kia" },
-      { value: "BMW", text: "Bmw" },
-    ]}
-  />
-</div>
+        <div className="filter-row">
+          <BasicSelect
+            label="Marque:"
+            name="marque"
+            handleChange={handleChange}
+            options={[
+              { value: "", text: "Toutes" },
+              { value: "citroen", text: "Citroen" },
+              { value: "peugeot", text: "Peugeot" },
+              { value: "kia", text: "Kia" },
+              { value: "BMW", text: "Bmw" },
+            ]}
+          />
+        </div>
 
 
         <div className="filter-row">
@@ -205,7 +204,7 @@ const VehiculesFilters = ({ onSearch }) => {
             key={vehicule.idVehicule}
             className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3" 
           >
-             <Card
+            <Card
               image={vehicule.imageVoiture}
               marque={vehicule.marque}
               nom={vehicule.nom}
@@ -214,7 +213,6 @@ const VehiculesFilters = ({ onSearch }) => {
               prix={vehicule.prix}
               id={vehicule.idVehicule}
             />
-           
           </div>
         ))}
       </div>

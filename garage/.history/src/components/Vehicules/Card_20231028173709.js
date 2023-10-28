@@ -20,7 +20,7 @@ const Card = (props) => {
       </div>
       <div className="card-footer">
         <Link
-          to={`/vehiculefiche/${props.id}`}
+          to={`/vehicule/${props.id}`}
           className="btn btn-primary"
         >
           En savoir plus

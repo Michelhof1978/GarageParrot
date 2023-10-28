@@ -25,7 +25,7 @@ const Form = (props) => {
                       onBlur={props.handleBlur}
                       type="text"
                       id="firstName"
-                      className="form-control border-3 border-primary" // Ajoutez la classe "border-2 border-primary" ici
+                      className="form-control border-2 border-primary" // Ajoutez la classe "border-2 border-primary" ici
                       placeholder="Prénom"
                       required
                     />
@@ -45,7 +45,7 @@ const Form = (props) => {
                       onBlur={props.handleBlur}
                       type="text"
                       id="lastName"
-                      className="form-control border-3 border-primary" // Ajoutez la classe "border-2 border-primary" ici
+                      className="form-control border-2 border-primary" // Ajoutez la classe "border-2 border-primary" ici
                       placeholder="Nom"
                       required
                     />
@@ -65,7 +65,7 @@ const Form = (props) => {
                       onBlur={props.handleBlur}
                       type="tel"
                       id="phoneNumber"
-                      className="form-control border-3 border-primary" // Ajoutez la classe "border-2 border-primary" ici
+                      className="form-control border-2 border-primary" // Ajoutez la classe "border-2 border-primary" ici
                       placeholder="Téléphone"
                       required
                     />

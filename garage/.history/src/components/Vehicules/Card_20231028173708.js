@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const CardFiche = (props) => {
+const Card = (props) => {
   const image = `http://localhost/garageback/public/images/${props.image}`;
   return (
     <div className="card">
@@ -20,7 +20,7 @@ const CardFiche = (props) => {
       </div>
       <div className="card-footer">
         <Link
-          to={`/vehiculedetail/${props.id}`}
+          to={`/vehiculed/${props.id}`}
           className="btn btn-primary"
         >
           En savoir plus
@@ -30,4 +30,4 @@ const CardFiche = (props) => {
   );
 };
 
-export default CardFiche;
+export default Card;

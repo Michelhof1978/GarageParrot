@@ -3,7 +3,7 @@ import Navbar from '../../components/UI/Navbar/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer';
-import VehiculeFiche from './VehiculeFiche';
+// import VehiculeFiche from '../../containers/Site/VehiculeFiche';
 import VehiculesFilters from '../../containers/Site/VehiculesFilters';
 import Contact from '../../containers/Site/Contact';
 import Reparation from '../../containers/Site/Reparation';
@@ -29,7 +29,7 @@ class Site extends Component {
             <Route path="/parebrise" element={<h1>PareBrise</h1>} />
             <Route path="/vidange" element={<h1>Vidange</h1>} />
             <Route path="/voitureoccasion" element={<VehiculesFilters />} />
-            <Route path="/vehiculefiche/:id" element={<VehiculeFiche />} />
+            {/* <Route path="/vehiculefiche/:id" element={<VehiculeFiche />} /> */}
             <Route path="/contact" element={<Contact/>} />
             <Route path="/reparation" element={<Reparation/>} />
             <Route path="/avisclients/" element={<AvisClients/>} />

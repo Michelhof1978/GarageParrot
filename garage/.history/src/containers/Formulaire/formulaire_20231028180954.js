@@ -25,7 +25,7 @@ const Form = (props) => {
                       onBlur={props.handleBlur}
                       type="text"
                       id="firstName"
-                      className="form-control border-3 border-primary" // Ajoutez la classe "border-2 border-primary" ici
+                      className="form-control border-2 border-primary" // Ajoutez la classe "border-2 border-primary" ici
                       placeholder="Prénom"
                       required
                     />
@@ -45,7 +45,7 @@ const Form = (props) => {
                       onBlur={props.handleBlur}
                       type="text"
                       id="lastName"
-                      className="form-control border-3 border-primary" // Ajoutez la classe "border-2 border-primary" ici
+                      className="form-control border-2 border-primary" // Ajoutez la classe "border-2 border-primary" ici
                       placeholder="Nom"
                       required
                     />
@@ -65,7 +65,7 @@ const Form = (props) => {
                       onBlur={props.handleBlur}
                       type="tel"
                       id="phoneNumber"
-                      className="form-control border-3 border-primary" // Ajoutez la classe "border-2 border-primary" ici
+                      className="form-control border-2 border-primary" // Ajoutez la classe "border-2 border-primary" ici
                       placeholder="Téléphone"
                       required
                     />
@@ -77,7 +77,7 @@ const Form = (props) => {
                 </div>
               </div>
 
-              <div className="form-outline mb-4 ">
+              <div className="form-outline mb-4">
                 <div className="input-group has-validation">
                   <span className="input-group-text" id="inputGroupPrepend">
                     @
@@ -89,7 +89,7 @@ const Form = (props) => {
                     onBlur={props.handleBlur}
                     type="email"
                     id="email"
-                    className="form-control border-3 border-primary" // Ajoutez la classe "border-2 border-primary" ici
+                    className="form-control border-2 border-primary" // Ajoutez la classe "border-2 border-primary" ici
                     placeholder="Email"
                     required
                   />
@@ -100,11 +100,11 @@ const Form = (props) => {
                 )}
               </div>
 
-              <div className="form-outline mb-4 ">
+              <div className="form-outline mb-4">
                 <label className="form-label round" htmlFor="objet">
                   Objet :&nbsp;
                 </label>
-                <select className="form-label border-3 border-primary rounded" name="objet" id="objet">
+                <select className="form-label" name="objet" id="objet">
                   <option>Renseignements</option>
                   <option>Prendre un rendez-vous</option>
                 </select>
@@ -116,7 +116,7 @@ const Form = (props) => {
                   onChange={props.handleChange}
                   value={props.values.message}
                   onBlur={props.handleBlur}
-                  className="form-control border-3 border-primary" // Ajoutez la classe "border-2 border-primary" ici
+                  className="form-control border- border-primary" // Ajoutez la classe "border-2 border-primary" ici
                   id="message"
                   required
                 ></textarea>
