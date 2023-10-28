@@ -31,7 +31,7 @@ const CardFiche = (props) => {
           </Textes>
         </a>
 
-        <h5 className="card-title text-primary lead fw-bold mb-4">{props.marque}</h5>
+        <h5 className="card-title text-primary lead f">{props.marque}</h5>
         <p className="card-text lead">Modèle: {props.modele}</p>
         <p className="card-text lead">Année: {props.annee}</p>
         <p className="card-text lead">Date De Circulation: {formatDateCirculation(props.datecirculation)}</p>

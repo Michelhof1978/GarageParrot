@@ -35,9 +35,10 @@ const VehiculeFiche = () => {
     <div className="container">
       <BannerInfo imageUrl={BannerInfo1} altText="Banner offre" />
 
-      <TitreH1>Informations Véhicule</TitreH1>
+     
       
       <div className="d-flex justify-content-center align-items-center vh-100">
+      
         <div className="col-lg-8">
           <CardFiche
             image={vehicule.imageVoiture}

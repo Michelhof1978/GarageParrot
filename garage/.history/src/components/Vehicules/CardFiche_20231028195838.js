@@ -31,23 +31,23 @@ const CardFiche = (props) => {
           </Textes>
         </a>
 
-        <h5 className="card-title text-primary lead fw-bold mb-4">{props.marque}</h5>
-        <p className="card-text lead">Modèle: {props.modele}</p>
-        <p className="card-text lead">Année: {props.annee}</p>
-        <p className="card-text lead">Date De Circulation: {formatDateCirculation(props.datecirculation)}</p>
-        <p className="card-text lead">Famille: {props.famille}</p>
-        <p className="card-text lead">Énergie: {props.energie}</p>
-        <p className="card-text lead">Kilomètrage: {props.kilometrage} Km</p>
-        <p className="card-text lead">Boite De Vitesse: {props.boitevitesse}</p>
-        <p className="card-text lead">Puissance: {props.puissance}</p>
-        <p className="card-text lead">Places: {props.places}</p>
-        <p className="card-text lead">Couleur: {props.couleur}</p>
-        <p className="card-text lead">Description <br /> {props.description}</p>
+        <h5 className="card-title text-primary">{props.marque}</h5>
+        <p className="card-text">Modèle: {props.modele}</p>
+        <p className="card-text">Année: {props.annee}</p>
+        <p className="card-text">Date De Circulation: {formatDateCirculation(props.datecirculation)}</p>
+        <p className="card-text">Famille: {props.famille}</p>
+        <p className="card-text">Énergie: {props.energie}</p>
+        <p className="card-text">Kilomètrage: {props.kilometrage} Km</p>
+        <p className="card-text">Boite De Vitesse: {props.boitevitesse}</p>
+        <p className="card-text">Puissance: {props.puissance}</p>
+        <p className="card-text">Places: {props.places}</p>
+        <p className="card-text">Couleur: {props.couleur}</p>
+        <p className="card-text">Description <br /> {props.description}</p>
         <a href={props.imageCritere} target="_blank" rel="noopener noreferrer">
           <img src={imageCritere} alt={props.imageCritere} style={imageCritereCss} />
         </a>
-        <Textes>
-        <p className="card-text fw-bold text-primary lead">Prix: {props.prix} €</p>
+<Textes>
+        <p className="card-text fw-bold text-primary">Prix: {props.prix} €</p>
         </Textes>
       </div>
       <div className="card-footer">

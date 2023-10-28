@@ -489,4 +489,7 @@ figure[class*='notation'][data-cover] [role='img']:after {
 
 /* FIN COMPOSANT ETOILE */
 
-
+.card-fiche {
+  max-width: 300px; /* Ajustez la largeur maximale selon vos besoins */
+  margin: 0 auto; /* Centrez la carte horizontalement */
+}

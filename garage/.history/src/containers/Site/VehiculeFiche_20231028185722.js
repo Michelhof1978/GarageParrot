@@ -32,37 +32,30 @@ const VehiculeFiche = () => {
   }
 
   return (
-    <div className="container">
+    <>
       <BannerInfo imageUrl={BannerInfo1} altText="Banner offre" />
 
       <TitreH1>Informations Véhicule</TitreH1>
       
       <div className="d-flex justify-content-center align-items-center vh-100">
         <div className="col-lg-8">
-          <CardFiche
-            image={vehicule.imageVoiture}
-            marque={vehicule.marque}
-            nom={vehicule.nom}
-            modele={vehicule.modele}
-            annee={vehicule.annee}
-            datecirculation={vehicule.datecirculation}
-            famille={vehicule.famille}
-            energie={vehicule.energie}
-            kilometrage={vehicule.kilometrage}
-            boitevitesse={vehicule.boitevitesse}
-            puissance={vehicule.puissance}
-            places={vehicule.places}
-            couleur={vehicule.couleur}
-            description={vehicule.description}
-            imageCritere={vehicule.imageCritere}
-            prix={vehicule.prix}
-            id={vehicule.idVehicule}
-          />
+        <CardFiche
+             image={vehicule.imageVoiture}
+              marque={vehicule.marque}
+              nom={vehicule.nom}
+              modele={vehicule.modele}
+              modele={vehicule.modele}
+              famille={vehicule.famille}
+              energie={vehicule.energie}
+              prix={vehicule.prix}
+              id={vehicule.idVehicule}
+        />
+         
         </div>
       </div>
 
       <BannerInfo imageUrl={logoVoiture} altText="logos marques voitures" />
-    </div>
+    </>
   );
 };
 

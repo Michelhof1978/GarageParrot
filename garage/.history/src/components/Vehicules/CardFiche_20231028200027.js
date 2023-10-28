@@ -31,7 +31,7 @@ const CardFiche = (props) => {
           </Textes>
         </a>
 
-        <h5 className="card-title text-primary lead fw-bold mb-4">{props.marque}</h5>
+        <h5 className="card-title text-primary lead">{props.marque}</h5>
         <p className="card-text lead">Modèle: {props.modele}</p>
         <p className="card-text lead">Année: {props.annee}</p>
         <p className="card-text lead">Date De Circulation: {formatDateCirculation(props.datecirculation)}</p>
@@ -47,7 +47,7 @@ const CardFiche = (props) => {
           <img src={imageCritere} alt={props.imageCritere} style={imageCritereCss} />
         </a>
         <Textes>
-        <p className="card-text fw-bold text-primary lead">Prix: {props.prix} €</p>
+        <p className="card-text fw-bold text-primary">Prix: {props.prix} €</p>
         </Textes>
       </div>
       <div className="card-footer">
