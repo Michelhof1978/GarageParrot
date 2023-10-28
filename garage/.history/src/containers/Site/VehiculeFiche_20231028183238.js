@@ -7,7 +7,7 @@ import logoVoiture from "../../assets/images/logoVoiture.webp";
 import BannerInfo1 from "../../assets/images/bannerInfo1.webp";
 import TitreH1 from "../../components/UI/Titres/TitreH1";
 import { Card } from "react-bootstrap";
-import CardFiche from "../../components/Vehicules/CardFiche";
+import C
 
 const VehiculeFiche = () => {
   const [vehicule, setVehicule] = useState(null);
@@ -36,20 +36,23 @@ const VehiculeFiche = () => {
       <BannerInfo imageUrl={BannerInfo1} altText="Banner offre" />
 
       <TitreH1>Informations Véhicule</TitreH1>
-      
+
       <div className="d-flex justify-content-center align-items-center vh-100">
         <div className="col-lg-8">
-        <CardFiche
-             image={vehicule.imageVoiture}
-              marque={vehicule.marque}
-              nom={vehicule.nom}
-              modele={vehicule.modele}
-              famille={vehicule.famille}
-              energie={vehicule.energie}
-              prix={vehicule.prix}
-              id={vehicule.idVehicule}
-        />
-         
+          <Card>
+            <Card.Img variant="top" src={vehicule.imageVoiture} alt={vehicule.marque} />
+            
+            <Card.Body>
+              <Card.Title>{vehicule.marque}</Card.Title>
+              <Card.Text>
+                Modèle: {vehicule.modele}
+                <br />
+                Énergie: {vehicule.energie}
+                <br />
+                Prix: {vehicule.prix} €
+              </Card.Text>
+            </Card.Body>
+          </Card>
         </div>
       </div>
 

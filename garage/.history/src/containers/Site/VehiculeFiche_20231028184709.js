@@ -39,17 +39,21 @@ const VehiculeFiche = () => {
       
       <div className="d-flex justify-content-center align-items-center vh-100">
         <div className="col-lg-8">
-        <CardFiche
-             image={vehicule.imageVoiture}
-              marque={vehicule.marque}
-              nom={vehicule.nom}
-              modele={vehicule.modele}
-              famille={vehicule.famille}
-              energie={vehicule.energie}
-              prix={vehicule.prix}
-              id={vehicule.idVehicule}
-        />
-         
+        <CardFiche/>
+          <Card>
+            <Card.Img variant="top" src={vehicule.imageVoiture} alt={vehicule.marque} />
+            
+            <Card.Body>
+              <Card.Title>{vehicule.marque}</Card.Title>
+              <Card.Text>
+                Modèle: {vehicule.modele}
+                <br />
+                Énergie: {vehicule.energie}
+                <br />
+                Prix: {vehicule.prix} €
+              </Card.Text>
+            </Card.Body>
+          </Card>
         </div>
       </div>
 

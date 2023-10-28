@@ -44,7 +44,7 @@ const VehiculeFiche = () => {
               marque={vehicule.marque}
               nom={vehicule.nom}
               modele={vehicule.modele}
-              famille={vehicule.famille}
+              modele={vehicule.modele}
               energie={vehicule.energie}
               prix={vehicule.prix}
               id={vehicule.idVehicule}

@@ -44,12 +44,24 @@ const VehiculeFiche = () => {
               marque={vehicule.marque}
               nom={vehicule.nom}
               modele={vehicule.modele}
-              famille={vehicule.famille}
               energie={vehicule.energie}
               prix={vehicule.prix}
               id={vehicule.idVehicule}
         />
-         
+          {/* <Card>
+            <Card.Img variant="top" src={vehicule.imageVoiture} alt={vehicule.marque} />
+            
+            <Card.Body>
+              <Card.Title>{vehicule.marque}</Card.Title>
+              <Card.Text>
+                Modèle: {vehicule.modele}
+                <br />
+                Énergie: {vehicule.energie}
+                <br />
+                Prix: {vehicule.prix} €
+              </Card.Text>
+            </Card.Body>
+          </Card> */}
         </div>
       </div>
 
