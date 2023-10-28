@@ -5,7 +5,10 @@ import Textes from "../UI/Textes/Textes";
 const CardFiche = (props) => {
   const image = `http://localhost/garageback/public/images/${props.image}`;
 
- 
+  const cardStyle = {
+  maxWidth: "400px", // Définissez la largeur maximale souhaitée
+  margin: "0 auto", // Pour centrer la carte horizontalement
+};
 
   // Fonction pour formater la date de circulation au format européen (jour/mois/année)
   const formatDateCirculation = (date) => {

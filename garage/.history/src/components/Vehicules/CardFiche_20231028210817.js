@@ -24,7 +24,7 @@ const CardFiche = (props) => {
   };
 
   return (
-    <div className="card text-center border-4 border-primary ">
+    <div className="card text-center border-4 border-primary  container">
       <div className="card-body  ">
       
         <a href={props.image} target="_blank" rel="noopener noreferrer">

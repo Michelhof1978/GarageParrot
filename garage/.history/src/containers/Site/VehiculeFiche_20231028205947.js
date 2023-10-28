@@ -37,7 +37,7 @@ const VehiculeFiche = () => {
 
       <TitreH1>Informations Véhicule</TitreH1>
       
-      <div className="d-flex justify-content-center align-items-center ">
+      <div className="d-flex justify-content-center align-items-center vh-100">
         <div className="col-lg-8">
           <CardFiche
             image={vehicule.imageVoiture}
