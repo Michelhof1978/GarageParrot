@@ -13,7 +13,7 @@ const Card = (props) => {
           <img src={image} alt={props.marque} />
         </a>
        
-        <h5 className="card-title text-primary">{props.marque.toUpperCase()}</h5>
+        <h5 className="card-title">{props.marque.toUpperCase()}</h5>
         <p className="card-text">Modèle: {props.modele} </p>
         <p className="card-text">Energie: {props.energie} </p>
         <p className="card-text">Prix: {props.prix} €</p>
