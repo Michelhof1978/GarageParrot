@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 
+
 const Card = (props) => {
   const image = `http://localhost/garageback/public/images/${props.image}`;
   return (
+<>
+   
+
     <div className="card">
       <div className="card-body">
         <a
@@ -27,6 +31,7 @@ const Card = (props) => {
         </Link>
       </div>
     </div>
+    </>
   );
 };
 
