@@ -35,17 +35,17 @@ const CardFiche = (props) => {
 
         <h5 className="card-title text-primary lead fw-bold mb-4">{props.marque.toUpperCase()}</h5>
 
-        <p className="card-text lead"> <strong>Modèle: </strong>{props.modele}</p>
-        <p className="card-text lead"><strong>Année:</strong> {props.annee}</p>
-        <p className="card-text lead"><strong>Date De Circulation:</strong> {formatDateCirculation(props.datecirculation)}</p>
-        <p className="card-text lead"><strong>Famille:</strong> {props.famille}</p>
-        <p className="card-text lead"><strong>Énergie:</strong> {props.energie}</p>
-        <p className="card-text lead"><strong>Kilomètrage:</strong> {props.kilometrage} Km</p>
-        <p className="card-text lead"><strong>Boite De Vitesse:</strong> {props.boitevitesse}</p>
-        <p className="card-text lead"><strong>Puissance:</strong> {props.puissance}</p>
-        <p className="card-text lead"><strong>Places:</strong> {props.places}</p>
-        <p className="card-text lead"><strong>Couleur:</strong> {props.couleur}</p>
-        <p className="card-text lead"><strong>Description </strong><br /> {props.description}</p>
+        <p className="card-text lead"> <strong></strong>Modèle: {props.modele}</p>
+        <p className="card-text lead"><strong></strong>Année: {props.annee}</p>
+        <p className="card-text lead"><strong></strong>Date De Circulation: {formatDateCirculation(props.datecirculation)}</p>
+        <p className="card-text lead"><strong></strong>Famille: {props.famille}</p>
+        <p className="card-text lead"><strong></strong>Énergie: {props.energie}</p>
+        <p className="card-text lead"><strong></strong>Kilomètrage: {props.kilometrage} Km</p>
+        <p className="card-text lead"><strong></strong>Boite De Vitesse: {props.boitevitesse}</p>
+        <p className="card-text lead"><strong></strong>Puissance: {props.puissance}</p>
+        <p className="card-text lead"><strong></strong>Places: {props.places}</p>
+        <p className="card-text lead">Couleur: {props.couleur}</p>
+        <p className="card-text lead">Description <br /> {props.description}</p>
         <a href={props.imageCritere} target="_blank" rel="noopener noreferrer">
           <img src={imageCritere} alt={props.imageCritere} style={imageCritereCss} />
         </a>

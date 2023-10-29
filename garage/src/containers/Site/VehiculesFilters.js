@@ -11,6 +11,9 @@ import BannerInfo from "../../components/UI/Banner/BannerInfo";
  import logoVoiture from "../../assets/images/logoVoiture.webp";
 import Card from "../../components/Vehicules/Card";
 import { Link } from "react-router-dom";
+import Textes from "../../components/UI/Textes/Textes";
+import { Pagination } from "react-bootstrap";
+
 
 //La fonction prend en paramètre une fonction onSearch qui sera appelée lorsque l'utilisateur clique sur le bouton "Rechercher".
 const VehiculesFilters = ({ onSearch }) => {
@@ -55,7 +58,20 @@ const VehiculesFilters = ({ onSearch }) => {
     }
   };
   
+  const [pageNumber, setPageNumber] = useState(0);
+  const itemsPerPage = 9;
+  const pagesCount = Math.ceil(cards.length / itemsPerPage);
+
+  const startIndex = pageNumber * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const displayedCards = cards.slice(startIndex, endIndex);
+
+  const handlePageClick = (selectedPage) => {
+    setPageNumber(selectedPage);
+  };
   const handleClick = ()=> {
+
+
         let lienTmp = "http://localhost/garageback/API/vehicules.php?";
         let lienObject = {kilometremin:filtres.kilometrage[0], 
                         kilometremax:filtres.kilometrage[1],
@@ -99,38 +115,65 @@ const VehiculesFilters = ({ onSearch }) => {
 
   return (
     <>
+
+<div className="container">
    <BannerInfo imageUrl={BannerInfo1} altText="Banner offre" />
+
+   <Textes>
+    Faites confiance au Garage Parrot pour des réparations de qualité,
+     des tarifs abordables et des voitures d'occasion qui répondent aux 
+     normes les plus strictes. Avec notre garantie d'un an, vous savez 
+     que vous faites un choix judicieux. Rejoignez notre famille de
+      clients satisfaits dès aujourd'hui.   
+      Garantie d'un An : Votre tranquillité d'esprit est notre priorité. 
+      C'est pourquoi nous offrons une garantie d'un an sur tous nos véhicules 
+      d'occasion. Nous croyons en la qualité de nos voitures, et nous sommes 
+      prêts à le prouver. En cas de problème, nous sommes là pour vous.        
+       </Textes>
 
       <div className="search-filters">
      
 
         <TitreH1>Veuillez faire votre sélection</TitreH1>
 
-        <div className="checkbox-filter mb-3 mt-5">
+        <div className="d-flex justify-content-center align-items-center mt-5 mb-3">
+        <div className="mb-3 ms-4">
           <BasicCheckbox
             handleCheckBoxChange={handleCheckBoxChange}
             label="Utilitaire"
             name="famille"
             value="Utilitaire"
           />
+        </div>
+
+        <div className="mb-3 ms-4">
           <BasicCheckbox
             handleCheckBoxChange={handleCheckBoxChange}
             label="Berline"
             name="famille"
             value="Berline"
           />
+        </div>
+
+        <div className="mb-3 ms-4">
           <BasicCheckbox
             handleCheckBoxChange={handleCheckBoxChange}
             label="Familiale"
             name="famille"
             value="Familiale"
           />
+        </div>
+
+        <div className="mb-3 ms-4">
           <BasicCheckbox
             handleCheckBoxChange={handleCheckBoxChange}
             label="Citadine"
             name="famille"
             value="Citadine"
           />
+        </div>
+
+        <div className="mb-3 ms-4">
           <BasicCheckbox
             handleCheckBoxChange={handleCheckBoxChange}
             label="SUV"
@@ -138,36 +181,41 @@ const VehiculesFilters = ({ onSearch }) => {
             value="SUV"
           />
         </div>
+      </div>
 
-        <div className="filter-row ">
-  <BasicSelect
-    label="Marque :&nbsp; "
-    name="marque"
-    handleChange={handleChange}
-    options={[
-      { value: "", text: "Toutes" },
-      { value: "citroen", text: "Citroen" },
-      { value: "peugeot", text: "Peugeot" },
-      { value: "kia", text: "Kia" },
-      { value: "BMW", text: "Bmw" },
-    ]}
-  />
-</div>
+      <div className="d-flex justify-content-center align-items-center ms-5 mb-3">
+        <div className="filter-row">
+          <BasicSelect
+            label="Marque :&nbsp; "
+            name="marque"
+            handleChange={handleChange}
+            options={[
+              { value: "", text: "Toutes" },
+              { value: "citroen", text: "Citroen" },
+              { value: "peugeot", text: "Peugeot" },
+              { value: "kia", text: "Kia" },
+              { value: "BMW", text: "Bmw" },
+            ]}
+          />
+        </div>
+      </div>
 
-
+      <div className="d-flex justify-content-center align-items-center">
         <div className="filter-row">
           <BasicRange
             handleChange={handleChange}
-            label="prix :"
+            label="Prix :"
             name="prix"
             marks={[
               { value: 5000, label: "5 000 €" },
               { value: 50000, label: "50 000 €" },
-            ]} //En variable pour les props, mettre une accolable
+            ]}
             range={[5000, 50000]}
           />
         </div>
+      </div>
 
+      <div className="d-flex justify-content-center align-items-center">
         <div className="filter-row">
           <BasicRange
             handleChange={handleChange}
@@ -176,11 +224,13 @@ const VehiculesFilters = ({ onSearch }) => {
             marks={[
               { value: 2000, label: "2000 " },
               { value: annee, label: `${annee}` },
-            ]} //En variable pour les props, mettre une accolable
+            ]}
             range={[2000, annee]}
           />
         </div>
+      </div>
 
+      <div className="d-flex justify-content-center align-items-center">
         <div className="filter-row">
           <BasicRange
             handleChange={handleChange}
@@ -189,12 +239,15 @@ const VehiculesFilters = ({ onSearch }) => {
             marks={[
               { value: 0, label: "0 km" },
               { value: 200000, label: "200 000 km" },
-            ]} //En variable pour les props, mettre une accolable
+            ]}
             range={[0, 200000]}
           />
         </div>
-
-        <button className="btn btn-primary btn-lg btn-block" onClick={handleClick}>Rechercher</button>
+      </div>
+      </div>
+      <div className="d-flex justify-content-center align-items-center mb-5">
+        <button className="btn btn-primary btn-lg btn-block " onClick={handleClick}>Rechercher</button>
+        </div>
       </div>
       
       <TitreH2>Résultat de la recherche</TitreH2>
@@ -219,6 +272,20 @@ const VehiculesFilters = ({ onSearch }) => {
         ))}
       </div>
 
+      <div className="d-flex justify-content-center mt-4">
+        <Pagination>
+          {[...Array(pagesCount)].map((_, index) => (
+            <Pagination.Item
+              key={index}
+              active={index === pageNumber}
+              onClick={() => handlePageClick(index)}
+            >
+              {index + 1}
+            </Pagination.Item>
+          ))}
+        </Pagination>
+      </div>
+    
       <BannerInfo imageUrl={logoVoiture} altText="logos marques voitures" />
 
     </>

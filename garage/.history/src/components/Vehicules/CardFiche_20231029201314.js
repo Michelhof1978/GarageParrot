@@ -35,7 +35,7 @@ const CardFiche = (props) => {
 
         <h5 className="card-title text-primary lead fw-bold mb-4">{props.marque.toUpperCase()}</h5>
 
-        <p className="card-text lead"> <strong>Modèle: </strong>{props.modele}</p>
+        <p className="card-text lead"> <strong></strong>Modèle: {props.modele}</p>
         <p className="card-text lead"><strong>Année:</strong> {props.annee}</p>
         <p className="card-text lead"><strong>Date De Circulation:</strong> {formatDateCirculation(props.datecirculation)}</p>
         <p className="card-text lead"><strong>Famille:</strong> {props.famille}</p>
