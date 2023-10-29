@@ -25,8 +25,7 @@ class Site extends Component {
             <Route path="/voitureoccasion" element={<VehiculesFilters />} />
             <Route path="/vehiculefiche/:id" element={<VehiculeFiche />} />
             <Route path="/contact" element={<Contact/>} />
-            <Route path="/prestation" element={<Prestation/>} />
-            <Route path="/prestationfiche/:id" element={<PrestationFiche />} />
+            <Route path="/reparation" element={<Reparation/>} />
             <Route path="/avisclients/" element={<AvisClients/>} />
 
         </Routes>
