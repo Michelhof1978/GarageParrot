@@ -56,7 +56,9 @@ const CardFiche = (props) => {
 
         <p className="card-text lead"><strong>Description </strong><br /> {props.description}</p>
 
-        <a href={props.imageCritere} target="_blank" rel="noopener noreferrer">
+        <p className="card-text lead"><strong>Description</strong> <br /> {props.description}</p>
+>>>>>>> b70df5b829a6fdf84dfdb5a9df5fb8cd8191952d
+        <a href={props.imageCritere} targ=======et="_blank" rel="noopener noreferrer">
           <img src={imageCritere} alt={props.imageCritere} style={imageCritereCss} />
         </a>
         <Textes>

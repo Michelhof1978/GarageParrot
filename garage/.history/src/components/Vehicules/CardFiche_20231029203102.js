@@ -44,7 +44,7 @@ const CardFiche = (props) => {
 
         <p className="card-text lead"><strong>Modèle:</strong> {props.modele}</p>        
         <p className="card-text lead"><strong>Année: </strong>{props.annee}</p>
-
+>>>>>>> b70df5b829a6fdf84dfdb5a9df5fb8cd8191952d
         <p className="card-text lead"><strong>Date De Circulation:</strong> {formatDateCirculation(props.datecirculation)}</p>
         <p className="card-text lead"><strong>Famille:</strong> {props.famille}</p>
         <p className="card-text lead"><strong>Énergie:</strong> {props.energie}</p>
@@ -53,9 +53,11 @@ const CardFiche = (props) => {
         <p className="card-text lead"><strong>Puissance:</strong> {props.puissance}</p>
         <p className="card-text lead"><strong>Places:</strong> {props.places}</p>
         <p className="card-text lead"><strong>Couleur:</strong> {props.couleur}</p>
-
+<<<<<<< HEAD
         <p className="card-text lead"><strong>Description </strong><br /> {props.description}</p>
-
+=======
+        <p className="card-text lead"><strong>Description</strong> <br /> {props.description}</p>
+>>>>>>> b70df5b829a6fdf84dfdb5a9df5fb8cd8191952d
         <a href={props.imageCritere} target="_blank" rel="noopener noreferrer">
           <img src={imageCritere} alt={props.imageCritere} style={imageCritereCss} />
         </a>

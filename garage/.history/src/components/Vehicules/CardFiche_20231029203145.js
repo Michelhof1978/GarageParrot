@@ -55,7 +55,9 @@ const CardFiche = (props) => {
         <p className="card-text lead"><strong>Couleur:</strong> {props.couleur}</p>
 
         <p className="card-text lead"><strong>Description </strong><br /> {props.description}</p>
-
+=======
+        <p className="card-text lead"><strong>Description</strong> <br /> {props.description}</p>
+>>>>>>> b70df5b829a6fdf84dfdb5a9df5fb8cd8191952d
         <a href={props.imageCritere} target="_blank" rel="noopener noreferrer">
           <img src={imageCritere} alt={props.imageCritere} style={imageCritereCss} />
         </a>
