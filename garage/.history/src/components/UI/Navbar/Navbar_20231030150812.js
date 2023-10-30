@@ -62,7 +62,7 @@ const Navbar = (props) => (
                 </li>
 
                 <li className="nav-item m-3 ">
-                <NavLink to="/voitureoccasion" className="nav-link text-white lead">Voitures D'occasion</NavLink>
+                <NavLink to="/voitureoccasion" className="nav-link text-white lead">Voitures D'occasions</NavLink>
                 </li>
 
                 <li className="nav-item m-3 ">

@@ -26,7 +26,7 @@ const CarousselCard = (props) => {
             <div className="carousel-caption">
               <h2 className='display-4 fw-bold text-md'>GARAGE PARROT</h2>
               <p className='lead fw-bold text-md'>Tout Type De Mécanique</p>
-              <Link to="/prestation" className="btn btn-primary btn-md fw-bold">Plus d'Infos Ici !</Link>
+              <Link to="/" className="btn btn-primary btn-md fw-bold">Plus d'Infos Ici !</Link>
             
             </div>
           </div>
