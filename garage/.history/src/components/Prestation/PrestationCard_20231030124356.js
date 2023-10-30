@@ -9,7 +9,7 @@ import CardPrestation from "./CardPrestation";
 const PrestationCard = () => {
   const [prestations, setPrestations] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const cardsPerPage = 6;
+  const cardsPerPage = 9;
 
   useEffect(() => {
     axios

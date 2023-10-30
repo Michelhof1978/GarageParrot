@@ -22,11 +22,10 @@ const Prestation = (props) => {
     <>
       <BannerInfo imageUrl={BannerPneusContinental} altText="Promotion pneus" />
       <div className="container">
-
+      
         <TitreH1>
           Découvrez Les Prestations Proposées Par Nos Réparateurs
         </TitreH1>
-        
         <Textes>
           Les réparateurs du Garage Parrot s'occupent de la réparation et de
           l'entretien de votre voiture, peu importe la marque ou le modèle de

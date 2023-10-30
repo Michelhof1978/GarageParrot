@@ -11,11 +11,11 @@ const CardPrestation = (props) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={image} alt={props.nom} className="img-fluid rounded mx-auto d-block mb-3" />
+            <img src={image} alt={props.nom} className="img-fluid rounded mx-auto d-block mb" />
           </a>
           <h5 className="card-title text-primary">{props.nom.toUpperCase()}</h5>
           <p className="card-text">Description: {props.description} </p>
-          <p className="card-text fw-bold text-primary">Prix: {props.prix} €</p>
+          <p className="card-text">Prix: {props.prix} €</p>
         </div>
         <div className="card-footer">
           <Link

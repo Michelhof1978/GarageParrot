@@ -20,7 +20,7 @@ const Card = (props) => {
         <h5 className="card-title text-primary">{props.marque.toUpperCase()}</h5>
         <p className="card-text">Modèle: {props.modele} </p>
         <p className="card-text">Energie: {props.energie} </p>
-        <p className="card-text fw-bold text-primary">Prix: {props.prix} €</p>
+        <p className="card-text fw-bold">Prix: {props.prix} €</p>
       </div>
       <div className="card-footer">
         <Link
