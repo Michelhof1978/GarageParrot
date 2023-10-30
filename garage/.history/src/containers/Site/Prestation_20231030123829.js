@@ -7,7 +7,7 @@ import Textes from "../../components/UI/Textes/Textes";
 import BannerQuality from "../../assets/images/bannerQuality.webp";
 
 const Prestation = (props) => {
-  const [cards, setCards] = useState([]); 
+  const [cards, setCards] = useState([]); // Déclarer l'état initial des cartes
 
   useEffect(() => {
     fetch("http://localhost/GarageBack/API/prestation.php")
@@ -36,7 +36,7 @@ const Prestation = (props) => {
         <div className="row">
           {cards.map((prestation) => (
             <div
-              key={prestation.idPrestation} 
+              key={prestation.idPrestation} // Utilisation de idPrestation plutôt que iPrestation
               className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3"
             >
               <CardPrestation

@@ -7,7 +7,7 @@ import Textes from "../../components/UI/Textes/Textes";
 import BannerQuality from "../../assets/images/bannerQuality.webp";
 
 const Prestation = (props) => {
-  const [cards, setCards] = useState([]); 
+  const [cards, setCards] = useState([]); // Déclarer l'état initial des cartes
 
   useEffect(() => {
     fetch("http://localhost/GarageBack/API/prestation.php")
