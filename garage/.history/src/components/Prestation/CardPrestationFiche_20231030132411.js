@@ -6,6 +6,11 @@ const CardPrestationFiche = (props) => {
   const image = `http://localhost/garageback/public/images/${props.image}`;
 
  
+
+  
+
+  
+
   return (
     <>
     <Textes>

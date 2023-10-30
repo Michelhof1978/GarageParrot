@@ -6,6 +6,18 @@ const CardPrestationFiche = (props) => {
   const image = `http://localhost/garageback/public/images/${props.image}`;
 
  
+
+  // Fonction pour formater la date de circulation au format européen (jour/mois/année)
+  const formatDateCirculation = (date) => {
+    const dateObj = new Date(date);
+    const day = String(dateObj.getDate()).padStart(2, "0"); // Ajoute un "0" au besoin
+    const month = dateObj.getMonth() + 1; // Mois commence à 0, donc ajoutez 1
+    const year = dateObj.getFullYear();
+    return `${day}/${month}/${year}`;
+  };
+
+  
+
   return (
     <>
     <Textes>
@@ -17,10 +29,13 @@ const CardPrestationFiche = (props) => {
       <div className="card-body  ">
       
         <a href={props.image} target="_blank" rel="noopener noreferrer">
-       <img className="rounded-2 mb-4"  src={image} alt={props.nom} />
+       <img className="rounded-2 mb-4"  src={image} alt={props.marque} />
          </a>
 
         <h5 className="card-title text-primary lead fw-bold mb-4">{props.nom.toUpperCase()}</h5>
+
+
+       
 
         <p className="card-text lead"><strong>Description </strong><br /> {props.description}</p>
 
