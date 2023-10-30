@@ -47,7 +47,7 @@ const Prestation = (props) => (
             className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3" 
           >
              <Card
-              image={prestation.imagePrestation}
+              image={prestation.imageprestation}
             
               nom={prestation.nom}
              

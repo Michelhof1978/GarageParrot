@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -6,8 +7,9 @@ import TitreH2 from "../UI/Titres/TitreH2";
 import { Pagination } from "react-bootstrap";
 import CardPrestation from "./CardPrestation";
 
+
 const PrestationCard = () => {
-  const [prestations, setPrestations] = useState([]);
+  const [prestations, setPrestation] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 12;
 
@@ -23,7 +25,7 @@ const PrestationCard = () => {
           return dateA - dateB;
         };
         sortedPrestations.sort(sortByCreatedAt);
-        setPrestations(sortedPrestations);
+        setPrestation(sortedPrestations);
       })
       .catch((error) => {
         console.error("Erreur lors de la récupération des prestations :", error);
@@ -41,23 +43,25 @@ const PrestationCard = () => {
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-
-  console.log(currentCards);
-
+console.log(currentCards);
   return (
+    <>
+    
     <div>
       <div className="row">
         {currentCards.map((prestation) => (
           <div
-            key={prestation.idPrestation}
-            className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3"
+            key={vehicule.idVehicule}
+            className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3" 
           >
             <CardPrestation
-              image={prestation.imageVoiture}
-              nom={prestation.nom}
-              description={prestation.description}
-              prix={prestation.prix}
-              id={prestation.idPrestation}
+              image={vehicule.imageVoiture}
+              marque={vehicule.marque}
+              nom={vehicule.nom}
+              modele={vehicule.modele}
+              energie={vehicule.energie}
+              prix={vehicule.prix}
+              id={vehicule.idVehicule}
             />
           </div>
         ))}
@@ -65,7 +69,7 @@ const PrestationCard = () => {
       <div className="pagination-container">
         <Pagination>
           {Array.from(
-            { length: Math.ceil(prestations.length / cardsPerPage) },
+            { length: Math.ceil(vehicules.length / cardsPerPage) },
             (_, index) => (
               <Pagination.Item
                 key={index}
@@ -79,7 +83,12 @@ const PrestationCard = () => {
         </Pagination>
       </div>
     </div>
+    </>
   );
 };
 
-export default PrestationCard;
+export default PrestationsCard;
+
+
+
+

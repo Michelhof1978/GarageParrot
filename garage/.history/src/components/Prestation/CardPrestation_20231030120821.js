@@ -18,7 +18,7 @@ const CardPrestation = (props) => {
         </a>
        
         <h5 className="card-title text-primary">{props.nom}</h5>
-        <p className="card-text">Description: {props.description} €</p>
+        <p className="card-text">Prix: {props.prix} €</p>
         <p className="card-text">Prix: {props.prix} €</p>
       </div>
       <div className="card-footer">

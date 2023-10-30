@@ -1,31 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import BannerInfo from "../../components/UI/Banner/BannerInfo";
-import CardPrestation from "../../components/Prestation/CardPrestation";
+import Card
 import BannerPneusContinental from "../../assets/images/bannerPneusContinental.webp";
 import TitreH1 from "../../components/UI/Titres/TitreH1";
 import Textes from "../../components/UI/Textes/Textes";
 import BannerQuality from "../../assets/images/bannerQuality.webp";
 
 const Prestation = (props) => (
-
-  useEffect(() => {
-    fetch(//fetch effectue une requête http, si reponse, elle sera encapsulé dans une promesse
-     "http://localhost/GarageBack/API/prestation.php"
-    )
-    //Si reponse reçu de la requête http, then va gére la reponse de cette promesse et va prendre une fonction de rappel en argument:
-      .then((res) => res.json())// Va extraire les données de l'API sous format json
-      .then((data) => {
-        setCards(data)
-        console.log();
-      })//data ou on aurait pu mettre un nom reprèsente la réponse de la requête http
-      .catch((err) => console.log(err));//Si erreur de la requête, catch retourne une erreur
-  }, [lien]);
-
-  
-
-
-  return (
   <>
+  
+  
    <BannerInfo imageUrl={BannerPneusContinental} altText="Promotion pneus" />
 
 
@@ -41,20 +25,24 @@ const Prestation = (props) => (
             </Textes>
 
             <div className="row">
-        {cards.map((prestation) => (
+        {cards.map((vehicule) => (
           <div
-            key={prestation.iPrestation}
+            key={vehicule.idVehicule}
             className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3" 
           >
-             <Card
-              image={prestation.imagePrestation}
-            
-              nom={prestation.nom}
-             
-              prix={prestation.prix}
-              id={prestation.idPrestation}
+             <CardPrestation
+              image={vehicule.imageVoiture}
+              marque={vehicule.marque}
+              nom={vehicule.nom}
+              modele={vehicule.modele}
+              energie={vehicule.energie}
+              prix={vehicule.prix}
+              id={vehicule.idVehicule}
             />
-        
+           
+          </div>
+        ))}
+      </div>
 
             <BannerInfo imageUrl={BannerQuality} altText="Offre satisfaction" />
           

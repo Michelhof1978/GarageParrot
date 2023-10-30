@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import BannerInfo from "../../components/UI/Banner/BannerInfo";
 import CardPrestation from "../../components/Prestation/CardPrestation";
 import BannerPneusContinental from "../../assets/images/bannerPneusContinental.webp";
@@ -40,20 +40,7 @@ const Prestation = (props) => (
             Les réparateurs du Garage Parrot s’occupent de la réparation et l’entretien de votre voiture, peu importe la marque ou le modèle de celle-ci. Profitez d’une prestation de qualité effectuée par des véritables experts auto. Réalisez dès maintenant un devis en ligne en nous contactant via le formulaire pour la réparation de votre voiture et obtenez un RDV immédiat !
             </Textes>
 
-            <div className="row">
-        {cards.map((prestation) => (
-          <div
-            key={prestation.iPrestation}
-            className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3" 
-          >
-             <Card
-              image={prestation.imagePrestation}
-            
-              nom={prestation.nom}
-             
-              prix={prestation.prix}
-              id={prestation.idPrestation}
-            />
+       
         
 
             <BannerInfo imageUrl={BannerQuality} altText="Offre satisfaction" />

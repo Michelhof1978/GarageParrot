@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import BannerInfo from "../../components/UI/Banner/BannerInfo";
 import CardPrestation from "../../components/Prestation/CardPrestation";
 import BannerPneusContinental from "../../assets/images/bannerPneusContinental.webp";
@@ -8,23 +8,41 @@ import BannerQuality from "../../assets/images/bannerQuality.webp";
 
 const Prestation = (props) => (
 
-  useEffect(() => {
-    fetch(//fetch effectue une requête http, si reponse, elle sera encapsulé dans une promesse
-     "http://localhost/GarageBack/API/prestation.php"
-    )
-    //Si reponse reçu de la requête http, then va gére la reponse de cette promesse et va prendre une fonction de rappel en argument:
-      .then((res) => res.json())// Va extraire les données de l'API sous format json
-      .then((data) => {
-        setCards(data)
-        console.log();
-      })//data ou on aurait pu mettre un nom reprèsente la réponse de la requête http
-      .catch((err) => console.log(err));//Si erreur de la requête, catch retourne une erreur
-  }, [lien]);
+  const [lien, setLien] = useState("http://localhost/garageback/API/vehicules.php")
 
-  
+  const [cards, setCards] = useState(
+    []
+  )
+
+  const [pageNumber, setPageNumber] = useState(0);
+  const itemsPerPage = 9;
+  const pagesCount = Math.ceil(cards.length / itemsPerPage);
+
+  const startIndex = pageNumber * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const displayedCards = cards.slice(startIndex, endIndex);
+
+  const handlePageClick = (selectedPage) => {
+    setPageNumber(selectedPage);
+  };
+  const handleClick = ()=> {
 
 
-  return (
+        let lienTmp = "http://localhost/garageback/API/vehicules.php?";
+        let lienObject = {kilometremin:filtres.kilometrage[0], 
+                        kilometremax:filtres.kilometrage[1],
+                        prixmin:filtres.prix[0],
+                        prixmax:filtres.prix[1], 
+                        anneemin:filtres.annee[0],
+                        anneemax:filtres.annee[1], 
+                        
+                      };
+
+                      
+
+
+
+
   <>
    <BannerInfo imageUrl={BannerPneusContinental} altText="Promotion pneus" />
 
@@ -41,20 +59,21 @@ const Prestation = (props) => (
             </Textes>
 
             <div className="row">
-        {cards.map((prestation) => (
+        {cardprestations.map((vehicule) => (
           <div
-            key={prestation.iPrestation}
+            key={vehicule.idVehicule}
             className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3" 
           >
-             <Card
-              image={prestation.imagePrestation}
-            
+             <CardPrestation
+              image={prestation.imageVoiture}
               nom={prestation.nom}
-             
               prix={prestation.prix}
-              id={prestation.idPrestation}
+              id={prestation.idVehicule}
             />
-        
+           
+          </div>
+        ))}
+      </div>
 
             <BannerInfo imageUrl={BannerQuality} altText="Offre satisfaction" />
           

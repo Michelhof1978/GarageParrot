@@ -55,7 +55,6 @@ const PrestationCard = () => {
             <CardPrestation
               image={prestation.imageVoiture}
               nom={prestation.nom}
-              description={prestation.description}
               prix={prestation.prix}
               id={prestation.idPrestation}
             />

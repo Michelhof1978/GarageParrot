@@ -4,29 +4,30 @@ import { Link } from "react-router-dom";
 import "../../App.css";
 import TitreH2 from "../UI/Titres/TitreH2";
 import { Pagination } from "react-bootstrap";
-import CardPrestation from "./CardPrestation";
+import Card from "./Card";
+
 
 const PrestationCard = () => {
-  const [prestations, setPrestations] = useState([]);
+  const [prestations, sets] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 12;
 
   useEffect(() => {
     axios
-      .get("http://localhost/garageback/front/prestation/all")
+      .get("http://localhost/garageback/front/voiturefiche/all")
       .then((response) => {
         const jsonData = response.data;
-        const sortedPrestations = [...jsonData];
+        const sortedVehicules = [...jsonData];
         const sortByCreatedAt = (a, b) => {
           const dateA = new Date(a.created_at).getTime();
           const dateB = new Date(b.created_at).getTime();
           return dateA - dateB;
         };
-        sortedPrestations.sort(sortByCreatedAt);
-        setPrestations(sortedPrestations);
+        sortedVehicules.sort(sortByCreatedAt);
+        setVehicules(sortedVehicules);
       })
       .catch((error) => {
-        console.error("Erreur lors de la récupération des prestations :", error);
+        console.error("Erreur lors de la récupération des véhicules :", error);
       });
 
     return () => {
@@ -36,28 +37,30 @@ const PrestationCard = () => {
 
   const indexOfLastCard = currentPage * cardsPerPage;
   const indexOfFirstCard = indexOfLastCard - cardsPerPage;
-  const currentCards = prestations.slice(indexOfFirstCard, indexOfLastCard);
+  const currentCards = vehicules.slice(indexOfFirstCard, indexOfLastCard);
 
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-
-  console.log(currentCards);
-
+console.log(currentCards);
   return (
+    <>
+    
     <div>
       <div className="row">
-        {currentCards.map((prestation) => (
+        {currentCards.map((vehicule) => (
           <div
-            key={prestation.idPrestation}
-            className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3"
+            key={vehicule.idVehicule}
+            className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3" 
           >
-            <CardPrestation
-              image={prestation.imageVoiture}
-              nom={prestation.nom}
-              description={prestation.description}
-              prix={prestation.prix}
-              id={prestation.idPrestation}
+            <Card
+              image={vehicule.imageVoiture}
+              marque={vehicule.marque}
+              nom={vehicule.nom}
+              modele={vehicule.modele}
+              energie={vehicule.energie}
+              prix={vehicule.prix}
+              id={vehicule.idVehicule}
             />
           </div>
         ))}
@@ -65,7 +68,7 @@ const PrestationCard = () => {
       <div className="pagination-container">
         <Pagination>
           {Array.from(
-            { length: Math.ceil(prestations.length / cardsPerPage) },
+            { length: Math.ceil(vehicules.length / cardsPerPage) },
             (_, index) => (
               <Pagination.Item
                 key={index}
@@ -79,7 +82,12 @@ const PrestationCard = () => {
         </Pagination>
       </div>
     </div>
+    </>
   );
 };
 
 export default PrestationCard;
+
+
+
+
