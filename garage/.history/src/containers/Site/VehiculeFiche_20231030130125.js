@@ -59,6 +59,7 @@ const VehiculeFiche = () => {
             id={vehicule.idVehicule}
           />
         </div>
+        
       </div>
 
       <BannerInfo imageUrl={logoVoiture} altText="logos marques voitures" />

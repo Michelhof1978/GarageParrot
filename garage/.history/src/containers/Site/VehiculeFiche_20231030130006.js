@@ -4,7 +4,7 @@ import axios from "axios";
 import "../../App.css";
 import BannerInfo from "../../components/UI/Banner/BannerInfo";
 import logoVoiture from "../../assets/images/logoVoiture.webp";
-import BannerInfo1 from "../../assets/images/bannerInfo1.webp";
+import BannerInfo from "../../assets/images/bannerInfo.webp";
 import TitreH1 from "../../components/UI/Titres/TitreH1";
 import { Card } from "react-bootstrap";
 import CardFiche from "../../components/Vehicules/CardFiche";
@@ -33,7 +33,7 @@ const VehiculeFiche = () => {
 
   return (
     <div className="container">
-      <BannerInfo imageUrl={BannerInfo1} altText="Banner offre" />
+      <BannerInfo imageUrl={BannerInfo} altText="Banner offre" />
 
       <TitreH1>Informations Véhicule</TitreH1>
       
@@ -59,6 +59,7 @@ const VehiculeFiche = () => {
             id={vehicule.idVehicule}
           />
         </div>
+        
       </div>
 
       <BannerInfo imageUrl={logoVoiture} altText="logos marques voitures" />

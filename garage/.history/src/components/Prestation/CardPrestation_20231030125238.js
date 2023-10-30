@@ -15,7 +15,7 @@ const CardPrestation = (props) => {
           </a>
           <h5 className="card-title text-primary">{props.nom.toUpperCase()}</h5>
           <p className="card-text">Description: {props.description} </p>
-          <p className="card-text fw-bold text-primary">Prix à partir de : {props.prix} €</p>
+          <p className="card-text fw-bold text-primary">Prix à : {props.prix} €</p>
         </div>
         <div className="card-footer">
           <Link
