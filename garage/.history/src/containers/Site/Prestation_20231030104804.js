@@ -6,7 +6,7 @@ import TitreH1 from "../../components/UI/Titres/TitreH1";
 import Textes from "../../components/UI/Textes/Textes";
 import BannerQuality from "../../assets/images/bannerQuality.webp";
 
-const Reparation = (props) => (
+const Pres = (props) => (
   <>
   
   

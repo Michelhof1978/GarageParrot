@@ -6,7 +6,7 @@ import Footer from '../../components/Footer/Footer';
 import VehiculeFiche from './VehiculeFiche';
 import VehiculesFilters from '../../containers/Site/VehiculesFilters';
 import Contact from '../../containers/Site/Contact';
-import Prestation from './Prestation';
+import P from './Prestation';
 import AvisClients from '../../containers/Site/AvisClients';
 import Accueil from './Accueil'
 

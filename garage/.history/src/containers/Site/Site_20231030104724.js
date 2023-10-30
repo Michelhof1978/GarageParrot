@@ -6,7 +6,7 @@ import Footer from '../../components/Footer/Footer';
 import VehiculeFiche from './VehiculeFiche';
 import VehiculesFilters from '../../containers/Site/VehiculesFilters';
 import Contact from '../../containers/Site/Contact';
-import Prestation from './Prestation';
+import Reparation from '../../containers/Site/Reparation';
 import AvisClients from '../../containers/Site/AvisClients';
 import Accueil from './Accueil'
 
@@ -25,7 +25,7 @@ class Site extends Component {
             <Route path="/voitureoccasion" element={<VehiculesFilters />} />
             <Route path="/vehiculefiche/:id" element={<VehiculeFiche />} />
             <Route path="/contact" element={<Contact/>} />
-            <Route path="/prestation" element={<Prestation/>} />
+            <Route path="/prestation" element={<Reparation/>} />
             {/* <Route path="/prestationfiche/:id" element={<PrestationFiche />} /> */}
             <Route path="/avisclients/" element={<AvisClients/>} />
 
