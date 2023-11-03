@@ -23,12 +23,11 @@
     "react-paginate": "^8.2.0",
     "react-router-dom": "^6.17.0",
     "react-scripts": "^5.0.1",
+    "react-simple-star-rating": "^5.1.7",
     "web-vitals": "^2.1.4"
   },
-
-  // "react-scripts start",
   "scripts": {
-    "start": "node server.js",   
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
