@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from "axios";
+import axios from 'axios';
 import BannerInfo from "../../components/UI/Banner/BannerInfo";
 import BannerPromoEntretien from "../../assets/images/bannerPromoEntretien.webp";
 import BannerQuality from "../../assets/images/bannerQuality.webp";
@@ -26,7 +26,7 @@ class AvisClients extends Component {
       prenom: "",
       note: 0,
       commentaire: "",
-      avisEnvoye: false,
+      avisEnvoye: false, // État initial, pas de message de confirmation
     };
   }
 
@@ -47,9 +47,10 @@ class AvisClients extends Component {
   };
 
   enregistrerAvis = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Empêche la soumission normale du formulaire
     const { nom, prenom, note, commentaire } = this.state;
 
+    // Créez un objet contenant les données de l'avis
     const avisData = {
       nom,
       prenom,
@@ -57,19 +58,17 @@ class AvisClients extends Component {
       commentaire,
     };
 
-    axios
-      .post("http://localhost/GarageBack/API/avis.php", avisData, {
-        headers: {
-          "Content-Type": "application/json",
-          // Vous pouvez ajouter des en-têtes personnalisés ici si nécessaire
-        },
-      })
+    // Effectuez une requête POST vers votre API PHP
+    axios.post('http://localhost/GarageBack/API/avis.php', avisData)
       .then((response) => {
-        console.log("Avis enregistré avec succès !", response.data);
+        // Gérez la réponse de votre API (par exemple, affichez un message de succès)
+        console.log('Avis enregistré avec succès !', response.data);
+        // Mettez à jour l'état pour afficher un message de confirmation
         this.setState({ avisEnvoye: true });
       })
       .catch((error) => {
-        console.error("Une erreur s'est produite lors de l'enregistrement de l'avis :", error);
+        // Gérez les erreurs en cas d'échec de la requête
+        console.error('Une erreur s\'est produite lors de l\'enregistrement de l\'avis :', error);
       });
   };
 
@@ -77,20 +76,21 @@ class AvisClients extends Component {
     return (
       <>
         <BannerInfo imageUrl={BannerPromoEntretien} altText="Promotion pneus" />
-
+        
+        
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-8">
               <TitreH2>Laissez un Avis !</TitreH2>
 
               <Textes>
-                Chez Garage Parrot à Toulouse, l'excellence est notre norme.
-                Notre équipe de professionnels qualifiés s'engage à offrir des
-                services automobiles de la plus haute qualité. Notre passion pour
-                l'automobile, notre expertise technique et notre souci du détail
-                font de nous le partenaire de confiance pour prendre soin de votre
-                véhicule.
-              </Textes>
+              Chez Garage Parrot à Toulouse, l'excellence est notre norme. 
+              Notre équipe de professionnels qualifiés s'engage à offrir des 
+              services automobiles de la plus haute qualité. Notre passion pour 
+              l'automobile, notre expertise technique et notre souci du détail 
+              font de nous le partenaire de confiance pour prendre soin de votre
+               véhicule.
+            </Textes>
 
               <div className="text-center m-5">
                 <DetailsInfoAvis />
@@ -120,7 +120,10 @@ class AvisClients extends Component {
                 <div className="form-group mb-3 fw-bold lead">
                   <label>Note :</label>
                   <div className="etoiles-container">
-                    <Stars note={this.state.note} onEtoileClick={this.handleNoteChange} />
+                    <Stars
+                      note={this.state.note}
+                      onEtoileClick={this.handleNoteChange}
+                    />
                   </div>
                 </div>
 
