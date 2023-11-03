@@ -1,0 +1,107 @@
+
+/* SITE */
+.site {
+  min-height:100vh;
+  margin-bottom: -540px; /* position du footer; */
+}
+
+
+/* FOOTER */
+footer, .minsite{
+  height: 540px;
+}
+
+.img-icon {
+  width: 40px; 
+  margin: 0 10px; 
+}
+
+.logo-container {
+  margin-top: -90px; 
+}
+
+.adressFooter {
+ margin-top: -90px; 
+}
+
+
+
+.site{
+  min-height: 100vh;
+  margin-bottom: -140px;
+}
+
+footer, .minsite{
+   height: 140px; /*Pour corriger les bug lié au footer et de sa position ds la fenêtre */
+}
+
+/* END FOOTER */
+
+/* SEARCH FILTER */
+.slider-container {
+display: flex;
+align-items: center;
+}
+
+input[type="range"] {
+width: 150px;
+margin: 0 10px;
+}
+
+span {
+font-size: 14px;
+}
+
+.search-filters {
+margin: 20px; /* Ajoute de la marge autour de la section des filtres */
+}
+
+.filter-row {
+margin-bottom: 10px; /* Ajoute de l'espace entre chaque filtre */
+}
+
+.checkbox-filter label {
+margin-right: 10px; /* Ajoute de l'espace entre les cases à cocher */
+}
+
+/* END SEARCH FILTER */
+
+/* CAR CARD*/
+.vehicule-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Cinq colonnes égales de 5 cartes par ligne et par largeur */
+  grid-gap: 20px; /* Espacement entre les cartes */
+  width: 100%; /* Pour occuper toute la largeur de la page */
+}
+/* END CAR CARD*/
+
+/* PAGINATION*/
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  background-color: #3498db;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.pagination button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* END PAGINATION*/
+
+/* FILTRE*/
+.filter-row {
+  wi
+}
