@@ -40,7 +40,7 @@ class AvisClients extends Component {
     this.setState({ prenom: e.target.value });
   };
 
-  handleNoteChange = (note) => {//on ne mets pas target.value car ce n'est pas un champs de text, elle va uniquement récupérer la valeur direct
+  handleNoteChange = (note) => {//on ne mets pas target.value car ce n'est pas un champs de text, elle va uniquement 
     this.setState({ note });
   };
 

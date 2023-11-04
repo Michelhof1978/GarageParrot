@@ -31,16 +31,16 @@ class AvisClients extends Component {
   }
 
 
-  //gestionnaire d'événement utilisés pour mettre à jour le state lorsque l'utilisateur interagit avec le formulaire
+  //gestionnaire d'événement utilisés pour mettre à jour le state lorsque l'utilisateur
   handleNomChange = (e) => {
-    this.setState({ nom: e.target.value });//target value extrait la valeur  saisie ds le champs
+    this.setState({ nom: e.target.value });
   };
 
   handlePrenomChange = (e) => {
     this.setState({ prenom: e.target.value });
   };
 
-  handleNoteChange = (note) => {//on ne mets pas target.value car ce n'est pas un champs de text, elle va uniquement récupérer la valeur direct
+  handleNoteChange = (note) => {
     this.setState({ note });
   };
 
