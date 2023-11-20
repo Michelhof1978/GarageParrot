@@ -53,7 +53,7 @@ const VehiculesFilters = ({ onSearch }) => {
     }
   };
 
-  //PAGINATION nombre de cartes par page
+  //PAGINATION nombre
   const [pageNumber, setPageNumber] = useState(0);
   const itemsPerPage = 6;
   const pagesCount = Math.ceil(cards.length / itemsPerPage);

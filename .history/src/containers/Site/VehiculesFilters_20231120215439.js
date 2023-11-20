@@ -53,7 +53,6 @@ const VehiculesFilters = ({ onSearch }) => {
     }
   };
 
-  //PAGINATION nombre de cartes par page
   const [pageNumber, setPageNumber] = useState(0);
   const itemsPerPage = 6;
   const pagesCount = Math.ceil(cards.length / itemsPerPage);
@@ -108,7 +107,7 @@ const VehiculesFilters = ({ onSearch }) => {
       .catch((err) => console.log(err)); //Si erreur de la requête, catch retourne une erreur
   }, [lien]);
 
-  //Mise à jour date actuelle composant BASICRANGE
+  //
   const annee = getCurrentYear();
 
   return (

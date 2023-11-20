@@ -13,9 +13,8 @@ import PaginationComponent from "../../components/Vehicules/CardPagination/CardP
 
 //La fonction prend en paramètre une fonction onSearch qui sera appelée lorsque l'utilisateur clique sur le bouton "Rechercher".
 const VehiculesFilters = ({ onSearch }) => {
-
   //Fonction pour obtenir l'année actuelle en utilisant l'objet date pour le composant BASICRANGE.
-    const getCurrentYear = () => {
+  const getCurrentYear = () => {
     const dateActuelle = new Date();
     const anneeActuelle = dateActuelle.getFullYear();
     return anneeActuelle;
@@ -53,7 +52,6 @@ const VehiculesFilters = ({ onSearch }) => {
     }
   };
 
-  //PAGINATION nombre de cartes par page
   const [pageNumber, setPageNumber] = useState(0);
   const itemsPerPage = 6;
   const pagesCount = Math.ceil(cards.length / itemsPerPage);
@@ -62,7 +60,7 @@ const VehiculesFilters = ({ onSearch }) => {
   const endIndex = startIndex + itemsPerPage;
   const displayedCards = cards.slice(startIndex, endIndex);
 
-
+  
   const handlePageClick = (selectedPage) => {
     setPageNumber(selectedPage);
   };
@@ -108,7 +106,6 @@ const VehiculesFilters = ({ onSearch }) => {
       .catch((err) => console.log(err)); //Si erreur de la requête, catch retourne une erreur
   }, [lien]);
 
-  //Mise à jour date actuelle composant BASICRANGE
   const annee = getCurrentYear();
 
   return (
@@ -264,7 +261,7 @@ const VehiculesFilters = ({ onSearch }) => {
       <div className="row">
         {/* Fonction map qui va itérer sur chaque élément du tableau 'card' et execute une fonction pour chaque élément. La fonction prend en paramétre chaque élément du tableau 'vehicule' et va retourner quelque chose. */}
         {cards && cards.length > 0 ? (
-         displayedCards.map((vehicule) => (
+          cards.map((vehicule) => (
             // {/* key =  aide à identifier de manière unique chaque élément généré dynamiquement au sein d'une liste*/}
             <div
               key={vehicule.idVehicule}
