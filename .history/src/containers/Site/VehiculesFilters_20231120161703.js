@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import VehiculesCard from "../../components/Vehicules/VehiculesCard";
 import TitreH1 from "../../components/UI/Titres/TitreH1";
 import TitreH2 from "../../components/UI/Titres/TitreH2";
 import BasicCheckbox from "../../components/Filters/BasicCheckbox";
@@ -10,14 +8,14 @@ import BannerInfo from "../../components/UI/Banner/BannerInfo";
  import BannerInfo1 from "../../assets/images/bannerInfo1.webp";
  import logoVoiture from "../../assets/images/logoVoiture.webp";
 import Card from "../../components/Vehicules/Card";
-import { Link } from "react-router-dom";
 import Textes from "../../components/UI/Textes/Textes";
 import PaginationComponent from "../../components/Vehicules/CardPagination/CardPagination";
 
 
 //La fonction prend en paramètre une fonction onSearch qui sera appelée lorsque l'utilisateur clique sur le bouton "Rechercher".
 const VehiculesFilters = ({ onSearch }) => {
-  //Fonction pour obtenir l'année actuelle en utilisant l'objet date.
+
+  //Fonction pour obtenir l'année actuelle en utilisant l'objet date pour composant 'range'.
   const getCurrentYear = () => {
     const dateActuelle = new Date();
     const anneeActuelle = dateActuelle.getFullYear();
@@ -33,17 +31,13 @@ const VehiculesFilters = ({ onSearch }) => {
     annee: [2000, getCurrentYear()], // On appelle la fonction getCurrentYear() pour avoir l'année actuelle
   });
 
-
   const [lien, setLien] = useState("http://localhost/garageback/API/vehicules.php")
+  const [cards, setCards] = useState( [] )
 
-  const [cards, setCards] = useState(
-    []
-  )
-
-  
-   //Impossible de communiquer directement entre parents et fils, on utilisera donc la fonction handlechange pour le faire, il sera passer en props pour chaque composant fils
-  const handleChange = (name, newValue) => {
-    setFiltres({ ...filtres, [name]: newValue }); //prendra 2 paramètres name (le nom du filtre à mettre à jour et newValue, la nouvelle valeur du filtre.
+  //Impossible de communiquer directement entre parents et fils, on utilisera donc la fonction handlechange pour le faire, il sera passer en props pour chaque composant fils
+   const handleChange = (name, newValue) => {
+    //prendra 2 paramètres name (le nom du filtre à mettre à jour et newValue, la nouvelle valeur du filtre.
+         setFiltres({ ...filtres, [name]: newValue }); 
   };
 
   const handleCheckBoxChange = (e) => {
@@ -60,43 +54,41 @@ const VehiculesFilters = ({ onSearch }) => {
   
   const [pageNumber, setPageNumber] = useState(0);
   const itemsPerPage = 6;
-  const pagesCount = Math.ceil(cards.length / itemsPerPage);
-
   const startIndex = pageNumber * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const displayedCards = cards.slice(startIndex, endIndex);
 
   const handlePageClick = (selectedPage) => {
-    setPageNumber(selectedPage);
+    setPageNumber(selectedPage - 1);
   };
+
+  //HANDLECLICK---------------------------------------------------------------
   const handleClick = ()=> {
-
-
         let lienTmp = "http://localhost/garageback/API/vehicules.php?";
+
         let lienObject = {kilometremin:filtres.kilometrage[0], 
                         kilometremax:filtres.kilometrage[1],
                         prixmin:filtres.prix[0],
                         prixmax:filtres.prix[1], 
                         anneemin:filtres.annee[0],
-                        anneemax:filtres.annee[1], 
-                        
-                      };
-        if(filtres.marque.length !== 0){
-          lienObject.marque = filtres.marque;
-        }
+                        anneemax:filtres.annee[1],};
 
-        if(filtres.famille.length !== 0){
-          lienObject.famille = filtres.famille.join(",");
+          if(filtres.marque.length !== 0){
+               lienObject.marque = filtres.marque;
         }
-
+          if(filtres.famille.length !== 0){
+                lienObject.famille = filtres.famille.join(",");
+        }
           for(const [cle, valeur] of Object.entries(lienObject)){
-            lienTmp = lienTmp + `${cle}=${valeur}&`
+                lienTmp = lienTmp + `${cle}=${valeur}&`
           }
-          lienTmp = lienTmp.slice(0, -1);
+                 lienTmp = lienTmp.slice(0, -1);
           // console.log(lienTmp)
           setLien(lienTmp)
   }
+  //FIN HANDLECLICK---------------------------------------------------------------
 
+//USEEFFECT-----------------------------------------------------------------------
   useEffect(() => {
     fetch(//fetch effectue une requête http, si reponse, elle sera encapsulé dans une promesse
      lien // "http://localhost/GarageBack/API/vehicule.php?kilometremin=0&kilometremax=200000&anneemin=2000&anneemax=2023&prixmin=5000&prixmax=50000"
@@ -109,6 +101,8 @@ const VehiculesFilters = ({ onSearch }) => {
       })//data ou on aurait pu mettre un nom reprèsente la réponse de la requête http
       .catch((err) => console.log(err));//Si erreur de la requête, catch retourne une erreur
   }, [lien]);
+  // FIN USEEFFECT-----------------------------------------------------------------------
+
 
   const annee = getCurrentYear();
 
@@ -250,7 +244,7 @@ const VehiculesFilters = ({ onSearch }) => {
           />
         </div>
       </div>
-{/*FIN BASICSELECT------------------------------------------------------------ */}
+{/*FIN BASICRANGE------------------------------------------------------------ */}
 
       </div>
 {/* BOUTON FILTRE------------------------------------------------------------ */}
@@ -265,12 +259,13 @@ const VehiculesFilters = ({ onSearch }) => {
       
       <div className="row">
 {/* Fonction map qui va itérer sur chaque élément du tableau 'card' et execute une fonction pour chaque élément. La fonction prend en paramétre chaque élément du tableau 'vehicule' et va retourner quelque chose. */}
-{cards && cards.length > 0 ? (
-  cards.map((vehicule) =>(
-
-    // {/* key =  aide à identifier de manière unique chaque élément généré dynamiquement au sein d'une liste*/}
-          <div  key={vehicule.idVehicule}  className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3" >
-           
+{displayedCards.map((vehicule) => (
+          <div
+// key =  aide à identifier de manière unique chaque élément généré dynamiquement au sein d'une liste
+            key={vehicule.idVehicule}
+ 
+            className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3" 
+          >
              <Card
               image={vehicule.imageVoiture}
               marque={vehicule.marque}
@@ -279,19 +274,23 @@ const VehiculesFilters = ({ onSearch }) => {
               energie={vehicule.energie}
               prix={vehicule.prix}
               id={vehicule.idVehicule}
-              />
+            />
            
-           </div>
-  ))
-) : (
-  <p className="text-center lead fw-bold mt-4 display-4">Aucune voiture dans les résultats</p>
-)}
+          </div>
+        ))}
       </div>
 
       <div className="d-flex justify-content-center mt-4">
       <PaginationComponent
-          currentPage={pageNumber + 1}
+//Pour afficher le numéro de page en indiquant bien que l'on veut commencer à 1 et non à 0
+          currentPage={pageNumber + 1} 
+         
+//Définit la propriété totalPages du composant 'PaginationComponent' avec la valeur pagesCount. 
+//Cette propriété représente le nombre total de pages disponibles dans la pagination.
           totalPages={pagesCount}
+
+//Pour gérer le changement de page lorsque l'utilisateur interagit avec la pagination
+
           onPageChange={handlePageClick}
         />
       </div>
@@ -309,10 +308,3 @@ export default VehiculesFilters;
 
 
 
-
-
-
-
-
-
-  

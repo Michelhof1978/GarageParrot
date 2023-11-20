@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import VehiculesCard from "../../components/Vehicules/VehiculesCard";
 import TitreH1 from "../../components/UI/Titres/TitreH1";
 import TitreH2 from "../../components/UI/Titres/TitreH2";
 import BasicCheckbox from "../../components/Filters/BasicCheckbox";
@@ -10,7 +8,6 @@ import BannerInfo from "../../components/UI/Banner/BannerInfo";
  import BannerInfo1 from "../../assets/images/bannerInfo1.webp";
  import logoVoiture from "../../assets/images/logoVoiture.webp";
 import Card from "../../components/Vehicules/Card";
-import { Link } from "react-router-dom";
 import Textes from "../../components/UI/Textes/Textes";
 import PaginationComponent from "../../components/Vehicules/CardPagination/CardPagination";
 
@@ -36,9 +33,7 @@ const VehiculesFilters = ({ onSearch }) => {
 
   const [lien, setLien] = useState("http://localhost/garageback/API/vehicules.php")
 
-  const [cards, setCards] = useState(
-    []
-  )
+  const [cards, setCards] = useState( [] )
 
   
    //Impossible de communiquer directement entre parents et fils, on utilisera donc la fonction handlechange pour le faire, il sera passer en props pour chaque composant fils
@@ -69,9 +64,8 @@ const VehiculesFilters = ({ onSearch }) => {
   const handlePageClick = (selectedPage) => {
     setPageNumber(selectedPage);
   };
+
   const handleClick = ()=> {
-
-
         let lienTmp = "http://localhost/garageback/API/vehicules.php?";
         let lienObject = {kilometremin:filtres.kilometrage[0], 
                         kilometremax:filtres.kilometrage[1],
@@ -79,8 +73,7 @@ const VehiculesFilters = ({ onSearch }) => {
                         prixmax:filtres.prix[1], 
                         anneemin:filtres.annee[0],
                         anneemax:filtres.annee[1], 
-                        
-                      };
+                          };
         if(filtres.marque.length !== 0){
           lienObject.marque = filtres.marque;
         }
@@ -250,7 +243,7 @@ const VehiculesFilters = ({ onSearch }) => {
           />
         </div>
       </div>
-{/*FIN BASICSELECT------------------------------------------------------------ */}
+{/*FIN BASICRANGE------------------------------------------------------------ */}
 
       </div>
 {/* BOUTON FILTRE------------------------------------------------------------ */}
@@ -265,12 +258,13 @@ const VehiculesFilters = ({ onSearch }) => {
       
       <div className="row">
 {/* Fonction map qui va itérer sur chaque élément du tableau 'card' et execute une fonction pour chaque élément. La fonction prend en paramétre chaque élément du tableau 'vehicule' et va retourner quelque chose. */}
-{cards && cards.length > 0 ? (
-  cards.map((vehicule) =>(
-
-    // {/* key =  aide à identifier de manière unique chaque élément généré dynamiquement au sein d'une liste*/}
-          <div  key={vehicule.idVehicule}  className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3" >
-           
+        {cards.map((vehicule) => (
+          <div
+// key =  aide à identifier de manière unique chaque élément généré dynamiquement au sein d'une liste
+            key={vehicule.idVehicule}
+ 
+            className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3" 
+          >
              <Card
               image={vehicule.imageVoiture}
               marque={vehicule.marque}
@@ -279,19 +273,23 @@ const VehiculesFilters = ({ onSearch }) => {
               energie={vehicule.energie}
               prix={vehicule.prix}
               id={vehicule.idVehicule}
-              />
+            />
            
-           </div>
-  ))
-) : (
-  <p className="text-center lead fw-bold mt-4 display-4">Aucune voiture dans les résultats</p>
-)}
+          </div>
+        ))}
       </div>
 
       <div className="d-flex justify-content-center mt-4">
       <PaginationComponent
-          currentPage={pageNumber + 1}
+//Pour afficher le numéro de page en indiquant bien que l'on veut commencer à 1 et non à 0
+          currentPage={pageNumber + 1} 
+         
+//Définit la propriété totalPages du composant 'PaginationComponent' avec la valeur pagesCount. 
+//Cette propriété représente le nombre total de pages disponibles dans la pagination.
           totalPages={pagesCount}
+
+//Pour gérer le changement de page lorsque l'utilisateur interagit avec la pagination
+
           onPageChange={handlePageClick}
         />
       </div>
@@ -309,10 +307,3 @@ export default VehiculesFilters;
 
 
 
-
-
-
-
-
-
-  

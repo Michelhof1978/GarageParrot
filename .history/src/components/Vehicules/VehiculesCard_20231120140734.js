@@ -60,7 +60,7 @@ const VehiculesCard = () => {
     <div>
       <div className="row">
 
-{/* Va itérer chaque élément du tableau d'objets 'currencards' représentant les véhicules */}
+Va itérer chaque élément du tableau ''
         {currentCards.map((vehicule) => (
           <div
 

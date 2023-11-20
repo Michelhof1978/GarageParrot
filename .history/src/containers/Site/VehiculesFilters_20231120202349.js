@@ -265,12 +265,13 @@ const VehiculesFilters = ({ onSearch }) => {
       
       <div className="row">
 {/* Fonction map qui va itérer sur chaque élément du tableau 'card' et execute une fonction pour chaque élément. La fonction prend en paramétre chaque élément du tableau 'vehicule' et va retourner quelque chose. */}
-{cards && cards.length > 0 ? (
-  cards.map((vehicule) =>(
-
-    // {/* key =  aide à identifier de manière unique chaque élément généré dynamiquement au sein d'une liste*/}
-          <div  key={vehicule.idVehicule}  className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3" >
-           
+        {cards.map((vehicule) => (
+          <div
+// key =  aide à identifier de manière unique chaque élément généré dynamiquement au sein d'une liste
+            key={vehicule.idVehicule}
+ 
+            className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3" 
+          >
              <Card
               image={vehicule.imageVoiture}
               marque={vehicule.marque}
@@ -279,13 +280,10 @@ const VehiculesFilters = ({ onSearch }) => {
               energie={vehicule.energie}
               prix={vehicule.prix}
               id={vehicule.idVehicule}
-              />
+            />
            
-           </div>
-  ))
-) : (
-  <p className="text-center lead fw-bold mt-4 display-4">Aucune voiture dans les résultats</p>
-)}
+          </div>
+        ))}
       </div>
 
       <div className="d-flex justify-content-center mt-4">
@@ -314,5 +312,24 @@ export default VehiculesFilters;
 
 
 
+{cards && cards.length > 0 ? (
+  cards.map((vehicule) =>(
 
-  
+          <div  key={vehicule.idVehicule}  className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3" >
+{/* key =  aide à identifier de manière unique chaque élément généré dynamiquement au sein d'une liste
+  */}
+             <Card
+              image={vehicule.imageVoiture}
+              marque={vehicule.marque}
+              nom={vehicule.nom}
+              modele={vehicule.modele}
+              energie={vehicule.energie}
+              prix={vehicule.prix}
+              id={vehicule.idVehicule}
+              />
+    </div>
+  ))
+) : (
+  <p>Aucune voiture dans les résultats</p>
+)}
+      </div>

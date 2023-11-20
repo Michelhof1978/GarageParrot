@@ -53,14 +53,13 @@ const VehiculesCard = () => {
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-
+  
 // console.log(currentCards);
   return (
     <>
+    
     <div>
       <div className="row">
-
-{/* Va itérer chaque élément du tableau d'objets 'currencards' représentant les véhicules */}
         {currentCards.map((vehicule) => (
           <div
 

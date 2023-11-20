@@ -281,11 +281,8 @@ const VehiculesFilters = ({ onSearch }) => {
               id={vehicule.idVehicule}
               />
            
-           </div>
-  ))
-) : (
-  <p className="text-center lead fw-bold mt-4 display-4">Aucune voiture dans les résultats</p>
-)}
+          </div>
+        ))}
       </div>
 
       <div className="d-flex justify-content-center mt-4">
@@ -315,4 +312,9 @@ export default VehiculesFilters;
 
 
 
-  
+    </div>
+  ))
+) : (
+  <p>Aucune voiture dans les résultats</p>
+)}
+      </div>

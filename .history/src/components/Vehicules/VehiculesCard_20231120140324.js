@@ -49,24 +49,20 @@ const VehiculesCard = () => {
 //La méthode slice(indexOfFirstCard, indexOfLastCard) prend une portion du tableau qui commence à l'index indexOfFirstCard (inclus) et se termine à l'index indexOfLastCard (exclus).
   const currentCards = vehicules.slice(indexOfFirstCard, indexOfLastCard);
 
-  //Fonction callback utilisée pour gérer le changement de page lorsque l'utilisateur clique sur l'élément de la pagination.
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-
-// console.log(currentCards);
+console.log(currentCards);
   return (
     <>
+    
     <div>
       <div className="row">
-
-{/* Va itérer chaque élément du tableau d'objets 'currencards' représentant les véhicules */}
         {currentCards.map((vehicule) => (
           <div
 
 // key =  aide à identifier de manière unique chaque élément généré dynamiquement au sein d'une liste
             key={vehicule.idVehicule}
-
             className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3" 
           >
             <Card

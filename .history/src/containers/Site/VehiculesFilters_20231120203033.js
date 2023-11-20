@@ -284,7 +284,7 @@ const VehiculesFilters = ({ onSearch }) => {
            </div>
   ))
 ) : (
-  <p className="text-center lead fw-bold mt-4 display-4">Aucune voiture dans les résultats</p>
+  <p className="gtex">Aucune voiture dans les résultats</p>
 )}
       </div>
 
