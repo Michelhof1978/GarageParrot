@@ -87,7 +87,7 @@ console.log(currentCards);
 //Fonction qui sera appelé lorsque que 'utilisateur va cliquer sur le numéro de page
           onPageChange={paginate}
         />
-{/* //FIN PAGINATION-------------------------------------------------------------- */}
+
 
       </div>
     </div>

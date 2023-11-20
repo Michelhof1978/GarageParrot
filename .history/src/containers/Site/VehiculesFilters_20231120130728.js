@@ -240,7 +240,8 @@ const VehiculesFilters = ({ onSearch }) => {
         <div className="filter-row">
           <BasicRange
             handleChange={handleChange}
-            label="Kilométrage :"
+            label="Kilométr
+            age :"
             name="kilometrage"
             marks={[
               { value: 0, label: "0 km" },
@@ -264,12 +265,9 @@ const VehiculesFilters = ({ onSearch }) => {
       <TitreH2>Résultats de la recherche</TitreH2>
       
       <div className="row">
-{/* Fonction map qui va itérer sur chaque élément du tableau 'card' et execute une fonction pour chaque élément. La fonction prend en paramétre chaque élément du tableau 'vehicule' et va retourner quelque chose. */}
         {cards.map((vehicule) => (
           <div
-// key =  aide à identifier de manière unique chaque élément généré dynamiquement au sein d'une liste
             key={vehicule.idVehicule}
- 
             className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3" 
           >
              <Card

@@ -77,7 +77,7 @@ console.log(currentCards);
       </div>
       <div className="pagination-container">
 
-{/* //PAGINATION-------------------------------------------------------------- */}
+//PAGINATION
       <PaginationComponent
 //Page actuellement active. Obtention de cette valeur à partir de l'état local avec const [currentPage, setCurrentPage] = useState(1);
           currentPage={currentPage}
@@ -87,7 +87,7 @@ console.log(currentCards);
 //Fonction qui sera appelé lorsque que 'utilisateur va cliquer sur le numéro de page
           onPageChange={paginate}
         />
-{/* //FIN PAGINATION-------------------------------------------------------------- */}
+
 
       </div>
     </div>

@@ -21,7 +21,7 @@ const PaginationComponent = ({ currentPage, totalPages, onPageChange }) => {
 //Fonction de rappel qui sera déclenchée lorsque l'utilisateur cliquera sur l'élément de pagination
           onClick={() => onPageChange(index + 1)}
         >
-{/* +1 car sinon on démare à 0 */}
+{/* //+1 car sinon on démare à 0 */}
           {index + 1}
         </Pagination.Item>
       ))}

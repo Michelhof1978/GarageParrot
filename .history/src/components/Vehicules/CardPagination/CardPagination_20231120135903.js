@@ -18,10 +18,9 @@ const PaginationComponent = ({ currentPage, totalPages, onPageChange }) => {
 //définit si l'élément de pagination est actif (sélectionné) ou non. Si l'index de la page + 1 est égal à la page actuelle (currentPage), alors l'élément est actif.         
           active={index + 1 === currentPage}
 
-//Fonction de rappel qui sera déclenchée lorsque l'utilisateur cliquera sur l'élément de pagination
+//Fonction
           onClick={() => onPageChange(index + 1)}
         >
-{/* +1 car sinon on démare à 0 */}
           {index + 1}
         </Pagination.Item>
       ))}
