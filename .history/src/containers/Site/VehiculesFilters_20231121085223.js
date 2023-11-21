@@ -14,20 +14,14 @@ import PaginationComponent from "../../components/Vehicules/CardPagination/CardP
 //La fonction prend en paramètre une fonction onSearch qui sera appelée lorsque l'utilisateur clique sur le bouton "Rechercher".
 const VehiculesFilters = ({ onSearch }) => {
 
-  useEffect(() => {
-    // Titre de la page
-    document.title = "Recherche Voitures d'Occasion";
-  }, []);
-
-
   //Fonction pour obtenir l'année actuelle en utilisant l'objet date pour le composant BASICRANGE.
     const getCurrentYear = () => {
-    const dateActuelle = new Date(); // crée une nouvelle instance de l'objet Date, qui représente la date et l'heure actuelles.
-    const anneeActuelle = dateActuelle.getFullYear();// crée une nouvelle instance de l'objet Date, qui représente la date et l'heure actuelles.
+    const dateActuelle = new Date();
+    const anneeActuelle = dateActuelle.getFullYear();
     return anneeActuelle;
   };
 
-  // Le composant va suivre l'état local grâce à useState qui est filtres qui va suivre les valeurs séléctionnéées par l'utilisateur.
+  // Le composant va suivre l'état local qui est filtres qui va suivre les valeurs séléctionnéées par l'utilisateur.
   const [filtres, setFiltres] = useState({
     famille: [],
     marque: "",
@@ -206,8 +200,7 @@ const VehiculesFilters = ({ onSearch }) => {
           </div>
           {/* FIN BASICSELECT------------------------------------------------------------ */}
 
-          {/* BASICRANGE------------------------------------------------------------ */}
-          {/* //PLAGE DE PRIX------------------------------- */}
+          {/* BASIC------------------------------------------------------------ */}
           <div className="d-flex justify-content-center align-items-center">
             <div className="filter-row">
               <BasicRange
@@ -223,7 +216,6 @@ const VehiculesFilters = ({ onSearch }) => {
             </div>
           </div>
 
-{/* //PLAGE DE ANNEE------------------------------- */}
           <div className="d-flex justify-content-center align-items-center">
             <div className="filter-row">
               <BasicRange

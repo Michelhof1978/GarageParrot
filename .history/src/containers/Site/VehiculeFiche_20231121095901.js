@@ -10,12 +10,7 @@ import { Card } from "react-bootstrap";
 import CardFiche from "../../components/Vehicules/CardFiche";
 
 const VehiculeFiche = () => {
-
-  useEffect(() => {
-    // Titre de la page
-    document.title = "  Informations Voitures d'Occasion";
-  }, []);
-
+  
   const [vehicule, setVehicule] = useState(null);
   const { id } = useParams();
 

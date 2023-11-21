@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import "../../App.css";
+import TitreH2 from "../UI/Titres/TitreH2";
 import PaginationComponent from "../../components/Vehicules/CardPagination/CardPagination";
 import Card from "./Card";
 
 
 const VehiculesCard = () => {
 
-  
+  useEffect(() => {
+    // Titre de la page
+    document.title = "Accueil Garage Parrot";
+  }, []);
 
+  
 //State pour stocker la liste des véhicules
   const [vehicules, setVehicules] = useState([]);
 

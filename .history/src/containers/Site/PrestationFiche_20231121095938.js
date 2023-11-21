@@ -13,10 +13,10 @@ const PrestationFiche = () => {
 
   useEffect(() => {
     // Titre de la page
-    document.title = "Prestation du garage";
+    document.title = "Recherche Voitures d'Occasion";
   }, []);
 
-
+  
   const [prestation, setVehicule] = useState(null);
   const { id } = useParams();
 

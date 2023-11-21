@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,  } from "react";
 import TitreH1 from "../../components/UI/Titres/TitreH1";
 import TitreH2 from "../../components/UI/Titres/TitreH2";
 import BasicCheckbox from "../../components/Filters/BasicCheckbox";
@@ -12,13 +12,12 @@ import Textes from "../../components/UI/Textes/Textes";
 import PaginationComponent from "../../components/Vehicules/CardPagination/CardPagination";
 
 //La fonction prend en paramètre une fonction onSearch qui sera appelée lorsque l'utilisateur clique sur le bouton "Rechercher".
-const VehiculesFilters = ({ onSearch }) => {
+const VehiculesFilters extends Component= ({ onSearch }) => {
 
-  useEffect(() => {
-    // Titre de la page
-    document.title = "Recherche Voitures d'Occasion";
-  }, []);
-
+  componentDidMount = () => {
+    //Titre de la page
+    document.title = "Accueil Garage Parrot";
+  };
 
   //Fonction pour obtenir l'année actuelle en utilisant l'objet date pour le composant BASICRANGE.
     const getCurrentYear = () => {

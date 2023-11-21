@@ -11,12 +11,7 @@ import CardPrestationFiche from "../../components/Prestation/CardPrestationFiche
 
 const PrestationFiche = () => {
 
-  useEffect(() => {
-    // Titre de la page
-    document.title = "Prestation du garage";
-  }, []);
-
-
+  
   const [prestation, setVehicule] = useState(null);
   const { id } = useParams();
 

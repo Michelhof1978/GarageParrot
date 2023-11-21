@@ -12,13 +12,12 @@ import Textes from "../../components/UI/Textes/Textes";
 import PaginationComponent from "../../components/Vehicules/CardPagination/CardPagination";
 
 //La fonction prend en paramètre une fonction onSearch qui sera appelée lorsque l'utilisateur clique sur le bouton "Rechercher".
-const VehiculesFilters = ({ onSearch }) => {
+const VehiculesFilters extends Component= ({ onSearch }) => {
 
-  useEffect(() => {
-    // Titre de la page
-    document.title = "Recherche Voitures d'Occasion";
-  }, []);
-
+  componentDidMount = () => {
+    //Titre de la page
+    document.title = "Accueil Garage Parrot";
+  };
 
   //Fonction pour obtenir l'année actuelle en utilisant l'objet date pour le composant BASICRANGE.
     const getCurrentYear = () => {

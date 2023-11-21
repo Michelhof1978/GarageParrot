@@ -14,11 +14,7 @@ import PaginationComponent from "../../components/Vehicules/CardPagination/CardP
 //La fonction prend en paramètre une fonction onSearch qui sera appelée lorsque l'utilisateur clique sur le bouton "Rechercher".
 const VehiculesFilters = ({ onSearch }) => {
 
-  useEffect(() => {
-    // Titre de la page
-    document.title = "Recherche Voitures d'Occasion";
-  }, []);
-
+  
 
   //Fonction pour obtenir l'année actuelle en utilisant l'objet date pour le composant BASICRANGE.
     const getCurrentYear = () => {

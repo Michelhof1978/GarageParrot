@@ -13,7 +13,7 @@ const VehiculeFiche = () => {
 
   useEffect(() => {
     // Titre de la page
-    document.title = "  Informations Voitures d'Occasion";
+    document.title = "   Voitures d'Occasion";
   }, []);
 
   const [vehicule, setVehicule] = useState(null);

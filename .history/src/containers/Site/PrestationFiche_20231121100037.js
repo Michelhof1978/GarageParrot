@@ -13,7 +13,7 @@ const PrestationFiche = () => {
 
   useEffect(() => {
     // Titre de la page
-    document.title = "Prestation du garage";
+    document.title = "P";
   }, []);
 
 
