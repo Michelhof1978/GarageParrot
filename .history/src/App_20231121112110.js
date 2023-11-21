@@ -6,14 +6,12 @@ import {BrowserRouter} from 'react-router-dom';//Composant qui va englober tout 
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";// Bibliothèque Icones
 
-library.add(fab);//Ajoute les icônes de marques (brands) à la bibliothèque FontAwesome
+library.add(fab);//
 
 
 function App() {
   return (
     <div>
-  {/* //Enveloppe le composant Site avec le BrowserRouter. 
-  Cela permet à l'application d'utiliser le système de routage fourni par react-router-dom */}
       <BrowserRouter>
         < Site />
       </BrowserRouter>

@@ -94,27 +94,17 @@ const VehiculesFilters = ({ onSearch }) => {
     if (filtres.marque.length !== 0) {
       lienObject.marque = filtres.marque;
     }
-
 //condition qui teste si la longueur du tableau filtres.famille est différente de zéro. 
 //En d'autres termes, elle vérifie si le tableau filtres.famille n'est pas vide.
 //Si la condition dans le if est vraie, cela signifie que le tableau filtres.famille 
-// contient des éléments. Dans ce cas, la propriété famille de l'objet lienObject est 
-// mise à jour en utilisant la méthode join(","). Cette méthode crée une chaîne de 
-// caractères en joignant tous les éléments du tableau avec une virgule comme séparateur.
+contient des éléments. Dans ce cas, la propriété famille de l'objet lienObject est mise à jour en utilisant la méthode join(","). Cette méthode crée une chaîne de caractères en joignant tous les éléments du tableau avec une virgule comme séparateur.
 if (filtres.famille.length !== 0) {
       lienObject.famille = filtres.famille.join(",");
     }
 
-//  Boucle for...of qui itère sur les paires clé-valeur de l'objet lienObject. À chaque
-//  itération, une chaîne de requête est construite en ajoutant chaque paire clé-valeur à
-//   la variable lienTmp
-//Va construire la chaine de la reqête = http://localhost/garageback/API/vehicules.php?kilometremin=5000&kilometremax=20000&prixmin=10000&prixmax=50000&anneemin=2010&anneemax=2022&marque=Toyota&famille=SUV,Berline
-// clé = kilometremin et valeur = 5000
-//la chaîne de requête, et les paires sont séparées par &. Le dernier & est ensuite supprimé pour obtenir une URL bien formée
     for (const [cle, valeur] of Object.entries(lienObject)) {
       lienTmp = lienTmp + `${cle}=${valeur}&`;
     }
-
     lienTmp = lienTmp.slice(0, -1);
     // console.log(lienTmp)
     setLien(lienTmp);

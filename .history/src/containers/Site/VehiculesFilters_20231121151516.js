@@ -110,7 +110,6 @@ if (filtres.famille.length !== 0) {
 //   la variable lienTmp
 //Va construire la chaine de la reqête = http://localhost/garageback/API/vehicules.php?kilometremin=5000&kilometremax=20000&prixmin=10000&prixmax=50000&anneemin=2010&anneemax=2022&marque=Toyota&famille=SUV,Berline
 // clé = kilometremin et valeur = 5000
-//la chaîne de requête, et les paires sont séparées par &. Le dernier & est ensuite supprimé pour obtenir une URL bien formée
     for (const [cle, valeur] of Object.entries(lienObject)) {
       lienTmp = lienTmp + `${cle}=${valeur}&`;
     }

@@ -12,8 +12,7 @@ library.add(fab);//Ajoute les icônes de marques (brands) à la bibliothèque Fo
 function App() {
   return (
     <div>
-  {/* //Enveloppe le composant Site avec le BrowserRouter. 
-  Cela permet à l'application d'utiliser le système de routage fourni par react-router-dom */}
+  //
       <BrowserRouter>
         < Site />
       </BrowserRouter>

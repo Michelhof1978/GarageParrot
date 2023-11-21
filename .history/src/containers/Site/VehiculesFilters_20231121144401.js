@@ -80,8 +80,7 @@ const VehiculesFilters = ({ onSearch }) => {
   //Création d'un objet qui contiendra les paramètres de l'Url à construire
     let lienObject = {
       //Propriétés de l'objet qui seront extraites des valeurs actuelles de filtres
-      //[0] et [1] Va extraire les valeurs du premier élément  minimum qui est 0 et 
-      //le 2 ème élément maximum qui sera 1
+      //[0] et [1] Va extraire les valeurs minimum et maximum
       kilometremin: filtres.kilometrage[0],
       kilometremax: filtres.kilometrage[1],
       prixmin: filtres.prix[0],
@@ -89,32 +88,17 @@ const VehiculesFilters = ({ onSearch }) => {
       anneemin: filtres.annee[0],
       anneemax: filtres.annee[1],
     };
-// Si la longueur du tableau filtres.marque n'est pas égale à zéro (c'est-à-dire s'il 
-//y a une marque sélectionnée), alors la propriété marque est ajoutée à l'objet lienObject.
     if (filtres.marque.length !== 0) {
       lienObject.marque = filtres.marque;
     }
 
-//condition qui teste si la longueur du tableau filtres.famille est différente de zéro. 
-//En d'autres termes, elle vérifie si le tableau filtres.famille n'est pas vide.
-//Si la condition dans le if est vraie, cela signifie que le tableau filtres.famille 
-// contient des éléments. Dans ce cas, la propriété famille de l'objet lienObject est 
-// mise à jour en utilisant la méthode join(","). Cette méthode crée une chaîne de 
-// caractères en joignant tous les éléments du tableau avec une virgule comme séparateur.
-if (filtres.famille.length !== 0) {
+    if (filtres.famille.length !== 0) {
       lienObject.famille = filtres.famille.join(",");
     }
 
-//  Boucle for...of qui itère sur les paires clé-valeur de l'objet lienObject. À chaque
-//  itération, une chaîne de requête est construite en ajoutant chaque paire clé-valeur à
-//   la variable lienTmp
-//Va construire la chaine de la reqête = http://localhost/garageback/API/vehicules.php?kilometremin=5000&kilometremax=20000&prixmin=10000&prixmax=50000&anneemin=2010&anneemax=2022&marque=Toyota&famille=SUV,Berline
-// clé = kilometremin et valeur = 5000
-//la chaîne de requête, et les paires sont séparées par &. Le dernier & est ensuite supprimé pour obtenir une URL bien formée
     for (const [cle, valeur] of Object.entries(lienObject)) {
       lienTmp = lienTmp + `${cle}=${valeur}&`;
     }
-
     lienTmp = lienTmp.slice(0, -1);
     // console.log(lienTmp)
     setLien(lienTmp);
