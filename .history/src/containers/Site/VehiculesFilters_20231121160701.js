@@ -115,8 +115,7 @@ if (filtres.famille.length !== 0) {
       lienTmp = lienTmp + `${cle}=${valeur}&`;
     }
 
-    //Une fois que la boucle est terminée, cette ligne supprime le dernier caractère 
-    //(&) de la chaîne de requête, car il n'est pas nécessaire à la fin.
+    
     lienTmp = lienTmp.slice(0, -1);
     // console.log(lienTmp)
     setLien(lienTmp);
@@ -163,12 +162,7 @@ if (filtres.famille.length !== 0) {
           <div className="d-flex justify-content-center align-items-center mt-5 mb-3">
             <div className="mb-3 ms-4">
               <BasicCheckbox
-
-          //Elle est destinée à être utilisée comme une fonction de rappel
-          //  (handleCheckBoxChange) qui sera exécutée lorsque l'état de la case à cocher
-          //   change. Cette fonction gère généralement la mise à jour de l'état dans le
-          //    composant parent.
-                handleCheckBoxChange={handleCheckBoxChange}// Propriété passée au composant
+                handleCheckBoxChange={handleCheckBoxChange}
                 label="Utilitaire"
                 name="famille"
                 value="Utilitaire"

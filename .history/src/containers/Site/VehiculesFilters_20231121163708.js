@@ -165,9 +165,9 @@ if (filtres.famille.length !== 0) {
               <BasicCheckbox
 
           //Elle est destinée à être utilisée comme une fonction de rappel
-          //  (handleCheckBoxChange) qui sera exécutée lorsque l'état de la case à cocher
-          //   change. Cette fonction gère généralement la mise à jour de l'état dans le
-          //    composant parent.
+           (handleCheckBoxChange) qui sera exécutée lorsque l'état de la case à cocher
+            change. Cette fonction gère généralement la mise à jour de l'état dans le
+             composant parent.
                 handleCheckBoxChange={handleCheckBoxChange}// Propriété passée au composant
                 label="Utilitaire"
                 name="famille"

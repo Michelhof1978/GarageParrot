@@ -163,12 +163,7 @@ if (filtres.famille.length !== 0) {
           <div className="d-flex justify-content-center align-items-center mt-5 mb-3">
             <div className="mb-3 ms-4">
               <BasicCheckbox
-
-          //Elle est destinée à être utilisée comme une fonction de rappel
-          //  (handleCheckBoxChange) qui sera exécutée lorsque l'état de la case à cocher
-          //   change. Cette fonction gère généralement la mise à jour de l'état dans le
-          //    composant parent.
-                handleCheckBoxChange={handleCheckBoxChange}// Propriété passée au composant
+                handleCheckBoxChange={handleCheckBoxChange}// 
                 label="Utilitaire"
                 name="famille"
                 value="Utilitaire"
