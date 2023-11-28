@@ -324,7 +324,7 @@ const VehiculesFilters = ({ onSearch }) => {
         </div>
         {/* FIN BOUTON FILTRE------------------------------------------------------------ */}
       </div>
-    
+      console.log(handleClick)
       <TitreH2>Résultats de la recherche</TitreH2>
 
       <div className="row">

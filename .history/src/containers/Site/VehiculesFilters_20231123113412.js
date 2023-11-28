@@ -202,7 +202,7 @@ const VehiculesFilters = ({ onSearch }) => {
                 label="Utilitaire"
                 name="famille"
                 value="Utilitaire"
-               
+                className="me-"
               />
             </div>
 
@@ -312,7 +312,6 @@ const VehiculesFilters = ({ onSearch }) => {
           </div>
           {/*FIN BASICSELECT------------------------------------------------------------ */}
         </div>
-
         {/* BOUTON FILTRE------------------------------------------------------------ */}
         <div className="d-flex justify-content-center align-items-center mb-5">
           <button
@@ -324,7 +323,7 @@ const VehiculesFilters = ({ onSearch }) => {
         </div>
         {/* FIN BOUTON FILTRE------------------------------------------------------------ */}
       </div>
-    
+
       <TitreH2>Résultats de la recherche</TitreH2>
 
       <div className="row">

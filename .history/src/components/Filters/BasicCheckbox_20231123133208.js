@@ -17,7 +17,7 @@ const BasicCheckbox = (props) => {
         name={props.name}
         value={props.value}
         onChange={handleChange} // Appelle la fonction handleChange lorsqu'il à un changement
-        className="ms-4"
+        className=""
       />
       {/* Affiche le texte de l'étiquette passé en prop */}
       {props.label}

@@ -5,7 +5,7 @@ import "../../App.css";
 const BasicCheckbox = (props) => {
   // Fonction appelée lorsqu'il y a un changement dans la case à cocher
   const handleChange = (e) => {
-    // Appelle la fonction handleCheckBoxChange passée en prop avec l'événement (e) en argument
+    // Appelle la fonction handleCheckBoxChange passée en prop avec l'événement en argument
     props.handleCheckBoxChange(e);
   };
 
@@ -16,8 +16,7 @@ const BasicCheckbox = (props) => {
         type="checkbox"
         name={props.name}
         value={props.value}
-        onChange={handleChange} // Appelle la fonction handleChange lorsqu'il à un changement
-        className="ms-4"
+        onChange={handleChange} // Appelle la fonction handleChange  changement
       />
       {/* Affiche le texte de l'étiquette passé en prop */}
       {props.label}

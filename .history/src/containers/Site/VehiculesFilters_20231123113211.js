@@ -88,7 +88,7 @@ const VehiculesFilters = ({ onSearch }) => {
   const startIndex = pageNumber * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
 
-  //Slice est utilisé pour mettre à jour le numéro de page
+  //Slice est utilisé pour mettre à jour le buméro de page
   const displayedCards = cards.slice(startIndex, endIndex);
 
   //Fonction handlePageClick est définie pour mettre à jour le numéro de page (pageNumber) en fonction de la page sélectionnée.
@@ -150,7 +150,6 @@ const VehiculesFilters = ({ onSearch }) => {
   };
   //FIN BOUTON RECHERCHER------------------------------------------
 
-// ------------------------------------------------------------------------------------
 
 
   useEffect(() => {
@@ -202,7 +201,7 @@ const VehiculesFilters = ({ onSearch }) => {
                 label="Utilitaire"
                 name="famille"
                 value="Utilitaire"
-               
+                className="me-"
               />
             </div>
 
@@ -312,7 +311,6 @@ const VehiculesFilters = ({ onSearch }) => {
           </div>
           {/*FIN BASICSELECT------------------------------------------------------------ */}
         </div>
-
         {/* BOUTON FILTRE------------------------------------------------------------ */}
         <div className="d-flex justify-content-center align-items-center mb-5">
           <button
@@ -324,7 +322,7 @@ const VehiculesFilters = ({ onSearch }) => {
         </div>
         {/* FIN BOUTON FILTRE------------------------------------------------------------ */}
       </div>
-    
+
       <TitreH2>Résultats de la recherche</TitreH2>
 
       <div className="row">

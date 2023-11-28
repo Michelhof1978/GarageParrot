@@ -202,7 +202,7 @@ const VehiculesFilters = ({ onSearch }) => {
                 label="Utilitaire"
                 name="famille"
                 value="Utilitaire"
-               
+                className="ms-5"
               />
             </div>
 
@@ -324,7 +324,7 @@ const VehiculesFilters = ({ onSearch }) => {
         </div>
         {/* FIN BOUTON FILTRE------------------------------------------------------------ */}
       </div>
-    
+
       <TitreH2>Résultats de la recherche</TitreH2>
 
       <div className="row">

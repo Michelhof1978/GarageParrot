@@ -26,7 +26,7 @@ const Site = () => {
           <Route path="/prestation" element={<Prestation />} />
           <Route path="/prestationfiche/:id" element={<PrestationFiche />} />
           <Route path="/avisclients/" element={<AvisClients />} />
-          <Route path="*" element={<Error type="404">La page n'existe pas</Error>} />
+          <Route path="*" element={<Error type=404>La page n'existe pas</Error>} />
         </Routes>
       </div>
 

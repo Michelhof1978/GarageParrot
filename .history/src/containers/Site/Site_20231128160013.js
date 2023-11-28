@@ -10,7 +10,7 @@ import Prestation from "./Prestation";
 import PrestationFiche from "./PrestationFiche";
 import AvisClients from "../../containers/Site/AvisClients";
 import Accueil from "./Accueil";
-import Error from "../../components/Error/Error";
+import error from "../../components/Error/Error";
 
 const Site = () => {
   return (
@@ -26,7 +26,7 @@ const Site = () => {
           <Route path="/prestation" element={<Prestation />} />
           <Route path="/prestationfiche/:id" element={<PrestationFiche />} />
           <Route path="/avisclients/" element={<AvisClients />} />
-          <Route path="*" element={<Error type="404">La page n'existe pas</Error>} />
+          <Route path="*" element={<Error></Error>} />
         </Routes>
       </div>
 

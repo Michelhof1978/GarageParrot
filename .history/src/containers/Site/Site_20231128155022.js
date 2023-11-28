@@ -10,7 +10,7 @@ import Prestation from "./Prestation";
 import PrestationFiche from "./PrestationFiche";
 import AvisClients from "../../containers/Site/AvisClients";
 import Accueil from "./Accueil";
-import Error from "../../components/Error/Error";
+import e
 
 const Site = () => {
   return (
@@ -19,14 +19,13 @@ const Site = () => {
         <Navbar />
 
         <Routes>
-          <Route path="/" exact element={<Accueil />} />
+          <Route path="/" element={<Accueil />} />
           <Route path="/voitureoccasion" element={<VehiculesFilters />} />
           <Route path="/vehiculefiche/:id" element={<VehiculeFiche />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/prestation" element={<Prestation />} />
           <Route path="/prestationfiche/:id" element={<PrestationFiche />} />
           <Route path="/avisclients/" element={<AvisClients />} />
-          <Route path="*" element={<Error type="404">La page n'existe pas</Error>} />
         </Routes>
       </div>
 

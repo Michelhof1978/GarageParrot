@@ -149,7 +149,7 @@ const VehiculesFilters = ({ onSearch }) => {
     setLien(lienTmp);
   };
   //FIN BOUTON RECHERCHER------------------------------------------
-
+console.log 
 // ------------------------------------------------------------------------------------
 
 
@@ -324,7 +324,7 @@ const VehiculesFilters = ({ onSearch }) => {
         </div>
         {/* FIN BOUTON FILTRE------------------------------------------------------------ */}
       </div>
-    
+
       <TitreH2>Résultats de la recherche</TitreH2>
 
       <div className="row">

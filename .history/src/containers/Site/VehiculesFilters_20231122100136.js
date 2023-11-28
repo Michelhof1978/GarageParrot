@@ -24,7 +24,7 @@ const VehiculesFilters = ({ onSearch }) => {
     return anneeActuelle;
   };
 
-  //hook useState  pour déclarer et initialiser un état local dans le composant fonctionnel.  
+  //hook useState de React pour déclarer et initialiser un état local dans le composant fonctionnel.  const [filtres, setFiltres] = useState({
   const [filtres, setFiltres] = useState({
     //déstructuration du tableau retourné par useState
     famille: [],
@@ -88,7 +88,7 @@ const VehiculesFilters = ({ onSearch }) => {
   const startIndex = pageNumber * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
 
-  //Slice est utilisé pour mettre à jour le numéro de page
+  //Slice est utilisé pour mettre à jour le buméro de page
   const displayedCards = cards.slice(startIndex, endIndex);
 
   //Fonction handlePageClick est définie pour mettre à jour le numéro de page (pageNumber) en fonction de la page sélectionnée.
@@ -96,11 +96,8 @@ const VehiculesFilters = ({ onSearch }) => {
   const handlePageClick = (selectedPage) => {
     setPageNumber(selectedPage);
   };
-  //FIN PAGINATION ---------------------------------------------------------
+  //PAGINATION ---------------------------------------------------------
 
-// ------------------------------------------------------------------------------------
-  
-//BOUTON RECHERCHER------------------------------------------
   const handleClick = () => {
     let lienTmp = "http://localhost/garageback/API/vehicules.php?";
 
@@ -148,10 +145,6 @@ const VehiculesFilters = ({ onSearch }) => {
     // console.log(lienTmp)
     setLien(lienTmp);
   };
-  //FIN BOUTON RECHERCHER------------------------------------------
-
-// ------------------------------------------------------------------------------------
-
 
   useEffect(() => {
     fetch(
@@ -202,7 +195,7 @@ const VehiculesFilters = ({ onSearch }) => {
                 label="Utilitaire"
                 name="famille"
                 value="Utilitaire"
-               
+                className="me-"
               />
             </div>
 
@@ -312,7 +305,6 @@ const VehiculesFilters = ({ onSearch }) => {
           </div>
           {/*FIN BASICSELECT------------------------------------------------------------ */}
         </div>
-
         {/* BOUTON FILTRE------------------------------------------------------------ */}
         <div className="d-flex justify-content-center align-items-center mb-5">
           <button
@@ -324,7 +316,7 @@ const VehiculesFilters = ({ onSearch }) => {
         </div>
         {/* FIN BOUTON FILTRE------------------------------------------------------------ */}
       </div>
-    
+
       <TitreH2>Résultats de la recherche</TitreH2>
 
       <div className="row">
