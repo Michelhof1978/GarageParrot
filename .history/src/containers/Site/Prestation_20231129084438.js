@@ -8,8 +8,8 @@ import BannerQuality from "../../assets/images/bannerQuality.webp";
 
 const Prestation = (props) => {
   useEffect(() => {
-    // Titre de la page pour référencement
-    document.title = "Presentation des services"; //Le tableau vide signifie que cet effet ne dépend d'aucune variable et ne sera exécuté qu'une fois après le montage du composant
+    // Titre de la page
+    document.title = "Presentation des sèrvices"; //Le tableau vide signifie que cet effet ne dépend d'aucune variable et ne sera exécuté qu'une fois après le montage du composant
   }, []);
 
   const [cards, setCards] = useState([]);

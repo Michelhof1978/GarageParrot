@@ -1,9 +1,0 @@
-
-.site{
-    min-height: 100vh;
-    margin-bottom: -140px;
-}
-
-footer, .minsite{
-    height: 140px; Pour corriger les bug lié au footer et de sa position ds la fenêtre
-}

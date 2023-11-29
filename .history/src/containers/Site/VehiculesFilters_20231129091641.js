@@ -153,9 +153,7 @@ const VehiculesFilters = ({ onSearch }) => {
 
 // ------------------------------------------------------------------------------------
 
-//déclenche une requête HTTP vers l'URL spécifiée par lien chaque fois que la valeur 
-//de lien change. Une fois les données reçues, elles sont transformées en JSON, mises
-// à jour dans l'état de l'application avec setCards(data)
+
 //Ce hook est exécuté chaque fois que la dépendance lien change
   useEffect(() => {
     fetch(
@@ -335,7 +333,7 @@ const VehiculesFilters = ({ onSearch }) => {
         {/* Fonction map qui va itérer sur chaque élément du tableau 'card' et execute une fonction pour chaque élément. La fonction prend en paramétre chaque élément du tableau 'vehicule' et va retourner quelque chose. */}
         {cards && cards.length > 0 ? (
           displayedCards.map((vehicule) => (
-            // {/*tableau associatif =  key =  aide à identifier de manière unique chaque élément généré dynamiquement au sein d'une liste*/}
+            // {/* key =  aide à identifier de manière unique chaque élément généré dynamiquement au sein d'une liste*/}
             <div
               key={vehicule.idVehicule}
               className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3"

@@ -335,7 +335,7 @@ const VehiculesFilters = ({ onSearch }) => {
         {/* Fonction map qui va itérer sur chaque élément du tableau 'card' et execute une fonction pour chaque élément. La fonction prend en paramétre chaque élément du tableau 'vehicule' et va retourner quelque chose. */}
         {cards && cards.length > 0 ? (
           displayedCards.map((vehicule) => (
-            // {/*tableau associatif =  key =  aide à identifier de manière unique chaque élément généré dynamiquement au sein d'une liste*/}
+            // {/* key =  aide à identifier de manière unique chaque élément généré dynamiquement au sein d'une liste*/}
             <div
               key={vehicule.idVehicule}
               className="col-lg-4 col-md-4 col-sm-6 col-6 mt-3"
