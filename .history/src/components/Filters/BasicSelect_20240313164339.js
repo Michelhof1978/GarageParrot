@@ -2,9 +2,8 @@
 
 import "../../App.css";
 
-//fonction fléchée  prenant un objet props en tant que paramètre.
+//
 const BasicSelect = (props) => {
-  
   //Fonction appelée lorsqu'il y a un changement ds le menu déroulant
   const handleChange = (event) => {
     //on extrait 2 propriètes value et name de l'objet event.target

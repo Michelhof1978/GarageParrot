@@ -86,10 +86,10 @@ const VehiculesCard = () => {
           <PaginationComponent
 //Page actuellement active. Obtention de cette valeur à partir de l'état local avec const [currentPage, setCurrentPage] = useState(1);
             currentPage={currentPage}
-//Math.ceil qui va arrondir vers le haut si le resultat de la division n'est pas un nombre entier
-//Nb total des pages, calculé en fonction de la longueur du tableau et du nombre de cartes par page
+            //Math.ceil qui va arrondir vers le haut si le resultat de la division n'est pas un nombre entier
+            //Nb total des pages, calculé en fonction de la longueur du tableau et du nombre de cartes par page
             totalPages={Math.ceil(vehicules.length / cardsPerPage)}
-//Fonction qui sera appelé lorsque que 'utilisateur va cliquer sur le numéro de page
+            //Fonction qui sera appelé lorsque que 'utilisateur va cliquer sur le numéro de page
             onPageChange={paginate}
           />
           {/* //FIN PAGINATION-------------------------------------------------------------- */}
