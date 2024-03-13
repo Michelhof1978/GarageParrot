@@ -14,30 +14,25 @@ const VehiculesCard = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 6;
 
-//Utilisation de useEffect qui va effectuer des opérations asynchrones lors du rendu d'un composant.
+  //Utilisation de useEffect qui va effectuer des opérations asynchrones lors du rendu d'un composant.
   useEffect(() => {
-//Utilisation de la bibliothèque Axios pour effectuer une requête HTTP GET vers l'URL spécifiée
+    //Utilisation de la bibliothèque Axios pour effectuer une requête HTTP GET vers l'URL spécifiée
     axios
       .get("http://localhost/garageback/front/voiturefiche/all")
-//La méthode .then est appelée sur la promesse renvoyée par la requête HTTP. Elle prend une fonction callback avec le paramètre response qui représente la réponse de la requête.
+      //La méthode .then est appelée sur la promesse renvoyée par la requête HTTP. Elle prend une fonction callback avec le paramètre response qui représente la réponse de la requête.
       .then((response) => {
-//Extraction des données Json de la réponse HTTP.
+        //Extraction des données Json de la réponse HTTP.
         const jsonData = response.data;
-//Tri des données avec la méthode sort() en fonction de la date de création. Les données sont triées en ordre croissant en utilisant la date de création comme critère
+        //Tri des données avec sort() en fonction de la  date de création
         jsonData.sort(
           (a, b) => new Date(a.created_at) - new Date(b.created_at)
         );
-//Mise à jour de l'état vehicules avec les données triées. setVehicules est une fonction qui met à jour l'état du composant.
         setVehicules(jsonData);
       })
-//Gestion des erreurs en cas d'échec de la requête HTTP. L'erreur est affichée dans la console avec console.error
       .catch((error) => {
         console.error("Erreur lors de la récupération des véhicules :", error);
       });
-      
-//La syntaxe return () => {}; définit une fonction de nettoyage qui sera exécutée lors du démontage du composant ou lorsqu'une nouvelle exécution de l'effet est déclenchée. 
-//Dans ce cas, une fonction vide est renvoyée, ce qui signifie qu'il n'y a pas de nettoyage nécessaire.
-//Le tableau vide [] passé en second argument signifie que l'effet ne dépend d'aucune valeur, donc il ne sera exécuté qu'une seule fois lorsque le composant est monté pour la première fois
+
     return () => {};
   }, []);
 

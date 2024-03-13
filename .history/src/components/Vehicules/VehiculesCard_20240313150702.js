@@ -14,7 +14,7 @@ const VehiculesCard = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 6;
 
-//Utilisation de useEffect qui va effectuer des opérations asynchrones lors du rendu d'un composant.
+  //Utilisation de useEffect qui va effectuer des opérations asynchrones lors du rendu d'un composant.
   useEffect(() => {
 //Utilisation de la bibliothèque Axios pour effectuer une requête HTTP GET vers l'URL spécifiée
     axios
@@ -30,14 +30,10 @@ const VehiculesCard = () => {
 //Mise à jour de l'état vehicules avec les données triées. setVehicules est une fonction qui met à jour l'état du composant.
         setVehicules(jsonData);
       })
-//Gestion des erreurs en cas d'échec de la requête HTTP. L'erreur est affichée dans la console avec console.error
       .catch((error) => {
         console.error("Erreur lors de la récupération des véhicules :", error);
       });
-      
-//La syntaxe return () => {}; définit une fonction de nettoyage qui sera exécutée lors du démontage du composant ou lorsqu'une nouvelle exécution de l'effet est déclenchée. 
-//Dans ce cas, une fonction vide est renvoyée, ce qui signifie qu'il n'y a pas de nettoyage nécessaire.
-//Le tableau vide [] passé en second argument signifie que l'effet ne dépend d'aucune valeur, donc il ne sera exécuté qu'une seule fois lorsque le composant est monté pour la première fois
+
     return () => {};
   }, []);
 
