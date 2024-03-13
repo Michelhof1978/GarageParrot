@@ -26,7 +26,6 @@ const VehiculesFilters = ({ onSearch }) => {
   };
 
   //hook useState  pour déclarer et initialiser un état local dans le composant fonctionnel.  
-  //Initialise l'état local filtres avec des valeurs par défaut et utilise le hook useState pour gérer cet état
   const [filtres, setFiltres] = useState({
     //déstructuration du tableau retourné par useState
     famille: [],
@@ -36,7 +35,6 @@ const VehiculesFilters = ({ onSearch }) => {
     annee: [2000, getCurrentYear()], // On appelle la fonction getCurrentYear() pour avoir l'année actuelle
   });
 
-  //Initialise deux états locaux lien et cards à l'aide du hook useState
   const [lien, setLien] = useState(
     "http://localhost/garageback/API/vehicules.php"
   );
@@ -44,7 +42,6 @@ const VehiculesFilters = ({ onSearch }) => {
 
   //Impossible de communiquer directement entre parents et fils, on utilisera donc la
   //fonction handlechange pour le faire, il sera passer en props pour chaque composant fils
-  // handleChange pour mettre à jour l'état filtres lorsqu'un changement est détecté dans les composants enfants
   const handleChange = (name, newValue) => {
     //mettre à jour l'état global (filtres) en React en modifiant la valeur associée à un filtre spécifique
 
@@ -95,7 +92,8 @@ const VehiculesFilters = ({ onSearch }) => {
   //Slice est utilisé pour mettre à jour le numéro de page
   const displayedCards = cards.slice(startIndex, endIndex);
 
-  //fonction handlePageClick pour mettre à jour le numéro de page lorsqu'un utilisateur clique sur un bouton de pagination
+  //Fonction handlePageClick est définie pour mettre à jour le numéro de page (pageNumber) en fonction de la page sélectionnée.
+  // Cette fonction est  utilisée en réponse à l'interaction de l'utilisateur, ici, sur le bouton de pagination.
   const handlePageClick = (selectedPage) => {
     setPageNumber(selectedPage);
   };
@@ -104,7 +102,6 @@ const VehiculesFilters = ({ onSearch }) => {
 // ------------------------------------------------------------------------------------
   
 //BOUTON RECHERCHER------------------------------------------
-//fonction handleClick pour construire l'URL de requête en fonction des filtres sélectionnés et mettre à jour l'état lien
   const handleClick = () => {
     let lienTmp = "http://localhost/garageback/API/vehicules.php?";
 
@@ -175,7 +172,8 @@ const VehiculesFilters = ({ onSearch }) => {
   }, [lien]);
 
   /*
-  //Au lieu de fetch, j'aurais pu utiliser AXIOS, à tester plus tard
+    //Au lieu de fetch, j'aurais pu utiliser AXIOS, à tester plus tard
+
   useEffect(() => {
   axios.get(lien)
   .then((response) => {

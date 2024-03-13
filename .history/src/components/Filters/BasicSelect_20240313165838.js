@@ -32,14 +32,11 @@ Cela permet d'associer un libellé à un menu déroulant pour aider les utilisat
 {/*Rend un élément de menu déroulant (select) qui appelle la fonction handleChange lorsqu'une option est modifiée. 
 Le nom du menu déroulant est spécifié par la prop name */}
       <select name={props.name} onChange={handleChange}>
-
-{/*Itère sur le tableau d'options (props.options) à l'aide de map 
-"itérer" en programmation fait référence à répéter une série d'instructions ou d'opérations sur un ensemble de données. 
-L'itération est souvent utilisée dans les boucles, où un bloc de code est répété plusieurs fois jusqu'à ce qu'une condition spécifiée soit atteinte ou que toutes les données aient été traitées*/}
+      
+{/*Itère sur le tableau d'options (props.options) à l'aide de map */}
         {props.options.map((ele, idx) => {
           //element , index
 
-//Pour chaque option, si c'est la première option (index 0), elle est rendue avec l'attribut selected pour la sélectionner par défaut. Sinon, les autres options sont rendues normalement. 
           if (idx === 0) {
             return (
               <option selected value={ele.value}>

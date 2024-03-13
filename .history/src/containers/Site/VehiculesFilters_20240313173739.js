@@ -104,7 +104,6 @@ const VehiculesFilters = ({ onSearch }) => {
 // ------------------------------------------------------------------------------------
   
 //BOUTON RECHERCHER------------------------------------------
-//fonction handleClick pour construire l'URL de requête en fonction des filtres sélectionnés et mettre à jour l'état lien
   const handleClick = () => {
     let lienTmp = "http://localhost/garageback/API/vehicules.php?";
 

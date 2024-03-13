@@ -39,7 +39,7 @@ L'itération est souvent utilisée dans les boucles, où un bloc de code est ré
         {props.options.map((ele, idx) => {
           //element , index
 
-//Pour chaque option, si c'est la première option (index 0), elle est rendue avec l'attribut selected pour la sélectionner par défaut. Sinon, les autres options sont rendues normalement. 
+//Pour chaque option, si c'est la première option (index 0), elle est rendue avec l'attribut selected pour la sélectionner par défaut. Sinon, les autres options sont rendues normalement. */
           if (idx === 0) {
             return (
               <option selected value={ele.value}>
