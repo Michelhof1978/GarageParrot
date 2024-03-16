@@ -59,9 +59,7 @@ const VehiculesFilters = ({ onSearch }) => {
     //prendra 2 paramètres name (le nom du filtre à mettre à jour et newValue, la nouvelle valeur du filtre.
     setFiltres({ ...filtres, [name]: newValue });
   };
-// FIN  DECLARATION ET INITIALISATION DES ETATS LOCAUX DANS UN COMPOSANT FONCTIONNEL FIN
-
-
+// DECLARATION ET INITIALISATION DES ETATS LOCAUX DANS UN COMPOSANT FONCTIONNEL
   //---------------------------CHECKBOX-----------------------------------------------
   //fonction utilisée pour gérer le changement d'état de la checkbox dans une interface
   //  utilisateur. Elle prend en paramètre un événement (e) généré par le changement d'état

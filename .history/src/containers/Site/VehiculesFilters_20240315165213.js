@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import TitreH1 from "../../components/UI/Titres/TitreH1";
 import TitreH2 from "../../components/UI/Titres/TitreH2";
 import BasicCheckbox from "../../components/Filters/BasicCheckbox";
@@ -12,15 +11,13 @@ import Card from "../../components/Vehicules/Card";
 import Textes from "../../components/UI/Textes/Textes";
 import PaginationComponent from "../../components/Vehicules/CardPagination/CardPagination";
 
-//La fonction prend en paramètre une fonction onSearch et qui sera passé en Prop et ensuite qui sera appelée lorsque l'utilisateur clique sur le bouton "Rechercher".
+//La fonction prend en paramètre une fonction onSearch qui sera appelée lorsque l'utilisateur clique sur le bouton "Rechercher".
 const VehiculesFilters = ({ onSearch }) => {
   
   useEffect(() => {
     document.title = "Recherche Voitures d'Occasion";
   }, []); // Le tableau vide signifie que cet effet ne dépend d'aucune variable et ne sera exécuté qu'une fois après le montage du composant
 
-  //----------------------------------------------------------------------------------
-  
   //Fonction pour obtenir l'année actuelle en utilisant l'objet date pour le composant BASICRANGE.
   const getCurrentYear = () => {
     const dateActuelle = new Date(); // crée une nouvelle instance de l'objet Date, qui représente la date et l'heure actuelles.
@@ -28,10 +25,7 @@ const VehiculesFilters = ({ onSearch }) => {
     return anneeActuelle;
   };
 
- //------------------------------------------------------------------------------------
-
- // DECLARATION ET INITIALISATION DES ETATS LOCAUX DANS UN COMPOSANT FONCTIONNEL 
-
+  //SLIDE 1
   //hook useState  pour déclarer et initialiser un état local dans le composant fonctionnel.  
   //Initialise l'état local filtres avec des valeurs par défaut et utilise le hook useState pour gérer cet état
   const [filtres, setFiltres] = useState({
@@ -47,7 +41,6 @@ const VehiculesFilters = ({ onSearch }) => {
   const [lien, setLien] = useState(
     "http://localhost/garageback/API/vehicules.php"
   );
-
   const [cards, setCards] = useState([]);
 
   //Impossible de communiquer directement entre parents et fils, on utilisera donc la
@@ -59,10 +52,8 @@ const VehiculesFilters = ({ onSearch }) => {
     //prendra 2 paramètres name (le nom du filtre à mettre à jour et newValue, la nouvelle valeur du filtre.
     setFiltres({ ...filtres, [name]: newValue });
   };
-// FIN  DECLARATION ET INITIALISATION DES ETATS LOCAUX DANS UN COMPOSANT FONCTIONNEL FIN
 
-
-  //---------------------------CHECKBOX-----------------------------------------------
+  //---------------------------CHECKBOX
   //fonction utilisée pour gérer le changement d'état de la checkbox dans une interface
   //  utilisateur. Elle prend en paramètre un événement (e) généré par le changement d'état
   //   de la case à cocher.
@@ -111,7 +102,7 @@ const VehiculesFilters = ({ onSearch }) => {
   };
   //FIN PAGINATION ---------------------------------------------------------
 
-
+// ------------------------------------------------------------------------------------
   
 //BOUTON RECHERCHER------------------------------------------
 //fonction handleClick pour construire l'URL de requête en fonction des filtres sélectionnés et mettre à jour l'état lien
@@ -164,9 +155,29 @@ const VehiculesFilters = ({ onSearch }) => {
   };
   //FIN BOUTON RECHERCHER------------------------------------------
 
-// AXIOS
-//Remplacement de fetch par AXIOS, à tester mais fetch et axios fonctionne tous les 2
-useEffect(() => {
+// ------------------------------------------------------------------------------------
+
+//déclenche une requête HTTP vers l'URL spécifiée par lien chaque fois que la valeur 
+//de lien change. Une fois les données reçues, elles sont transformées en JSON, mises
+// à jour dans l'état de l'application avec setCards(data)
+//Ce hook est exécuté chaque fois que la dépendance lien change
+  useEffect(() => {
+    fetch(
+//fetch effectue une requête http, si reponse, elle sera encapsulé dans une promesse
+      lien // "http://localhost/GarageBack/API/vehicule.php?kilometremin=0&kilometremax=200000&anneemin=2000&anneemax=2023&prixmin=5000&prixmax=50000"
+    ) //test sur POSTMAN en insérant l'url en combinant les filtres et le resultat est 1 donc ok
+//Si reponse reçu de la requête http, then va gére la reponse de cette promesse et va prendre une fonction de rappel en argument:
+      .then((res) => res.json()) // Va extraire les données de l'API sous format json
+      .then((data) => {
+        setCards(data);
+        console.log();
+      }) //data ou on aurait pu mettre un nom reprèsente la réponse de la requête http
+      .catch((err) => console.log(err)); //Si erreur de la requête, catch retourne une erreur
+  }, [lien]);
+
+  /*
+  //Au lieu de fetch, j'aurais pu utiliser AXIOS, à tester plus tard
+  useEffect(() => {
   axios.get(lien)
   .then((response) => {
     setCards(response.data);
@@ -175,25 +186,9 @@ useEffect(() => {
     console.error("Erreur lors de la récupération des données :", error);
   });
 }, [lien]);
-//déclenche une requête HTTP vers l'URL spécifiée par lien chaque fois que la valeur 
-//de lien change. Une fois les données reçues, elles sont transformées en JSON, mises
-// à jour dans l'état de l'application avec setCards(data)
-//Ce hook est exécuté chaque fois que la dépendance lien change
-//   useEffect(() => {
-//     fetch(
-// //fetch effectue une requête http, si reponse, elle sera encapsulé dans une promesse
-//       lien // "http://localhost/GarageBack/API/vehicule.php?kilometremin=0&kilometremax=200000&anneemin=2000&anneemax=2023&prixmin=5000&prixmax=50000"
-//     ) //test sur POSTMAN en insérant l'url en combinant les filtres et le resultat est 1 donc ok
-// //Si reponse reçu de la requête http, then va gére la reponse de cette promesse et va prendre une fonction de rappel en argument:
-//       .then((res) => res.json()) // Va extraire les données de l'API sous format json
-//       .then((data) => {
-//         setCards(data);
-//         console.log();
-//       }) //data ou on aurait pu mettre un nom reprèsente la réponse de la requête http
-//       .catch((err) => console.log(err)); //Si erreur de la requête, catch retourne une erreur
-//   }, [lien]);
+*/
 
-  
+
   //Mise à jour date actuelle composant BASICRANGE
   const annee = getCurrentYear();
 

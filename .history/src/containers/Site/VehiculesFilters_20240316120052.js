@@ -59,7 +59,7 @@ const VehiculesFilters = ({ onSearch }) => {
     //prendra 2 paramètres name (le nom du filtre à mettre à jour et newValue, la nouvelle valeur du filtre.
     setFiltres({ ...filtres, [name]: newValue });
   };
-// FIN  DECLARATION ET INITIALISATION DES ETATS LOCAUX DANS UN COMPOSANT FONCTIONNEL FIN
+// FIN  DECLARATION ET INITIALISATION DES ETATS LOCAUX DANS UN COMPOSANT FONCTIONNEL
 
 
   //---------------------------CHECKBOX-----------------------------------------------

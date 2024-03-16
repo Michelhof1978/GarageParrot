@@ -19,8 +19,6 @@ const VehiculesFilters = ({ onSearch }) => {
     document.title = "Recherche Voitures d'Occasion";
   }, []); // Le tableau vide signifie que cet effet ne dépend d'aucune variable et ne sera exécuté qu'une fois après le montage du composant
 
-  //----------------------------------------------------------------------------------
-  
   //Fonction pour obtenir l'année actuelle en utilisant l'objet date pour le composant BASICRANGE.
   const getCurrentYear = () => {
     const dateActuelle = new Date(); // crée une nouvelle instance de l'objet Date, qui représente la date et l'heure actuelles.
@@ -28,10 +26,7 @@ const VehiculesFilters = ({ onSearch }) => {
     return anneeActuelle;
   };
 
- //------------------------------------------------------------------------------------
-
- // DECLARATION ET INITIALISATION DES ETATS LOCAUX DANS UN COMPOSANT FONCTIONNEL 
-
+  
   //hook useState  pour déclarer et initialiser un état local dans le composant fonctionnel.  
   //Initialise l'état local filtres avec des valeurs par défaut et utilise le hook useState pour gérer cet état
   const [filtres, setFiltres] = useState({
@@ -47,7 +42,6 @@ const VehiculesFilters = ({ onSearch }) => {
   const [lien, setLien] = useState(
     "http://localhost/garageback/API/vehicules.php"
   );
-
   const [cards, setCards] = useState([]);
 
   //Impossible de communiquer directement entre parents et fils, on utilisera donc la
@@ -59,10 +53,8 @@ const VehiculesFilters = ({ onSearch }) => {
     //prendra 2 paramètres name (le nom du filtre à mettre à jour et newValue, la nouvelle valeur du filtre.
     setFiltres({ ...filtres, [name]: newValue });
   };
-// FIN  DECLARATION ET INITIALISATION DES ETATS LOCAUX DANS UN COMPOSANT FONCTIONNEL FIN
 
-
-  //---------------------------CHECKBOX-----------------------------------------------
+  //---------------------------CHECKBOX
   //fonction utilisée pour gérer le changement d'état de la checkbox dans une interface
   //  utilisateur. Elle prend en paramètre un événement (e) généré par le changement d'état
   //   de la case à cocher.
@@ -164,7 +156,8 @@ const VehiculesFilters = ({ onSearch }) => {
   };
   //FIN BOUTON RECHERCHER------------------------------------------
 
-// AXIOS
+// ------------------------------------------------------------------------------------
+
 //Remplacement de fetch par AXIOS, à tester mais fetch et axios fonctionne tous les 2
 useEffect(() => {
   axios.get(lien)

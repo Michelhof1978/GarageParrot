@@ -18,9 +18,7 @@ const VehiculesFilters = ({ onSearch }) => {
   useEffect(() => {
     document.title = "Recherche Voitures d'Occasion";
   }, []); // Le tableau vide signifie que cet effet ne dépend d'aucune variable et ne sera exécuté qu'une fois après le montage du composant
-
-  //----------------------------------------------------------------------------------
-  
+//----------------------------------------------------------------------------------
   //Fonction pour obtenir l'année actuelle en utilisant l'objet date pour le composant BASICRANGE.
   const getCurrentYear = () => {
     const dateActuelle = new Date(); // crée une nouvelle instance de l'objet Date, qui représente la date et l'heure actuelles.
@@ -28,10 +26,7 @@ const VehiculesFilters = ({ onSearch }) => {
     return anneeActuelle;
   };
 
- //------------------------------------------------------------------------------------
-
- // DECLARATION ET INITIALISATION DES ETATS LOCAUX DANS UN COMPOSANT FONCTIONNEL 
-
+  
   //hook useState  pour déclarer et initialiser un état local dans le composant fonctionnel.  
   //Initialise l'état local filtres avec des valeurs par défaut et utilise le hook useState pour gérer cet état
   const [filtres, setFiltres] = useState({
@@ -59,10 +54,8 @@ const VehiculesFilters = ({ onSearch }) => {
     //prendra 2 paramètres name (le nom du filtre à mettre à jour et newValue, la nouvelle valeur du filtre.
     setFiltres({ ...filtres, [name]: newValue });
   };
-// FIN  DECLARATION ET INITIALISATION DES ETATS LOCAUX DANS UN COMPOSANT FONCTIONNEL FIN
 
-
-  //---------------------------CHECKBOX-----------------------------------------------
+  //---------------------------CHECKBOX
   //fonction utilisée pour gérer le changement d'état de la checkbox dans une interface
   //  utilisateur. Elle prend en paramètre un événement (e) généré par le changement d'état
   //   de la case à cocher.
