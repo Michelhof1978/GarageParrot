@@ -28,7 +28,7 @@ const BasicCheckbox = (props) => {
       {props.label}
     </label>
   );
-// --------------------------------FIN AFFICHAGE--------------------------------------------
+    // --------------------------------AFFICHAGE--------------------------------------------
 
 };
 export default BasicCheckbox;

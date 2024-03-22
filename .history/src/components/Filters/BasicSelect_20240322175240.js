@@ -4,10 +4,7 @@ import "../../App.css";
 
 //fonction fléchée  prenant un objet props en tant que paramètre.
 const BasicSelect = (props) => {
-
-  // --------------------------PAS DE STATE SUR CE COMPOSANT------------------------------------
-
-  // --------------------------------COMPORTEMENTS--------------------------------------------
+  
 
   // Fonction nommée handleChange qui sera appelée lorsqu'une option est modifiée dans le menu déroulant. 
   //Elle extrait la valeur (value) et le nom (name) de l'option sélectionnée à partir de event.target, puis appelle la fonction handleChange passée en prop du composant parent avec ces valeurs.

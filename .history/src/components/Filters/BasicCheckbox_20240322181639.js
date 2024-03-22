@@ -3,18 +3,15 @@
 import "../../App.css";
 
 
-// --------------------------------COMPORTEMENTS--------------------------------------------
+  // --------------------------------COMPORTEMENTS--------------------------------------------
 const BasicCheckbox = (props) => {
   // Fonction appelée lorsqu'il y a un changement dans la case à cocher
   const handleChange = (e) => {
     // Appelle la fonction handleCheckBoxChange passée en prop avec l'événement (e) en argument
     props.handleCheckBoxChange(e);
   };
-  // --------------------------------FIN COMPORTEMENTS--------------------------------------------
 
-
-  // --------------------------------AFFICHAGE--------------------------------------------
-
+  // Rendu du composant
   return (
     <label>
       <input
@@ -28,7 +25,5 @@ const BasicCheckbox = (props) => {
       {props.label}
     </label>
   );
-// --------------------------------FIN AFFICHAGE--------------------------------------------
-
 };
 export default BasicCheckbox;

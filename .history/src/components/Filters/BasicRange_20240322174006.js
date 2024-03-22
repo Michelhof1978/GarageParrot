@@ -26,15 +26,13 @@ const [value, setValue] = useState(range);
   // On l'utilisera car pour les 3 composants prix, km et année, leurs valeurs sont des entiers et que sort trie uniquement des chaînes de caractères.
   range.sort((a, b) => a - b);
 
+  
+
   // Fonction de gestion du changement de valeur du slider
   const handleSliderChange = (event, newValue) => {
     setValue(newValue);
     handleChange(name, newValue); // Appel de la fonction handleChange du parent avec le nom et la nouvelle valeur
   };
-
-  // --------------------------------FIN COMPORTEMENTS--------------------------------------------
-
-  // --------------------------------AFFICHAGE--------------------------------------------
 
   return (
     <>
@@ -61,7 +59,6 @@ const [value, setValue] = useState(range);
       />
     </>
   );
-    // --------------------------------FIN AFFICHAGE--------------------------------------------
 };
 
 export default BasicRange;

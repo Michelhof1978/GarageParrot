@@ -34,8 +34,6 @@ const [value, setValue] = useState(range);
 
   // --------------------------------FIN COMPORTEMENTS--------------------------------------------
 
-  // --------------------------------AFFICHAGE--------------------------------------------
-
   return (
     <>
       {/* Affiche une typographie avec un identifiant "input-slider" et un espace en bas */}
@@ -61,7 +59,6 @@ const [value, setValue] = useState(range);
       />
     </>
   );
-    // --------------------------------FIN AFFICHAGE--------------------------------------------
 };
 
 export default BasicRange;

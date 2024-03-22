@@ -20,21 +20,18 @@ const [value, setValue] = useState(range);
   
    // -----------------FIN DECLARATION ET INITIALISATION DU STATE----------------------------
 
-   // --------------------------------COMPORTEMENTS--------------------------------------------
-
+   
   // Tri du tableau range si nécessaire, de sorte que la valeur la plus petite soit toujours en 1ère position et la plus grande en dernière
   // On l'utilisera car pour les 3 composants prix, km et année, leurs valeurs sont des entiers et que sort trie uniquement des chaînes de caractères.
   range.sort((a, b) => a - b);
+
+  
 
   // Fonction de gestion du changement de valeur du slider
   const handleSliderChange = (event, newValue) => {
     setValue(newValue);
     handleChange(name, newValue); // Appel de la fonction handleChange du parent avec le nom et la nouvelle valeur
   };
-
-  // --------------------------------FIN COMPORTEMENTS--------------------------------------------
-
-  // --------------------------------AFFICHAGE--------------------------------------------
 
   return (
     <>
@@ -61,7 +58,6 @@ const [value, setValue] = useState(range);
       />
     </>
   );
-    // --------------------------------FIN AFFICHAGE--------------------------------------------
 };
 
 export default BasicRange;

@@ -61,7 +61,6 @@ const [value, setValue] = useState(range);
       />
     </>
   );
-    // --------------------------------FIN AFFICHAGE--------------------------------------------
 };
 
 export default BasicRange;

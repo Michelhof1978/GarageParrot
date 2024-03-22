@@ -5,10 +5,6 @@ import "../../App.css";
 //fonction fléchée  prenant un objet props en tant que paramètre.
 const BasicSelect = (props) => {
 
-  // --------------------------PAS DE STATE SUR CE COMPOSANT------------------------------------
-
-  // --------------------------------COMPORTEMENTS--------------------------------------------
-
   // Fonction nommée handleChange qui sera appelée lorsqu'une option est modifiée dans le menu déroulant. 
   //Elle extrait la valeur (value) et le nom (name) de l'option sélectionnée à partir de event.target, puis appelle la fonction handleChange passée en prop du composant parent avec ces valeurs.
   const handleChange = (event) => {
@@ -21,12 +17,10 @@ const BasicSelect = (props) => {
     props.handleChange(name, value);
   };
 
-    // --------------------------------FIN COMPORTEMENTS--------------------------------------------
-
-    // --------------------------------AFFICHAGE--------------------------------------------
 
   return (
     <>
+
 {/* Le composant va recevoir les(`props`) en entrée, qui seront utilisées pour personnaliser son comportement et son apparence. 
 <label> : C'est un élément de balisage HTML représentant une étiquette associée à un contrôle d'entrée, comme un champ de saisie de texte ou un menu déroulant. 
 Dans ce contexte, c'est l'élément utilisé pour afficher un libellé associé à un champ de formulaire ou à un autre élément de l'interface utilisateur.
@@ -60,8 +54,6 @@ L'itération est souvent utilisée dans les boucles, où un bloc de code est ré
       </select>
     </>
   );
-  // --------------------------------FIN AFFICHAGE--------------------------------------------
-
 };
 
 export default BasicSelect;

@@ -13,8 +13,7 @@ const BasicCheckbox = (props) => {
   // --------------------------------FIN COMPORTEMENTS--------------------------------------------
 
 
-  // --------------------------------AFFICHAGE--------------------------------------------
-
+  // Rendu du composant
   return (
     <label>
       <input
@@ -28,7 +27,5 @@ const BasicCheckbox = (props) => {
       {props.label}
     </label>
   );
-// --------------------------------FIN AFFICHAGE--------------------------------------------
-
 };
 export default BasicCheckbox;

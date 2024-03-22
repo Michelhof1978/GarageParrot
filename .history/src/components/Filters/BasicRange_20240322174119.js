@@ -32,9 +32,7 @@ const [value, setValue] = useState(range);
     handleChange(name, newValue); // Appel de la fonction handleChange du parent avec le nom et la nouvelle valeur
   };
 
-  // --------------------------------FIN COMPORTEMENTS--------------------------------------------
-
-  // --------------------------------AFFICHAGE--------------------------------------------
+  // --------------------------------COMPORTEMENTS--------------------------------------------
 
   return (
     <>
@@ -61,7 +59,6 @@ const [value, setValue] = useState(range);
       />
     </>
   );
-    // --------------------------------FIN AFFICHAGE--------------------------------------------
 };
 
 export default BasicRange;

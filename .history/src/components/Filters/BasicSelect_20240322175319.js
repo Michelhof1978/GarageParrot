@@ -5,7 +5,7 @@ import "../../App.css";
 //fonction fléchée  prenant un objet props en tant que paramètre.
 const BasicSelect = (props) => {
 
-  // --------------------------PAS DE STATE SUR CE COMPOSANT------------------------------------
+    // --------------------------------PAS DE STATE--------------------------------------------
 
   // --------------------------------COMPORTEMENTS--------------------------------------------
 
