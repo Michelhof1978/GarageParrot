@@ -30,9 +30,8 @@ const VehiculesFilters = ({ onSearch }) => {
 
  // -----------------DECLARATION ET INITIALISATION DU STATE----------------------------
 
-//Initialise l'état local des filtres avec des valeurs par défaut 
-  const [filtres, setFiltres] = useState({  
-//déstructuring du tableau 
+  //Initialise l'état local des filtres avec des valeurs par défaut 
+  const [filtres, setFiltres] = useState({//déstructuring du tableau 
     famille: [], //Déclaré vide car il peut y avoir plusieurs valeurs sélectionnées pour ce filtre.chaque fois qu'une valeur est sélectionnée ou désélectionnée, elle est ajoutée ou supprimée de ce tableau
     marque: "",//déclaré comme une chaîne vide car il s'agit d'un filtre où l'utilisateur ne peut sélectionner qu'une seule valeur à la fois
     prix: [5000, 50000],
@@ -40,9 +39,8 @@ const VehiculesFilters = ({ onSearch }) => {
     annee: [2000, getCurrentYear()], // On appelle la fonction getCurrentYear() pour avoir l'année actuelle
   });
 
-//Lorsque les filtres de recherche sont appliqués et lors du clique sur bouton "Rechercher",l'URL sera mise à jour en fonction des filtres sélectionnés.
+  //Initialise deux états locaux lien et cards à l'aide du hook useState
   const [lien, setLien] = useState("http://localhost/garageback/API/vehicules.php");
-
   const [cards, setCards] = useState([]);
   //nombre de cartes par page, gère la pagination d'une liste d'éléments (cards)
   const [pageNumber, setPageNumber] = useState(0);

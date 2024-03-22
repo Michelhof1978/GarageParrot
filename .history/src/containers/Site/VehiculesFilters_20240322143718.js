@@ -40,7 +40,7 @@ const VehiculesFilters = ({ onSearch }) => {
     annee: [2000, getCurrentYear()], // On appelle la fonction getCurrentYear() pour avoir l'année actuelle
   });
 
-//Lorsque les filtres de recherche sont appliqués et lors du clique sur bouton "Rechercher",l'URL sera mise à jour en fonction des filtres sélectionnés.
+//Lorsque les filtres de recherche sont appliqués et que l'utilisateur clique sur le bouton "Rechercher", cette URL est mise à jour en fonction des filtres sélectionnés.
   const [lien, setLien] = useState("http://localhost/garageback/API/vehicules.php");
 
   const [cards, setCards] = useState([]);

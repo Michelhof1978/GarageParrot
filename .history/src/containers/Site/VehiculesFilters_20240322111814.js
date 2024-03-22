@@ -14,6 +14,9 @@ import PaginationComponent from "../../components/Vehicules/CardPagination/CardP
 
 //La fonction prend en paramètre une fonction onSearch et qui sera passé en Prop et ensuite qui sera appelée lorsque l'utilisateur clique sur le bouton "Rechercher".
 const VehiculesFilters = ({ onSearch }) => {
+  
+  // -----------------------------------COMPORTEMENTS--------------------------------------------
+
   useEffect(() => {
     document.title = "Recherche Voitures d'Occasion";
   }, []); // Le tableau vide signifie que cet effet ne dépend d'aucune variable et ne sera exécuté qu'une fois après le montage du composant
@@ -26,30 +29,30 @@ const VehiculesFilters = ({ onSearch }) => {
     return anneeActuelle;
   };
 
-// ---------------------------------------------------------------------------------------
+// -----------------------------------FIN COMPORTEMENTS --------------------------------------------
 
  // -----------------DECLARATION ET INITIALISATION DU STATE----------------------------
 
-//Initialise l'état local des filtres avec des valeurs par défaut 
-  const [filtres, setFiltres] = useState({  
-//déstructuring du tableau 
-    famille: [], //Déclaré vide car il peut y avoir plusieurs valeurs sélectionnées pour ce filtre.chaque fois qu'une valeur est sélectionnée ou désélectionnée, elle est ajoutée ou supprimée de ce tableau
-    marque: "",//déclaré comme une chaîne vide car il s'agit d'un filtre où l'utilisateur ne peut sélectionner qu'une seule valeur à la fois
+  //hook useState  pour déclarer et initialiser un état local dans le composant fonctionnel.  
+  //Initialise l'état local filtres avec des valeurs par défaut et utilise le hook useState pour gérer cet état
+  const [filtres, setFiltres] = useState({
+    //déstructuration du tableau retourné par useState
+    famille: [],
+    marque: "",
     prix: [5000, 50000],
     kilometrage: [0, 200000],
     annee: [2000, getCurrentYear()], // On appelle la fonction getCurrentYear() pour avoir l'année actuelle
   });
 
-//Lorsque les filtres de recherche sont appliqués et lors du clique sur bouton "Rechercher",l'URL sera mise à jour en fonction des filtres sélectionnés.
+  //Initialise deux états locaux lien et cards à l'aide du hook useState
   const [lien, setLien] = useState("http://localhost/garageback/API/vehicules.php");
-
   const [cards, setCards] = useState([]);
   //nombre de cartes par page, gère la pagination d'une liste d'éléments (cards)
   const [pageNumber, setPageNumber] = useState(0);
 
 //---------------------FIN DECLARATION ET INITIALISATION DU STATE----------------------------
 
-// --------------------------------COMPORTEMENTS--------------------------------------------
+// -----------------------------------COMPORTEMENTS--------------------------------------------
 
   //Impossible de communiquer directement entre parents et fils, on utilisera donc la
   //fonction handlechange pour le faire, il sera passer en props pour chaque composant fils
@@ -194,8 +197,6 @@ useEffect(() => {
   //Mise à jour date actuelle composant BASICRANGE
   const annee = getCurrentYear();
 
-
-  //--------------------------------------AFFICHAGE---------------------------------------
   return (
     <>
       <div className="container">
