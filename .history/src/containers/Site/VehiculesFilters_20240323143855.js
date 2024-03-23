@@ -13,7 +13,7 @@ import Textes from "../../components/UI/Textes/Textes";
 import PaginationComponent from "../../components/Vehicules/CardPagination/CardPagination";
 
 //La fonction prend en paramètre une fonction onSearch et qui sera passé en Prop et ensuite qui sera appelée lorsque l'utilisateur clique sur le bouton "Rechercher".
-const VehiculesFilters = () => {
+const VehiculesFilters = ({ onSearch }) => {
   useEffect(() => {
     document.title = "Recherche Voitures d'Occasion";
   }, []); // Le tableau vide signifie que cet effet ne dépend d'aucune variable et ne sera exécuté qu'une fois après le montage du composant

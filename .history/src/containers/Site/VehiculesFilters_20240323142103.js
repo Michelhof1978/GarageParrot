@@ -13,7 +13,7 @@ import Textes from "../../components/UI/Textes/Textes";
 import PaginationComponent from "../../components/Vehicules/CardPagination/CardPagination";
 
 //La fonction prend en paramètre une fonction onSearch et qui sera passé en Prop et ensuite qui sera appelée lorsque l'utilisateur clique sur le bouton "Rechercher".
-const VehiculesFilters = () => {
+const VehiculesFilters = ({ onSearch }) => {
   useEffect(() => {
     document.title = "Recherche Voitures d'Occasion";
   }, []); // Le tableau vide signifie que cet effet ne dépend d'aucune variable et ne sera exécuté qu'une fois après le montage du composant
@@ -53,7 +53,7 @@ const VehiculesFilters = () => {
 
 // --------------------------------COMPORTEMENTS--------------------------------------------
 
-  // handleChange mettra à jour automatiquement l'état filtres à chaque fois que l'utilisateur fera une modif pour chaque filtre
+  // handleChange mettra à jour automatiquement l'état filtres à chaque fois que l'utilisateur fera une modif ds chaque filtre
   const handleChange = (name, newValue) => {
     //prendra 2 paramètres name (le nom du filtre à mettre à jour et newValue, la nouvelle valeur du filtre.
     setFiltres({ ...filtres, [name]: newValue });

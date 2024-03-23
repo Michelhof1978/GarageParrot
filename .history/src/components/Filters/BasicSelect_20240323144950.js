@@ -46,18 +46,15 @@ L'itération est souvent utilisée dans les boucles, où un bloc de code est ré
         {props.options.map((ele, idx) => {
           //element , index
 
-          return (
-            <option
-              key={idx}
-              value={ele.value}
-              // Utilisation de l'opérateur ternaire pour déterminer si l'option est sélectionnée par défaut
-              // La première option est sélectionnée par défaut si son index est 0
-              // Sinon, aucune option n'est sélectionnée par défaut
-              selected={idx === 0 ? true : false}
-            >
-              {ele.text}
-            </option>
-          );
+
+            return (
+              <option selected value={ele.value}>
+                {ele.text}
+              </option>
+            );
+          } else {
+            return <option value={ele.value}>{ele.text}</option>;
+          }
         })}
       </select>
     </>
