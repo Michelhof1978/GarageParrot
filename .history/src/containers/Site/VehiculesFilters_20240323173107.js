@@ -43,7 +43,7 @@ const VehiculesFilters = () => {
   const [lien, setLien] = useState("http://localhost/garageback/API/vehicules.php");
 
 //Cet état local stocke les données des véhicules récupérées à partir de l'API. Il sera initialisé comme un tableau vide, indiquant qu'aucun véhicule n'a été récupéré initialement. Lorsque la requête vers l'API est effectuée avec l'URL spécifiée dans lien, les données des véhicules sont mises à jour dans cet état à l'aide de la fonction setCards.
-  const [cards, setCards] = useState([]);//tableau initialisé à vide pour représenter iun état initial où aucune donnée de véhicule n'a encopre été récupérée.
+  const [cards, setCards] = useState([]);
 
 //Cet état local stocke le numéro de la page actuellement affichée dans la pagination des cartes de véhicules. Il est initialisé à 0, indiquant que la première page est affichée initialement. Lorsque l'utilisateur change de page en cliquant sur les boutons de pagination, ce numéro de page est mis à jour à l'aide de la fonction setPageNumber, ce qui entraîne le rendu des cartes correspondantes à cette page.
   const [pageNumber, setPageNumber] = useState(0);
