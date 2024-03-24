@@ -115,9 +115,8 @@ const VehiculesFilters = () => {
 
     //Création d'un objet qui contiendra les paramètres de l'Url à construire en utilisant les valeurs actuelles des filtres.
     let lienObject = {
-
-      //SLIDER
       //[0] et [1] Va extraire les valeurs du premier élément  minimum qui est 0 et le 2 ème élément maximum qui sera 1
+      //SLIDER
       kilometremin: filtres.kilometrage[0],
       kilometremax: filtres.kilometrage[1],
       prixmin: filtres.prix[0],
@@ -125,15 +124,12 @@ const VehiculesFilters = () => {
       anneemin: filtres.annee[0],
       anneemax: filtres.annee[1],
     };
-
-    //DROPDOWN
     // Si la longueur du tableau filtres.marque n'est pas égale à zéro (c'est-à-dire s'il
     //y a une marque sélectionnée), alors la propriété marque est ajoutée à l'objet lienObject.
     if (filtres.marque.length !== 0) {
       lienObject.marque = filtres.marque;
     }
 
-    //CHECKBOX
     //condition qui teste si la longueur du tableau filtres.famille est différente de zéro.
     //Elle vérifie si le tableau filtres.famille n'est pas vide.
     //Si la condition est vraie, cela signifie que le tableau filtres.famille contient des éléments. 
@@ -143,8 +139,8 @@ const VehiculesFilters = () => {
       lienObject.famille = filtres.famille.join(",");
     }
 
-    //  Boucle for...of qui itère sur les paires clé-valeur de l'objet lienObject.
-    //À chaque itération, une chaîne de requête est construite en ajoutant chaque paire clé-valeur à la variable lienTmp
+    //  Boucle for...of qui itère sur les paires clé-valeur de l'objet lienObject. À chaque
+    //  itération, une chaîne de requête est construite en ajoutant chaque paire clé-valeur àla variable lienTmp
     //Va construire la chaine de la reqête = http://localhost/garageback/API/vehicules.php?kilometremin=5000&kilometremax=20000&prixmin=10000&prixmax=50000&anneemin=2010&anneemax=2022&marque=Toyota&famille=SUV,Berline
     // clé = kilometremin et valeur = 5000
     //la chaîne de requête, et les paires sont séparées par &. Le dernier & est ensuite supprimé pour obtenir une URL bien formée

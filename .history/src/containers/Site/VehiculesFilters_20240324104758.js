@@ -115,9 +115,8 @@ const VehiculesFilters = () => {
 
     //Création d'un objet qui contiendra les paramètres de l'Url à construire en utilisant les valeurs actuelles des filtres.
     let lienObject = {
-
-      //SLIDER
       //[0] et [1] Va extraire les valeurs du premier élément  minimum qui est 0 et le 2 ème élément maximum qui sera 1
+      //SLIDER
       kilometremin: filtres.kilometrage[0],
       kilometremax: filtres.kilometrage[1],
       prixmin: filtres.prix[0],
@@ -126,14 +125,13 @@ const VehiculesFilters = () => {
       anneemax: filtres.annee[1],
     };
 
-    //DROPDOWN
+    
     // Si la longueur du tableau filtres.marque n'est pas égale à zéro (c'est-à-dire s'il
     //y a une marque sélectionnée), alors la propriété marque est ajoutée à l'objet lienObject.
     if (filtres.marque.length !== 0) {
       lienObject.marque = filtres.marque;
     }
 
-    //CHECKBOX
     //condition qui teste si la longueur du tableau filtres.famille est différente de zéro.
     //Elle vérifie si le tableau filtres.famille n'est pas vide.
     //Si la condition est vraie, cela signifie que le tableau filtres.famille contient des éléments. 

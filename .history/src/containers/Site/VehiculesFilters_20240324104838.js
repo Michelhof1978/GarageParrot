@@ -115,9 +115,8 @@ const VehiculesFilters = () => {
 
     //Création d'un objet qui contiendra les paramètres de l'Url à construire en utilisant les valeurs actuelles des filtres.
     let lienObject = {
-
-      //SLIDER
       //[0] et [1] Va extraire les valeurs du premier élément  minimum qui est 0 et le 2 ème élément maximum qui sera 1
+      //SLIDER
       kilometremin: filtres.kilometrage[0],
       kilometremax: filtres.kilometrage[1],
       prixmin: filtres.prix[0],
