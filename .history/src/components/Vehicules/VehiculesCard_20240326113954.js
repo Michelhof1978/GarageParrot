@@ -5,18 +5,15 @@ import PaginationComponent from "../../components/Vehicules/CardPagination/CardP
 import Card from "./Card";
 
 const VehiculesCard = () => {
-
-//----------------------STATE---------------------------------------------------------
   //Le hook useState est utilisé pour ajouter l'état à un composant fonctionnel React. 
   //Il prend un argument initial et renvoie un tableau contenant deux éléments : la valeur actuelle de l'état et une fonction pour mettre à jour cet état.
   //State pour stocker la liste des véhicules
-  const [vehicules, setVehicules] = useState([]);// tableau vehicules est initialisé à vide ([]) afin de représenter un état initial où aucune donnée de véhicule n'a encore été récupérée et sera ajouté grâce à setVehicules
+  const [vehicules, setVehicules] = useState([]);// tableau vehicules est initialisé à vide ([]) afin de représenter un état initial où aucune donnée de véhicule n'a encore été récupérée
 
   //State pour gérer la pagination
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 6;
 
-//----------------------------------COMPORTEMENT-----------------------------------------------
 //Utilisation de useEffect qui va effectuer des opérations asynchrones lors du rendu d'un composant.
   useEffect(() => {
 //Utilisation de la bibliothèque Axios pour effectuer une requête HTTP GET vers l'URL spécifiée
@@ -60,8 +57,6 @@ const VehiculesCard = () => {
   };
 
   // console.log(currentCards);
-
-  //----------------------------------AFFICHAGE-----------------------------------------------
   return (
     <>
       <div>

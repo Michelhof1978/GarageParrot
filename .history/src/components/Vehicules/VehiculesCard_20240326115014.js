@@ -16,7 +16,7 @@ const VehiculesCard = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 6;
 
-//----------------------------------COMPORTEMENT-----------------------------------------------
+  
 //Utilisation de useEffect qui va effectuer des opérations asynchrones lors du rendu d'un composant.
   useEffect(() => {
 //Utilisation de la bibliothèque Axios pour effectuer une requête HTTP GET vers l'URL spécifiée
@@ -60,8 +60,6 @@ const VehiculesCard = () => {
   };
 
   // console.log(currentCards);
-
-  //----------------------------------AFFICHAGE-----------------------------------------------
   return (
     <>
       <div>

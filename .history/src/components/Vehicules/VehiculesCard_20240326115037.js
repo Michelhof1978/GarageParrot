@@ -60,8 +60,6 @@ const VehiculesCard = () => {
   };
 
   // console.log(currentCards);
-
-  //----------------------------------AFFICHAGE-----------------------------------------------
   return (
     <>
       <div>
