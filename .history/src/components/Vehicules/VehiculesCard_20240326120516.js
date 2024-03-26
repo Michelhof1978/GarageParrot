@@ -26,7 +26,7 @@ const VehiculesCard = () => {
       .then((response) => {
 //Extraction des données Json de la réponse HTTP.
         const jsonData = response.data;
-//Tri des données grâce à la méthode sort() en fonction de la date de création en mode décroissant d'un véhicule. 
+//Tri des données grâce à la méthode sort() en fonction de la date de création. Les données sont triées en ordre croissant en utilisant la date de création comme critère
         jsonData.sort(
           (a, b) => new Date(a.created_at) - new Date(b.created_at)
         );
